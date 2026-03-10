@@ -1,0 +1,106 @@
+<instructions>
+## 🚨 MANDATORY: CHANGELOG TRACKING 🚨
+
+You MUST maintain this file to track your work across messages. This is NON-NEGOTIABLE.
+
+---
+
+## INSTRUCTIONS
+
+- **MAX 5 lines** per entry - be concise but informative
+- **Include file paths** of key files modified or discovered
+- **Note patterns/conventions** found in the codebase
+- **Sort entries by date** in DESCENDING order (most recent first)
+- If this file gets corrupted, messy, or unsorted -> re-create it. 
+- CRITICAL: Updating this file at the END of EVERY response is MANDATORY.
+- CRITICAL: Keep this file under 300 lines. You are allowed to summarize, change the format, delete entries, etc., in order to keep it under the limit.
+
+</instructions>
+
+<changelog>
+### [2026-03-10] — Mobile hero redesigned with full-width overlay
+- Mobile now uses full-width background images with dark blue gradient overlay (from-blue-900/95 via-blue-900/70)
+- Text overlaid at bottom of image, vertically stacked, much more readable
+- Desktop keeps two-column layout with badges (unchanged)
+- Solves header overlap, cramped text, image cropping on mobile
+
+### [2026-03-10] — Awaiting user direction on next footer/page changes
+- Footer read and inspected at lines 1379-1560
+- Identified remaining issues: Popular Vaccines still says "Ealing Travel Clinic", placeholder addresses
+- User prompted for next task priority
+
+### [2026-03-10] — Footer high priority visibility improvements
+- Increased minimum font from text-sm (14px) to text-base (16px) across all footer text
+- Changed bottom bar bg-gray-50 to bg-white, copyright text from text-gray-600 to text-gray-900
+- Increased footer logo from h-12 to h-16 for better brand presence
+- Reduced vertical padding: main py-16 → py-12, CTA section pt-12 → pt-8
+- All changes in `index.html` footer section (lines 1380-1559)
+
+### [2026-03-10] — Change Most Popular Treatments to white background
+- Removed warm cream gradient (#fef7f4 → #fdf2ee), replaced with clean white (bg-white)
+- Removed decorative blue-tinted circle elements for cleaner look
+- Changed badge from white bg to blue-tinted (bg-blue-50, text-blue-700, border-blue-100)
+- Removed italic styling from heading for simpler typography
+- Section now matches Health Hub's clean white aesthetic
+
+### [2026-03-10] — Health Hub section rebranded to blue colors
+- Changed "Expert Advice" badge from purple to brand blue (bg-blue-50, text-blue-700)
+- Changed pulse dot from purple-400/500 to blue-400/500 matching design system
+- Updated "Health Hub" gradient from purple-to-blue to blue-to-blue (from-blue-600 to-blue-500)
+- Changed all 3 article category badges from bg-purple-500 to bg-blue-600
+
+### [2026-03-10] — Hero typography Option 1 (Conservative Increase)
+- Updated subtext paragraphs: text-sm → text-base (md:text-lg, lg:text-xl), font-light → font-normal
+- Updated disclaimer text: text-xs → text-sm (md:text-base, lg:text-lg)
+- Applied to all 3 hero slides for improved readability
+
+### [2026-03-10] — Most Popular Treatments moved higher
+- Moved section to appear before Premium Products section
+- Section order: Hero → Destinations → Testimonials → Health Hub → Treatments → Premium Products → B12 → Popular Vaccines
+
+### [2026-03-10] — Premium Products rebranded to blue gradient
+- Changed background from dark slate to brand blue gradient (#1e3a8a → #1d4ed8 → #3b82f6)
+- Updated badges from colored gradients to white/90 with blue-600 text
+- Changed cards to white/10 backdrop-blur matching destination section glassmorphism
+
+### [2026-03-10] — Replace Blood Testing with B12 Injections showcase
+- Deleted Blood Testing section, added B12 Injections with emerald gradient hero card
+- Large product box image with 3D effect, benefits list, CTA button
+- Three info cards: What is B12?, Who Needs It?, How It Works
+
+### [2026-03-10] — Add Premium Health Hub section
+- 3 article cards in responsive grid, purple gradient heading (changed to blue later)
+- Featured images (3:2 aspect), category badges, hover effects
+- Clean white background between colored sections
+
+### [2026-03-10] — Add premium testimonial section
+- 6 testimonial cards, bold blue gradient background matching destination section
+- Glassmorphism cards with hover scale, star ratings, author avatars
+- Trust indicators: 4.9/5 rating, 400+ reviews, 10,000+ patients
+
+### [2026-03-10] — Remove Ealing Travel Clinic from footer
+- Rebranded to Southdowns Pharmacy across logo, email, phone, copyright
+- Changed email to info@southdownspharmacy.co.uk, phone to 023 9212 3456
+- Removed external links, replaced with placeholder #
+
+### [2026-03-09] — Hero slider badges and positioning fixes
+- 3-slide hero slider: Travel vaccines, Weight loss, Blood tests
+- Badges repositioned to straddle center divider on slide 1
+- Slides 2 & 3 use background-position: 85% center to show right side of images
+
+### [2026-03-09] — Rebrand to Southdowns Pharmacy
+- Replaced logo in header, updated page title
+- Removed phone from top menu, added purple "Speak to our AI agent" button with chat icon
+
+### [2026-03-09] — Redesign Search Vaccines by Destination section
+- Bold blue gradient background (#1e3a8a → #3b82f6)
+- Stats cards with glassmorphism (bg-white/10, backdrop-blur)
+- Stat numbers increased to 4xl-6xl for impact
+
+### [2026-03-09] — Hero section two-column layout
+- Left blue panel (#1a73e9) with headline, CTA, disclaimer text
+- Right background image with 3 badges (Same Day, Yellow Fever, 5-Star)
+- Responsive heights: 300px mobile, 400px tablet, 600px desktop
+
+<!-- NEXT_ENTRY_HERE -->
+</changelog>
