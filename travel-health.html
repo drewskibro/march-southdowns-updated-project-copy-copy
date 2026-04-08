@@ -8,15 +8,15 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
-  content: [],
-  theme: {
-    extend: {
-      fontFamily: {
-        jost: ['Jost', 'sans-serif']
+    content: [],
+    theme: {
+      extend: {
+        fontFamily: {
+          jost: ['Jost', 'sans-serif']
+        }
       }
     }
-  }
-};
+  };
 </script>
   <style>
     @font-face {
@@ -31,13 +31,29 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .gradient-text-amber {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    /* Dot texture overlay */
+    .dot-pattern {
+      background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    /* Destination card hover */
+    .dest-card:hover .dest-overlay { opacity: 1; }
+    .dest-card:hover img { transform: scale(1.08); }
+    .dest-overlay { opacity: 0; transition: opacity 0.35s ease; }
+    img { transition: transform 0.5s ease; }
   </style>
 </head>
 <body class="font-jost bg-white text-gray-900 overflow-x-hidden">
 
 <!-- ============================================================
      HEADER / NAV
-     ACF: Global options (A1) — logo, nav links, AI agent CTA
+     ACF: A1 — logo, nav links, AI agent CTA
      ============================================================ -->
 <header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,126 +85,123 @@
 
 
 <!-- ============================================================
-     SECTION 1: HERO
-     ACF: TH1 — badge text, headline (2 lines), subheading,
-          primary CTA label/url, secondary CTA label/url,
-          trust badge x4 (icon, label), hero image
+     SECTION 1: HERO — full-bleed destination-led
+     ACF: TH1 — headline, subheading, primary CTA, secondary CTA,
+          background image, destination pills x5 (country, flag code),
+          trust badge x4 (label)
      ============================================================ -->
-<section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 overflow-hidden">
+<section class="relative min-h-[85vh] flex flex-col justify-center overflow-hidden">
 
-  <!-- Background orbs -->
-  <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-  <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-      <!-- Left: copy -->
-      <div>
-
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-blue-100 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-          <span class="w-2 h-2 bg-blue-300 rounded-full animate-pulse"></span>
-          NATHNAC Registered Travel Clinic · Hampshire
-        </div>
-
-        <!-- Headline -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 font-jost">
-          Hampshire's trusted<br>
-          <span class="gradient-text">travel health clinic</span>
-        </h1>
-
-        <!-- Subheading -->
-        <p class="text-blue-100 text-lg leading-relaxed mb-8 max-w-lg">
-          Expert travel consultations, all vaccines in stock, and official Yellow Fever certificates — available the same day across our 4 Hampshire branches. No GP referral needed.
-        </p>
-
-        <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row gap-4 mb-10">
-          <a href="#"
-             class="inline-flex items-center justify-center gap-2 bg-white text-blue-900 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl text-base">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
-            Book a Travel Consultation
-          </a>
-          <a href="tel:02392123456"
-             class="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 text-base">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-            </svg>
-            023 9212 3456
-          </a>
-        </div>
-
-        <!-- Trust badges -->
-        <div class="flex flex-wrap gap-3">
-
-          <div class="flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-4 py-2.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-            </svg>
-            <span class="text-white text-sm font-medium">Official Yellow Fever Centre</span>
-          </div>
-
-          <div class="flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-4 py-2.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-            </svg>
-            <span class="text-white text-sm font-medium">All Vaccines In Stock</span>
-          </div>
-
-          <div class="flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-4 py-2.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <span class="text-white text-sm font-medium">Same-Day Appointments</span>
-          </div>
-
-          <div class="flex items-center gap-2 bg-white/10 border border-white/20 rounded-lg px-4 py-2.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <span class="text-white text-sm font-medium">No GP Referral Needed</span>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Right: image with floating cards -->
-      <div class="relative hidden lg:block">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&q=80"
-               alt="Travel health consultation at Southdowns Pharmacy Hampshire"
-               class="w-full h-96 object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
-        </div>
-
-        <!-- Floating: Yellow Fever badge -->
-        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-              </svg>
-            </div>
-            <div>
-              <div class="text-sm font-bold text-gray-900">NATHNAC</div>
-              <div class="text-xs text-gray-500">Registered Yellow<br>Fever Centre</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Floating: Countries stat -->
-        <div class="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 max-w-[170px]">
-          <div class="text-3xl font-bold text-blue-600 font-jost mb-0.5">50+</div>
-          <div class="text-xs text-gray-500 font-medium">countries covered with<br>expert travel advice</div>
-        </div>
-
-      </div>
-
-    </div>
+  <!-- Background: full-bleed travel image -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=85"
+         alt="Travel destinations" class="w-full h-full object-cover" />
+    <!-- Deep gradient overlay — dark at bottom, brand blue at top -->
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-950/85 via-blue-900/75 to-blue-950/95"></div>
+    <!-- Dot texture for depth -->
+    <div class="absolute inset-0 dot-pattern"></div>
   </div>
+
+  <!-- Floating destination pills — scattered -->
+  <!-- Top-left area -->
+  <div class="absolute top-16 left-8 sm:left-16 z-10 hidden sm:flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg">
+    <img src="https://flagcdn.com/w20/th.png" width="20" alt="Thailand" class="rounded-sm" />
+    Thailand
+  </div>
+  <div class="absolute top-32 left-4 sm:left-8 z-10 hidden md:flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg">
+    <img src="https://flagcdn.com/w20/ke.png" width="20" alt="Kenya" class="rounded-sm" />
+    Kenya
+  </div>
+  <!-- Top-right area -->
+  <div class="absolute top-12 right-8 sm:right-20 z-10 hidden sm:flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg">
+    <img src="https://flagcdn.com/w20/in.png" width="20" alt="India" class="rounded-sm" />
+    India
+  </div>
+  <div class="absolute top-28 right-6 sm:right-8 z-10 hidden md:flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg">
+    <img src="https://flagcdn.com/w20/vn.png" width="20" alt="Vietnam" class="rounded-sm" />
+    Vietnam
+  </div>
+  <!-- Mid-right -->
+  <div class="absolute top-1/2 right-6 sm:right-12 z-10 hidden lg:flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg">
+    <img src="https://flagcdn.com/w20/br.png" width="20" alt="Brazil" class="rounded-sm" />
+    Brazil
+  </div>
+  <div class="absolute top-20 left-1/4 z-10 hidden lg:flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg">
+    <img src="https://flagcdn.com/w20/tz.png" width="20" alt="Tanzania" class="rounded-sm" />
+    Tanzania
+  </div>
+
+  <!-- Main content — centred -->
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-blue-100 text-sm font-medium px-5 py-2 rounded-full mb-8">
+      <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+      NATHNAC Registered Yellow Fever Centre · Hampshire
+    </div>
+
+    <!-- Headline -->
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 font-jost">
+      Travel further.<br>
+      <span class="gradient-text">Travel safer.</span>
+    </h1>
+
+    <!-- Subheading -->
+    <p class="text-blue-100 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+      Expert travel health consultations, every vaccine in stock, and official Yellow Fever certificates — from your local Hampshire pharmacy. Same day. No GP referral.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-14">
+      <a href="#"
+         class="inline-flex items-center justify-center gap-2 bg-white text-blue-900 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl text-base">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        Book a Travel Consultation
+      </a>
+      <a href="tel:02392123456"
+         class="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 text-base">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        023 9212 3456
+      </a>
+    </div>
+
+    <!-- Trust badges row -->
+    <div class="flex flex-wrap justify-center gap-3">
+      <div class="flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-2.5 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+        Official Yellow Fever Centre
+      </div>
+      <div class="flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-2.5 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+        </svg>
+        All Vaccines In Stock
+      </div>
+      <div class="flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-2.5 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Same-Day Appointments
+      </div>
+      <div class="flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-2.5 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        4 Hampshire Locations
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom fade into next section -->
+  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent z-10"></div>
 </section>
 <!-- END SECTION 1: HERO -->
 
