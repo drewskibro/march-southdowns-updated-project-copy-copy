@@ -18,7 +18,3 @@ Rules:
 
 <!-- Add tasks here only when there are real next steps. -->
 
-<todo>
-Address medium priority footer items
-Fix "Ealing Travel Clinic" placeholder in Popular Vaccines and update addresses
-</todo>
