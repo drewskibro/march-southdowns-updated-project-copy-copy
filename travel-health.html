@@ -620,6 +620,195 @@
 
 
 <!-- ============================================================
+     SECTION 5: AVAILABLE VACCINES
+     ACF: TH5_section_heading, TH5_section_subheading,
+          TH5_featured_vaccine_*, TH5_vaccine_card_* (repeater)
+     ============================================================ -->
+<section class="py-20 bg-blue-950 relative overflow-hidden" id="vaccines">
+  <!-- Dot-pattern texture overlay -->
+  <div class="absolute inset-0 dot-pattern pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <!-- Section header -->
+    <!-- ACF: TH5_section_heading, TH5_section_subheading -->
+    <div class="text-center mb-12">
+      <span class="inline-flex items-center gap-2 bg-amber-400/15 text-amber-300 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full border border-amber-400/25 mb-5">
+        <!-- Syringe icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 3.5l1 1-2 2 1.5 1.5-1 1-1.5-1.5-5 5 .75 2.25-5.75 5.75a1 1 0 01-1.414 0l-1.086-1.086a1 1 0 010-1.414l5.75-5.75L8.5 11l5-5-1.5-1.5 1-1L14.5 5l2-2z"/>
+        </svg>
+        Vaccines &amp; Antimalarials
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white font-jost mb-4 leading-tight">
+        Every vaccine your trip requires,<br class="hidden md:block"> under one roof
+      </h2>
+      <p class="text-blue-200 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        All vaccines are administered by GPhC-registered pharmacists. We check live NATHNAC guidance for your exact destination and travel dates — no generic checklists.
+      </p>
+    </div>
+
+    <!-- FEATURED: Yellow Fever — full-width amber card -->
+    <!-- ACF: TH5_featured_vaccine_name, TH5_featured_vaccine_badge, TH5_featured_vaccine_description, TH5_featured_vaccine_note -->
+    <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 rounded-2xl p-7 md:p-9 mb-8 shadow-2xl shadow-amber-900/40 relative overflow-hidden">
+      <!-- Background texture -->
+      <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, rgba(0,0,0,0.3) 1px, transparent 1px); background-size: 24px 24px;"></div>
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-3 mb-3">
+            <span class="inline-flex items-center gap-1.5 bg-black/20 text-white text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
+              <!-- Star icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Featured vaccine
+            </span>
+            <span class="bg-red-600 text-white text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-full">Certificate required</span>
+            <span class="bg-black/15 text-white text-xs font-semibold px-3 py-1.5 rounded-full">Designated centre</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-extrabold text-white font-jost mb-2">Yellow Fever Vaccination</h3>
+          <p class="text-amber-950/80 text-sm md:text-base leading-relaxed max-w-xl">
+            Mandatory for entry to many countries in sub-Saharan Africa and South America. As an NHS-approved Yellow Fever Vaccination Centre, we can issue the official International Certificate of Vaccination or Prophylaxis (ICVP) — the only document accepted at borders.
+          </p>
+          <p class="text-amber-900 text-xs mt-3 font-medium">Valid for life · Single dose · Book at least 10 days before travel</p>
+        </div>
+        <div class="flex flex-col sm:flex-row md:flex-col gap-3 md:min-w-[200px]">
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-white text-amber-700 font-bold text-sm px-6 py-3.5 rounded-xl hover:bg-amber-50 transition-colors shadow-lg">
+            Book Yellow Fever
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-black/15 text-white font-semibold text-sm px-6 py-3.5 rounded-xl hover:bg-black/25 transition-colors">
+            Learn more
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vaccines grid -->
+    <!-- ACF: TH5_vaccine_card_* repeater — name, tag, description, price_from -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+
+      <!-- Typhoid -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/12 hover:border-white/20 transition-all duration-300 group">
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="text-white font-bold font-jost text-base group-hover:text-amber-300 transition-colors">Typhoid</h4>
+          <span class="bg-blue-400/20 text-blue-200 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2">Most destinations</span>
+        </div>
+        <p class="text-blue-200 text-sm leading-relaxed">Recommended for travel to Africa, Asia and Latin America. Especially important if visiting local homes or rural areas.</p>
+        <p class="text-amber-300/80 text-xs font-semibold mt-3">From £45 per dose</p>
+      </div>
+
+      <!-- Hepatitis A -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/12 hover:border-white/20 transition-all duration-300 group">
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="text-white font-bold font-jost text-base group-hover:text-amber-300 transition-colors">Hepatitis A</h4>
+          <span class="bg-blue-400/20 text-blue-200 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2">Most destinations</span>
+        </div>
+        <p class="text-blue-200 text-sm leading-relaxed">Spread via contaminated food and water. Recommended for most travel outside northern and western Europe, North America and Australasia.</p>
+        <p class="text-amber-300/80 text-xs font-semibold mt-3">From £55 per dose</p>
+      </div>
+
+      <!-- Hepatitis B -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/12 hover:border-white/20 transition-all duration-300 group">
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="text-white font-bold font-jost text-base group-hover:text-amber-300 transition-colors">Hepatitis B</h4>
+          <span class="bg-teal-400/20 text-teal-200 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2">Higher-risk travel</span>
+        </div>
+        <p class="text-blue-200 text-sm leading-relaxed">Recommended for those with potential blood exposure, longer stays, or working in healthcare. Often combined with Hepatitis A (Twinrix).</p>
+        <p class="text-amber-300/80 text-xs font-semibold mt-3">From £60 per dose</p>
+      </div>
+
+      <!-- Rabies -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/12 hover:border-white/20 transition-all duration-300 group">
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="text-white font-bold font-jost text-base group-hover:text-amber-300 transition-colors">Rabies</h4>
+          <span class="bg-orange-400/20 text-orange-200 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2">Adventure travel</span>
+        </div>
+        <p class="text-blue-200 text-sm leading-relaxed">Essential for adventure travel, rural areas and destinations with limited post-exposure treatment. Pre-exposure course is 3 doses over 21+ days.</p>
+        <p class="text-amber-300/80 text-xs font-semibold mt-3">From £75 per dose</p>
+      </div>
+
+      <!-- Cholera -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/12 hover:border-white/20 transition-all duration-300 group">
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="text-white font-bold font-jost text-base group-hover:text-amber-300 transition-colors">Cholera</h4>
+          <span class="bg-blue-400/20 text-blue-200 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2">High-risk areas</span>
+        </div>
+        <p class="text-blue-200 text-sm leading-relaxed">Dukoral oral vaccine recommended for humanitarian workers, relief agencies and those visiting cholera-affected areas with poor sanitation.</p>
+        <p class="text-amber-300/80 text-xs font-semibold mt-3">From £50 per dose</p>
+      </div>
+
+      <!-- Japanese Encephalitis -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/12 hover:border-white/20 transition-all duration-300 group">
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="text-white font-bold font-jost text-base group-hover:text-amber-300 transition-colors">Japanese Encephalitis</h4>
+          <span class="bg-blue-400/20 text-blue-200 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2">Rural Asia</span>
+        </div>
+        <p class="text-blue-200 text-sm leading-relaxed">Recommended for travellers spending a month or more in rural parts of Asia, particularly near rice paddies or pig farms where the virus circulates.</p>
+        <p class="text-amber-300/80 text-xs font-semibold mt-3">From £120 per dose</p>
+      </div>
+
+      <!-- Meningitis ACWY -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/12 hover:border-white/20 transition-all duration-300 group">
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="text-white font-bold font-jost text-base group-hover:text-amber-300 transition-colors">Meningitis ACWY</h4>
+          <span class="bg-red-400/20 text-red-200 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2">Required for Hajj</span>
+        </div>
+        <p class="text-blue-200 text-sm leading-relaxed">Mandatory for Hajj and Umrah pilgrims. Also recommended for travel to the sub-Saharan "meningitis belt" during the dry season.</p>
+        <p class="text-amber-300/80 text-xs font-semibold mt-3">From £65 per dose</p>
+      </div>
+
+      <!-- Tetanus / Diphtheria / Polio -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/12 hover:border-white/20 transition-all duration-300 group">
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="text-white font-bold font-jost text-base group-hover:text-amber-300 transition-colors">Tetanus / Diphtheria / Polio</h4>
+          <span class="bg-blue-400/20 text-blue-200 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2">Booster check</span>
+        </div>
+        <p class="text-blue-200 text-sm leading-relaxed">Many destinations require an up-to-date Td/IPV booster. We'll check your vaccination history and top up if needed — often covered on the NHS.</p>
+        <p class="text-amber-300/80 text-xs font-semibold mt-3">Free if NHS eligible</p>
+      </div>
+
+      <!-- Tick-Borne Encephalitis -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:bg-white/12 hover:border-white/20 transition-all duration-300 group">
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="text-white font-bold font-jost text-base group-hover:text-amber-300 transition-colors">Tick-Borne Encephalitis</h4>
+          <span class="bg-green-400/20 text-green-200 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2">Eastern Europe</span>
+        </div>
+        <p class="text-blue-200 text-sm leading-relaxed">For hiking, camping or outdoor activities in forested areas of Central and Eastern Europe, Scandinavia or Russia during spring and summer.</p>
+        <p class="text-amber-300/80 text-xs font-semibold mt-3">From £85 per dose</p>
+      </div>
+
+      <!-- Malaria — Antimalarials (teal accent) -->
+      <div class="bg-teal-950/60 backdrop-blur-sm border border-teal-700/40 rounded-2xl p-5 hover:bg-teal-900/50 hover:border-teal-600/50 transition-all duration-300 group sm:col-span-2 lg:col-span-1">
+        <div class="flex items-start justify-between mb-3">
+          <h4 class="text-white font-bold font-jost text-base group-hover:text-teal-300 transition-colors">Malaria (Antimalarials)</h4>
+          <span class="bg-teal-400/25 text-teal-200 text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2">Prescription tablets</span>
+        </div>
+        <p class="text-blue-200 text-sm leading-relaxed">Not a vaccine — prescription tablets that prevent malaria infection. We prescribe the right antimalarial for your destination (Doxycycline, Malarone or Mefloquine) following UKTIS guidelines.</p>
+        <p class="text-teal-300/80 text-xs font-semibold mt-3">From £2.50 per day · Private prescription</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom note + CTA -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-5 bg-white/6 border border-white/10 rounded-2xl px-7 py-5">
+      <div class="flex items-center gap-3 text-blue-200 text-sm">
+        <!-- Info icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span>Don't see your vaccine listed? We offer additional vaccines including BCG, HPV, MMR, Chickenpox and Dengue Fever — ask our team.</span>
+      </div>
+      <a href="#" class="shrink-0 inline-flex items-center gap-2 bg-amber-400 text-amber-950 font-bold text-sm px-6 py-3 rounded-xl hover:bg-amber-300 transition-colors whitespace-nowrap">
+        Book a consultation
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- END SECTION 5: AVAILABLE VACCINES -->
+
+
+<!-- ============================================================
      FOOTER PLACEHOLDER — will be replaced with shared footer
      ============================================================ -->
 <footer class="bg-gray-50 border-t border-gray-200 py-8 text-center text-gray-400 text-sm">
