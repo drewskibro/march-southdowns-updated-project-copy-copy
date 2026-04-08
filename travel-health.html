@@ -937,6 +937,221 @@
 
 
 <!-- ============================================================
+     SECTION 7: TESTIMONIALS
+     ACF: TH7_section_heading, TH7_featured_quote_*,
+          TH7_testimonial_* (repeater: quote, name, destination_country_code,
+          destination_label, branch, rating)
+     ============================================================ -->
+<section class="py-20 bg-blue-950 relative overflow-hidden" id="testimonials">
+  <div class="absolute inset-0 dot-pattern pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <!-- Section header -->
+    <div class="text-center mb-12">
+      <span class="inline-flex items-center gap-2 bg-amber-400/15 text-amber-300 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full border border-amber-400/25 mb-5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Traveller reviews
+      </span>
+      <!-- ACF: TH7_section_heading -->
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white font-jost mb-4 leading-tight">
+        Trusted by Hampshire travellers<br class="hidden md:block"> heading everywhere
+      </h2>
+      <p class="text-blue-200 text-base md:text-lg max-w-xl mx-auto">From weekend city breaks to six-month expeditions — here's what our patients say.</p>
+    </div>
+
+    <!-- Featured quote — full width -->
+    <!-- ACF: TH7_featured_quote_text, TH7_featured_quote_name, TH7_featured_quote_destination_code, TH7_featured_quote_destination_label, TH7_featured_quote_branch -->
+    <div class="bg-gradient-to-r from-amber-500/20 via-amber-400/10 to-blue-800/30 border border-amber-400/25 rounded-2xl p-8 md:p-10 mb-8 relative overflow-hidden">
+      <div class="absolute top-4 right-6 text-amber-400/20 text-9xl font-serif leading-none select-none">&ldquo;</div>
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
+        <div class="flex-1">
+          <!-- Stars -->
+          <div class="flex gap-1 mb-4">
+            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="text-white text-lg md:text-xl leading-relaxed font-medium italic mb-6">"I was heading to Uganda and Rwanda for three weeks of gorilla trekking — genuinely complex requirements. The pharmacist at Havant didn't just hand me a leaflet. She went through every destination day-by-day, sorted my Yellow Fever certificate, malaria tablets, Hep A and Typhoid, and even flagged that I'd need rabies due to remote locations. I felt completely prepared. Couldn't recommend more."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-400 flex items-center justify-center text-amber-950 font-bold text-sm shrink-0">SR</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Sarah R.</p>
+              <div class="flex items-center gap-2 text-blue-300 text-xs">
+                <img src="https://flagcdn.com/w20/ug.png" alt="Uganda" class="w-4 h-3 rounded-sm object-cover">
+                <span>Travelled to Uganda &amp; Rwanda</span>
+                <span class="text-blue-600">·</span>
+                <span>Havant branch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6-card grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Card 1: Thailand -->
+      <!-- ACF: TH7_testimonial_1_* -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/12 hover:border-white/20 transition-all duration-300">
+        <div class="flex gap-1 mb-3">
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-blue-100 text-sm leading-relaxed mb-4 italic">"Booked a last-minute appointment three weeks before heading to Thailand and Cambodia. Got everything sorted — Hep A, Typhoid, and malaria tablets — all in one visit. The advice on food and water safety was genuinely useful too."</p>
+        <div class="flex items-center gap-2.5 pt-3 border-t border-white/10">
+          <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs shrink-0">JM</div>
+          <div>
+            <p class="text-white font-semibold text-xs">James M.</p>
+            <div class="flex items-center gap-1.5 text-blue-300 text-xs">
+              <img src="https://flagcdn.com/w20/th.png" alt="Thailand" class="w-3.5 h-2.5 rounded-sm object-cover">
+              <span>Thailand &amp; Cambodia · Emsworth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Kenya -->
+      <!-- ACF: TH7_testimonial_2_* -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/12 hover:border-white/20 transition-all duration-300">
+        <div class="flex gap-1 mb-3">
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-blue-100 text-sm leading-relaxed mb-4 italic">"Going on safari with the kids — I was nervous about getting it wrong. The pharmacist was brilliant with the children, explained everything clearly and made sure they were comfortable. Yellow Fever certs issued on the spot. Seamless."</p>
+        <div class="flex items-center gap-2.5 pt-3 border-t border-white/10">
+          <div class="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center text-white font-bold text-xs shrink-0">LP</div>
+          <div>
+            <p class="text-white font-semibold text-xs">Laura P.</p>
+            <div class="flex items-center gap-1.5 text-blue-300 text-xs">
+              <img src="https://flagcdn.com/w20/ke.png" alt="Kenya" class="w-3.5 h-2.5 rounded-sm object-cover">
+              <span>Kenya · Havant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: India -->
+      <!-- ACF: TH7_testimonial_3_* -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/12 hover:border-white/20 transition-all duration-300">
+        <div class="flex gap-1 mb-3">
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-blue-100 text-sm leading-relaxed mb-4 italic">"Six weeks backpacking India — a lot to cover. Cholera oral vaccine, Hep A &amp; B, Typhoid, Rabies and Japanese Encephalitis for the rural sections. Spread over two appointments and timed perfectly around my departure. Genuinely impressive knowledge."</p>
+        <div class="flex items-center gap-2.5 pt-3 border-t border-white/10">
+          <div class="w-8 h-8 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold text-xs shrink-0">TK</div>
+          <div>
+            <p class="text-white font-semibold text-xs">Tom K.</p>
+            <div class="flex items-center gap-1.5 text-blue-300 text-xs">
+              <img src="https://flagcdn.com/w20/in.png" alt="India" class="w-3.5 h-2.5 rounded-sm object-cover">
+              <span>India · Leigh Park</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Vietnam -->
+      <!-- ACF: TH7_testimonial_4_* -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/12 hover:border-white/20 transition-all duration-300">
+        <div class="flex gap-1 mb-3">
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-blue-100 text-sm leading-relaxed mb-4 italic">"I'd used a travel clinic in London before and it cost a fortune. Southdowns were half the price, much easier to get to, and honestly the pharmacist gave me more time and better advice than I'd had before. Hep A, Typhoid, malaria — all sorted quickly."</p>
+        <div class="flex items-center gap-2.5 pt-3 border-t border-white/10">
+          <div class="w-8 h-8 rounded-full bg-blue-800 flex items-center justify-center text-white font-bold text-xs shrink-0">AW</div>
+          <div>
+            <p class="text-white font-semibold text-xs">Anna W.</p>
+            <div class="flex items-center gap-1.5 text-blue-300 text-xs">
+              <img src="https://flagcdn.com/w20/vn.png" alt="Vietnam" class="w-3.5 h-2.5 rounded-sm object-cover">
+              <span>Vietnam · Rowlands Castle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Morocco -->
+      <!-- ACF: TH7_testimonial_5_* -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/12 hover:border-white/20 transition-all duration-300">
+        <div class="flex gap-1 mb-3">
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-blue-100 text-sm leading-relaxed mb-4 italic">"Quick and professional. I only needed a booster check and Hep A for Morocco — in and out in 25 minutes. No fuss, no upselling, just what I actually needed. Will definitely come back before my next trip."</p>
+        <div class="flex items-center gap-2.5 pt-3 border-t border-white/10">
+          <div class="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-bold text-xs shrink-0">RH</div>
+          <div>
+            <p class="text-white font-semibold text-xs">Rachel H.</p>
+            <div class="flex items-center gap-1.5 text-blue-300 text-xs">
+              <img src="https://flagcdn.com/w20/ma.png" alt="Morocco" class="w-3.5 h-2.5 rounded-sm object-cover">
+              <span>Morocco · Emsworth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Tanzania -->
+      <!-- ACF: TH7_testimonial_6_* -->
+      <div class="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/12 hover:border-white/20 transition-all duration-300">
+        <div class="flex gap-1 mb-3">
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-blue-100 text-sm leading-relaxed mb-4 italic">"Climbing Kilimanjaro was a bucket-list trip — I wasn't going to leave anything to chance. The pharmacist flagged altitude sickness medication I hadn't even thought to ask about, alongside the standard vaccines. That kind of proactive advice makes all the difference."</p>
+        <div class="flex items-center gap-2.5 pt-3 border-t border-white/10">
+          <div class="w-8 h-8 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold text-xs shrink-0">DC</div>
+          <div>
+            <p class="text-white font-semibold text-xs">David C.</p>
+            <div class="flex items-center gap-1.5 text-blue-300 text-xs">
+              <img src="https://flagcdn.com/w20/tz.png" alt="Tanzania" class="w-3.5 h-2.5 rounded-sm object-cover">
+              <span>Tanzania · Havant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Review score summary -->
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+      <div class="flex gap-1">
+        <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="text-blue-200 text-sm"><span class="text-white font-bold">4.9 / 5</span> average across all branches · Based on 200+ patient reviews</p>
+    </div>
+
+  </div>
+</section>
+<!-- END SECTION 7: TESTIMONIALS -->
+
+
+<!-- ============================================================
      FOOTER PLACEHOLDER — will be replaced with shared footer
      ============================================================ -->
 <footer class="bg-gray-50 border-t border-gray-200 py-8 text-center text-gray-400 text-sm">
