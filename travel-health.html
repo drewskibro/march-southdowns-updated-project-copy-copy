@@ -272,6 +272,219 @@
 
 
 <!-- ============================================================
+     SECTION 3: POPULAR DESTINATIONS
+     ACF: TH3 — section badge, headline, subheading,
+          destination card x8 (country name, flag code,
+          image url, vaccine count, page url)
+     ============================================================ -->
+<section class="bg-white py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-700 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+        <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+        Popular Destinations
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 font-jost mb-4">
+        Where are you heading?
+      </h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        Select your destination and we'll tell you exactly which vaccines and health precautions you need — tailored to your itinerary and travel dates.
+      </p>
+    </div>
+
+    <!-- Destination grid: 2-col mobile, 4-col desktop
+         First two cards are taller (featured) via CSS aspect ratio trick -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+
+      <!-- Card 1: Thailand — FEATURED (taller) -->
+      <a href="#" class="dest-card col-span-1 lg:row-span-2 relative rounded-2xl overflow-hidden shadow-md block group" style="aspect-ratio: auto;">
+        <div class="relative h-64 lg:h-full min-h-[28rem] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80"
+               alt="Travel vaccinations for Thailand" class="w-full h-full object-cover" />
+          <!-- Always-on gradient -->
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
+          <!-- Hover overlay -->
+          <div class="dest-overlay absolute inset-0 bg-blue-900/70 flex flex-col items-center justify-center gap-3 p-6">
+            <div class="text-white text-lg font-bold font-jost text-center">Thailand</div>
+            <div class="bg-white/20 border border-white/30 text-white text-sm px-3 py-1.5 rounded-full">5 vaccines recommended</div>
+            <span class="inline-flex items-center gap-1 bg-white text-blue-900 text-sm font-bold px-4 py-2 rounded-xl">
+              View vaccines
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </span>
+          </div>
+          <!-- Label -->
+          <div class="absolute bottom-0 left-0 right-0 p-5">
+            <div class="flex items-center gap-2 mb-1">
+              <img src="https://flagcdn.com/w20/th.png" width="20" alt="Thailand" class="rounded-sm shadow" />
+              <h3 class="text-white text-xl font-bold font-jost">Thailand</h3>
+            </div>
+            <p class="text-white/70 text-xs">5 vaccines recommended</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2: India — FEATURED (taller) -->
+      <a href="#" class="dest-card col-span-1 lg:row-span-2 relative rounded-2xl overflow-hidden shadow-md block group">
+        <div class="relative h-64 lg:h-full min-h-[28rem] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80"
+               alt="Travel vaccinations for India" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
+          <div class="dest-overlay absolute inset-0 bg-blue-900/70 flex flex-col items-center justify-center gap-3 p-6">
+            <div class="text-white text-lg font-bold font-jost text-center">India</div>
+            <div class="bg-white/20 border border-white/30 text-white text-sm px-3 py-1.5 rounded-full">7 vaccines recommended</div>
+            <span class="inline-flex items-center gap-1 bg-white text-blue-900 text-sm font-bold px-4 py-2 rounded-xl">
+              View vaccines
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-5">
+            <div class="flex items-center gap-2 mb-1">
+              <img src="https://flagcdn.com/w20/in.png" width="20" alt="India" class="rounded-sm shadow" />
+              <h3 class="text-white text-xl font-bold font-jost">India</h3>
+            </div>
+            <p class="text-white/70 text-xs">7 vaccines recommended</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3: Kenya -->
+      <a href="#" class="dest-card relative rounded-2xl overflow-hidden shadow-md block group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=400&q=80"
+               alt="Travel vaccinations for Kenya" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/10 to-transparent"></div>
+          <div class="dest-overlay absolute inset-0 bg-blue-900/70 flex flex-col items-center justify-center gap-2 p-4">
+            <div class="bg-white/20 border border-white/30 text-white text-xs px-3 py-1 rounded-full">6 vaccines</div>
+            <span class="inline-flex items-center gap-1 bg-white text-blue-900 text-xs font-bold px-3 py-1.5 rounded-lg">View vaccines</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="flex items-center gap-2">
+              <img src="https://flagcdn.com/w20/ke.png" width="18" alt="Kenya" class="rounded-sm shadow" />
+              <h3 class="text-white text-base font-bold font-jost">Kenya</h3>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4: Vietnam -->
+      <a href="#" class="dest-card relative rounded-2xl overflow-hidden shadow-md block group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=80"
+               alt="Travel vaccinations for Vietnam" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/10 to-transparent"></div>
+          <div class="dest-overlay absolute inset-0 bg-blue-900/70 flex flex-col items-center justify-center gap-2 p-4">
+            <div class="bg-white/20 border border-white/30 text-white text-xs px-3 py-1 rounded-full">5 vaccines</div>
+            <span class="inline-flex items-center gap-1 bg-white text-blue-900 text-xs font-bold px-3 py-1.5 rounded-lg">View vaccines</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="flex items-center gap-2">
+              <img src="https://flagcdn.com/w20/vn.png" width="18" alt="Vietnam" class="rounded-sm shadow" />
+              <h3 class="text-white text-base font-bold font-jost">Vietnam</h3>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5: Tanzania -->
+      <a href="#" class="dest-card relative rounded-2xl overflow-hidden shadow-md block group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80"
+               alt="Travel vaccinations for Tanzania" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/10 to-transparent"></div>
+          <div class="dest-overlay absolute inset-0 bg-blue-900/70 flex flex-col items-center justify-center gap-2 p-4">
+            <div class="bg-white/20 border border-white/30 text-white text-xs px-3 py-1 rounded-full">6 vaccines</div>
+            <span class="inline-flex items-center gap-1 bg-white text-blue-900 text-xs font-bold px-3 py-1.5 rounded-lg">View vaccines</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="flex items-center gap-2">
+              <img src="https://flagcdn.com/w20/tz.png" width="18" alt="Tanzania" class="rounded-sm shadow" />
+              <h3 class="text-white text-base font-bold font-jost">Tanzania</h3>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6: Morocco -->
+      <a href="#" class="dest-card relative rounded-2xl overflow-hidden shadow-md block group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=400&q=80"
+               alt="Travel vaccinations for Morocco" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/10 to-transparent"></div>
+          <div class="dest-overlay absolute inset-0 bg-blue-900/70 flex flex-col items-center justify-center gap-2 p-4">
+            <div class="bg-white/20 border border-white/30 text-white text-xs px-3 py-1 rounded-full">4 vaccines</div>
+            <span class="inline-flex items-center gap-1 bg-white text-blue-900 text-xs font-bold px-3 py-1.5 rounded-lg">View vaccines</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="flex items-center gap-2">
+              <img src="https://flagcdn.com/w20/ma.png" width="18" alt="Morocco" class="rounded-sm shadow" />
+              <h3 class="text-white text-base font-bold font-jost">Morocco</h3>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 7: Indonesia -->
+      <a href="#" class="dest-card relative rounded-2xl overflow-hidden shadow-md block group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=80"
+               alt="Travel vaccinations for Indonesia" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/10 to-transparent"></div>
+          <div class="dest-overlay absolute inset-0 bg-blue-900/70 flex flex-col items-center justify-center gap-2 p-4">
+            <div class="bg-white/20 border border-white/30 text-white text-xs px-3 py-1 rounded-full">5 vaccines</div>
+            <span class="inline-flex items-center gap-1 bg-white text-blue-900 text-xs font-bold px-3 py-1.5 rounded-lg">View vaccines</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="flex items-center gap-2">
+              <img src="https://flagcdn.com/w20/id.png" width="18" alt="Indonesia" class="rounded-sm shadow" />
+              <h3 class="text-white text-base font-bold font-jost">Indonesia</h3>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 8: Brazil -->
+      <a href="#" class="dest-card relative rounded-2xl overflow-hidden shadow-md block group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=400&q=80"
+               alt="Travel vaccinations for Brazil" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/10 to-transparent"></div>
+          <div class="dest-overlay absolute inset-0 bg-blue-900/70 flex flex-col items-center justify-center gap-2 p-4">
+            <div class="bg-white/20 border border-white/30 text-white text-xs px-3 py-1 rounded-full">6 vaccines</div>
+            <span class="inline-flex items-center gap-1 bg-white text-blue-900 text-xs font-bold px-3 py-1.5 rounded-lg">View vaccines</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="flex items-center gap-2">
+              <img src="https://flagcdn.com/w20/br.png" width="18" alt="Brazil" class="rounded-sm shadow" />
+              <h3 class="text-white text-base font-bold font-jost">Brazil</h3>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- View all destinations link -->
+    <div class="text-center">
+      <a href="#" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors">
+        View all destinations
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- END SECTION 3: POPULAR DESTINATIONS -->
+
+
+<!-- ============================================================
      FOOTER PLACEHOLDER — will be replaced with shared footer
      ============================================================ -->
 <footer class="bg-gray-50 border-t border-gray-200 py-8 text-center text-gray-400 text-sm">
