@@ -102,5 +102,11 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - Right background image with 3 badges (Same Day, Yellow Fever, 5-Star)
 - Responsive heights: 300px mobile, 400px tablet, 600px desktop
 
+### [2026-04-08] — Removed all Ealing Travel Clinic references
+- Replaced all `href="https://ealingtravelclinic.co.uk/..."` with `href="#"` (nav, vaccines, destinations, contact)
+- Fixed Popular Vaccines description: "Ealing Travel Clinic" → "Southdowns Pharmacy" (line 1173)
+- Updated footer Our Locations: Southsea/Waterlooville/Havant/Portsmouth → real 4 branches with full addresses
+- Font CSS src URLs pointing to ETC left intact (functional font files)
+
 <!-- NEXT_ENTRY_HERE -->
 </changelog>
