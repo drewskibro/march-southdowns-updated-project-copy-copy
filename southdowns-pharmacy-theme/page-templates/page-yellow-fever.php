@@ -886,4 +886,124 @@ $check_svg   = '<svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox
   </div>
 </section>
 
+<!-- ============================================================
+     S9: FAQ ACCORDION
+     ============================================================ -->
+<section class="bg-white py-16 lg:py-24">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <p class="text-amber-500 font-bold text-xs tracking-widest uppercase mb-3">FAQ</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 font-jost leading-tight mb-4">
+        Frequently asked questions
+      </h2>
+      <p class="text-gray-500 text-base leading-relaxed">
+        Everything you need to know about the Yellow Fever vaccine and your ICVP certificate.
+      </p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="space-y-3" id="yf-faq">
+      <?php
+      $faqs = [
+        [
+          'q' => 'How much does the Yellow Fever vaccine cost?',
+          'a' => 'The Yellow Fever vaccination at Southdowns Pharmacy costs £65 per dose. This includes the travel health consultation, the Stamaril® vaccine, and the official ICVP certificate. It is a private service — not available free on the NHS.',
+        ],
+        [
+          'q' => 'Do I need an appointment for the Yellow Fever vaccine?',
+          'a' => 'Walk-ins are welcome for travel health advice, but we recommend booking an appointment for vaccinations to guarantee vaccine stock availability. Same-day appointments are often available — call your nearest branch to check.',
+        ],
+        [
+          'q' => 'How soon before travel do I need the Yellow Fever vaccine?',
+          'a' => 'You must be vaccinated at least 10 days before departure. The ICVP certificate only becomes valid 10 days after vaccination. Ideally book 4–6 weeks in advance to allow time and ensure stock availability.',
+        ],
+        [
+          'q' => 'I had the Yellow Fever vaccine years ago — do I need a booster?',
+          'a' => 'No — in the vast majority of cases, you do not need a booster. Since July 2016, the WHO confirmed that a single Yellow Fever dose provides lifelong protection. All previously issued 10-year certificates have also been automatically extended for life.',
+        ],
+        [
+          'q' => 'Can children have the Yellow Fever vaccine?',
+          'a' => 'Yes, for children aged 9 months and over. The vaccine is not recommended for infants under 6 months due to the risk of vaccine-associated encephalitis. Children aged 6–9 months may be considered on a case-by-case basis — speak to our pharmacist.',
+        ],
+        [
+          'q' => 'What are the side effects of the Yellow Fever vaccine?',
+          'a' => 'Most people experience only mild, short-lived side effects: soreness at the injection site, mild headache, low-grade fever, and fatigue for a few days. Serious adverse reactions are very rare and will be discussed with you at your appointment.',
+        ],
+        [
+          'q' => 'Can I have other vaccines at the same time as Yellow Fever?',
+          'a' => 'Yes. Inactivated vaccines such as Typhoid, Hepatitis A, and Hepatitis B can safely be given alongside Yellow Fever at the same appointment. Other live vaccines should ideally be given on the same day or separated by at least 4 weeks.',
+        ],
+        [
+          'q' => 'What if I can\'t have the Yellow Fever vaccine for medical reasons?',
+          'a' => 'If you have a genuine medical contraindication, our pharmacist can issue a medical exemption waiver letter. Some countries accept this in lieu of the ICVP — check with your destination\'s embassy before travelling.',
+        ],
+      ];
+
+      foreach ( $faqs as $idx => $faq ) :
+        $num = str_pad( $idx + 1, 2, '0', STR_PAD_LEFT );
+        $id  = 'faq-' . ( $idx + 1 );
+      ?>
+      <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300" data-faq="<?php echo esc_attr( $id ); ?>">
+
+        <!-- Question button -->
+        <button
+          type="button"
+          class="faq-trigger w-full flex items-center gap-4 px-6 py-5 text-left hover:bg-gray-50 transition-colors duration-200"
+          aria-expanded="false"
+          aria-controls="<?php echo esc_attr( $id ); ?>"
+        >
+          <span class="shrink-0 w-8 h-8 bg-amber-50 border border-amber-200 text-amber-600 font-extrabold text-xs rounded-lg flex items-center justify-center font-jost"><?php echo esc_html( $num ); ?></span>
+          <span class="flex-1 text-gray-900 font-bold text-base leading-snug"><?php echo esc_html( $faq['q'] ); ?></span>
+          <svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+
+        <!-- Answer panel -->
+        <div id="<?php echo esc_attr( $id ); ?>" class="faq-panel hidden px-6 pb-5">
+          <div class="pl-12 border-l-2 border-amber-400 ml-4">
+            <p class="text-gray-600 text-sm leading-relaxed"><?php echo esc_html( $faq['a'] ); ?></p>
+          </div>
+        </div>
+
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ accordion JS (self-contained, no dependencies) -->
+<script>
+(function () {
+  var triggers = document.querySelectorAll('#yf-faq .faq-trigger');
+  triggers.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item    = btn.closest('.faq-item');
+      var panel   = item.querySelector('.faq-panel');
+      var chevron = item.querySelector('.faq-chevron');
+      var isOpen  = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      document.querySelectorAll('#yf-faq .faq-item').forEach(function (el) {
+        el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+        el.querySelector('.faq-panel').classList.add('hidden');
+        el.querySelector('.faq-chevron').classList.remove('rotate-180');
+        el.classList.remove('border-amber-400', 'shadow-sm');
+        el.classList.add('border-gray-200');
+      });
+
+      // Open clicked (if it was closed)
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        panel.classList.remove('hidden');
+        chevron.classList.add('rotate-180');
+        item.classList.remove('border-gray-200');
+        item.classList.add('border-amber-400', 'shadow-sm');
+      }
+    });
+  });
+})();
+</script>
+
 <?php get_footer(); ?>
