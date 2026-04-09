@@ -417,4 +417,112 @@ $check_svg   = '<svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox
   </div>
 </section>
 
+<!-- ============================================================
+     S5: COUNTRIES REQUIRING ICVP
+     ============================================================ -->
+<section class="bg-blue-950 relative overflow-hidden py-16 lg:py-24">
+  <div class="absolute inset-0 dot-pattern pointer-events-none opacity-50"></div>
+  <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <!-- Heading -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <p class="text-amber-400 font-bold text-xs tracking-widest uppercase mb-3">ICVP Required</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white font-jost leading-tight mb-4">
+        Countries requiring a Yellow Fever certificate
+      </h2>
+      <p class="text-blue-300 text-base leading-relaxed">
+        The following countries require <strong class="text-white">all travellers</strong> to present a valid ICVP on arrival, regardless of origin. Travelling without one risks denial of boarding or entry.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+
+      <!-- Africa -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 bg-amber-400/20 rounded-lg flex items-center justify-center shrink-0">
+            <span class="text-lg">🌍</span>
+          </div>
+          <div>
+            <p class="text-white font-bold text-base">Africa</p>
+            <p class="text-blue-400 text-xs">21 countries</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+          <?php
+          $africa = [
+            'Angola','Benin','Burkina Faso','Burundi','Cameroon',
+            'Central African Republic','Chad','Côte d\'Ivoire','Democratic Republic of Congo',
+            'Equatorial Guinea','Gabon','Ghana','Guinea','Guinea-Bissau',
+            'Liberia','Mali','Niger','Nigeria','Republic of Congo','Sierra Leone','Togo',
+          ];
+          foreach ( $africa as $country ) : ?>
+          <div class="flex items-center gap-2 py-1.5 border-b border-white/5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-blue-100 text-sm"><?php echo esc_html( $country ); ?></span>
+          </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+
+      <!-- Americas + additional info -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Americas -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 bg-amber-400/20 rounded-lg flex items-center justify-center shrink-0">
+              <span class="text-lg">🌎</span>
+            </div>
+            <div>
+              <p class="text-white font-bold text-base">Americas</p>
+              <p class="text-blue-400 text-xs">3 countries</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 gap-y-2">
+            <?php
+            $americas = ['French Guiana', 'Panama (certain areas)', 'Trinidad and Tobago'];
+            foreach ( $americas as $country ) : ?>
+            <div class="flex items-center gap-2 py-1.5 border-b border-white/5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-blue-100 text-sm"><?php echo esc_html( $country ); ?></span>
+            </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+
+        <!-- Transit warning card -->
+        <div class="bg-amber-400/10 border border-amber-400/30 rounded-2xl p-6">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+            <div>
+              <p class="text-amber-300 font-bold text-sm mb-1">Don't forget transit requirements</p>
+              <p class="text-amber-200/80 text-sm leading-relaxed">If your flight connects through a Yellow Fever endemic country — even for a short layover — your onward destination may require a valid ICVP. Always check transit rules for every leg of your journey.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book CTA -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4">
+          <div class="flex-1">
+            <p class="text-white font-bold text-base mb-1">Travelling to any of these countries?</p>
+            <p class="text-blue-300 text-sm">Book your vaccination today — ICVP issued the same day.</p>
+          </div>
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-amber-400 text-amber-950 font-bold px-6 py-3 rounded-xl hover:bg-amber-300 transition-all duration-300 text-sm whitespace-nowrap shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Book Now
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer note -->
+    <p class="text-center text-blue-500 text-xs">Source: WHO / NaTHNaC TravelHealthPro. Requirements correct at time of publication — verify with your destination embassy before travel.</p>
+
+  </div>
+</section>
+
 <?php get_footer(); ?>
