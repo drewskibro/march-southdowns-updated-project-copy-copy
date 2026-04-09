@@ -307,6 +307,148 @@ $stars = str_repeat( $star_svg, 5 );
       </div>
       <?php endforeach; ?>
     </div>
+
+    <!-- Trust Indicators -->
+    <div class="mt-12 md:mt-16 flex flex-wrap justify-center items-center gap-8 md:gap-12">
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">4.9/5</div>
+        <div class="text-blue-200 text-sm md:text-base font-jost">Average Rating</div>
+      </div>
+      <div class="hidden md:block w-px h-12 bg-white/30"></div>
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">400+</div>
+        <div class="text-blue-200 text-sm md:text-base font-jost">5-Star Reviews</div>
+      </div>
+      <div class="hidden md:block w-px h-12 bg-white/30"></div>
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">10,000+</div>
+        <div class="text-blue-200 text-sm md:text-base font-jost">Happy Patients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HEALTH HUB
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden bg-white">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-14 gap-6">
+      <div class="flex-1">
+        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
+          <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
+          <span class="uppercase tracking-wider text-xs font-semibold">Expert Advice</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 font-jost">
+          Latest from the <span class="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">Health Hub</span>
+        </h2>
+      </div>
+      <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-lg transition-colors group">
+        View all articles
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <?php
+      $articles = [
+        ['https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop', 'Weight Loss', 'Mounjaro vs Wegovy: What the Clinical Trials Actually Show', '"My GP mentioned Wegovy. But my friend lost loads of weight on Mounjaro. Are they the same thing? Should I ask for the other one?...'],
+        ['https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&h=400&fit=crop', 'Weight Loss', 'Mounjaro Side Effects: What to Expect at Your Monthly Review', "How Southdowns Pharmacy's face-to-face clinical support helps patients across Hampshire manage their weight loss journey with confidence..."],
+        ['https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop', 'Weight Loss', "Why Most Hampshire Patients Wish They'd Started Mounjaro Sooner", 'The weight loss treatment that makes people say "I should have started this sooner" — now available across Hampshire...'],
+      ];
+      foreach ( $articles as $a ) : ?>
+      <a href="<?php echo esc_url( home_url( '/health-hub/' ) ); ?>" class="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <div class="relative overflow-hidden aspect-[3/2]">
+          <img src="<?php echo esc_url( $a[0] ); ?>" alt="<?php echo esc_attr( $a[2] ); ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+          <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider"><?php echo esc_html( $a[1] ); ?></span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-3 font-jost group-hover:text-blue-600 transition-colors"><?php echo esc_html( $a[2] ); ?></h3>
+          <p class="text-slate-600 text-base leading-relaxed mb-4 line-clamp-3"><?php echo esc_html( $a[3] ); ?></p>
+          <span class="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm group-hover:gap-3 transition-all">Read Article <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     POPULAR VACCINES
+     ============================================================ -->
+<section class="relative py-16 md:py-24" style="background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 50%,#3b82f6 100%);">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-semibold text-white mb-4 font-jost">Popular Vaccines</h2>
+        <p class="text-blue-100 text-lg mb-8 font-jost">Find out everything about these popular vaccines we can provide at <?php echo esc_html( sp_pharmacy_name() ); ?>.</p>
+        <ul class="grid grid-cols-2 gap-3 mb-8">
+          <?php
+          $vaccines = ['Chickenpox','Chikungunya Vaccine','Cholera','Dengue Fever (Qdenga)','DTP (Diphtheria, Tetanus & Polio)','Hepatitis A','Hepatitis B','HPV (Gardasil 9)','Japanese Encephalitis','Malaria','Meningitis B','Meningococcal Meningitis','MMR (Measles, Mumps & Rubella)','Private Covid Vaccine','Rabies','Shingles','Tick Borne Encephalitis','Typhoid','Whooping Cough (Pertussis)','Yellow Fever'];
+          foreach ( $vaccines as $v ) : ?>
+          <li><a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="block px-4 py-3 border-2 border-white/30 rounded-xl text-white font-medium font-jost text-sm hover:border-white/70 hover:bg-white/10 transition-all duration-200 text-center"><?php echo esc_html( $v ); ?></a></li>
+          <?php endforeach; ?>
+        </ul>
+        <p class="text-white/80 text-sm font-jost"><strong class="text-white">Vaccine not listed?</strong> We can provide any travel vaccine. <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-white underline hover:text-blue-200">Contact us</a> for more information.</p>
+      </div>
+      <div class="hidden md:block">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <img src="https://c.animaapp.com/mmkd7a1dRSnHAj/assets/Couple-at-airport.webp" alt="Travel health at Southdowns Pharmacy" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute top-6 right-6">
+            <img src="https://c.animaapp.com/mmkd7a1dRSnHAj/assets/Roundals-Yellow-Fever-Centre.webp" alt="Yellow Fever Centre" class="w-32 h-32 object-contain drop-shadow-lg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PREMIUM PRODUCTS
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 50%,#3b82f6 100%);">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white rounded-full -translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+    <div class="text-center mb-12 md:mb-16">
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/30">
+        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span></span>
+        <span class="uppercase tracking-wider text-xs font-semibold">Premium Collection</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-jost">Our Premium Products</h2>
+      <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed font-jost">Discover our exclusive range of premium healthcare products, crafted with excellence.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+      <?php
+      $products = [
+        ['PREMIUM',     'Ear Wax Removal', 'Professional microsuction service for safe and effective ear cleaning',    home_url('/ear-wax/'),        'https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773135818122-0.png', 'Ear Wax Removal'],
+        ['BEST SELLER', 'B12 Injections',  'Energy boost vitamin therapy to support your wellness journey',            home_url('/b12-injections/'), 'https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773135818147-1.png', 'B12 Injections'],
+        ['EXCLUSIVE',   'Travel Health',   'Complete vaccination packages for your next adventure',                    home_url('/travel-health/'),  'https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773135818166-2.png', 'Travel Health'],
+      ];
+      foreach ( $products as $p ) : ?>
+      <a href="<?php echo esc_url( $p[3] ); ?>" class="group block relative">
+        <div class="absolute top-4 right-4 z-20 bg-white/90 text-blue-600 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg"><?php echo esc_html( $p[0] ); ?></div>
+        <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] shadow-xl">
+          <div class="aspect-[4/3] overflow-hidden p-8 bg-white/5">
+            <img src="<?php echo esc_url( $p[4] ); ?>" alt="<?php echo esc_attr( $p[5] ); ?>" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-2xl" loading="lazy" />
+          </div>
+          <div class="p-6 bg-gradient-to-t from-blue-900/40 to-transparent">
+            <h3 class="text-white text-xl font-bold mb-2 font-jost"><?php echo esc_html( $p[1] ); ?></h3>
+            <p class="text-blue-100 text-base"><?php echo esc_html( $p[2] ); ?></p>
+          </div>
+        </div>
+      </a>
+      <?php endforeach; ?>
+    </div>
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 flex items-start gap-5 hover:bg-white/20 transition-all duration-300">
+        <div class="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <p class="text-white text-lg leading-relaxed"><strong class="font-bold">Product not listed?</strong> <span class="text-blue-100">Don't worry, we can provide a wide range of healthcare products and services.</span> <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-white font-bold hover:text-blue-200 transition-colors underline decoration-2 underline-offset-4">Contact us</a> <span class="text-blue-100">for more information.</span></p>
+      </div>
+    </div>
   </div>
 </section>
 
