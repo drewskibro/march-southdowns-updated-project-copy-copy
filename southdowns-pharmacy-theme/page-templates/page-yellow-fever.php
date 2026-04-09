@@ -645,4 +645,134 @@ $check_svg   = '<svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox
   </div>
 </section>
 
+<!-- ============================================================
+     S7: ELIGIBILITY
+     ============================================================ -->
+<section class="bg-white py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <p class="text-amber-500 font-bold text-xs tracking-widest uppercase mb-3">Who Can Be Vaccinated</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 font-jost leading-tight mb-4">
+        Eligibility for the Yellow Fever vaccine
+      </h2>
+      <p class="text-gray-500 text-base leading-relaxed">
+        The vaccine is safe for most travellers, but there are some groups who cannot receive it. Our pharmacist will review your medical history at your appointment.
+      </p>
+    </div>
+
+    <!-- Can / Cannot two columns -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+
+      <!-- Can receive -->
+      <div class="bg-green-50 border border-green-200 rounded-2xl p-7">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 bg-green-500 rounded-xl flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="text-gray-900 font-extrabold text-lg font-jost">Who can be vaccinated</h3>
+        </div>
+        <ul class="space-y-3">
+          <?php
+          $can = [
+            'Healthy adults and children aged 9 months and over',
+            'Travellers with well-controlled chronic conditions (e.g. controlled hypertension, type 2 diabetes)',
+            'Those on most common medications — confirm with our pharmacist',
+            'Travellers who received a Yellow Fever vaccine previously (no booster needed — lifelong protection)',
+            'Women who are breastfeeding (in most cases — discuss with pharmacist)',
+          ];
+          foreach ( $can as $item ) : ?>
+          <li class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-gray-700 text-sm leading-relaxed"><?php echo esc_html( $item ); ?></span>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+
+      <!-- Cannot receive -->
+      <div class="bg-red-50 border border-red-200 rounded-2xl p-7">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 bg-red-500 rounded-xl flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </div>
+          <h3 class="text-gray-900 font-extrabold text-lg font-jost">Who cannot be vaccinated</h3>
+        </div>
+        <ul class="space-y-3">
+          <?php
+          $cannot = [
+            'Infants under 6 months (risk of vaccine-associated encephalitis)',
+            'People with a severe allergy to eggs or any vaccine component',
+            'Those with a weakened immune system (e.g. HIV with low CD4, leukaemia, lymphoma)',
+            'Patients currently on immunosuppressant medication (e.g. high-dose steroids)',
+            'Anyone who has had a serious reaction to a previous Yellow Fever vaccine',
+          ];
+          foreach ( $cannot as $item ) : ?>
+          <li class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            <span class="text-gray-700 text-sm leading-relaxed"><?php echo esc_html( $item ); ?></span>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 3 special cases -->
+    <div class="mb-10">
+      <h3 class="text-gray-900 font-extrabold text-xl font-jost text-center mb-6">Special considerations</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <?php
+        $specials = [
+          [
+            'icon' => 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+            'title' => 'Pregnancy',
+            'body'  => 'Generally avoided in the first trimester. May be offered in the second or third trimester if travel to a high-risk area is unavoidable. Discuss the risk-benefit balance with our pharmacist.',
+            'color' => 'rose',
+          ],
+          [
+            'icon' => 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+            'title' => 'Children aged 6–9 months',
+            'body'  => 'The vaccine is not routinely recommended for infants aged 6–9 months. It may be considered in exceptional circumstances where travel cannot be avoided — assessed case by case by our pharmacist.',
+            'color' => 'orange',
+          ],
+          [
+            'icon' => 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z',
+            'title' => 'Over 60 years of age',
+            'body'  => 'Older travellers receiving the vaccine for the first time have a slightly higher risk of adverse events. Our pharmacist will discuss your individual circumstances and destination risk before administering.',
+            'color' => 'blue',
+          ],
+        ];
+        foreach ( $specials as $s ) : ?>
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+          <div class="w-10 h-10 bg-<?php echo esc_attr( $s['color'] ); ?>-100 rounded-xl flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-<?php echo esc_attr( $s['color'] ); ?>-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="<?php echo esc_attr( $s['icon'] ); ?>"/></svg>
+          </div>
+          <h4 class="text-gray-900 font-bold text-base mb-2"><?php echo esc_html( $s['title'] ); ?></h4>
+          <p class="text-gray-500 text-sm leading-relaxed"><?php echo esc_html( $s['body'] ); ?></p>
+        </div>
+        <?php endforeach; ?>
+
+      </div>
+    </div>
+
+    <!-- Medical exemption waiver CTA -->
+    <div class="bg-blue-950 rounded-2xl p-7 flex flex-col md:flex-row items-center gap-6">
+      <div class="w-12 h-12 bg-amber-400/20 rounded-xl flex items-center justify-center shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      </div>
+      <div class="flex-1 text-center md:text-left">
+        <p class="text-white font-extrabold text-lg font-jost mb-1">Can't have the vaccine for medical reasons?</p>
+        <p class="text-blue-300 text-sm leading-relaxed">If you have a genuine medical contraindication, our GPhC-registered pharmacist can issue a <strong class="text-white">medical exemption waiver letter</strong>. Some countries accept this in lieu of the ICVP — always verify with your destination's embassy before travelling.</p>
+      </div>
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-amber-400 text-amber-950 font-bold px-6 py-3 rounded-xl hover:bg-amber-300 transition-all duration-300 text-sm whitespace-nowrap shrink-0">
+        Speak to our pharmacist
+      </a>
+    </div>
+
+  </div>
+</section>
+
 <?php get_footer(); ?>
