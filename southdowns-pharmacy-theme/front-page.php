@@ -1,7 +1,9 @@
 <?php
 /**
- * Homepage template — WordPress uses this automatically for the front page.
- * Set front page: Settings → Reading → "A static page" → Front page.
+ * Template Name: Home Page
+ *
+ * Select this template on any page via Page → Template dropdown in the editor.
+ * Then set that page as the front page: Settings → Reading → "A static page".
  */
 get_header();
 $booking_url = sp_booking_url();
