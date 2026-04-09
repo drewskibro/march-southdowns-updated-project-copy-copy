@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'southdowns-pharmacy-theme/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -24,4 +25,5 @@ jobs:
           source: "southdowns-pharmacy-theme"
           target: "/www/southdownspharmacygroup_597/public/wp-content/themes/"
           overwrite: true
+          use_insecure_cipher: true
           timeout: 120s
