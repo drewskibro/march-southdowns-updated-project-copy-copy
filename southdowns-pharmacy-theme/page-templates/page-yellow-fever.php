@@ -179,4 +179,73 @@ $phone       = sp_phone();
   </div>
 </section>
 
+<!-- ============================================================
+     S3: WHAT IS YELLOW FEVER?
+     ============================================================ -->
+<section class="py-16 md:py-24 bg-gradient-to-br from-slate-50 via-white to-amber-50/30 relative overflow-hidden" id="about">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-amber-100/30 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center yf-reveal">
+
+      <!-- Left: text + stat cards -->
+      <div>
+        <span class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-50 to-blue-50 text-amber-700 text-xs font-semibold px-4 py-2 rounded-full mb-6 border border-amber-200/60 uppercase tracking-wider">What You Need to Know</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-jost">What Is Yellow Fever?</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-6">Yellow Fever is a serious viral disease transmitted by infected mosquitoes across sub-Saharan Africa, South America and parts of Central America. In severe cases, the disease carries a fatality rate of up to 50%. There is no specific antiviral treatment &mdash; vaccination is the only effective prevention.</p>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">Many countries legally require proof of yellow fever vaccination for entry, even if you are simply transiting through an airport in an affected region. Without an official ICVP, you may be denied boarding, quarantined on arrival, or refused entry entirely.</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-5 border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent mb-1">99%</div>
+            <div class="text-gray-500 text-sm">Protection from a single vaccine dose within 30 days</div>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-amber-100 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-3xl font-bold bg-gradient-to-r from-amber-500 to-amber-400 bg-clip-text text-transparent mb-1">Valid for Life</div>
+            <div class="text-gray-500 text-sm">One vaccination. Your ICVP certificate never expires.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: photo with hover zoom -->
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+        <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80&auto=format&fit=crop" alt="Healthcare professional administering a travel vaccination" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S4: WHY YOU NEED IT — 3 numbered step cards
+     ============================================================ -->
+<section class="py-16 md:py-24 bg-white relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-64 h-64 bg-blue-100/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
+        <span class="uppercase tracking-wider text-xs font-semibold">Why It Matters</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-4 font-jost">Why You Need the Yellow Fever Vaccine</h2>
+      <p class="text-lg text-gray-500 max-w-3xl mx-auto font-jost">Three essential reasons vaccination is critical for travel to affected regions.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <div class="yf-reveal yf-step bg-gradient-to-br from-white to-blue-50/30 rounded-2xl p-8 border border-blue-100/50 hover:shadow-xl hover:shadow-blue-100/30 hover:-translate-y-1 transition-all duration-300" data-delay="1">
+        <div class="yf-step-num w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold mb-5 shadow-lg shadow-blue-500/25">1</div>
+        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Legal Entry Requirement</h3>
+        <p class="text-gray-600 leading-relaxed">Many countries in Africa, South America, and Asia require a valid yellow fever certificate for entry. Your certificate becomes valid <strong>10 days after vaccination</strong>. Without it, you risk being denied boarding or quarantined.</p>
+      </div>
+      <div class="yf-reveal yf-step bg-gradient-to-br from-white to-amber-50/30 rounded-2xl p-8 border border-amber-100/50 hover:shadow-xl hover:shadow-amber-100/30 hover:-translate-y-1 transition-all duration-300" data-delay="2">
+        <div class="yf-step-num w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 text-white rounded-2xl flex items-center justify-center text-xl font-bold mb-5 shadow-lg shadow-amber-400/25">2</div>
+        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Serious Disease Prevention</h3>
+        <p class="text-gray-600 leading-relaxed">Yellow fever is transmitted by mosquitoes in tropical regions. Most experience mild symptoms, but in some cases it can cause serious complications affecting the liver and kidneys. There is no specific treatment once infected.</p>
+      </div>
+      <div class="yf-reveal yf-step bg-gradient-to-br from-white to-blue-50/30 rounded-2xl p-8 border border-blue-100/50 hover:shadow-xl hover:shadow-blue-100/30 hover:-translate-y-1 transition-all duration-300" data-delay="3">
+        <div class="yf-step-num w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-2xl flex items-center justify-center text-xl font-bold mb-5 shadow-lg shadow-blue-500/25">3</div>
+        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Lifetime Protection</h3>
+        <p class="text-gray-600 leading-relaxed">Unlike many travel vaccines, yellow fever vaccination provides <strong>lifelong immunity from a single dose.</strong> Your official certificate is valid for life, even certificates issued before 2016 with old expiry dates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
