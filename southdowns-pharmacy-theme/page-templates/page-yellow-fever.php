@@ -314,4 +314,107 @@ $check_svg   = '<svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox
   </div>
 </section>
 
+<!-- ============================================================
+     S4: DO YOU NEED IT?
+     ============================================================ -->
+<section id="countries" class="bg-white py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <p class="text-amber-500 font-bold text-xs tracking-widest uppercase mb-3">Travel Requirements</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 font-jost leading-tight mb-4">
+        Do you need the Yellow Fever vaccine?
+      </h2>
+      <p class="text-gray-500 text-lg leading-relaxed">
+        Requirements vary by destination and your travel itinerary. Use the scenarios below to understand your situation — and always check with your destination's embassy or consulate before travel.
+      </p>
+    </div>
+
+    <!-- Three scenario cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+
+      <!-- Mandatory -->
+      <div class="rounded-2xl border-2 border-red-200 bg-red-50 p-7 flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+          </div>
+          <div>
+            <span class="inline-block bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Mandatory</span>
+          </div>
+        </div>
+        <h3 class="text-gray-900 font-extrabold text-xl font-jost mb-3">Required for entry</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">
+          Some countries legally require proof of Yellow Fever vaccination for <strong>all travellers</strong> regardless of where they are coming from. You will not be allowed to board or enter without a valid ICVP certificate.
+        </p>
+        <div class="mt-auto">
+          <p class="text-gray-500 text-xs font-bold uppercase tracking-wider mb-2">Examples include</p>
+          <div class="flex flex-wrap gap-1.5">
+            <?php foreach ( ['Ghana', 'Nigeria', 'Cameroon', 'Uganda', 'Democratic Republic of Congo', 'French Guiana'] as $country ) : ?>
+            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-1 rounded-full"><?php echo esc_html( $country ); ?></span>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conditional -->
+      <div class="rounded-2xl border-2 border-amber-300 bg-amber-50 p-7 flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-amber-400 rounded-xl flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-950" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <span class="inline-block bg-amber-400 text-amber-950 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Conditional</span>
+          </div>
+        </div>
+        <h3 class="text-gray-900 font-extrabold text-xl font-jost mb-3">Required if arriving from a risk country</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">
+          Many countries require proof of vaccination only if you are <strong>arriving from or transiting through</strong> a Yellow Fever endemic country. This includes layovers of 12 hours or more in some cases.
+        </p>
+        <div class="mt-auto">
+          <p class="text-gray-500 text-xs font-bold uppercase tracking-wider mb-2">Examples include</p>
+          <div class="flex flex-wrap gap-1.5">
+            <?php foreach ( ['India', 'Thailand', 'Australia', 'China', 'Egypt', 'Indonesia'] as $country ) : ?>
+            <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-1 rounded-full"><?php echo esc_html( $country ); ?></span>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommended -->
+      <div class="rounded-2xl border-2 border-green-200 bg-green-50 p-7 flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <span class="inline-block bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Recommended</span>
+          </div>
+        </div>
+        <h3 class="text-gray-900 font-extrabold text-xl font-jost mb-3">Advised for traveller protection</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">
+          Even where no certificate is required, vaccination is medically recommended if you are visiting areas where Yellow Fever is <strong>endemic or active</strong>. The disease is potentially fatal and there is no cure — the vaccine is your only protection.
+        </p>
+        <div class="mt-auto">
+          <p class="text-gray-500 text-xs font-bold uppercase tracking-wider mb-2">Examples include</p>
+          <div class="flex flex-wrap gap-1.5">
+            <?php foreach ( ['Brazil', 'Bolivia', 'Peru', 'Colombia', 'Kenya', 'Tanzania'] as $country ) : ?>
+            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full"><?php echo esc_html( $country ); ?></span>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom disclaimer -->
+    <div class="bg-gray-50 border border-gray-200 rounded-xl px-6 py-4 flex items-start gap-3 max-w-3xl mx-auto">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <p class="text-gray-500 text-sm leading-relaxed">Travel health requirements change frequently. Always verify current entry requirements with your destination's official embassy, the <a href="https://travelhealthpro.org.uk" target="_blank" rel="noopener noreferrer" class="text-amber-600 font-semibold hover:underline">TravelHealthPro</a> database, or speak to our pharmacist.</p>
+    </div>
+
+  </div>
+</section>
+
 <?php get_footer(); ?>
