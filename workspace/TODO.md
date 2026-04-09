@@ -18,3 +18,18 @@ Rules:
 
 <!-- Add tasks here only when there are real next steps. -->
 
+<todo>
+Build travel-health.html
+Next service page — template structure established in weight-loss.html, rey-london HTML available as reference
+</todo>
+
+<todo>
+Build yellow-fever.html
+First vaccine detail page — high search intent, rey-london template available
+</todo>
+
+<todo>
+Link weight-loss.html from homepage
+Update the Weight Loss treatment card on index.html to href="weight-loss.html"
+</todo>
+

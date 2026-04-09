@@ -102,6 +102,12 @@ You MUST maintain this file to track your work across messages. This is NON-NEGO
 - Right background image with 3 badges (Same Day, Yellow Fever, 5-Star)
 - Responsive heights: 300px mobile, 400px tablet, 600px desktop
 
+### [2026-04-08] — weight-loss.html complete (10 sections)
+- Full weight loss service page built section-by-section: Hero, Social Proof, Problem/Solution, Treatments (Mounjaro/Wegovy/Saxenda), Benefits, How It Works, Testimonials, Locations, FAQ, Final CTA + Footer
+- Tailwind CSS, Jost font, blue gradient palette matching index.html
+- ACF field comments throughout (G1–G10 series), FAQPage JSON-LD schema
+- All 4 Hampshire branches featured with real addresses
+
 ### [2026-04-08] — Removed all Ealing Travel Clinic references
 - Replaced all `href="https://ealingtravelclinic.co.uk/..."` with `href="#"` (nav, vaccines, destinations, contact)
 - Fixed Popular Vaccines description: "Ealing Travel Clinic" → "Southdowns Pharmacy" (line 1173)

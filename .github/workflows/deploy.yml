@@ -1,0 +1,28 @@
+name: Deploy Theme to Kinsta
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'southdowns-pharmacy-theme/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy theme via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.KINSTA_HOST }}
+          port: ${{ secrets.KINSTA_PORT }}
+          username: ${{ secrets.KINSTA_USERNAME }}
+          password: ${{ secrets.KINSTA_PASSWORD }}
+          source: "southdowns-pharmacy-theme/"
+          target: "/www/southdownspharmacygroup/public/wp-content/themes/"
+          strip_components: 1
+          overwrite: true
+          timeout: 120s
