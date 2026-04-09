@@ -1006,4 +1006,65 @@ $check_svg   = '<svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox
 })();
 </script>
 
+<!-- ============================================================
+     S10: FINAL CTA
+     ============================================================ -->
+<section class="bg-blue-950 relative overflow-hidden py-16 lg:py-24">
+  <div class="absolute inset-0 dot-pattern pointer-events-none"></div>
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/8 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-700/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 bg-amber-400/15 border border-amber-400/30 text-amber-300 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+      <div class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+      Same-day appointments available
+    </div>
+
+    <!-- Headline -->
+    <h2 class="text-3xl md:text-5xl font-extrabold text-white font-jost leading-tight mb-5">
+      Ready to travel with confidence?<br>
+      <span class="gradient-text-amber">Book your Yellow Fever vaccine today.</span>
+    </h2>
+
+    <!-- Subheading -->
+    <p class="text-blue-200 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+      <?php echo esc_html( sp_pharmacy_name() ); ?> is an NHS-approved Yellow Fever Vaccination Centre across four Hampshire locations. Get vaccinated, receive your ICVP certificate, and travel knowing you're protected — all in one appointment.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center justify-center gap-2 bg-amber-400 text-amber-950 font-bold px-10 py-4 rounded-xl hover:bg-amber-300 transition-all duration-300 shadow-lg text-base">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Book Your Appointment
+      </a>
+      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-semibold px-10 py-4 rounded-xl hover:bg-white/15 transition-all duration-300 text-base">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <?php echo esc_html( $phone ); ?>
+      </a>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="flex flex-wrap justify-center gap-x-8 gap-y-3">
+      <?php
+      $trust = [
+        'NHS-approved designated centre',
+        'ICVP issued same day',
+        'Valid for life — no booster',
+        'No GP referral needed',
+        '4 Hampshire locations',
+        'GPhC-registered pharmacists',
+      ];
+      foreach ( $trust as $t ) : ?>
+      <div class="flex items-center gap-2 text-blue-300 text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        <?php echo esc_html( $t ); ?>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+  </div>
+</section>
+
 <?php get_footer(); ?>
