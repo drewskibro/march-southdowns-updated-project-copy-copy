@@ -665,4 +665,176 @@ $phone       = sp_phone();
   </div>
 </section>
 
+<!-- ============================================================
+     S11: LOCATIONS
+     ============================================================ -->
+<section class="py-16 md:py-24 relative overflow-hidden bg-white" id="locations">
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(#1e3a8a 1px, transparent 1px); background-size: 32px 32px;"></div>
+  <div class="absolute top-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-80 h-80 bg-amber-100/20 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-10 md:mb-14">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="uppercase tracking-wider text-xs font-semibold">4 Locations Across Hampshire</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 mb-6 font-jost">Visit Our Vaccination Centres</h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">Free parking &amp; same-day yellow fever appointments at all locations.</p>
+    </div>
+
+    <!-- Branch photo cards -->
+    <?php
+    $branch_images = [
+      1 => 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80&auto=format&fit=crop',
+      2 => 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80&auto=format&fit=crop',
+      3 => 'https://images.unsplash.com/photo-1576602976047-174e57a47881?w=600&q=80&auto=format&fit=crop',
+      4 => 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80&auto=format&fit=crop',
+    ];
+    ?>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 yf-reveal">
+      <?php for ( $i = 1; $i <= 4; $i++ ) :
+        $b = sp_branch( $i ); ?>
+      <div class="group relative bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        <div class="relative overflow-hidden aspect-[4/3]">
+          <img src="<?php echo esc_url( $branch_images[ $i ] ); ?>" alt="<?php echo esc_attr( $b['name'] ); ?> branch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+          <div class="absolute bottom-3 left-3">
+            <h3 class="text-white text-xl font-bold font-jost"><?php echo esc_html( $b['name'] ); ?></h3>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-start gap-2 mb-2">
+            <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="text-gray-600 text-sm font-jost"><?php echo esc_html( $b['address_line1'] . ', ' . $b['address_line2'] ); ?></span>
+          </div>
+          <div class="flex items-start gap-2 mb-4">
+            <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span class="text-gray-400 text-xs font-jost"><?php echo esc_html( $b['hours_weekday'] ); ?></span>
+          </div>
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="flex items-center justify-center gap-2 w-full text-blue-600 text-sm font-semibold bg-blue-50 hover:bg-blue-100 px-4 py-2.5 rounded-xl transition-colors font-jost">
+            Book Here
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+      <?php endfor; ?>
+    </div>
+
+    <!-- Info banner -->
+    <div class="mt-10 bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-xl shadow-blue-500/15 yf-reveal">
+      <div class="flex-shrink-0">
+        <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+          <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        </div>
+      </div>
+      <div class="flex-1 text-center md:text-left">
+        <p class="text-white text-lg font-semibold mb-1 font-jost">Need help choosing a location?</p>
+        <p class="text-blue-100 text-base font-jost">All four branches are NaTHNaC registered Yellow Fever Vaccination Centres with free parking.</p>
+      </div>
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg text-sm font-jost flex-shrink-0">
+        Book Nearest Branch
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     S12: FINAL CTA
+     ============================================================ -->
+<section class="py-16 md:py-24 overflow-hidden relative" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);" id="book">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white rounded-full translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+    <!-- Trust badges -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <?php foreach ( ['NaTHNaC Registered', 'Certificate Included', 'Same-Day Service', 'GPhC Pharmacists'] as $badge ) : ?>
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30"><?php echo esc_html( $badge ); ?></span>
+      <?php endforeach; ?>
+    </div>
+
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-jost">Protect Yourself Before You Travel</h2>
+    <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-10 font-jost">Don&#39;t risk being denied boarding or quarantined on arrival. Book your yellow fever vaccination at our registered centre today.</p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-semibold px-8 py-4 rounded-full hover:bg-blue-50 transition-all shadow-lg text-lg hover:scale-[1.02] hover:shadow-xl font-jost">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Yellow Fever Vaccination
+      </a>
+      <a href="#locations" class="inline-flex items-center justify-center gap-2 text-white font-medium border-2 border-white/30 px-8 py-4 rounded-full hover:bg-white/10 transition-all text-lg hover:border-white/50 font-jost">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Find Your Nearest Branch
+      </a>
+    </div>
+
+    <!-- Checklist -->
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white text-sm mb-6 font-jost">
+      <?php foreach ( ['NaTHNaC Registered Centre', 'Official ICVP Included', 'Same-Day Available', '£85 All-Inclusive'] as $point ) : ?>
+      <span>&check; <?php echo esc_html( $point ); ?></span>
+      <?php endforeach; ?>
+    </div>
+    <p class="text-blue-200/60 text-sm font-jost">Serving Portsmouth, Southsea, Waterlooville, Havant &amp; wider Hampshire</p>
+
+    <!-- Trust indicators -->
+    <div class="mt-10 flex flex-wrap justify-center items-center gap-8 md:gap-12">
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">4.9/5</div>
+        <div class="text-blue-200 text-sm">Average Rating</div>
+      </div>
+      <div class="hidden md:block w-px h-12 bg-white/30"></div>
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">400+</div>
+        <div class="text-blue-200 text-sm">5-Star Reviews</div>
+      </div>
+      <div class="hidden md:block w-px h-12 bg-white/30"></div>
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">10,000+</div>
+        <div class="text-blue-200 text-sm">Happy Patients</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Medical disclaimer -->
+<div class="bg-gray-100 py-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-gray-400 text-xs leading-relaxed text-center">This information is for educational purposes and does not constitute medical advice. Yellow fever vaccination is a prescription-only medicine in the UK. Eligibility and suitability are assessed by our GPhC-registered pharmacists during your consultation. Only NaTHNaC-registered vaccination centres are authorised to issue International Certificates of Vaccination or Prophylaxis (ICVP). Information is based on current NaTHNaC, WHO, and MHRA guidance.</p>
+  </div>
+</div>
+
+<!-- FAQ accordion script -->
+<script>
+document.querySelectorAll('.yf-faq-trigger').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = this.closest('.yf-faq-item');
+    var isActive = item.classList.contains('active');
+    document.querySelectorAll('.yf-faq-item').forEach(function(el) { el.classList.remove('active'); });
+    if (!isActive) item.classList.add('active');
+  });
+});
+</script>
+
+<!-- Scroll reveal script -->
+<script>
+(function() {
+  var els = document.querySelectorAll('.yf-reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  els.forEach(function(el) { observer.observe(el); });
+})();
+</script>
+
 <?php get_footer(); ?>
