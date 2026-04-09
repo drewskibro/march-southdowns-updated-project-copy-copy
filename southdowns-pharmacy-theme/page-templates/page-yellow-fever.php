@@ -248,4 +248,76 @@ $phone       = sp_phone();
   </div>
 </section>
 
+<!-- ============================================================
+     S5: RISK AREAS
+     ============================================================ -->
+<section class="py-16 md:py-20 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);" id="risk-areas">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/30">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Risk Areas
+      </div>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-jost">Yellow Fever Risk Areas</h2>
+      <p class="text-lg text-blue-100 max-w-3xl mx-auto font-jost">Yellow fever is endemic across large areas of sub-Saharan Africa and South America. If your itinerary passes through these regions, you almost certainly need vaccination.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 yf-reveal">
+
+      <!-- Africa -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <h3 class="text-2xl font-bold text-white mb-4 font-jost">🌍 Africa</h3>
+        <p class="text-blue-100 mb-4 text-sm">Sub-Saharan Africa (47 countries at risk). West Africa carries the highest risk.</p>
+        <ul class="space-y-3">
+          <?php
+          $africa_regions = [
+            'Ghana, Nigeria, Senegal, C&ocirc;te d&#39;Ivoire (West Africa &mdash; highest risk)',
+            'Kenya, Ethiopia, Tanzania, Uganda (East Africa)',
+            'Democratic Republic of Congo, Cameroon, Sudan (Central Africa)',
+            'Angola, Zambia, Zimbabwe (Southern Africa risk zones)',
+          ];
+          foreach ( $africa_regions as $region ) : ?>
+          <li class="flex items-start gap-2 text-white text-sm">
+            <svg class="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <?php echo $region; ?>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+
+      <!-- South America -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <h3 class="text-2xl font-bold text-white mb-4 font-jost">🌎 South America</h3>
+        <p class="text-blue-100 mb-4 text-sm">Central and South America (13 countries). Amazon rainforest regions carry the highest risk.</p>
+        <ul class="space-y-3">
+          <?php
+          $americas_regions = [
+            'Brazil (Amazon basin, north and central states)',
+            'Peru, Colombia, Ecuador (Andean and Amazon regions)',
+            'Bolivia, Venezuela, Guyana, Suriname',
+            'Panama, Trinidad and Tobago, Argentina (border risk zones)',
+          ];
+          foreach ( $americas_regions as $region ) : ?>
+          <li class="flex items-start gap-2 text-white text-sm">
+            <svg class="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <?php echo esc_html( $region ); ?>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Transit warning -->
+    <div class="mt-8 bg-yellow-500/20 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-yellow-400/30 flex items-start gap-5 yf-reveal">
+      <svg class="w-8 h-8 text-yellow-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div>
+        <strong class="block text-white text-lg mb-2 font-jost">Transit Warning &mdash; Don&#39;t Overlook This</strong>
+        <p class="text-blue-100 leading-relaxed">Even if your destination doesn&#39;t have yellow fever, you may need a certificate if <strong class="text-white">transiting through affected countries.</strong> For example, travelling UK &rarr; Kenya &rarr; Seychelles requires a certificate for Seychelles entry. We check your complete itinerary during consultation.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <?php get_footer(); ?>
