@@ -676,6 +676,190 @@
 
 
 <!-- ============================================================
+     SECTION 5: COUNTRIES REQUIRING CERTIFICATE
+     ACF: YF5_section_heading, YF5_africa_countries (repeater: name, flag_code),
+          YF5_americas_countries (repeater: name, flag_code), YF5_disclaimer
+     ============================================================ -->
+<section class="py-20 bg-blue-950 relative overflow-hidden">
+  <div class="absolute inset-0 dot-pattern pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <!-- Section header -->
+    <div class="text-center mb-12">
+      <span class="inline-flex items-center gap-2 bg-amber-400/15 text-amber-300 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full border border-amber-400/25 mb-5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Mandatory certificate countries
+      </span>
+      <!-- ACF: YF5_section_heading -->
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white font-jost mb-4 leading-tight">
+        Countries requiring an ICVP<br class="hidden md:block"> from all travellers
+      </h2>
+      <p class="text-blue-200 text-base max-w-2xl mx-auto leading-relaxed">
+        These countries require a valid Yellow Fever certificate regardless of where you're travelling from. No certificate = no entry.
+      </p>
+    </div>
+
+    <!-- Two columns: Africa + Americas -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+
+      <!-- Africa -->
+      <div class="bg-white/6 border border-white/10 rounded-2xl p-7">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-amber-400/20 rounded-lg flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-white font-bold font-jost text-lg">Africa</h3>
+            <p class="text-blue-300 text-xs">21 countries</p>
+          </div>
+        </div>
+        <!-- ACF: YF5_africa_countries repeater -->
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/ao.png" alt="Angola" class="w-4 h-3 rounded-sm object-cover"> Angola
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/bj.png" alt="Benin" class="w-4 h-3 rounded-sm object-cover"> Benin
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/bf.png" alt="Burkina Faso" class="w-4 h-3 rounded-sm object-cover"> Burkina Faso
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/cm.png" alt="Cameroon" class="w-4 h-3 rounded-sm object-cover"> Cameroon
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/cf.png" alt="Central African Republic" class="w-4 h-3 rounded-sm object-cover"> Central African Rep.
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/ci.png" alt="Côte d'Ivoire" class="w-4 h-3 rounded-sm object-cover"> Côte d'Ivoire
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/cd.png" alt="DR Congo" class="w-4 h-3 rounded-sm object-cover"> DR Congo
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/gq.png" alt="Equatorial Guinea" class="w-4 h-3 rounded-sm object-cover"> Equatorial Guinea
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/ga.png" alt="Gabon" class="w-4 h-3 rounded-sm object-cover"> Gabon
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/gh.png" alt="Ghana" class="w-4 h-3 rounded-sm object-cover"> Ghana
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/gn.png" alt="Guinea" class="w-4 h-3 rounded-sm object-cover"> Guinea
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/gw.png" alt="Guinea-Bissau" class="w-4 h-3 rounded-sm object-cover"> Guinea-Bissau
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/lr.png" alt="Liberia" class="w-4 h-3 rounded-sm object-cover"> Liberia
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/ml.png" alt="Mali" class="w-4 h-3 rounded-sm object-cover"> Mali
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/mr.png" alt="Mauritania" class="w-4 h-3 rounded-sm object-cover"> Mauritania
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/ne.png" alt="Niger" class="w-4 h-3 rounded-sm object-cover"> Niger
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/cg.png" alt="Republic of Congo" class="w-4 h-3 rounded-sm object-cover"> Republic of Congo
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/rw.png" alt="Rwanda" class="w-4 h-3 rounded-sm object-cover"> Rwanda
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/st.png" alt="São Tomé & Príncipe" class="w-4 h-3 rounded-sm object-cover"> São Tomé &amp; Príncipe
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/sl.png" alt="Sierra Leone" class="w-4 h-3 rounded-sm object-cover"> Sierra Leone
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/tg.png" alt="Togo" class="w-4 h-3 rounded-sm object-cover"> Togo
+          </span>
+        </div>
+      </div>
+
+      <!-- Americas -->
+      <div class="bg-white/6 border border-white/10 rounded-2xl p-7">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 bg-amber-400/20 rounded-lg flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-white font-bold font-jost text-lg">The Americas</h3>
+            <p class="text-blue-300 text-xs">3 countries / territories</p>
+          </div>
+        </div>
+        <!-- ACF: YF5_americas_countries repeater -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/gf.png" alt="French Guiana" class="w-4 h-3 rounded-sm object-cover"> French Guiana
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/gy.png" alt="Guyana" class="w-4 h-3 rounded-sm object-cover"> Guyana
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors cursor-default">
+            <img src="https://flagcdn.com/w20/py.png" alt="Paraguay" class="w-4 h-3 rounded-sm object-cover"> Paraguay
+          </span>
+        </div>
+
+        <!-- Why fewer Americas countries note -->
+        <div class="bg-amber-400/10 border border-amber-400/20 rounded-xl p-4 mt-4">
+          <p class="text-amber-200 text-xs leading-relaxed"><strong class="text-amber-300">Why fewer countries in the Americas?</strong> Many South American countries — including Brazil, Peru, Colombia and Ecuador — have endemic Yellow Fever risk but don't mandate a certificate from all visitors. Vaccination is still strongly recommended. Others (Bolivia, Trinidad &amp; Tobago, Venezuela) require it only from travellers arriving from endemic regions.</p>
+        </div>
+
+        <!-- Also worth noting -->
+        <div class="mt-4 bg-white/6 border border-white/10 rounded-xl p-4">
+          <p class="text-blue-200 text-xs font-semibold mb-2">Also check your itinerary for:</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 bg-white/8 border border-white/10 text-blue-200 text-xs px-2.5 py-1.5 rounded-lg">
+              <img src="https://flagcdn.com/w20/bo.png" alt="Bolivia" class="w-4 h-3 rounded-sm object-cover"> Bolivia
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white/8 border border-white/10 text-blue-200 text-xs px-2.5 py-1.5 rounded-lg">
+              <img src="https://flagcdn.com/w20/tt.png" alt="Trinidad & Tobago" class="w-4 h-3 rounded-sm object-cover"> Trinidad &amp; Tobago
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white/8 border border-white/10 text-blue-200 text-xs px-2.5 py-1.5 rounded-lg">
+              <img src="https://flagcdn.com/w20/ve.png" alt="Venezuela" class="w-4 h-3 rounded-sm object-cover"> Venezuela
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white/8 border border-white/10 text-blue-200 text-xs px-2.5 py-1.5 rounded-lg">
+              <img src="https://flagcdn.com/w20/sr.png" alt="Suriname" class="w-4 h-3 rounded-sm object-cover"> Suriname
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+    <!-- ACF: YF5_disclaimer -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-5 bg-white/6 border border-white/10 rounded-2xl px-7 py-5">
+      <div class="flex items-start gap-3 text-blue-200 text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M5.07 19H19a2 2 0 001.75-2.75L13.75 4a2 2 0 00-3.5 0L3.25 16.25A2 2 0 005.07 19z"/>
+        </svg>
+        <span>This list is indicative based on current NATHNAC guidance. Requirements can change. Always verify the entry requirements for your specific destination and travel dates before departure.</span>
+      </div>
+      <a href="#" class="shrink-0 inline-flex items-center gap-2 bg-amber-400 text-amber-950 font-bold text-sm px-6 py-3 rounded-xl hover:bg-amber-300 transition-colors whitespace-nowrap">
+        Book your vaccine
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- END SECTION 5: COUNTRIES REQUIRING CERTIFICATE -->
+
+
+<!-- ============================================================
      FOOTER PLACEHOLDER — will be replaced with shared footer
      ============================================================ -->
 <footer class="bg-gray-50 border-t border-gray-200 py-8 text-center text-gray-400 text-sm">
