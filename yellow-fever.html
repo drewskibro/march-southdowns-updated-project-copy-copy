@@ -1030,6 +1030,199 @@
 
 
 <!-- ============================================================
+     SECTION 7: ELIGIBILITY
+     ACF: YF7_section_heading, YF7_can_have (repeater: label),
+          YF7_cannot_have (repeater: label, note),
+          YF7_special_case_* (repeater: heading, body)
+     ============================================================ -->
+<section class="py-20 bg-gray-50" id="eligibility">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-12">
+      <span class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full border border-blue-100 mb-5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Who can receive it
+      </span>
+      <!-- ACF: YF7_section_heading -->
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 font-jost mb-4 leading-tight">
+        Eligibility for the Yellow Fever vaccine
+      </h2>
+      <p class="text-gray-500 text-base max-w-xl mx-auto leading-relaxed">
+        Yellow Fever is a <strong>live attenuated vaccine</strong> — meaning it contains a weakened form of the virus. This makes it highly effective but means it's not suitable for everyone.
+      </p>
+    </div>
+
+    <!-- Can / Cannot two-col -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+      <!-- Can have -->
+      <div class="bg-white border border-green-100 rounded-2xl overflow-hidden shadow-sm">
+        <div class="bg-green-600 px-6 py-4 flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <h3 class="text-white font-bold font-jost text-lg">Generally suitable</h3>
+        </div>
+        <!-- ACF: YF7_can_have repeater -->
+        <ul class="divide-y divide-gray-50 px-6 py-2">
+          <li class="flex items-start gap-3 py-3.5">
+            <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-800 font-semibold text-sm">Adults and children aged 9 months and over</p>
+              <p class="text-gray-400 text-xs mt-0.5">The minimum age for safe administration</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-3.5">
+            <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-800 font-semibold text-sm">Healthy adults with no contraindications</p>
+              <p class="text-gray-400 text-xs mt-0.5">Including those with minor, well-controlled conditions</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-3.5">
+            <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-800 font-semibold text-sm">Travellers to endemic or certificate-required countries</p>
+              <p class="text-gray-400 text-xs mt-0.5">Whether the certificate is mandatory or recommended</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-3.5">
+            <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-800 font-semibold text-sm">Those with a mild egg intolerance (not allergy)</p>
+              <p class="text-gray-400 text-xs mt-0.5">Discuss with pharmacist — different to egg allergy</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-3.5">
+            <div class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-800 font-semibold text-sm">Individuals requiring a replacement ICVP record</p>
+              <p class="text-gray-400 text-xs mt-0.5">Re-vaccination needed if original certificate is lost</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cannot have -->
+      <div class="bg-white border border-red-100 rounded-2xl overflow-hidden shadow-sm">
+        <div class="bg-red-500 px-6 py-4 flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <h3 class="text-white font-bold font-jost text-lg">Contraindicated</h3>
+        </div>
+        <!-- ACF: YF7_cannot_have repeater -->
+        <ul class="divide-y divide-gray-50 px-6 py-2">
+          <li class="flex items-start gap-3 py-3.5">
+            <div class="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-800 font-semibold text-sm">Infants under 6 months</p>
+              <p class="text-gray-400 text-xs mt-0.5">High risk of vaccine-associated encephalitis</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-3.5">
+            <div class="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-800 font-semibold text-sm">Severe allergy to eggs, chicken, or gelatin</p>
+              <p class="text-gray-400 text-xs mt-0.5">Vaccine is grown on embryonated eggs</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-3.5">
+            <div class="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-800 font-semibold text-sm">Severely immunocompromised individuals</p>
+              <p class="text-gray-400 text-xs mt-0.5">e.g. active chemotherapy, HIV with CD4 &lt;200, organ transplant</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-3.5">
+            <div class="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-800 font-semibold text-sm">Thymus disease (thymoma, myasthenia gravis)</p>
+              <p class="text-gray-400 text-xs mt-0.5">Associated with risk of severe adverse reaction</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3 py-3.5">
+            <div class="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-800 font-semibold text-sm">Previous severe reaction to Yellow Fever vaccine</p>
+              <p class="text-gray-400 text-xs mt-0.5">Including anaphylaxis or neurological reaction</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Special cases — need clinical assessment -->
+    <div class="bg-white border border-gray-200 rounded-2xl p-7 mb-6">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-9 h-9 bg-amber-50 rounded-xl flex items-center justify-center border border-amber-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M5.07 19H19a2 2 0 001.75-2.75L13.75 4a2 2 0 00-3.5 0L3.25 16.25A2 2 0 005.07 19z"/>
+          </svg>
+        </div>
+        <h3 class="text-gray-900 font-bold font-jost text-lg">Needs individual assessment — speak to our pharmacist</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- ACF: YF7_special_case_* repeater -->
+        <div class="bg-amber-50 rounded-xl border border-amber-100 p-5">
+          <p class="text-amber-900 font-bold text-sm font-jost mb-2">Pregnancy</p>
+          <p class="text-gray-600 text-xs leading-relaxed">Generally avoided due to theoretical risk to the foetus. However, if travel to a high-risk area is unavoidable, vaccination may be recommended — the risk of Yellow Fever can outweigh the vaccine risk. We will assess this with you individually.</p>
+        </div>
+        <div class="bg-amber-50 rounded-xl border border-amber-100 p-5">
+          <p class="text-amber-900 font-bold text-sm font-jost mb-2">Aged 60 or over</p>
+          <p class="text-gray-600 text-xs leading-relaxed">Older adults face a higher risk of vaccine-associated viscerotropic disease (YEL-AVD) — a rare but serious side effect. Our pharmacists will conduct a thorough benefit-risk assessment and may issue a medical exemption waiver if vaccination is inadvisable.</p>
+        </div>
+        <div class="bg-amber-50 rounded-xl border border-amber-100 p-5">
+          <p class="text-amber-900 font-bold text-sm font-jost mb-2">Breastfeeding</p>
+          <p class="text-gray-600 text-xs leading-relaxed">Generally avoided unless travel to a high-risk area is essential and cannot be postponed. There is a small theoretical risk of transmission of the vaccine virus through breast milk to the infant. Discuss with our pharmacist before your appointment.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cannot be vaccinated? Waiver note -->
+    <div class="bg-blue-950 rounded-2xl px-7 py-6 flex flex-col md:flex-row items-center justify-between gap-5">
+      <div class="flex items-start gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        <p class="text-blue-100 text-sm leading-relaxed"><strong class="text-white">Can't be vaccinated but need to travel?</strong> In some cases, our pharmacist can issue a <strong class="text-amber-300">medical exemption waiver letter</strong> — an official document accepted by some (not all) countries in place of the ICVP. Book a consultation to discuss your options.</p>
+      </div>
+      <a href="#" class="shrink-0 inline-flex items-center gap-2 bg-amber-400 text-amber-950 font-bold text-sm px-6 py-3.5 rounded-xl hover:bg-amber-300 transition-colors whitespace-nowrap">
+        Book consultation
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- END SECTION 7: ELIGIBILITY -->
+
+
+<!-- ============================================================
      FOOTER PLACEHOLDER — will be replaced with shared footer
      ============================================================ -->
 <footer class="bg-gray-50 border-t border-gray-200 py-8 text-center text-gray-400 text-sm">
