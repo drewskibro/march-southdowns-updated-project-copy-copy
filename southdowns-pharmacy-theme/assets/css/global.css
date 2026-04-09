@@ -1,0 +1,64 @@
+/* Southdowns Pharmacy — Global CSS */
+
+@font-face {
+  font-family: 'Jost';
+  src: url('https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gradient text utilities */
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dot texture overlay */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.dot-pattern-amber {
+  background-image: radial-gradient(circle, rgba(251,191,36,0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Destination card hover (travel health) */
+.dest-card:hover .dest-overlay { opacity: 1; }
+.dest-card:hover img { transform: scale(1.08); }
+.dest-overlay { opacity: 0; transition: opacity 0.35s ease; }
+img { transition: transform 0.5s ease; }
+
+/* Shared section utilities */
+.section-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
