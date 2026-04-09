@@ -386,4 +386,71 @@ $phone       = sp_phone();
   </div>
 </section>
 
+<!-- ============================================================
+     S7: SIDE EFFECTS & SAFETY
+     ============================================================ -->
+<section class="py-16 md:py-24 relative overflow-hidden" id="safety" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #fffbeb 100%);">
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#1e3a8a 1px, transparent 1px); background-size: 28px 28px;"></div>
+  <div class="absolute top-0 left-0 w-72 h-72 bg-blue-200/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-amber-200/20 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-white text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100 shadow-sm">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span class="uppercase tracking-wider text-xs font-semibold">Safety Information</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-4 font-jost">Side Effects &amp; Safety</h2>
+      <p class="text-lg text-gray-500 max-w-3xl mx-auto font-jost">Excellent safety record with over 600 million doses administered worldwide. Serious reactions are extremely rare.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 yf-reveal">
+
+      <!-- Common side effects -->
+      <div class="bg-white rounded-2xl p-8 border border-gray-200 yf-card-lift shadow-sm">
+        <h3 class="text-xl font-bold text-slate-800 mb-5 font-jost">Common Side Effects (1 in 3 People)</h3>
+        <ul class="space-y-3 mb-6">
+          <?php
+          $common = [
+            'Injection site pain, redness, or swelling',
+            'Headache and muscle aches',
+            'Low-grade fever and fatigue',
+          ];
+          foreach ( $common as $item ) : ?>
+          <li class="flex items-center gap-3 text-gray-600">
+            <svg class="w-5 h-5 text-green-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <?php echo esc_html( $item ); ?>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+        <p class="text-gray-400 text-sm">These mild effects typically appear 5&ndash;10 days post-vaccination and resolve within 2 weeks.</p>
+      </div>
+
+      <!-- Contraindications -->
+      <div class="bg-white rounded-2xl p-8 border border-gray-200 yf-card-lift shadow-sm">
+        <h3 class="text-xl font-bold text-slate-800 mb-5 font-jost">Who Should NOT Receive the Vaccine</h3>
+        <ul class="space-y-3">
+          <?php
+          $cannot = [
+            'Infants under 9 months old',
+            'Severe egg allergy or previous severe reaction',
+            'Thymus disorders or history of thymus removal',
+            'Severely immunocompromised patients',
+          ];
+          foreach ( $cannot as $item ) : ?>
+          <li class="flex items-start gap-3 text-gray-600">
+            <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <?php echo esc_html( $item ); ?>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+        <div class="mt-6 bg-amber-50 rounded-xl p-4 border border-amber-200 text-amber-800 text-sm">
+          <strong>Special precautions:</strong> Pregnancy, breastfeeding, ages 60+, and mild immunosuppression require case-by-case assessment by our pharmacist.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
