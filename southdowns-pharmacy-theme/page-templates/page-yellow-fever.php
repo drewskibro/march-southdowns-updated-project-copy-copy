@@ -525,4 +525,124 @@ $check_svg   = '<svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox
   </div>
 </section>
 
+<!-- ============================================================
+     S6: UNDERSTANDING THE ICVP CERTIFICATE
+     ============================================================ -->
+<section class="bg-gray-50 py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <p class="text-amber-500 font-bold text-xs tracking-widest uppercase mb-3">The Certificate</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 font-jost leading-tight mb-4">
+        Understanding your ICVP
+      </h2>
+      <p class="text-gray-500 text-base leading-relaxed">
+        The International Certificate of Vaccination or Prophylaxis is the only document accepted at international borders as proof of Yellow Fever vaccination. Here is what you need to know.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+
+      <!-- Left: 4 rules -->
+      <div class="space-y-4">
+
+        <?php
+        $rules = [
+          [
+            'num'   => '01',
+            'title' => 'It only becomes valid 10 days after vaccination',
+            'body'  => 'Your ICVP certificate is issued on the day of vaccination, but is not legally valid for international travel until 10 full days have passed. Plan your appointment at least 10 days before departure — ideally 4–6 weeks ahead.',
+          ],
+          [
+            'num'   => '02',
+            'title' => 'It is valid for life — no renewal required',
+            'body'  => 'Since July 2016, the WHO confirmed that a single Yellow Fever dose provides lifelong immunity. All previously issued 10-year certificates have been automatically extended for life. You will never need a booster or a new certificate.',
+          ],
+          [
+            'num'   => '03',
+            'title' => 'It must be issued by a designated centre',
+            'body'  => 'Only NHS-approved Yellow Fever Vaccination Centres can issue a legally valid ICVP. Certificates from non-designated clinics are not accepted. ' . esc_html( sp_pharmacy_name() ) . ' is an officially designated centre across all four Hampshire branches.',
+          ],
+          [
+            'num'   => '04',
+            'title' => 'Keep the original — copies are not accepted',
+            'body'  => 'Border officials require the original booklet. Photocopies, digital photos, or scanned PDFs are not accepted. Keep your yellow booklet with your passport whenever you travel to or from a Yellow Fever zone.',
+          ],
+        ];
+        foreach ( $rules as $rule ) : ?>
+        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex gap-5">
+          <div class="shrink-0">
+            <span class="block w-10 h-10 bg-amber-400 text-amber-950 font-extrabold text-sm rounded-xl flex items-center justify-center font-jost"><?php echo esc_html( $rule['num'] ); ?></span>
+          </div>
+          <div>
+            <h3 class="text-gray-900 font-bold text-base mb-2"><?php echo esc_html( $rule['title'] ); ?></h3>
+            <p class="text-gray-500 text-sm leading-relaxed"><?php echo esc_html( $rule['body'] ); ?></p>
+          </div>
+        </div>
+        <?php endforeach; ?>
+
+      </div>
+
+      <!-- Right: certificate breakdown card -->
+      <div class="sticky top-8">
+
+        <!-- Certificate mockup -->
+        <div class="bg-gradient-to-br from-amber-400 via-amber-300 to-yellow-300 rounded-2xl p-7 shadow-2xl shadow-amber-900/20 relative overflow-hidden mb-6">
+          <div class="absolute inset-0 dot-pattern-amber pointer-events-none"></div>
+          <div class="relative z-10">
+
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <p class="text-amber-900 text-xs font-bold tracking-widest uppercase">World Health Organisation</p>
+                <p class="text-amber-950 font-extrabold font-jost text-lg leading-tight mt-0.5">International Certificate of<br>Vaccination or Prophylaxis</p>
+              </div>
+              <div class="w-14 h-14 bg-amber-500/30 rounded-full flex items-center justify-center shrink-0 border-2 border-amber-600/30">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+            </div>
+
+            <?php
+            $fields = [
+              ['label' => 'Vaccine',        'value' => 'Yellow Fever (Stamaril®)'],
+              ['label' => 'Date of vaccination', 'value' => 'Stamped on day of dose'],
+              ['label' => 'Valid from',     'value' => '10 days after vaccination'],
+              ['label' => 'Expiry',         'value' => 'Does not expire (lifetime)'],
+              ['label' => 'Issuing centre', 'value' => sp_pharmacy_name() . ' — NHS Approved'],
+              ['label' => 'Batch number',   'value' => 'Recorded from vial'],
+            ];
+            ?>
+            <div class="space-y-2 mb-5">
+              <?php foreach ( $fields as $field ) : ?>
+              <div class="bg-white/40 rounded-lg px-3 py-2 flex items-center justify-between gap-3">
+                <p class="text-amber-900 text-xs font-semibold uppercase tracking-wider shrink-0"><?php echo esc_html( $field['label'] ); ?></p>
+                <p class="text-amber-950 font-bold text-xs text-right"><?php echo esc_html( $field['value'] ); ?></p>
+              </div>
+              <?php endforeach; ?>
+            </div>
+
+            <div class="border-t border-amber-500/30 pt-4 flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full border-2 border-amber-700/40 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <p class="text-amber-900 text-xs font-semibold">Signed &amp; stamped by GPhC-registered pharmacist<br><span class="font-normal"><?php echo esc_html( sp_pharmacy_name() ); ?></span></p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Lost certificate note -->
+        <div class="bg-blue-50 border border-blue-200 rounded-xl px-5 py-4 flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div>
+            <p class="text-blue-900 font-bold text-sm mb-1">Lost your certificate?</p>
+            <p class="text-blue-700 text-sm leading-relaxed">If you were vaccinated at one of our branches, contact us — we keep vaccination records and may be able to assist with replacement documentation. Call <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="font-semibold hover:underline"><?php echo esc_html( $phone ); ?></a>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
