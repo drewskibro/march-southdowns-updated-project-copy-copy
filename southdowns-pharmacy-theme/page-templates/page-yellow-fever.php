@@ -585,4 +585,84 @@ $phone       = sp_phone();
   </div>
 </section>
 
+<!-- ============================================================
+     S10: FAQ — Two-column with sticky sidebar
+     ============================================================ -->
+<section class="py-16 md:py-24 relative overflow-hidden" id="faq" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #f8fafc 100%);">
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#1e3a8a 1px, transparent 1px); background-size: 28px 28px;"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-blue-200/20 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-amber-200/15 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+
+      <!-- Left: sticky sidebar -->
+      <div class="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
+        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+          </span>
+          <span class="uppercase tracking-wider text-xs font-semibold">FAQs</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-jost">Yellow Fever Vaccine FAQs</h2>
+        <p class="text-lg text-gray-500 leading-relaxed mb-8 font-jost">Everything you need to know about yellow fever vaccination at <?php echo esc_html( sp_pharmacy_name() ); ?>.</p>
+        <!-- Trust stats -->
+        <div class="hidden lg:grid grid-cols-3 gap-4 mb-8">
+          <div class="text-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+            <div class="text-2xl font-bold text-slate-800 mb-1 font-jost">4.9</div>
+            <div class="text-gray-400 text-xs font-medium">Rating</div>
+          </div>
+          <div class="text-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+            <div class="text-2xl font-bold text-slate-800 mb-1 font-jost">400+</div>
+            <div class="text-gray-400 text-xs font-medium">Reviews</div>
+          </div>
+          <div class="text-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+            <div class="text-2xl font-bold text-slate-800 mb-1 font-jost">10k+</div>
+            <div class="text-gray-400 text-xs font-medium">Patients</div>
+          </div>
+        </div>
+        <div class="hidden lg:block space-y-4">
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3.5 rounded-full transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] font-jost">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book Vaccination
+          </a>
+          <p class="text-gray-400 text-sm text-center font-jost">&pound;85 all-inclusive &middot; Certificate included</p>
+        </div>
+      </div>
+
+      <!-- Right: FAQ accordion -->
+      <div class="lg:col-span-8">
+        <div class="space-y-4" id="faq-list">
+          <?php
+          $faqs = [
+            ['num' => '01', 'q' => 'How long does yellow fever vaccination protection last?',          'a' => 'A single dose provides lifelong immunity for most people. The International Certificate of Vaccination is now valid for life (previously 10 years under old WHO rules). You won\'t need booster doses unless you were pregnant, immunocompromised, or a stem cell transplant recipient when first vaccinated.'],
+            ['num' => '02', 'q' => 'When should I get the vaccine before travel?',                    'a' => 'Book at least 10 days before departure. Your ICVP certificate becomes valid 10 days after vaccination. Some countries strictly enforce this rule. We recommend 2–3 weeks before travel where possible. Same-day appointments available for last-minute plans.'],
+            ['num' => '03', 'q' => 'Which countries require yellow fever certification?',              'a' => 'Over 40 countries require proof of vaccination. This includes most of sub-Saharan Africa, parts of South America, and some Asian/Pacific nations when arriving from endemic areas. Requirements change frequently — we check current NaTHNaC guidance during your consultation.'],
+            ['num' => '04', 'q' => 'Do I need the vaccine if I\'m only transiting through an affected country?', 'a' => 'Yes, often. Many countries require certification if you\'ve transited through a yellow fever endemic country, even without leaving the airport. We\'ll assess your specific itinerary, including all transit stops, during consultation.'],
+            ['num' => '05', 'q' => 'Can I get yellow fever vaccine on the NHS?',                      'a' => 'No. Yellow fever vaccination has never been available on the NHS. It must be obtained privately from a registered centre like Southdowns Pharmacy. Our all-inclusive price of £85 covers the vaccine, consultation, official certificate, and everything you need in a single appointment.'],
+            ['num' => '06', 'q' => 'I lost my certificate. Can I get a replacement?',                 'a' => 'If you were vaccinated at Southdowns Pharmacy, we can issue a replacement certificate from our vaccination records. Bring valid photo ID. If vaccinated elsewhere, contact that centre directly — a legitimate replacement cannot be issued without proof of original vaccination.'],
+            ['num' => '07', 'q' => 'Is the vaccine safe during pregnancy?',                           'a' => 'Yellow fever vaccine is generally avoided during pregnancy as it is a live vaccine. However, if travel to a high-risk area is unavoidable, vaccination may be recommended after careful risk-benefit assessment. Discuss your situation with our pharmacist.'],
+            ['num' => '08', 'q' => 'What if I have an egg allergy?',                                  'a' => 'The vaccine is grown in eggs. Severe anaphylactic egg allergy is a contraindication. Milder egg allergies may still allow vaccination with an extended observation period. Disclose your complete allergy history during consultation so we can advise appropriately.'],
+          ];
+          foreach ( $faqs as $faq ) : ?>
+          <div class="yf-faq-item bg-white border border-gray-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg">
+            <button class="yf-faq-trigger w-full flex items-center justify-between text-left p-6 hover:bg-gray-50/50 transition-colors">
+              <div class="flex items-center gap-4 flex-1">
+                <span class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-xl flex items-center justify-center font-bold text-sm shadow-md shadow-blue-500/20"><?php echo esc_html( $faq['num'] ); ?></span>
+                <span class="text-slate-800 font-semibold text-base md:text-lg font-jost"><?php echo esc_html( $faq['q'] ); ?></span>
+              </div>
+              <svg class="yf-faq-icon w-5 h-5 text-blue-400 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <div class="yf-faq-answer">
+              <div class="px-6 pb-6 pt-0 text-gray-600 leading-relaxed text-base font-jost"><?php echo esc_html( $faq['a'] ); ?></div>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
