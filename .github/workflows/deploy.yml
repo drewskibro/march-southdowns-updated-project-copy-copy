@@ -21,8 +21,7 @@ jobs:
           port: ${{ secrets.KINSTA_PORT }}
           username: ${{ secrets.KINSTA_USERNAME }}
           password: ${{ secrets.KINSTA_PASSWORD }}
-          source: "southdowns-pharmacy-theme/"
+          source: "southdowns-pharmacy-theme"
           target: "/www/southdownspharmacygroup_597/public/wp-content/themes/"
-          strip_components: 1
           overwrite: true
           timeout: 120s
