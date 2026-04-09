@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.KINSTA_USERNAME }}
           password: ${{ secrets.KINSTA_PASSWORD }}
           source: "southdowns-pharmacy-theme/"
-          target: "/www/southdownspharmacygroup/public/wp-content/themes/"
+          target: "/www/southdownspharmacygroup_597/public/wp-content/themes/"
           strip_components: 1
           overwrite: true
           timeout: 120s
