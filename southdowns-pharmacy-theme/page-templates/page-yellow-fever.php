@@ -775,4 +775,115 @@ $check_svg   = '<svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox
   </div>
 </section>
 
+<!-- ============================================================
+     S8: PRICING & BOOKING
+     ============================================================ -->
+<section class="bg-gray-50 py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <p class="text-amber-500 font-bold text-xs tracking-widest uppercase mb-3">Pricing &amp; Booking</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 font-jost leading-tight mb-4">
+        Book your Yellow Fever vaccination
+      </h2>
+      <p class="text-gray-500 text-base leading-relaxed">
+        No GP referral needed. Walk in or book online — same-day appointments often available. Your ICVP certificate is issued on the day.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+
+      <!-- Price card -->
+      <div class="lg:col-span-1">
+        <div class="bg-gradient-to-br from-amber-400 to-yellow-300 rounded-2xl p-8 shadow-xl shadow-amber-900/20 text-center sticky top-8">
+          <p class="text-amber-900 text-xs font-bold tracking-widest uppercase mb-2">Yellow Fever Vaccination</p>
+          <div class="flex items-start justify-center gap-1 mb-1">
+            <span class="text-amber-900 font-bold text-2xl mt-2">£</span>
+            <span class="text-7xl font-extrabold text-amber-950 font-jost leading-none">65</span>
+          </div>
+          <p class="text-amber-800 text-sm mb-6">per dose — all inclusive</p>
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="block w-full bg-amber-950 text-amber-400 font-bold py-4 rounded-xl hover:bg-blue-950 transition-all duration-300 text-base mb-4">
+            Book Now
+          </a>
+          <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="block w-full bg-white/40 text-amber-900 font-semibold py-3 rounded-xl hover:bg-white/60 transition-all duration-300 text-sm">
+            <?php echo esc_html( $phone ); ?>
+          </a>
+          <p class="text-amber-800 text-xs mt-4">Private service — not available on the NHS</p>
+        </div>
+      </div>
+
+      <!-- What's included -->
+      <div class="lg:col-span-2">
+        <h3 class="text-gray-900 font-extrabold text-xl font-jost mb-5">What's included in your £65</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          <?php
+          $included = [
+            ['title' => 'Travel health consultation', 'body' => 'A full pre-travel assessment covering your destination, itinerary, and medical history — ensuring the vaccine is safe and appropriate for you.'],
+            ['title' => 'Stamaril® Yellow Fever vaccine', 'body' => 'The only licensed Yellow Fever vaccine in the UK, manufactured by Sanofi Pasteur. Administered by a GPhC-registered pharmacist.'],
+            ['title' => 'Official ICVP certificate', 'body' => 'The WHO-approved yellow booklet, completed, stamped, and signed. Legally valid for international travel immediately — active from 10 days post-dose.'],
+            ['title' => 'Personalised travel advice', 'body' => 'Guidance on additional vaccines, malaria prevention, and other health precautions relevant to your specific destinations and activities.'],
+          ];
+          foreach ( $included as $item ) : ?>
+          <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm flex gap-4">
+            <div class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="text-gray-900 font-bold text-sm mb-1"><?php echo esc_html( $item['title'] ); ?></p>
+              <p class="text-gray-500 text-xs leading-relaxed"><?php echo esc_html( $item['body'] ); ?></p>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+
+        <!-- How to book steps -->
+        <h3 class="text-gray-900 font-extrabold text-xl font-jost mb-5">How to book</h3>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <?php
+          $steps = [
+            ['num' => '1', 'label' => 'Book online or call', 'sub' => 'Choose your branch and a convenient time'],
+            ['num' => '2', 'label' => 'Attend your appointment', 'sub' => 'Consultation + vaccination — typically 20 mins'],
+            ['num' => '3', 'label' => 'Collect your ICVP', 'sub' => 'Walk out with your certificate the same day'],
+          ];
+          foreach ( $steps as $step ) : ?>
+          <div class="flex-1 bg-white rounded-xl px-5 py-4 border border-gray-100 shadow-sm flex items-center gap-4">
+            <span class="w-9 h-9 bg-amber-400 text-amber-950 font-extrabold text-sm rounded-xl flex items-center justify-center shrink-0 font-jost"><?php echo esc_html( $step['num'] ); ?></span>
+            <div>
+              <p class="text-gray-900 font-bold text-sm"><?php echo esc_html( $step['label'] ); ?></p>
+              <p class="text-gray-400 text-xs"><?php echo esc_html( $step['sub'] ); ?></p>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Branch cards -->
+    <h3 class="text-gray-900 font-extrabold text-xl font-jost text-center mb-6">Our Hampshire branches</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <?php for ( $i = 1; $i <= 4; $i++ ) :
+        $b = sp_branch( $i ); ?>
+      <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-9 h-9 bg-blue-950 rounded-xl flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <p class="text-gray-900 font-extrabold text-base font-jost"><?php echo esc_html( $b['name'] ); ?></p>
+        </div>
+        <p class="text-gray-500 text-xs leading-relaxed mb-1"><?php echo esc_html( $b['address_line1'] ); ?></p>
+        <p class="text-gray-500 text-xs mb-1"><?php echo esc_html( $b['address_line2'] ); ?>, <?php echo esc_html( $b['postcode'] ); ?></p>
+        <p class="text-gray-400 text-xs mb-1"><?php echo esc_html( $b['hours_weekday'] ); ?></p>
+        <p class="text-gray-400 text-xs mb-4"><?php echo esc_html( $b['hours_saturday'] ); ?></p>
+        <div class="mt-auto flex flex-col gap-2">
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="block text-center bg-amber-400 text-amber-950 font-bold text-xs py-2.5 rounded-lg hover:bg-amber-300 transition-colors">Book here</a>
+          <a href="<?php echo esc_url( $b['maps_url'] ); ?>" target="_blank" rel="noopener noreferrer" class="block text-center bg-gray-50 border border-gray-200 text-gray-600 font-semibold text-xs py-2.5 rounded-lg hover:bg-gray-100 transition-colors">Get directions</a>
+        </div>
+      </div>
+      <?php endfor; ?>
+    </div>
+
+  </div>
+</section>
+
 <?php get_footer(); ?>
