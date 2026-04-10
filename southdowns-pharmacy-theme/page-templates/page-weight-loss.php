@@ -490,4 +490,90 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S6: HOW IT WORKS — White bg, photo left + 4 numbered step cards
+     ============================================================ -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-12 md:mb-16 yf-reveal">
+      <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4">Your Journey</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-jost">How our programme works</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto font-jost">From your first free consultation to reaching your goal weight, we're with you at every step.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Photo -->
+      <div class="yf-reveal order-2 lg:order-1">
+        <div class="relative rounded-3xl overflow-hidden shadow-xl">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80&auto=format&fit=crop" alt="Pharmacist consultation" class="w-full h-[420px] object-cover"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl px-5 py-4 shadow-lg">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900 text-sm font-jost">GPhC-Registered Pharmacists</div>
+                  <div class="text-xs text-gray-600 font-jost">Expert face-to-face care across Hampshire</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div class="order-1 lg:order-2 space-y-5">
+
+        <div class="yf-reveal yf-step flex gap-5 p-5 bg-blue-50 rounded-2xl hover:bg-blue-100 transition-colors" data-delay="1">
+          <div class="yf-step-num w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0 font-jost" style="background-color:#1a73e9;">1</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1 font-jost">Free consultation</h3>
+            <p class="text-sm text-gray-600 font-jost">Book a same-day appointment at your nearest Southdowns branch. Our pharmacist reviews your medical history, BMI and health goals to recommend the right treatment.</p>
+          </div>
+        </div>
+
+        <div class="yf-reveal yf-step flex gap-5 p-5 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors" data-delay="2">
+          <div class="yf-step-num w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0 font-jost" style="background: linear-gradient(135deg, #1a73e9, #1d4ed8);">2</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1 font-jost">Same-day prescription &amp; injection training</h3>
+            <p class="text-sm text-gray-600 font-jost">If eligible, your prescription is issued the same day. We show you exactly how to self-administer your weekly injection safely and confidently.</p>
+          </div>
+        </div>
+
+        <div class="yf-reveal yf-step flex gap-5 p-5 bg-blue-50 rounded-2xl hover:bg-blue-100 transition-colors" data-delay="3">
+          <div class="yf-step-num w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0 font-jost" style="background-color:#1a73e9;">3</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1 font-jost">Monthly check-ins &amp; dose adjustments</h3>
+            <p class="text-sm text-gray-600 font-jost">Return monthly for weight monitoring, blood pressure checks and dose titration. We adjust your medication as needed to maximise results and minimise side effects.</p>
+          </div>
+        </div>
+
+        <div class="yf-reveal yf-step flex gap-5 p-5 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors" data-delay="4">
+          <div class="yf-step-num w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0 font-jost" style="background: linear-gradient(135deg, #1a73e9, #1d4ed8);">4</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1 font-jost">Reach your goal &amp; maintain results</h3>
+            <p class="text-sm text-gray-600 font-jost">At your goal weight, we guide you through a structured exit plan to help you maintain your results long-term, with lifestyle advice and ongoing support.</p>
+          </div>
+        </div>
+
+        <div class="yf-reveal pt-2" data-delay="5">
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3.5 rounded-full transition-colors font-jost shadow-lg shadow-blue-500/20">
+            Book Your Free Consultation
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
