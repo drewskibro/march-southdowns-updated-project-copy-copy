@@ -847,4 +847,113 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S10: FAQ — Light gradient, two-column sticky sidebar + accordion
+     ============================================================ -->
+<section id="faqs" class="py-16 md:py-24" style="background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-[340px_1fr] gap-12 lg:gap-16 items-start">
+
+      <!-- Sticky sidebar -->
+      <div class="lg:sticky lg:top-28 yf-reveal">
+        <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4">FAQs</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-jost">Common questions about medical weight loss</h2>
+        <p class="text-gray-600 mb-8 font-jost">Everything you need to know before starting your journey. Can't find your answer? Call us free.</p>
+
+        <!-- Trust stats -->
+        <div class="grid grid-cols-3 gap-3 mb-8">
+          <div class="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
+            <div class="text-2xl font-bold text-blue-600 font-jost">4.9</div>
+            <div class="text-xs text-gray-500 font-jost">Rating</div>
+          </div>
+          <div class="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
+            <div class="text-2xl font-bold text-blue-600 font-jost">400+</div>
+            <div class="text-xs text-gray-500 font-jost">Reviews</div>
+          </div>
+          <div class="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
+            <div class="text-2xl font-bold text-blue-600 font-jost">10k+</div>
+            <div class="text-xs text-gray-500 font-jost">Patients</div>
+          </div>
+        </div>
+
+        <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3.5 rounded-full transition-colors font-jost shadow-lg shadow-blue-500/20 w-full justify-center">
+          Book Free Consultation
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- FAQ accordion -->
+      <div class="space-y-3 yf-reveal" data-delay="2">
+
+        <details class="wl-faq-item">
+          <summary class="wl-faq-question">
+            <span>Am I eligible for weight loss injections?</span>
+            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="wl-faq-answer">You are generally eligible if you have a BMI of 30 or above, or a BMI of 27 or above alongside a weight-related health condition such as type 2 diabetes, high blood pressure, high cholesterol or sleep apnoea. Our pharmacists will carry out a full assessment at your free consultation to confirm eligibility.</div>
+        </details>
+
+        <details class="wl-faq-item">
+          <summary class="wl-faq-question">
+            <span>What is the difference between Mounjaro and Wegovy?</span>
+            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="wl-faq-answer">Both are weekly self-injections that reduce appetite, but they work differently. Mounjaro (tirzepatide) targets two hormones &mdash; GIP and GLP-1 &mdash; and tends to produce greater weight loss (up to 22.5% in trials). Wegovy (semaglutide) targets GLP-1 only and has a longer clinical track record. Our pharmacists will recommend the right option based on your health history and goals.</div>
+        </details>
+
+        <details class="wl-faq-item">
+          <summary class="wl-faq-question">
+            <span>Do I need a GP referral?</span>
+            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="wl-faq-answer">No. Our GPhC-registered pharmacists are independent prescribers who can assess your suitability and issue a prescription directly &mdash; without a GP referral or NHS waiting list. You can book, consult and start treatment all on the same day.</div>
+        </details>
+
+        <details class="wl-faq-item">
+          <summary class="wl-faq-question">
+            <span>How much weight can I expect to lose?</span>
+            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="wl-faq-answer">Clinical trials show that patients typically lose 10&ndash;20% of their body weight over 12 months. Results vary by individual and depend on consistent use, diet, activity and adherence to the programme. Most patients notice a meaningful reduction in appetite and begin losing weight within the first 4&ndash;8 weeks.</div>
+        </details>
+
+        <details class="wl-faq-item">
+          <summary class="wl-faq-question">
+            <span>What are the common side effects?</span>
+            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="wl-faq-answer">The most common side effects are nausea, constipation, diarrhoea and reduced appetite, particularly in the first few weeks as your body adjusts to the medication. These are usually mild and temporary. Our pharmacists provide detailed advice on managing side effects and can adjust your dose if needed.</div>
+        </details>
+
+        <details class="wl-faq-item">
+          <summary class="wl-faq-question">
+            <span>How much does the programme cost?</span>
+            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="wl-faq-answer">Your initial consultation is completely free. Monthly treatment costs start from &pound;149 and include your medication, the prescribing consultation and ongoing pharmacist support. Pricing varies by medication and dose. We will provide a full cost breakdown at your free consultation before you commit to anything.</div>
+        </details>
+
+        <details class="wl-faq-item">
+          <summary class="wl-faq-question">
+            <span>Can I use weight loss injections if I have type 2 diabetes?</span>
+            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="wl-faq-answer">Yes, and GLP-1 medications can be particularly beneficial for people with type 2 diabetes, as they also improve blood sugar control. However, your pharmacist will review your current medications and medical history carefully to ensure safety and appropriate dosing, particularly if you are taking insulin or sulphonylureas.</div>
+        </details>
+
+        <details class="wl-faq-item">
+          <summary class="wl-faq-question">
+            <span>What happens when I reach my goal weight?</span>
+            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="wl-faq-answer">When you reach your goal weight, our pharmacists will work with you on a structured exit plan to help maintain your results. This may involve a gradual dose reduction, lifestyle coaching and dietary advice. Our goal is to give you the tools to maintain a healthy weight long after completing the programme.</div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
