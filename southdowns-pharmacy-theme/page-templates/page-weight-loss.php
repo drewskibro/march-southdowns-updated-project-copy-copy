@@ -774,4 +774,77 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S9: WHY SOUTHDOWNS — Blue gradient, 6-card grid
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 yf-shimmer pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-12 md:mb-16 yf-reveal">
+      <span class="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4 border border-white/20">
+        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Why Choose Us
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-jost">Why Hampshire chooses Southdowns</h2>
+      <p class="text-lg text-blue-100 max-w-2xl mx-auto font-jost">We combine clinical expertise with genuine face-to-face care &mdash; the things online weight loss services simply can't replicate.</p>
+    </div>
+
+    <!-- 6-card grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7" data-delay="1">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 font-jost">GPhC-Registered</h3>
+        <p class="text-blue-100 text-sm leading-relaxed font-jost">All prescribers are General Pharmaceutical Council registered. Your safety and clinical standards are never compromised.</p>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7" data-delay="2">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 font-jost">Same-Day Prescriptions</h3>
+        <p class="text-blue-100 text-sm leading-relaxed font-jost">No waiting lists, no GP referrals. Book a free consultation online and start your weight loss programme the same day.</p>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7" data-delay="3">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 font-jost">Face-to-Face Care</h3>
+        <p class="text-blue-100 text-sm leading-relaxed font-jost">Unlike online services, our pharmacists see you in person every month &mdash; monitoring progress, adjusting doses and answering your questions.</p>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7" data-delay="1">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 font-jost">4 Hampshire Locations</h3>
+        <p class="text-blue-100 text-sm leading-relaxed font-jost">Southsea, Waterlooville, Havant and Portsmouth &mdash; with free parking. Always a convenient branch near you.</p>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7" data-delay="2">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 font-jost">MHRA-Approved Medications</h3>
+        <p class="text-blue-100 text-sm leading-relaxed font-jost">We only prescribe UK-licensed, MHRA-approved medications. No compounded or unregulated products &mdash; ever.</p>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7" data-delay="3">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 font-jost">10,000+ Patients Served</h3>
+        <p class="text-blue-100 text-sm leading-relaxed font-jost">Over a decade serving Hampshire communities. Our 4.9-star rating reflects the care and trust we build with every patient.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
