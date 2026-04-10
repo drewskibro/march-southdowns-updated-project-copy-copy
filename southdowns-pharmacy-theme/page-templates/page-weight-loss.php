@@ -391,4 +391,103 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S5: OUTCOMES & BENEFITS — Light gradient, 6 result photo cards
+     ============================================================ -->
+<section class="py-16 md:py-24" style="background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-12 md:mb-16 yf-reveal">
+      <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4">Real Results</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-jost">What you can expect from your programme</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto font-jost">Beyond the number on the scales, patients report wide-ranging improvements to their health and quality of life.</p>
+    </div>
+
+    <!-- 6 benefit cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="yf-reveal yf-card-lift bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-delay="1">
+        <div class="h-44 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&auto=format&fit=crop" alt="Healthy weight" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"/>
+        </div>
+        <div class="p-6">
+          <div class="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1 font-jost">Significant weight loss</h3>
+          <p class="text-sm text-gray-600 font-jost">10&ndash;20% of body weight lost over 12 months, with most patients seeing results within the first 4 weeks.</p>
+        </div>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-delay="2">
+        <div class="h-44 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80&auto=format&fit=crop" alt="Blood sugar control" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"/>
+        </div>
+        <div class="p-6">
+          <div class="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1 font-jost">Improved blood sugar control</h3>
+          <p class="text-sm text-gray-600 font-jost">GLP-1 medications improve insulin sensitivity, helping to prevent or manage type 2 diabetes alongside weight loss.</p>
+        </div>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-delay="3">
+        <div class="h-44 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop" alt="Better energy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"/>
+        </div>
+        <div class="p-6">
+          <div class="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1 font-jost">More energy, less fatigue</h3>
+          <p class="text-sm text-gray-600 font-jost">Patients consistently report better energy levels, improved sleep quality and greater motivation for exercise.</p>
+        </div>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-delay="1">
+        <div class="h-44 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=600&q=80&auto=format&fit=crop" alt="Heart health" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"/>
+        </div>
+        <div class="p-6">
+          <div class="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1 font-jost">Reduced cardiovascular risk</h3>
+          <p class="text-sm text-gray-600 font-jost">Lower blood pressure, improved cholesterol levels and reduced strain on your heart as you reach a healthier weight.</p>
+        </div>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-delay="2">
+        <div class="h-44 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop" alt="Mental wellbeing" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"/>
+        </div>
+        <div class="p-6">
+          <div class="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1 font-jost">Better mental wellbeing</h3>
+          <p class="text-sm text-gray-600 font-jost">Improved self-confidence, reduced anxiety around food and a greater sense of control over your health and body.</p>
+        </div>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm" data-delay="3">
+        <div class="h-44 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80&auto=format&fit=crop" alt="Joint health" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"/>
+        </div>
+        <div class="p-6">
+          <div class="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1 font-jost">Reduced joint pain</h3>
+          <p class="text-sm text-gray-600 font-jost">Less weight means less pressure on knees, hips and ankles &mdash; many patients report significantly reduced joint pain within months.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
