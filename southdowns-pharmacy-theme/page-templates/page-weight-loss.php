@@ -119,4 +119,73 @@ $phone       = sp_phone();
 
 </section>
 
+
+<!-- ============================================================
+     S2: SOCIAL PROOF BAR — Blue gradient, 5 glassmorphism stat cards
+     ============================================================ -->
+<section class="relative py-16 md:py-20 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 yf-shimmer pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+
+      <!-- Card 1: Patients Treated -->
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 md:p-6 text-center" data-delay="1">
+        <div class="text-3xl md:text-4xl font-bold text-white mb-1 font-jost">10,000+</div>
+        <div class="text-sm text-blue-100 font-medium font-jost">Patients Treated</div>
+        <div class="mt-3 flex justify-center">
+          <svg class="w-6 h-6 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Card 2: Body Weight Lost -->
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 md:p-6 text-center" data-delay="2">
+        <div class="text-3xl md:text-4xl font-bold text-white mb-1 font-jost">10–20%</div>
+        <div class="text-sm text-blue-100 font-medium font-jost">Body Weight Lost</div>
+        <div class="mt-3 flex justify-center">
+          <svg class="w-6 h-6 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Card 3: Satisfaction -->
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 md:p-6 text-center" data-delay="3">
+        <div class="text-3xl md:text-4xl font-bold text-white mb-1 font-jost">4.9/5</div>
+        <div class="text-sm text-blue-100 font-medium font-jost">Patient Satisfaction</div>
+        <div class="mt-3 flex justify-center">
+          <svg class="w-6 h-6 text-yellow-300" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Card 4: Locations -->
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 md:p-6 text-center" data-delay="4">
+        <div class="text-3xl md:text-4xl font-bold text-white mb-1 font-jost">4</div>
+        <div class="text-sm text-blue-100 font-medium font-jost">Hampshire Locations</div>
+        <div class="mt-3 flex justify-center">
+          <svg class="w-6 h-6 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Card 5: Same Day -->
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 md:p-6 text-center col-span-2 md:col-span-1" data-delay="5">
+        <div class="text-3xl md:text-4xl font-bold text-white mb-1 font-jost">Same Day</div>
+        <div class="text-sm text-blue-100 font-medium font-jost">Appointments</div>
+        <div class="mt-3 flex justify-center">
+          <svg class="w-6 h-6 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
