@@ -956,4 +956,111 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S11: FINAL CTA — Blue gradient, trust badges, checklist, disclaimer
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 yf-shimmer pointer-events-none"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+    <!-- Trust badge pills -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10 yf-reveal">
+      <span class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full border border-white/20">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        GPhC Registered
+      </span>
+      <span class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full border border-white/20">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        No GP Referral
+      </span>
+      <span class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full border border-white/20">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        4.9/5 Rating
+      </span>
+      <span class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full border border-white/20">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        MHRA-Approved Meds
+      </span>
+    </div>
+
+    <!-- Heading -->
+    <div class="yf-reveal mb-6">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 font-jost">Start your weight loss journey today</h2>
+      <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto font-jost">Book your free consultation at your nearest Hampshire branch. Same-day prescriptions. No waiting lists. Real results.</p>
+    </div>
+
+    <!-- Checklist -->
+    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-2 max-w-xl mx-auto mb-10 text-left yf-reveal" data-delay="1">
+      <?php
+      $points = [
+        'Free consultation &mdash; no obligation',
+        'Same-day prescription if eligible',
+        'Monthly face-to-face check-ins',
+        'MHRA-approved medications only',
+        'GPhC-registered prescribers',
+        'No GP referral needed',
+      ];
+      foreach ( $points as $point ) : ?>
+      <div class="flex items-center gap-2.5 text-sm text-blue-100 font-jost">
+        <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <?php echo $point; ?>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="flex flex-wrap justify-center gap-4 yf-reveal" data-delay="2">
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition-colors shadow-xl text-base font-jost">
+        Book Free Consultation
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="inline-flex items-center gap-2 text-white font-semibold border-2 border-white/40 px-8 py-4 rounded-full hover:bg-white/10 transition-colors text-base font-jost">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <?php echo esc_html( $phone ); ?>
+      </a>
+    </div>
+
+    <!-- Trust indicators -->
+    <div class="flex flex-wrap justify-center gap-8 mt-10 text-blue-200 text-sm yf-reveal" data-delay="3">
+      <div class="flex items-center gap-2 font-jost">
+        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span><strong class="text-white">4.9/5</strong> from 400+ reviews</span>
+      </div>
+      <div class="flex items-center gap-2 font-jost">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>
+        <span><strong class="text-white">10,000+</strong> patients served</span>
+      </div>
+      <div class="flex items-center gap-2 font-jost">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span><strong class="text-white">GPhC</strong> registered pharmacy</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Medical disclaimer strip -->
+<div class="bg-gray-50 border-t border-gray-200 py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-xs text-gray-500 text-center leading-relaxed font-jost max-w-4xl mx-auto">
+      <strong>Medical disclaimer:</strong> The information on this page is for general information only and does not constitute medical advice. Mounjaro&reg; (tirzepatide) and Wegovy&reg; (semaglutide) are prescription-only medicines. Eligibility is subject to a clinical assessment by a GPhC-registered pharmacist prescriber. Results may vary. Individual weight loss outcomes depend on a number of factors including adherence to the treatment plan, lifestyle and pre-existing medical conditions. Always consult a healthcare professional before starting any new medication.
+    </p>
+  </div>
+</div>
+
+<!-- Scroll reveal JS -->
+<script>
+(function() {
+  var els = document.querySelectorAll('.yf-reveal');
+  if (!els.length) return;
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function(el) { io.observe(el); });
+})();
+</script>
+
 <?php get_footer(); ?>
