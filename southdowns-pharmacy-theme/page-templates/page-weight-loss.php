@@ -188,4 +188,101 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S3: WHY DIETS FAIL — Light gradient, stats + problem/solution cards
+     ============================================================ -->
+<section class="py-16 md:py-24" style="background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-12 md:mb-16 yf-reveal">
+      <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4">The Science Behind Weight Loss</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-jost">Why diets alone often fail &mdash; and what actually works</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto font-jost">Most people regain weight after dieting because hunger hormones work against them. Prescription medications change that equation.</p>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="grid grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-16">
+      <div class="yf-reveal text-center" data-delay="1">
+        <div class="text-3xl md:text-5xl font-bold text-blue-600 mb-2 font-jost">95%</div>
+        <div class="text-sm md:text-base text-gray-600 font-jost">of dieters regain weight within 5 years</div>
+      </div>
+      <div class="yf-reveal text-center" data-delay="2">
+        <div class="text-3xl md:text-5xl font-bold text-blue-600 mb-2 font-jost">3×</div>
+        <div class="text-sm md:text-base text-gray-600 font-jost">more weight lost with GLP-1 medication vs diet alone</div>
+      </div>
+      <div class="yf-reveal text-center" data-delay="3">
+        <div class="text-3xl md:text-5xl font-bold text-blue-600 mb-2 font-jost">68%</div>
+        <div class="text-sm md:text-base text-gray-600 font-jost">of adults in England are overweight or obese</div>
+      </div>
+    </div>
+
+    <!-- Problem / Solution two-col cards -->
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+
+      <!-- Problem card -->
+      <div class="yf-reveal yf-card-lift bg-white rounded-2xl p-8 border border-red-100 shadow-sm" data-delay="1">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 font-jost">Traditional dieting</h3>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-gray-600 font-jost">
+            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
+            Constant hunger and cravings make adherence extremely difficult
+          </li>
+          <li class="flex items-start gap-3 text-gray-600 font-jost">
+            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
+            Metabolism slows down, making weight loss progressively harder
+          </li>
+          <li class="flex items-start gap-3 text-gray-600 font-jost">
+            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
+            Hormones actively drive you to regain lost weight
+          </li>
+          <li class="flex items-start gap-3 text-gray-600 font-jost">
+            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
+            Yo-yo cycling damages long-term metabolic health
+          </li>
+        </ul>
+      </div>
+
+      <!-- Solution card -->
+      <div class="yf-reveal yf-card-lift bg-white rounded-2xl p-8 border border-blue-100 shadow-sm" data-delay="2">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 font-jost">Medical weight loss (GLP-1)</h3>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-gray-600 font-jost">
+            <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Reduces appetite at a hormonal level &mdash; hunger feels manageable
+          </li>
+          <li class="flex items-start gap-3 text-gray-600 font-jost">
+            <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Slows gastric emptying so you feel full for longer after meals
+          </li>
+          <li class="flex items-start gap-3 text-gray-600 font-jost">
+            <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Clinically proven: 10&ndash;20% body weight loss over 12 months
+          </li>
+          <li class="flex items-start gap-3 text-gray-600 font-jost">
+            <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Ongoing pharmacist support to help maintain results long-term
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
