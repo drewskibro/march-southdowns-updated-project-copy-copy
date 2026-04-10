@@ -576,4 +576,130 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S7: TESTIMONIALS — Blue gradient, 6 glassmorphism review cards
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 yf-shimmer pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-12 md:mb-16 yf-reveal">
+      <span class="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4 border border-white/20">
+        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Patient Stories
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-jost">Real patients, real results</h2>
+      <p class="text-lg text-blue-100 max-w-2xl mx-auto font-jost">Hundreds of Hampshire patients have transformed their health through our medical weight loss programme.</p>
+    </div>
+
+    <!-- 6 review cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="1">
+        <div class="flex gap-1 mb-3">
+          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
+        </div>
+        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;I've tried every diet going over the years. With Mounjaro I lost 18kg in 6 months. The Southdowns team have been brilliant &mdash; so knowledgeable and supportive throughout.&rdquo;</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">SH</div>
+          <div>
+            <div class="text-white font-semibold text-sm font-jost">Sarah H.</div>
+            <div class="text-blue-200 text-xs font-jost">Waterlooville</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="2">
+        <div class="flex gap-1 mb-3">
+          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
+        </div>
+        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;My GP had a 3-month wait. I walked into Southdowns pharmacy, had a consultation the same day and started Wegovy that afternoon. 14kg down in 5 months &mdash; absolutely life-changing.&rdquo;</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">MT</div>
+          <div>
+            <div class="text-white font-semibold text-sm font-jost">Mark T.</div>
+            <div class="text-blue-200 text-xs font-jost">Portsmouth</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="3">
+        <div class="flex gap-1 mb-3">
+          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
+        </div>
+        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;I was sceptical at first but the pharmacist explained everything so clearly. My blood sugar is now normal for the first time in years and I've lost nearly 3 stone. Highly recommend.&rdquo;</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">LR</div>
+          <div>
+            <div class="text-white font-semibold text-sm font-jost">Linda R.</div>
+            <div class="text-blue-200 text-xs font-jost">Havant</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="1">
+        <div class="flex gap-1 mb-3">
+          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
+        </div>
+        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;The monthly check-ins are what make this different from online services. Having a real pharmacist monitor my progress and adjust my dose has made all the difference. Down 22kg and counting.&rdquo;</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">DJ</div>
+          <div>
+            <div class="text-white font-semibold text-sm font-jost">David J.</div>
+            <div class="text-blue-200 text-xs font-jost">Southsea</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="2">
+        <div class="flex gap-1 mb-3">
+          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
+        </div>
+        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;I'd heard horror stories about side effects but mine were minimal. The pharmacist gave me clear advice on managing them. 11kg lost in 3 months and my joints feel amazing.&rdquo;</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">JB</div>
+          <div>
+            <div class="text-white font-semibold text-sm font-jost">Julie B.</div>
+            <div class="text-blue-200 text-xs font-jost">Waterlooville</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="3">
+        <div class="flex gap-1 mb-3">
+          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
+        </div>
+        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;Fantastic service from start to finish. No judgement, just professional support. I feel like a completely different person. The team at Portsmouth are wonderful.&rdquo;</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">RC</div>
+          <div>
+            <div class="text-white font-semibold text-sm font-jost">Rachel C.</div>
+            <div class="text-blue-200 text-xs font-jost">Portsmouth</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Trust row -->
+    <div class="flex flex-wrap justify-center gap-8 yf-reveal">
+      <div class="flex items-center gap-2 text-white font-jost">
+        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span class="font-bold">4.9/5</span><span class="text-blue-200 text-sm">average rating</span>
+      </div>
+      <div class="flex items-center gap-2 text-white font-jost">
+        <svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>
+        <span class="font-bold">400+</span><span class="text-blue-200 text-sm">verified reviews</span>
+      </div>
+      <div class="flex items-center gap-2 text-white font-jost">
+        <svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span class="font-bold">GPhC</span><span class="text-blue-200 text-sm">registered</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <?php get_footer(); ?>
