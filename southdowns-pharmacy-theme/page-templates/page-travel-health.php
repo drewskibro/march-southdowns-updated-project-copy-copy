@@ -672,4 +672,89 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S9: FAQ — White bg, sticky sidebar + 8 accordion items
+     ============================================================ -->
+<section class="py-16 md:py-24 bg-white relative overflow-hidden" id="faq">
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-50/60 rounded-full -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
+        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
+        <span class="uppercase tracking-wider text-xs font-semibold">Frequently Asked Questions</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Travel Health FAQs</h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">Everything you need to know about travel vaccinations and health advice at Southdowns Pharmacy.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
+      <!-- Sticky sidebar -->
+      <div class="lg:sticky lg:top-24 tv-reveal" data-delay="1">
+        <div class="rounded-2xl p-8 border border-blue-100" style="background:linear-gradient(135deg,#f0f4ff,#e8f0fe);">
+          <h3 class="text-xl font-bold text-slate-800 mb-4 font-jost">Ready to travel safely?</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-6 font-jost">Our travel health pharmacists are available 6 days a week. Same-day appointments usually available.</p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-blue-100">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <div><div class="font-semibold text-slate-800 text-sm font-jost">Same-Day Available</div><div class="text-xs text-gray-500 font-jost">Mon–Sat</div></div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-blue-100">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div><div class="font-semibold text-slate-800 text-sm font-jost">No GP Referral</div><div class="text-xs text-gray-500 font-jost">Walk in or book ahead</div></div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-blue-100">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.58a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div><div class="font-semibold text-slate-800 text-sm font-jost"><?php echo esc_html( $phone ); ?></div><div class="text-xs text-gray-500 font-jost">Free to call</div></div>
+            </div>
+          </div>
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="block text-center text-white font-semibold py-3.5 rounded-full shadow-lg font-jost transition-opacity hover:opacity-90 mb-3" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+            Book Travel Consultation
+          </a>
+          <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="block text-center text-blue-700 font-semibold py-3.5 rounded-full border border-blue-200 hover:border-blue-400 transition-colors font-jost">
+            Call <?php echo esc_html( $phone ); ?>
+          </a>
+        </div>
+      </div>
+
+      <!-- FAQ accordion -->
+      <div class="lg:col-span-2 space-y-4">
+        <?php
+        $faqs = [
+          ['01', 'How far in advance should I book travel vaccinations?',
+           'We recommend booking at least <strong>6–8 weeks before travel</strong>. Some vaccines require a course of injections over several weeks (e.g. Rabies requires 3 doses over 21–28 days, Hepatitis B requires 3 doses over 6 months). That said, we can still help with last-minute trips and will do our best to protect you even with limited time.'],
+          ['02', 'Do I need a GP referral for travel vaccinations?',
+           '<strong>No GP referral is needed.</strong> Simply book directly with us online or by phone. Our qualified pharmacists can assess your needs, recommend the right vaccines, and administer them all in the same appointment. No waiting lists, no bouncing between services.'],
+          ['03', 'Which vaccinations are free on the NHS for travel?',
+           'A small number of travel vaccines are available free on the NHS if your GP provides them: Hepatitis A, Typhoid, Cholera, and Polio (if boosters are needed). <strong>Most travel vaccines are private</strong> (not NHS-funded), including Yellow Fever, Rabies, Japanese Encephalitis, Hepatitis B, and Meningitis ACWY (for travel). We can advise you on what&rsquo;s available and at what cost during your consultation.'],
+          ['04', 'What happens at a travel health consultation?',
+           'Your appointment typically takes <strong>20–30 minutes</strong>. A qualified travel health pharmacist will: review your destination(s) and planned activities; check your vaccination history; discuss any relevant medical conditions; recommend appropriate vaccines and malaria prevention; and provide written destination-specific health advice. Approved vaccines are usually administered the same day.'],
+          ['05', 'Can you vaccinate children for travel?',
+           'Yes, we vaccinate children for travel. <strong>Most vaccines can be given from 12 months of age</strong>, and some from 6 weeks. We will tailor recommendations to your child&rsquo;s age and destination. Please bring any previous vaccination records to the appointment.'],
+          ['06', 'Do you stock malaria tablets?',
+           'Yes. We supply all commonly prescribed anti-malarial medications including <strong>Doxycycline</strong>, <strong>Malarone (Atovaquone/Proguanil)</strong>, and <strong>Lariam (Mefloquine)</strong>. The right choice depends on your destination, medical history, and personal preferences &mdash; we&rsquo;ll discuss all options at your consultation.'],
+          ['07', 'What is the Yellow Fever certificate (ICVP) and do you issue them?',
+           'The <strong>International Certificate of Vaccination or Prophylaxis (ICVP)</strong>, also known as the "Yellow Card," is an official WHO document proving you have been vaccinated against Yellow Fever. Some countries require it for entry. We are an NHS-approved Yellow Fever Vaccination Centre and issue ICVP certificates on the same day as vaccination. The certificate is now valid for life (no booster or renewal needed).'],
+          ['08', 'Can I get all my vaccines in one appointment?',
+           '<strong>Yes, in most cases.</strong> We can administer multiple vaccines on the same day &mdash; most travel vaccines can be given simultaneously. We stock everything you&rsquo;re likely to need and will coordinate your jabs efficiently to minimise the number of appointments required. Courses requiring multiple doses (such as Rabies or Hepatitis B) will need follow-up visits.'],
+        ];
+        foreach ( $faqs as $faq ) : ?>
+        <div class="tv-faq-item tv-reveal border border-gray-200 rounded-2xl overflow-hidden" data-delay="2">
+          <button class="tv-faq-trigger w-full flex items-center gap-4 p-6 text-left bg-white hover:bg-blue-50/50 transition-colors" type="button">
+            <span class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm font-bold font-jost" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);"><?php echo esc_html( $faq[0] ); ?></span>
+            <span class="flex-1 font-semibold text-slate-800 text-base leading-snug font-jost"><?php echo $faq[1]; ?></span>
+            <span class="tv-faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="tv-faq-answer">
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed font-jost text-sm"><?php echo $faq[2]; ?></div>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
