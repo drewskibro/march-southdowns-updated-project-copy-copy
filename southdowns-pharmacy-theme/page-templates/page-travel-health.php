@@ -836,4 +836,118 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S11: FINAL CTA — Blue gradient, trust badges, Book + phone CTAs
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white rounded-full translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-8 border border-white/20">
+      <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-60"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span></span>
+      Same-Day Appointments Available
+    </div>
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-jost" style="line-height:1.1;">Travel with Confidence.<br/>Start Here.</h2>
+    <p class="text-xl text-blue-100 leading-relaxed mb-10 max-w-2xl mx-auto font-jost">Don&rsquo;t leave your health to chance. Book a travel health consultation with Hampshire&rsquo;s most trusted pharmacy group &mdash; expert advice, all vaccines in stock, same-day appointments across 4 locations.</p>
+
+    <!-- Trust badge pills -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <?php
+      $trust_pills = [
+        ['<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>', 'GPhC Registered'],
+        ['<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>', '4 Hampshire Locations'],
+        ['<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>', 'Same-Day Appointments'],
+        ['<polyline points="20 6 9 17 4 12"/>', 'No GP Referral Needed'],
+        ['<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>', '20+ Vaccines In Stock'],
+      ];
+      foreach ( $trust_pills as $pill ) : ?>
+      <div class="flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-sm font-medium px-4 py-2 rounded-full border border-white/20 font-jost">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><?php echo $pill[0]; ?></svg>
+        <?php echo esc_html( $pill[1] ); ?>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-10">
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 font-bold text-lg px-8 py-4 rounded-full hover:bg-blue-50 transition-colors shadow-xl font-jost">
+        Book Travel Consultation
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="inline-flex items-center gap-2 text-white/90 font-semibold text-lg px-8 py-4 rounded-full border-2 border-white/30 hover:border-white/60 transition-colors font-jost">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.58a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call <?php echo esc_html( $phone ); ?>
+      </a>
+    </div>
+
+    <!-- Checklist -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto mb-10">
+      <?php
+      $checklist = [
+        'All travel vaccines in stock',
+        'No GP referral required',
+        'Written health advice included',
+        'ICVP certificates issued same-day',
+        'Malaria prevention prescriptions',
+        'Fit to fly certificates',
+      ];
+      foreach ( $checklist as $item ) : ?>
+      <div class="flex items-center gap-2 text-white/90 text-sm font-jost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <?php echo esc_html( $item ); ?>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+    <!-- Trust indicators -->
+    <div class="flex flex-wrap justify-center gap-6 text-blue-200/80 text-xs font-jost">
+      <span>&#9733; 4.9/5 Patient Rating</span>
+      <span>&middot;</span>
+      <span>1,000+ Travellers Protected</span>
+      <span>&middot;</span>
+      <span>GPhC Registered</span>
+      <span>&middot;</span>
+      <span>NHS Yellow Fever Centre</span>
+    </div>
+  </div>
+</section>
+
+<!-- Medical disclaimer -->
+<div class="bg-slate-50 border-t border-slate-200 py-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-xs text-gray-400 leading-relaxed font-jost"><strong>Medical disclaimer:</strong> The information on this page is for general guidance only and does not replace professional medical advice. Travel health recommendations vary depending on your individual medical history, destination, and activities. Always consult a qualified healthcare professional before travelling. Southdowns Pharmacy pharmacists are registered with the General Pharmaceutical Council (GPhC).</p>
+  </div>
+</div>
+
+<!-- FAQ accordion JS -->
+<script>
+(function() {
+  document.querySelectorAll('.tv-faq-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.tv-faq-item');
+      var isOpen = item.classList.contains('active');
+      document.querySelectorAll('.tv-faq-item.active').forEach(function(el) { el.classList.remove('active'); });
+      if (!isOpen) item.classList.add('active');
+    });
+  });
+})();
+</script>
+
+<!-- Scroll reveal JS -->
+<script>
+(function() {
+  var els = document.querySelectorAll('.tv-reveal');
+  if (!els.length) return;
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function(el) { io.observe(el); });
+})();
+</script>
+
 <?php get_footer(); ?>
