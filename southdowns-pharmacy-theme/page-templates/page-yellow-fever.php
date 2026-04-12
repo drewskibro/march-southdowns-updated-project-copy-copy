@@ -744,4 +744,101 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S12: FINAL CTA — Blue gradient, trust badges, CTAs, disclaimer + JS
+     ============================================================ -->
+<section class="py-16 md:py-24 overflow-hidden relative" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);" id="book">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white rounded-full translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+    <!-- Trust badge pills -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8 yf-reveal">
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30">NaTHNaC Registered</span>
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30">Certificate Included</span>
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30">Same-Day Service</span>
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30">GPhC Pharmacists</span>
+    </div>
+
+    <div class="yf-reveal mb-6">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-jost">Protect Yourself Before You Travel</h2>
+      <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-10 font-jost">Don&apos;t risk being denied boarding or quarantined on arrival. Book your yellow fever vaccination at our registered centre today.</p>
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8 yf-reveal" data-delay="1">
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-semibold px-8 py-4 rounded-full hover:bg-blue-50 transition-all shadow-lg text-lg hover:scale-[1.02] hover:shadow-xl font-jost">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Yellow Fever Vaccination
+      </a>
+      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="inline-flex items-center justify-center gap-2 text-white font-medium border-2 border-white/30 px-8 py-4 rounded-full hover:bg-white/10 transition-all text-lg hover:border-white/50 font-jost">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <?php echo esc_html( $phone ); ?>
+      </a>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white text-sm mb-6 yf-reveal" data-delay="2">
+      <span>&#10003; NaTHNaC Registered Centre</span>
+      <span>&#10003; Official ICVP Included</span>
+      <span>&#10003; Same-Day Available</span>
+      <span>&#10003; &pound;85 All-Inclusive</span>
+    </div>
+
+    <!-- Trust indicators -->
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 mt-10 yf-reveal" data-delay="3">
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">4.9/5</div>
+        <div class="text-blue-200 text-sm font-jost">Average Rating</div>
+      </div>
+      <div class="hidden md:block w-px h-12 bg-white/30"></div>
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">400+</div>
+        <div class="text-blue-200 text-sm font-jost">5-Star Reviews</div>
+      </div>
+      <div class="hidden md:block w-px h-12 bg-white/30"></div>
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">10,000+</div>
+        <div class="text-blue-200 text-sm font-jost">Happy Patients</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Medical disclaimer strip -->
+<div class="bg-gray-100 border-t border-gray-200 py-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-gray-400 text-xs leading-relaxed text-center font-jost">This information is for educational purposes and does not constitute medical advice. Yellow fever vaccination is a prescription-only medicine in the UK. Eligibility and suitability are assessed by our GPhC-registered pharmacists during your consultation. Only NaTHNaC-registered vaccination centres are authorised to issue International Certificates of Vaccination or Prophylaxis (ICVP). Information is accurate as of April 2026 and based on current NaTHNaC, WHO, and MHRA guidance.</p>
+  </div>
+</div>
+
+<!-- FAQ Accordion JS -->
+<script>
+document.querySelectorAll('.yf-faq-trigger').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = this.closest('.yf-faq-item');
+    var isActive = item.classList.contains('active');
+    document.querySelectorAll('.yf-faq-item').forEach(function(el) { el.classList.remove('active'); });
+    if (!isActive) item.classList.add('active');
+  });
+});
+</script>
+
+<!-- Scroll Reveal JS -->
+<script>
+(function() {
+  var els = document.querySelectorAll('.yf-reveal');
+  if (!els.length) return;
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function(el) { io.observe(el); });
+})();
+</script>
+
 <?php get_footer(); ?>
