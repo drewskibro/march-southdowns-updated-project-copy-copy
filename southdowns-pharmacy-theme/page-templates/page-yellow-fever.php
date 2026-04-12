@@ -321,4 +321,62 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S6: HOW IT WORKS — White bg, pharmacist photo + 3 numbered steps
+     ============================================================ -->
+<section class="py-16 md:py-24 bg-white relative overflow-hidden" id="how-it-works">
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-amber-100/20 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-amber-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100/60">
+        <span class="uppercase tracking-wider text-xs font-semibold">Your Appointment</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-4 font-jost">What to Expect</h2>
+      <p class="text-lg text-gray-500 max-w-3xl mx-auto font-jost">A streamlined, professional vaccination experience. From consultation to certified ICVP in under 30 minutes.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start yf-reveal">
+
+      <!-- Photo -->
+      <div class="relative rounded-2xl overflow-hidden shadow-xl">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop" alt="GPhC pharmacist preparing travel vaccination" class="w-full aspect-[4/3] object-cover" loading="lazy"/>
+        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg">
+          <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span class="text-slate-800 font-semibold text-sm font-jost">GPhC-Registered Pharmacists</span>
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div class="space-y-8">
+        <div class="flex gap-5 group">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">1</div>
+          <div>
+            <h4 class="text-xl font-bold text-slate-800 mb-2 font-jost">Travel Consultation</h4>
+            <p class="text-gray-600 leading-relaxed font-jost">Our yellow fever travel expert reviews your itinerary, destination countries, transit points, and medical history. We confirm whether you need vaccination and check for any contraindications.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 group">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">2</div>
+          <div>
+            <h4 class="text-xl font-bold text-slate-800 mb-2 font-jost">Vaccination</h4>
+            <p class="text-gray-600 leading-relaxed font-jost">Single injection administered into your upper arm. We use only WHO-prequalified vaccine from approved manufacturers, stored under strict cold chain conditions.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 group">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">3</div>
+          <div>
+            <h4 class="text-xl font-bold text-slate-800 mb-2 font-jost">Official Certificate Issued</h4>
+            <p class="text-gray-600 leading-relaxed font-jost">You receive your International Certificate of Vaccination or Prophylaxis (ICVP) immediately. We complete all required fields &mdash; vaccine batch number, date, official stamp, and pharmacist signature. Valid 10 days after vaccination and lasts for life.</p>
+          </div>
+        </div>
+        <div class="bg-gradient-to-r from-blue-50 to-amber-50 rounded-xl p-5 border border-blue-100 text-blue-700 text-sm font-medium flex items-center gap-3">
+          <svg class="w-5 h-5 text-blue-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span class="font-jost">Allow approx 30 minutes total &middot; Book at least 10 days before travel</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
