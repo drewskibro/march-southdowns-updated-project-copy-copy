@@ -515,4 +515,87 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S7: HOW IT WORKS — White bg, 3 photo step cards
+     ============================================================ -->
+<section class="py-16 md:py-24 bg-white relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-80 h-80 bg-blue-50/60 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
+        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
+        <span class="uppercase tracking-wider text-xs font-semibold">Simple &amp; Straightforward</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">How Your Appointment Works</h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">From booking to protected &mdash; it really is this simple. No GP referral, no long waits, no unnecessary visits.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+      <!-- Step 1 -->
+      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="1">
+        <div class="relative overflow-hidden aspect-[3/2]">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" alt="Book your travel health appointment online" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <div class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider font-jost">STEP 1</div>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Book Online or Call Us</h3>
+          <p class="text-gray-600 leading-relaxed mb-4 font-jost">Book a travel health consultation at your nearest Southdowns Pharmacy location. Same-day appointments are usually available &mdash; just call ahead to confirm. No GP referral needed.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition-colors font-jost">
+              Book Online
+            </a>
+            <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="inline-flex items-center gap-2 text-blue-600 text-sm font-semibold px-4 py-2 rounded-full border border-blue-200 hover:border-blue-400 transition-colors font-jost">
+              Call Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="2">
+        <div class="relative overflow-hidden aspect-[3/2]">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Travel health consultation with pharmacist" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <div class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider font-jost">STEP 2</div>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Your Consultation</h3>
+          <p class="text-gray-600 leading-relaxed mb-4 font-jost">A qualified travel health pharmacist reviews your destinations, activities, medical history, and travel dates. We build your personalised vaccine and health plan &mdash; typically takes 20&ndash;30 minutes.</p>
+          <ul class="space-y-1.5">
+            <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Personalised risk assessment</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Written health advice provided</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="3">
+        <div class="relative overflow-hidden aspect-[3/2]">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=400&fit=crop" alt="Travel vaccinations administered same day" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <div class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider font-jost">STEP 3</div>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Vaccinated &amp; Ready to Go</h3>
+          <p class="text-gray-600 leading-relaxed mb-4 font-jost">Approved vaccines are administered the same day, no follow-up visit needed. You leave with your vaccination record, written health advice, and the confidence to travel safely.</p>
+          <ul class="space-y-1.5">
+            <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Certificates issued same day</li>
+            <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Complete vaccination record kept</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
