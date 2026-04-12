@@ -133,4 +133,43 @@ $phone       = sp_phone();
 
 </section>
 
+
+<!-- ============================================================
+     S2: KEY FACTS — Blue gradient, 4 glassmorphism stat cards
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white rounded-full translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 md:mb-14">
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/30">
+        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span></span>
+        <span class="uppercase tracking-wider text-xs font-semibold">At a Glance</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Key Facts About the Yellow Fever Vaccine</h2>
+      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">Everything you need to know before booking your vaccination at Southdowns Pharmacy.</p>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div class="yf-reveal yf-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="1">
+        <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 font-jost">&infin;</div>
+        <div class="text-sm md:text-base text-blue-100 font-medium">Lifetime Protection</div>
+      </div>
+      <div class="yf-reveal yf-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="2">
+        <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 font-jost">ICVP</div>
+        <div class="text-sm md:text-base text-blue-100 font-medium">Certificate Included</div>
+      </div>
+      <div class="yf-reveal yf-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="3">
+        <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 font-jost">Same</div>
+        <div class="text-sm md:text-base text-blue-100 font-medium">Day Appointments</div>
+      </div>
+      <div class="yf-reveal yf-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="4">
+        <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 font-jost">4</div>
+        <div class="text-sm md:text-base text-blue-100 font-medium">Hampshire Locations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
