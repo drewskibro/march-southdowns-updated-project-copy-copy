@@ -172,4 +172,36 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S3: WHAT IS YELLOW FEVER — Light gradient, two-col layout
+     ============================================================ -->
+<section class="py-16 md:py-24 bg-gradient-to-br from-slate-50 via-white to-amber-50/30 relative overflow-hidden" id="about">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-amber-100/30 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center yf-reveal">
+      <div>
+        <span class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-50 to-blue-50 text-amber-700 text-xs font-semibold px-4 py-2 rounded-full mb-6 border border-amber-200/60 uppercase tracking-wider">What You Need to Know</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-jost">What Is Yellow Fever?</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-6 font-jost">Yellow Fever is a serious viral disease transmitted by infected mosquitoes across sub-Saharan Africa, South America and parts of Central America. In severe cases, the disease carries a fatality rate of up to 50%. There is no specific antiviral treatment &mdash; vaccination is the only effective prevention.</p>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8 font-jost">Many countries legally require proof of yellow fever vaccination for entry, even if you are simply transiting through an airport in an affected region. Without an official ICVP, you may be denied boarding, quarantined on arrival, or refused entry entirely.</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-5 border border-blue-100 shadow-sm hover:shadow-md transition-shadow yf-card-lift">
+            <div class="text-3xl font-bold text-blue-600 mb-1 font-jost">99%</div>
+            <div class="text-gray-500 text-sm font-jost">Protection from a single vaccine dose within 30 days</div>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-amber-100 shadow-sm hover:shadow-md transition-shadow yf-card-lift">
+            <div class="text-3xl font-bold text-amber-500 mb-1 font-jost">Valid for Life</div>
+            <div class="text-gray-500 text-sm font-jost">One vaccination. Your ICVP certificate never expires.</div>
+          </div>
+        </div>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+        <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80&auto=format&fit=crop" alt="Healthcare professional administering a travel vaccination" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
