@@ -598,4 +598,78 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S8: TRUST / ABOUT — Light gradient, two-col with bullet points + photo
+     ============================================================ -->
+<section class="py-16 md:py-24 relative overflow-hidden" style="background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 50%, #f5f8ff 100%);">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Left: copy -->
+      <div class="tv-reveal" data-delay="1">
+        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
+          <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
+          <span class="uppercase tracking-wider text-xs font-semibold">GPhC Registered &middot; NHS Partner</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Hampshire&rsquo;s Dedicated Travel Health Experts</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6 font-jost">Southdowns Pharmacy Group has been protecting Hampshire travellers for years. Our dedicated travel health team combines clinical expertise with genuine care to make your trip preparation as straightforward as possible.</p>
+        <ul class="space-y-4 mb-8">
+          <?php
+          $trust_points = [
+            ['GPhC Registered Pharmacists', 'All our travel health pharmacists are registered with the General Pharmaceutical Council and hold specialist travel health qualifications.'],
+            ['NHS-Designated Yellow Fever Centre', 'One of very few approved Yellow Fever vaccination centres in Hampshire, we meet NHS standards for international travel certification.'],
+            ['4 Convenient Hampshire Locations', 'Cosham, Emsworth, Havant, and Purbrook &mdash; with free parking, wheelchair access, and extended opening hours at most sites.'],
+            ['Trusted by Local GPs', 'Hampshire GPs refer their patients to us for travel health advice, knowing they&rsquo;ll receive expert care and up-to-date guidance.'],
+          ];
+          foreach ( $trust_points as $point ) : ?>
+          <li class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="font-bold text-slate-800 font-jost mb-1"><?php echo esc_html( $point[0] ); ?></div>
+              <div class="text-gray-600 text-sm leading-relaxed font-jost"><?php echo $point[1]; ?></div>
+            </div>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+        <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg font-jost transition-opacity hover:opacity-90" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+          Book Your Appointment
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Right: photo + floating badge -->
+      <div class="tv-reveal relative" data-delay="2">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&h=900&fit=crop" alt="Southdowns Pharmacy travel health pharmacist" class="w-full h-full object-cover" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
+        </div>
+        <!-- Floating trust badge -->
+        <div class="absolute -bottom-4 -left-4 md:-left-8 bg-white rounded-2xl shadow-xl p-5 max-w-[220px]">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <span class="font-bold text-slate-800 text-sm font-jost">GPhC Registered</span>
+          </div>
+          <p class="text-gray-500 text-xs leading-relaxed font-jost">Fully qualified travel health pharmacists at all 4 locations</p>
+          <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-1">
+            <?php for($s=0;$s<5;$s++): ?><svg width="14" height="14" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><?php endfor; ?>
+            <span class="text-xs text-gray-500 ml-1 font-jost">4.9/5 Rating</span>
+          </div>
+        </div>
+        <!-- Second floating badge top right -->
+        <div class="absolute -top-4 -right-4 md:-right-8 bg-white rounded-2xl shadow-xl p-4 max-w-[180px]">
+          <div class="text-2xl font-bold text-blue-700 font-jost">1,000+</div>
+          <div class="text-xs text-gray-500 font-jost">Travellers protected each year</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
