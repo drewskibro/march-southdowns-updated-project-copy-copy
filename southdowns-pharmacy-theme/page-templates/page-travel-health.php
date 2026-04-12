@@ -444,4 +444,75 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S6: AVAILABLE VACCINES — Blue gradient, 12 vaccine name tiles
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);" id="vaccines">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white rounded-full -translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+        <span class="uppercase tracking-wider text-xs font-semibold">Always In Stock</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Travel Vaccines We Provide</h2>
+      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">No prescription, no waiting lists, no GP appointments. All vaccines are available same-day across our 4 Hampshire locations.</p>
+    </div>
+
+    <?php
+    $vaccines = [
+      ['Yellow Fever',           'ICVP certificate included &middot; Valid for life',           '#f59e0b', true ],
+      ['Hepatitis A',            'Single dose gives 1 year protection, booster lasts 25 years', '#3b82f6', false],
+      ['Hepatitis B',            'Course of 3 doses over 6 months &middot; Long-term protection','#3b82f6', false],
+      ['Typhoid',                'Injection or oral capsules &middot; 3-year protection',        '#3b82f6', false],
+      ['Rabies (Pre-Exposure)',   '3-dose course &middot; Essential for adventure travellers',   '#3b82f6', false],
+      ['Meningitis ACWY',        'Single dose &middot; Required for Hajj / Umrah pilgrims',      '#3b82f6', false],
+      ['Japanese Encephalitis',  '2-dose course &middot; For rural Asia travel',                '#3b82f6', false],
+      ['Diphtheria, Tetanus &amp; Polio', 'Combined booster &middot; 10-year protection',       '#3b82f6', false],
+      ['Cholera',                'Oral vaccine &middot; Includes diarrhoea protection',         '#3b82f6', false],
+      ['Chickenpox (Varicella)', 'For travellers without prior immunity',                       '#3b82f6', false],
+      ['MMR (Measles, Mumps, Rubella)', 'Catch-up for unvaccinated adults',                    '#3b82f6', false],
+      ['Travel Flu &amp; Pneumo', 'For high-risk travellers and over-65s',                     '#3b82f6', false],
+    ];
+    ?>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <?php foreach ( $vaccines as $i => $v ) :
+        $delay = ( $i % 3 ) + 1;
+        $is_yf = $v[3];
+      ?>
+      <div class="tv-reveal tv-card-lift flex items-start gap-4 p-5 rounded-2xl border backdrop-blur-sm <?php echo $is_yf ? 'bg-amber-500/20 border-amber-400/40' : 'bg-white/10 border-white/20 hover:bg-white/15'; ?> transition-colors" data-delay="<?php echo $delay; ?>">
+        <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center <?php echo $is_yf ? 'bg-amber-400/30' : 'bg-white/20'; ?>">
+          <?php if ( $is_yf ) : ?>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <?php else : ?>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <?php endif; ?>
+        </div>
+        <div>
+          <div class="font-bold <?php echo $is_yf ? 'text-amber-200' : 'text-white'; ?> font-jost mb-1"><?php echo $v[0]; ?></div>
+          <div class="text-xs <?php echo $is_yf ? 'text-amber-100/80' : 'text-blue-100/80'; ?> font-jost"><?php echo $v[1]; ?></div>
+        </div>
+        <?php if ( $is_yf ) : ?>
+        <div class="ml-auto flex-shrink-0">
+          <span class="bg-amber-400/30 text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full font-jost">ICVP</span>
+        </div>
+        <?php endif; ?>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+    <div class="mt-10 p-5 rounded-2xl bg-white/10 border border-white/20 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <svg class="flex-shrink-0 w-8 h-8 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <p class="text-blue-100 text-sm leading-relaxed font-jost flex-1">Some vaccinations require a course of doses over several weeks. We recommend booking your appointment at least <strong class="text-white">6–8 weeks before travel</strong>, though we can still help with last-minute trips.</p>
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="flex-shrink-0 inline-flex items-center gap-2 bg-white text-blue-700 font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-blue-50 transition-colors shadow font-jost">
+        Book Now <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
