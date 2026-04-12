@@ -107,4 +107,39 @@ $phone       = sp_phone();
 
 </section>
 
+
+<!-- ============================================================
+     S2: STATS BAR — Blue gradient, 4 glassmorphism stat cards
+     ============================================================ -->
+<section class="relative py-16 md:py-20 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white rounded-full translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div class="tv-reveal tv-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="1">
+        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-jost">Same Day</div>
+        <div class="text-sm md:text-base text-blue-100 font-medium font-jost">Travel Vaccinations</div>
+        <div class="text-xs text-blue-200/60 mt-1 font-jost">No referral needed, no long waits</div>
+      </div>
+      <div class="tv-reveal tv-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="2">
+        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-jost">1,000+</div>
+        <div class="text-sm md:text-base text-blue-100 font-medium font-jost">Travellers Protected</div>
+        <div class="text-xs text-blue-200/60 mt-1 font-jost">Safe journeys across 50+ countries</div>
+      </div>
+      <div class="tv-reveal tv-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="3">
+        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-jost">20+</div>
+        <div class="text-sm md:text-base text-blue-100 font-medium font-jost">Vaccines In Stock</div>
+        <div class="text-xs text-blue-200/60 mt-1 font-jost">Complete travel protection</div>
+      </div>
+      <div class="tv-reveal tv-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="4">
+        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-jost">4.9&#9733;</div>
+        <div class="text-sm md:text-base text-blue-100 font-medium font-jost">Patient Rating</div>
+        <div class="text-xs text-blue-200/60 mt-1 font-jost">GPhC registered pharmacists</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
