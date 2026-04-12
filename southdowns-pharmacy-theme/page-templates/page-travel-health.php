@@ -208,4 +208,124 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S4: POPULAR DESTINATIONS — Blue gradient, 8 destination photo cards
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);" id="destinations">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white rounded-full translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="uppercase tracking-wider text-xs font-semibold">Popular Travel Destinations</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Where Are You Headed?</h2>
+      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">From tropical Asia to safari Africa, we have the vaccinations and expert advice to keep you safe wherever your adventure takes you.</p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+
+      <!-- Thailand -->
+      <div class="tv-reveal tv-card-lift relative group overflow-hidden rounded-2xl aspect-[4/3]" data-delay="1">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=450&fit=crop" alt="Thailand travel vaccinations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-4">
+          <div class="text-xs text-blue-200 font-semibold uppercase tracking-wider mb-1 font-jost">Southeast Asia</div>
+          <h3 class="text-white font-bold text-lg leading-tight mb-1 font-jost">Thailand</h3>
+          <p class="text-blue-100/80 text-xs font-jost">Hep A/B &middot; Typhoid &middot; Rabies</p>
+        </div>
+      </div>
+
+      <!-- India -->
+      <div class="tv-reveal tv-card-lift relative group overflow-hidden rounded-2xl aspect-[4/3]" data-delay="2">
+        <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=450&fit=crop" alt="India travel vaccinations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-4">
+          <div class="text-xs text-blue-200 font-semibold uppercase tracking-wider mb-1 font-jost">South Asia</div>
+          <h3 class="text-white font-bold text-lg leading-tight mb-1 font-jost">India</h3>
+          <p class="text-blue-100/80 text-xs font-jost">Hep A/B &middot; Typhoid &middot; DTP</p>
+        </div>
+      </div>
+
+      <!-- Kenya -->
+      <div class="tv-reveal tv-card-lift relative group overflow-hidden rounded-2xl aspect-[4/3]" data-delay="3">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&h=450&fit=crop" alt="Kenya travel vaccinations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-4">
+          <div class="text-xs text-blue-200 font-semibold uppercase tracking-wider mb-1 font-jost">East Africa</div>
+          <h3 class="text-white font-bold text-lg leading-tight mb-1 font-jost">Kenya</h3>
+          <p class="text-blue-100/80 text-xs font-jost">Yellow Fever &middot; Typhoid &middot; Malaria</p>
+        </div>
+      </div>
+
+      <!-- Vietnam -->
+      <div class="tv-reveal tv-card-lift relative group overflow-hidden rounded-2xl aspect-[4/3]" data-delay="4">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&h=450&fit=crop" alt="Vietnam travel vaccinations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-4">
+          <div class="text-xs text-blue-200 font-semibold uppercase tracking-wider mb-1 font-jost">Southeast Asia</div>
+          <h3 class="text-white font-bold text-lg leading-tight mb-1 font-jost">Vietnam</h3>
+          <p class="text-blue-100/80 text-xs font-jost">Hep A &middot; Typhoid &middot; Rabies</p>
+        </div>
+      </div>
+
+      <!-- Tanzania -->
+      <div class="tv-reveal tv-card-lift relative group overflow-hidden rounded-2xl aspect-[4/3]" data-delay="1">
+        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&h=450&fit=crop" alt="Tanzania safari travel vaccinations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-4">
+          <div class="text-xs text-blue-200 font-semibold uppercase tracking-wider mb-1 font-jost">East Africa</div>
+          <h3 class="text-white font-bold text-lg leading-tight mb-1 font-jost">Tanzania</h3>
+          <p class="text-blue-100/80 text-xs font-jost">Yellow Fever &middot; Malaria &middot; Typhoid</p>
+        </div>
+      </div>
+
+      <!-- Morocco -->
+      <div class="tv-reveal tv-card-lift relative group overflow-hidden rounded-2xl aspect-[4/3]" data-delay="2">
+        <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=600&h=450&fit=crop" alt="Morocco travel vaccinations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-4">
+          <div class="text-xs text-blue-200 font-semibold uppercase tracking-wider mb-1 font-jost">North Africa</div>
+          <h3 class="text-white font-bold text-lg leading-tight mb-1 font-jost">Morocco</h3>
+          <p class="text-blue-100/80 text-xs font-jost">Hep A &middot; Typhoid &middot; Rabies</p>
+        </div>
+      </div>
+
+      <!-- Indonesia / Bali -->
+      <div class="tv-reveal tv-card-lift relative group overflow-hidden rounded-2xl aspect-[4/3]" data-delay="3">
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=450&fit=crop" alt="Indonesia Bali travel vaccinations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-4">
+          <div class="text-xs text-blue-200 font-semibold uppercase tracking-wider mb-1 font-jost">Southeast Asia</div>
+          <h3 class="text-white font-bold text-lg leading-tight mb-1 font-jost">Indonesia / Bali</h3>
+          <p class="text-blue-100/80 text-xs font-jost">Hep A/B &middot; Typhoid &middot; Rabies</p>
+        </div>
+      </div>
+
+      <!-- Dubai / UAE -->
+      <div class="tv-reveal tv-card-lift relative group overflow-hidden rounded-2xl aspect-[4/3]" data-delay="4">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=450&fit=crop" alt="Dubai UAE travel vaccinations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-4">
+          <div class="text-xs text-blue-200 font-semibold uppercase tracking-wider mb-1 font-jost">Middle East</div>
+          <h3 class="text-white font-bold text-lg leading-tight mb-1 font-jost">Dubai / UAE</h3>
+          <p class="text-blue-100/80 text-xs font-jost">Hep A &middot; DTP &middot; Advice</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- CTA strip -->
+    <div class="text-center mt-10">
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-7 py-3.5 rounded-full hover:bg-blue-50 transition-colors shadow-lg font-jost">
+        Get Your Personalised Vaccine Plan
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+      <p class="text-blue-200 text-sm mt-3 font-jost">Not seeing your destination? We cover 150+ countries &mdash; book a consultation for a personalised assessment.</p>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
