@@ -757,4 +757,83 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S10: LOCATIONS — Light gradient, 4 branch cards
+     ============================================================ -->
+<section class="py-16 md:py-24 relative overflow-hidden" style="background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 50%, #f5f8ff 100%);" id="locations">
+  <div class="absolute top-0 left-0 w-96 h-96 bg-blue-100/40 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="uppercase tracking-wider text-xs font-semibold">4 Hampshire Locations</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Visit Your Nearest Travel Clinic</h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">All four Southdowns Pharmacy locations offer the full range of travel health services. Same-day appointments usually available &mdash; call ahead to confirm.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <?php
+      $branch_images = [
+        'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&h=400&fit=crop',
+        'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop',
+      ];
+      for ( $b = 1; $b <= 4; $b++ ) :
+        $name    = sp_branch( $b, 'name' );
+        $addr1   = sp_branch( $b, 'address_line1' );
+        $addr2   = sp_branch( $b, 'address_line2' );
+        $hours   = sp_branch( $b, 'hours_weekday' );
+        $img     = $branch_images[ $b - 1 ];
+        $delay   = $b;
+      ?>
+      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="<?php echo $delay; ?>">
+        <div class="relative overflow-hidden aspect-[4/3]">
+          <img src="<?php echo esc_attr( $img ); ?>" alt="<?php echo esc_attr( $name ); ?> travel health clinic" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
+          <div class="absolute bottom-3 left-3">
+            <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full font-jost">Travel Clinic</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-bold text-slate-800 mb-2 font-jost"><?php echo esc_html( $name ); ?></h3>
+          <div class="space-y-1.5 text-sm text-gray-600 mb-4 font-jost">
+            <div class="flex items-start gap-2">
+              <svg class="flex-shrink-0 mt-0.5 text-blue-500" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span><?php echo esc_html( $addr1 ); ?><?php if ($addr2) echo ', ' . esc_html( $addr2 ); ?></span>
+            </div>
+            <?php if ( $hours ) : ?>
+            <div class="flex items-start gap-2">
+              <svg class="flex-shrink-0 mt-0.5 text-blue-500" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span><?php echo esc_html( $hours ); ?></span>
+            </div>
+            <?php endif; ?>
+          </div>
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="block text-center text-blue-700 font-semibold text-sm py-2.5 rounded-full border border-blue-200 hover:border-blue-400 hover:bg-blue-50 transition-colors font-jost">
+            Book at This Branch
+          </a>
+        </div>
+      </div>
+      <?php endfor; ?>
+    </div>
+
+    <!-- Info banner -->
+    <div class="mt-10 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-5 bg-white border border-blue-100 shadow-sm">
+      <div class="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.58a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div class="flex-1">
+        <div class="font-bold text-slate-800 font-jost mb-1">Not sure which branch to visit?</div>
+        <p class="text-gray-600 text-sm font-jost">All four locations offer the complete range of travel health services. Call <strong><?php echo esc_html( $phone ); ?></strong> and we&rsquo;ll help you find the best appointment for your schedule and location.</p>
+      </div>
+      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="flex-shrink-0 inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-full font-jost transition-opacity hover:opacity-90" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+        Call <?php echo esc_html( $phone ); ?>
+      </a>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
