@@ -448,4 +448,74 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S8: PRICING — White bg, animated glow card, £85 all-inclusive
+     ============================================================ -->
+<section class="py-16 md:py-24 bg-white relative overflow-hidden" id="pricing">
+  <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(#1e3a8a 1px, transparent 1px); background-size: 32px 32px;"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-amber-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100/60">
+        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
+        <span class="uppercase tracking-wider text-xs font-semibold">Transparent Pricing</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-4 font-jost">Yellow Fever Vaccine Pricing</h2>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto font-jost">All-inclusive price. No hidden fees. No consultation charges.</p>
+    </div>
+
+    <div class="max-w-lg mx-auto yf-reveal">
+      <div class="yf-glow-card relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <div class="bg-gradient-to-r from-blue-600 to-blue-500 text-center py-3.5 relative overflow-hidden">
+          <div class="yf-shimmer absolute inset-0"></div>
+          <span class="relative text-white font-semibold text-sm uppercase tracking-wider">All-Inclusive &middot; Everything Included</span>
+        </div>
+        <div class="p-8 text-center">
+          <div class="mb-6">
+            <span class="text-5xl md:text-6xl font-bold text-slate-800 font-jost">&pound;85</span>
+            <span class="text-gray-500 text-lg ml-2 font-jost">per person</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-8 font-jost">Single lifetime dose</p>
+          <ul class="text-left space-y-3 mb-8">
+            <li class="flex items-start gap-3 text-gray-600 font-jost">
+              <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              Yellow fever vaccine (single lifetime dose)
+            </li>
+            <li class="flex items-start gap-3 text-gray-600 font-jost">
+              <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              GPhC pharmacist travel health consultation
+            </li>
+            <li class="flex items-start gap-3 text-gray-600 font-jost">
+              <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              Full travel health risk assessment
+            </li>
+            <li class="flex items-start gap-3 text-gray-600 font-jost">
+              <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              15-minute post-vaccination observation
+            </li>
+            <li class="flex items-start gap-3 text-gray-600 font-jost">
+              <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              Official ICVP Certificate included
+            </li>
+            <li class="flex items-start gap-3 text-gray-600 font-jost">
+              <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              No additional fees whatsoever
+            </li>
+          </ul>
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="block w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 rounded-full text-center transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] font-jost">
+            Book Your Vaccination
+          </a>
+          <p class="text-gray-400 text-xs mt-4 font-jost">Certificate valid for life &middot; Valid 10 days post-vaccination</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto mt-8 bg-blue-50 rounded-2xl p-6 border border-blue-100 flex items-start gap-4 yf-reveal">
+      <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <p class="text-gray-600 text-sm leading-relaxed font-jost">Unlike many vaccination centres, we include the official ICVP certificate in our price &mdash; some providers charge &pound;20&ndash;40 extra. The price you see is the price you pay. We accept cash, card, and contactless. <strong>Book at least 10 days before departure.</strong></p>
+    </div>
+
+  </div>
+</section>
+
 <?php get_footer(); ?>
