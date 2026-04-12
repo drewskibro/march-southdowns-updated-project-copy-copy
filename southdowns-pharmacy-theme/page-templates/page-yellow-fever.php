@@ -518,4 +518,76 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S9: WHY CHOOSE US — Blue gradient, 6-card grid
+     ============================================================ -->
+<section class="py-16 md:py-24 overflow-hidden relative" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white rounded-full -translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 md:mb-16">
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/30">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span class="uppercase tracking-wider text-xs font-semibold">Why Us</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Why Choose Southdowns Pharmacy</h2>
+      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">Officially designated NaTHNaC Yellow Fever Vaccination Centre &mdash; the only type of centre authorised to issue valid ICVP certificates.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 yf-reveal">
+
+      <div class="group yf-card-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
+        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold mb-3 font-jost">NaTHNaC Registered Centre</h3>
+        <p class="text-blue-100 text-base leading-relaxed font-jost">Officially designated by the National Travel Health Network and Centre as an authorised Yellow Fever Vaccination Centre.</p>
+      </div>
+
+      <div class="group yf-card-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
+        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold mb-3 font-jost">GPhC Registered Pharmacists</h3>
+        <p class="text-blue-100 text-base leading-relaxed font-jost">All vaccinations administered by General Pharmaceutical Council registered pharmacists with specialist travel health training.</p>
+      </div>
+
+      <div class="group yf-card-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
+        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold mb-3 font-jost">WHO-Prequalified Vaccine</h3>
+        <p class="text-blue-100 text-base leading-relaxed font-jost">Only WHO-prequalified yellow fever vaccine from licensed UK manufacturers, stored under strict cold-chain protocols.</p>
+      </div>
+
+      <div class="group yf-card-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
+        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold mb-3 font-jost">4 Hampshire Locations</h3>
+        <p class="text-blue-100 text-base leading-relaxed font-jost">Serving Portsmouth, Southsea, Waterlooville, Havant, and wider Hampshire. Easy parking at all sites.</p>
+      </div>
+
+      <div class="group yf-card-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
+        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold mb-3 font-jost">Same-Day Appointments</h3>
+        <p class="text-blue-100 text-base leading-relaxed font-jost">Last-minute travel? We offer same-day vaccination appointments subject to availability. Walk-ins welcome.</p>
+      </div>
+
+      <div class="group yf-card-lift bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
+        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold mb-3 font-jost">Complete Travel Health</h3>
+        <p class="text-blue-100 text-base leading-relaxed font-jost">We provide comprehensive pre-travel consultations covering typhoid, hepatitis, rabies, meningitis, and malaria alongside yellow fever.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
