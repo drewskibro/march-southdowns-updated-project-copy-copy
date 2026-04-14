@@ -741,4 +741,104 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S13: FINAL CTA — Blue gradient, trust pills + Book CTA
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white rounded-full translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <span class="bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20 font-jost">TympaHealth Certified</span>
+      <span class="bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20 font-jost">Free Follow-Up</span>
+      <span class="bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20 font-jost">Same-Day Available</span>
+      <span class="bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20 font-jost">Ages 18+ Only</span>
+    </div>
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Clearer Hearing Starts Today</h2>
+    <p class="text-xl text-blue-100 leading-relaxed mb-10 max-w-2xl mx-auto font-jost">Don&rsquo;t suffer in silence. Book your ear wax removal appointment at one of our TympaHealth-equipped branches and experience immediate relief.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition-colors shadow-xl text-lg font-jost">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Ear Wax Removal
+      </a>
+      <a href="#locations" class="inline-flex items-center justify-center gap-2 text-white font-medium border-2 border-white/30 px-8 py-4 rounded-full hover:bg-white/10 transition-colors text-lg font-jost">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Find Your Nearest Branch
+      </a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white text-sm mb-4 font-jost">
+      <span>&#10003; TympaHealth Certified</span>
+      <span>&#10003; Free Follow-Up</span>
+      <span>&#10003; Same-Day Available</span>
+      <span>&#10003; From &pound;49</span>
+    </div>
+    <p class="text-blue-200/70 text-sm font-jost">Serving Emsworth, Havant, Leigh Park, Rowlands Castle &amp; wider Hampshire</p>
+    <!-- Trust indicators -->
+    <div class="mt-10 flex flex-wrap justify-center items-center gap-8 md:gap-12">
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">4.9/5</div>
+        <div class="text-blue-200 text-sm font-jost">Average Rating</div>
+      </div>
+      <div class="hidden md:block w-px h-12 bg-white/30"></div>
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">400+</div>
+        <div class="text-blue-200 text-sm font-jost">5-Star Reviews</div>
+      </div>
+      <div class="hidden md:block w-px h-12 bg-white/30"></div>
+      <div class="text-center">
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">10,000+</div>
+        <div class="text-blue-200 text-sm font-jost">Happy Patients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Age restriction notice -->
+<div class="bg-amber-50 border-t border-amber-200 py-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-start gap-3">
+      <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <p class="text-amber-800 text-sm leading-relaxed font-jost"><strong>Age Restriction:</strong> This service is strictly for age 18+ only. If you make a booking for under 18, there is a strict no-refund policy, as the clinical time has been allocated for the original appointment made. Please do not book for any persons under the age of 18.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Medical disclaimer -->
+<div class="bg-gray-50 border-t border-gray-200 py-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-gray-400 text-xs leading-relaxed text-center font-jost">This information is for educational purposes and does not constitute medical advice. Ear wax removal by microsuction is a clinical procedure performed by trained healthcare professionals. Suitability is assessed during your initial consultation. Southdowns Pharmacy pharmacists are registered with the General Pharmaceutical Council (GPhC).</p>
+  </div>
+</div>
+
+<!-- FAQ accordion JS -->
+<script>
+(function() {
+  document.querySelectorAll('.ew-faq-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.ew-faq-item');
+      var isOpen = item.classList.contains('active');
+      document.querySelectorAll('.ew-faq-item.active').forEach(function(el) { el.classList.remove('active'); });
+      if (!isOpen) item.classList.add('active');
+    });
+  });
+})();
+</script>
+
+<!-- Scroll reveal JS -->
+<script>
+(function() {
+  var els = document.querySelectorAll('.ew-reveal');
+  if (!els.length) return;
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function(el) { io.observe(el); });
+})();
+</script>
+
 <?php get_footer(); ?>
