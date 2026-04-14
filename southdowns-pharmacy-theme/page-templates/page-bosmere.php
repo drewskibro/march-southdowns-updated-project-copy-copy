@@ -277,5 +277,99 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
 </section>
 
 
+<!-- ============================================================
+     S3: TESTIMONIALS
+     ============================================================ -->
+<section class="py-16 lg:py-24" style="background:linear-gradient(180deg,#f8fafc 0%,#eff6ff 60%,#f8fafc 100%);">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+
+    <div class="text-center mb-12 loc-reveal">
+      <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-sm font-medium px-5 py-2 rounded-full mb-5 border border-blue-200 font-jost">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        Patient Reviews
+      </div>
+      <h2 class="text-gray-900 text-3xl lg:text-4xl font-semibold font-jost mb-4">What Our Bosmere Patients Say</h2>
+      <p class="text-gray-500 text-lg font-jost max-w-2xl mx-auto">Real experiences from patients at our Bosmere Medical Centre branch.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+
+      <!-- Review 1 -->
+      <div class="bg-white rounded-2xl shadow-sm border border-blue-100 p-7 loc-reveal loc-card-lift" style="transition-delay:0s;">
+        <div class="flex gap-1 mb-4">
+          <?php for($s=0;$s<5;$s++): ?><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><?php endfor; ?>
+        </div>
+        <p class="text-gray-700 text-base font-jost leading-relaxed mb-6 italic">"Having a pharmacy right inside the medical centre is incredibly convenient. I can see my doctor and collect my prescription all in one visit. The staff are always welcoming and efficient."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-sm font-bold font-jost">PK</span>
+          </div>
+          <div>
+            <div class="text-gray-900 font-semibold text-sm font-jost">Patricia K.</div>
+            <div class="text-gray-400 text-xs font-jost">Prescription Services &middot; March 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-white rounded-2xl shadow-sm border border-blue-100 p-7 loc-reveal loc-card-lift" style="transition-delay:0.1s;">
+        <div class="flex gap-1 mb-4">
+          <?php for($s=0;$s<5;$s++): ?><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><?php endfor; ?>
+        </div>
+        <p class="text-gray-700 text-base font-jost leading-relaxed mb-6 italic">"I needed a travel health consultation at short notice and they fit me in the same day. Thorough, professional, and the evening hours are a lifesaver when you can't get away from work during the day."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-sm font-bold font-jost">SB</span>
+          </div>
+          <div>
+            <div class="text-gray-900 font-semibold text-sm font-jost">Simon B.</div>
+            <div class="text-gray-400 text-xs font-jost">Travel Health &middot; February 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-white rounded-2xl shadow-sm border border-blue-100 p-7 loc-reveal loc-card-lift" style="transition-delay:0.2s;">
+        <div class="flex gap-1 mb-4">
+          <?php for($s=0;$s<5;$s++): ?><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><?php endfor; ?>
+        </div>
+        <p class="text-gray-700 text-base font-jost leading-relaxed mb-6 italic">"Came in on a Sunday for a minor ailment — couldn't believe the pharmacy was open. The pharmacist was just as thorough as any weekday visit. Brilliant service and so handy being inside the medical centre."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-sm font-bold font-jost">AH</span>
+          </div>
+          <div>
+            <div class="text-gray-900 font-semibold text-sm font-jost">Angela H.</div>
+            <div class="text-gray-400 text-xs font-jost">Minor Ailments &middot; January 2025</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /Review cards -->
+
+    <!-- Trust strip -->
+    <div class="flex flex-wrap items-center justify-center gap-8 loc-reveal">
+      <div class="flex items-center gap-3">
+        <div class="flex gap-0.5">
+          <?php for($s=0;$s<5;$s++): ?><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><?php endfor; ?>
+        </div>
+        <span class="text-gray-700 font-semibold text-sm font-jost">4.9/5 Average Rating</span>
+      </div>
+      <div class="w-px h-6 bg-gray-300 hidden md:block"></div>
+      <div class="text-gray-700 font-semibold text-sm font-jost">Open 7 Days a Week</div>
+      <div class="w-px h-6 bg-gray-300 hidden md:block"></div>
+      <div class="text-gray-700 font-semibold text-sm font-jost">GPhC Registered Pharmacy</div>
+      <div class="w-px h-6 bg-gray-300 hidden md:block"></div>
+      <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-blue-700 transition-colors shadow-md font-jost">
+        Book Appointment
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
 <?php get_footer(); ?>
+
 
