@@ -445,7 +445,155 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
 </section>
 
 
+<!-- ============================================================
+     S5: OTHER BRANCHES
+     ============================================================ -->
+<?php
+$other_branches = [
+  [
+    'name'     => 'Emsworth',
+    'addr'     => '2-4 Central Buildings, Emsworth, PO10 7DU',
+    'phone'    => '01243 968 869',
+    'phone_raw'=> '01243968869',
+    'hours_wd' => 'Mon–Fri 9am–7pm',
+    'hours_sat'=> 'Sat 9am–5pm',
+    'services' => 8,
+    'img'      => 'https://images.unsplash.com/photo-1582560475093-ba66accbc424?w=600&h=400&fit=crop',
+    'url'      => home_url('/emsworth/'),
+  ],
+  [
+    'name'     => 'Southsea',
+    'addr'     => '64 Marmion Road, Southsea, PO5 2AT',
+    'phone'    => '023 9282 2044',
+    'phone_raw'=> '02392822044',
+    'hours_wd' => 'Mon–Fri 9am–6pm',
+    'hours_sat'=> 'Sat 9am–1pm',
+    'services' => 10,
+    'img'      => 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop',
+    'url'      => home_url('/southsea/'),
+  ],
+  [
+    'name'     => 'Leigh Park',
+    'addr'     => 'Leigh Park, Hampshire',
+    'phone'    => sp_phone(),
+    'phone_raw'=> sp_phone_raw(),
+    'hours_wd' => 'Mon–Fri 9am–6pm',
+    'hours_sat'=> 'Sat 9am–1pm',
+    'services' => 8,
+    'img'      => 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=600&h=400&fit=crop',
+    'url'      => home_url('/leigh-park/'),
+  ],
+];
+?>
+<section class="py-16 lg:py-24" style="background:linear-gradient(180deg,#f8fafc 0%,#eff6ff 50%,#dbeafe 100%);">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+
+    <div class="text-center mb-12 loc-reveal">
+      <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-sm font-medium px-5 py-2 rounded-full mb-5 border border-blue-200 font-jost">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Our Locations
+      </div>
+      <h2 class="text-gray-900 text-3xl lg:text-4xl font-semibold font-jost mb-4">Other Southdowns Branches</h2>
+      <p class="text-gray-500 text-lg font-jost max-w-2xl mx-auto">We serve communities across Hampshire. Find your nearest branch below.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <?php foreach ( $other_branches as $i => $b ) :
+        $stagger_cls = 'branch-stagger-' . ($i + 1);
+      ?>
+      <div class="branch-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 <?php echo esc_attr($stagger_cls); ?> loc-reveal">
+        <div class="relative h-48 overflow-hidden">
+          <img src="<?php echo esc_url($b['img']); ?>" alt="<?php echo esc_attr($b['name']); ?> pharmacy"
+               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end p-5">
+            <h3 class="text-white text-xl font-semibold font-jost"><?php echo esc_html($b['name']); ?></h3>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-start gap-2.5 mb-3">
+            <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <address class="text-gray-600 text-sm not-italic font-jost leading-snug"><?php echo esc_html($b['addr']); ?></address>
+          </div>
+          <div class="flex items-center gap-2.5 mb-3">
+            <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:<?php echo esc_attr($b['phone_raw']); ?>" class="text-gray-600 text-sm font-jost hover:text-blue-600 transition-colors"><?php echo esc_html($b['phone']); ?></a>
+          </div>
+          <div class="flex items-start gap-2.5 mb-5">
+            <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="text-gray-600 text-sm font-jost leading-snug">
+              <div><?php echo esc_html($b['hours_wd']); ?></div>
+              <div><?php echo esc_html($b['hours_sat']); ?></div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 mb-6">
+            <span class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1.5 rounded-full border border-blue-100 font-jost">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <?php echo esc_html($b['services']); ?>+ services available
+            </span>
+          </div>
+          <a href="<?php echo esc_url($b['url']); ?>"
+             class="branch-cta-btn flex items-center justify-center gap-2 w-full text-white font-semibold text-sm px-5 py-3 rounded-xl font-jost"
+             style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+            View <?php echo esc_html($b['name']); ?> Branch
+            <svg class="w-4 h-4 branch-cta-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="mt-14 pt-10 border-t border-blue-100 flex flex-wrap items-center justify-center gap-8 loc-reveal">
+      <div class="text-center">
+        <div class="text-2xl font-bold text-gray-900 font-jost">4</div>
+        <div class="text-gray-500 text-sm font-jost">Branches</div>
+      </div>
+      <div class="w-px h-10 bg-gray-200 hidden md:block"></div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-gray-900 font-jost">8+</div>
+        <div class="text-gray-500 text-sm font-jost">Services</div>
+      </div>
+      <div class="w-px h-10 bg-gray-200 hidden md:block"></div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-gray-900 font-jost">10,000+</div>
+        <div class="text-gray-500 text-sm font-jost">Patients Served</div>
+      </div>
+      <div class="w-px h-10 bg-gray-200 hidden md:block"></div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-gray-900 font-jost">7 Days</div>
+        <div class="text-gray-500 text-sm font-jost">Open Every Week</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S6: JAVASCRIPT — Scroll reveal
+     ============================================================ -->
+<script>
+(function () {
+  'use strict';
+  var revealEls = document.querySelectorAll('.loc-reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('loc-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('loc-visible'); });
+  }
+})();
+</script>
+
 <?php get_footer(); ?>
+
 
 
 
