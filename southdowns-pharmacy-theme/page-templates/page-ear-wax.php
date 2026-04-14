@@ -593,4 +593,84 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S11: FAQ — Blue gradient, sticky sidebar + 8 accordion items
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" id="faq" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white rounded-full translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+
+      <!-- Sticky sidebar -->
+      <div class="lg:col-span-4 lg:sticky lg:top-28 lg:self-start ew-reveal">
+        <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
+          <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span></span>
+          <span class="uppercase tracking-wider text-xs font-semibold">FAQs</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-jost">Frequently Asked Questions</h2>
+        <p class="text-lg text-blue-100 leading-relaxed mb-8 font-jost">Everything you need to know about ear wax removal at Southdowns Pharmacy.</p>
+        <div class="hidden lg:grid grid-cols-3 gap-4 mb-8">
+          <div class="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
+            <div class="text-2xl font-bold text-white mb-1 font-jost">4.9</div>
+            <div class="text-blue-200 text-xs font-medium font-jost">Rating</div>
+          </div>
+          <div class="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
+            <div class="text-2xl font-bold text-white mb-1 font-jost">400+</div>
+            <div class="text-blue-200 text-xs font-medium font-jost">Reviews</div>
+          </div>
+          <div class="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
+            <div class="text-2xl font-bold text-white mb-1 font-jost">10k+</div>
+            <div class="text-blue-200 text-xs font-medium font-jost">Patients</div>
+          </div>
+        </div>
+        <div class="hidden lg:block space-y-3">
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="flex items-center justify-center gap-2 bg-white text-blue-700 hover:bg-blue-50 font-semibold px-6 py-3.5 rounded-full transition-all shadow-lg font-jost">Book Appointment</a>
+          <p class="text-blue-200 text-sm text-center font-jost">From &pound;49 &middot; Free follow-up included</p>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="lg:col-span-8 space-y-4">
+        <?php
+        $faqs = [
+          ['01', 'Is microsuction painful?',
+           'No. Microsuction is a gentle, painless procedure. You may hear a mild suction sound during treatment, but the low-pressure probe causes no discomfort. It&rsquo;s far more comfortable than traditional ear syringing which uses water pressure.'],
+          ['02', 'How long does the appointment take?',
+           'Each appointment takes roughly <strong>20&ndash;30 minutes</strong>. This includes the initial ear examination, the microsuction procedure itself, and a hearing screening afterwards if appropriate.'],
+          ['03', 'Do I need to use ear drops before my appointment?',
+           'We recommend using olive oil or sodium bicarbonate ear drops for <strong>2&ndash;3 days before your appointment</strong>. This softens the wax and makes removal easier and quicker. However, we can often remove wax without prior preparation.'],
+          ['04', 'Is the service available on the NHS?',
+           'Many NHS GP surgeries no longer offer ear wax removal, and where they do, waiting times can be 12&ndash;16 weeks. Our private service means you can be seen <strong>the same day with no referral needed</strong>, so you get relief immediately.'],
+          ['05', 'Is there an age restriction?',
+           '<strong>Yes, this service is strictly for ages 18 and over only.</strong> If you make a booking for someone under 18, there is a strict no-refund policy as clinical time has been allocated. Please do not book for any persons under the age of 18.'],
+          ['06', 'How often will I need treatment?',
+           'This varies from person to person. Some people only need treatment once. Others who produce excess wax may benefit from appointments <strong>every 3 to 6 months</strong>. Your clinician will advise a personalised schedule during your free follow-up.'],
+          ['07', 'What if you find something other than wax?',
+           'During the examination, high-definition images and videos are taken. This can identify infections, perforations, or other conditions. If we find anything that requires further investigation, we&rsquo;ll advise you to visit your GP or refer you to a specialist ENT doctor.'],
+          ['08', 'Which branches offer this service?',
+           'TympaHealth ear wax removal is currently available at our <strong>Emsworth, Davies &amp; Bosmere</strong> branches. We serve patients from Emsworth, Havant, Leigh Park, Rowlands Castle and the surrounding Hampshire area. Contact us for the nearest location.'],
+        ];
+        foreach ( $faqs as $faq ) : ?>
+        <div class="ew-faq-item bg-white border border-gray-200/80 rounded-2xl overflow-hidden shadow-sm">
+          <button class="ew-faq-trigger w-full flex items-center gap-4 p-6 text-left hover:bg-gray-50/50 transition-colors" type="button">
+            <span class="flex-shrink-0 w-10 h-10 text-white rounded-xl flex items-center justify-center font-bold text-sm shadow-md" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);"><?php echo esc_html($faq[0]); ?></span>
+            <span class="flex-1 font-semibold text-slate-800 text-base leading-snug font-jost"><?php echo $faq[1]; ?></span>
+            <span class="ew-faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="ew-faq-answer">
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed font-jost text-sm"><?php echo $faq[2]; ?></div>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
