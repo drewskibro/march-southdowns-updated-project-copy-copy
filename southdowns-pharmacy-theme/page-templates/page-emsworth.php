@@ -565,7 +565,31 @@ $other_branches = [
 </section>
 
 
+<!-- ============================================================
+     S6: JAVASCRIPT — Scroll reveal
+     ============================================================ -->
+<script>
+(function () {
+  'use strict';
+  var revealEls = document.querySelectorAll('.loc-reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('loc-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('loc-visible'); });
+  }
+})();
+</script>
+
 <?php get_footer(); ?>
+
 
 
 
