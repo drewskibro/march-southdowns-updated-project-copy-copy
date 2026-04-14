@@ -511,4 +511,45 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S9: WHY CHOOSE US — Blue gradient, 6 glassmorphism cards
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white rounded-full -translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span class="uppercase tracking-wider text-xs font-semibold">Why Us</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Why Choose Southdowns Pharmacy</h2>
+      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">TympaHealth certified clinicians using the latest diagnostic technology for safe, effective ear care.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <?php
+      $why_cards = [
+        ['TympaHealth Certified',        'Our clinicians completed the comprehensive TympaHealth Ear &amp; Hearing Healthcare training course.',                                     'rgba(16,185,129,0.25)',  'rgba(52,211,153,0.5)',  '#6ee7b7',  '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'],
+        ['Real-Time HD Imaging',         'Using advanced imaging equipment, we can see exactly what&rsquo;s in your ear canal before and during treatment.',                          'rgba(6,182,212,0.25)',   'rgba(34,211,238,0.5)',  '#67e8f9',  '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'],
+        ['Same-Day Appointments',        'No NHS waiting. Same-day microsuction appointments available subject to availability.',                                                   'rgba(245,158,11,0.25)', 'rgba(252,211,77,0.5)',  '#fcd34d',  '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'],
+        ['Painless Procedure',           'No water, no mess &mdash; just gentle suction for a comfortable experience with immediate hearing improvement.',                          'rgba(139,92,246,0.25)', 'rgba(196,181,253,0.5)', '#c4b5fd',  '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>'],
+        ['3 Convenient Locations',       'Available at Emsworth, Davies &amp; Bosmere. Serving Havant, Leigh Park, Rowlands Castle and surrounds.',                                'rgba(244,63,94,0.25)',  'rgba(253,164,175,0.5)', '#fda4af',  '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'],
+        ['Free Follow-Up',               'Complimentary aftercare appointment included to check progress and determine if further treatment is needed.',                            'rgba(249,115,22,0.25)', 'rgba(253,186,116,0.5)', '#fdba74',  '<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>'],
+      ];
+      foreach ( $why_cards as $i => $card ) : $delay = ($i % 3) + 1; ?>
+      <div class="ew-reveal group bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105" data-delay="<?php echo $delay; ?>">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:<?php echo $card[2]; ?>;border:1px solid <?php echo $card[3]; ?>;">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="<?php echo $card[4]; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><?php echo $card[5]; ?></svg>
+        </div>
+        <h3 class="text-white text-lg font-bold mb-3 font-jost"><?php echo $card[0]; ?></h3>
+        <p class="text-blue-100 leading-relaxed font-jost"><?php echo $card[1]; ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
