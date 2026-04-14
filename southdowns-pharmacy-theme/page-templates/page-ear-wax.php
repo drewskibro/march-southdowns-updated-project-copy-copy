@@ -447,4 +447,68 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S8: PRICING — Light gradient, consultation card + glow treatment card
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" id="pricing" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 40%, #ecfeff 70%, #f8fafc 100%);">
+  <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-200/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+  <div class="absolute top-0 right-0 w-80 h-80 bg-cyan-200/15 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
+        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
+        <span class="uppercase tracking-wider text-xs font-semibold">Transparent Pricing</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-jost">Ear Wax Removal Pricing</h2>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto font-jost">Clear, upfront pricing with no hidden fees.</p>
+    </div>
+    <div class="max-w-3xl mx-auto ew-reveal">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Consultation -->
+        <div class="ew-card-lift bg-white rounded-2xl p-8 border border-gray-200 shadow-lg text-center">
+          <div class="mb-4">
+            <span class="text-5xl font-bold text-slate-800 font-jost">&pound;10</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Initial Consultation</h3>
+          <p class="text-gray-500 text-base mb-6 font-jost">Comprehensive ear assessment before treatment to determine the best care for you.</p>
+          <ul class="text-left space-y-3 mb-6">
+            <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> HD ear canal imaging</li>
+            <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Symptom discussion</li>
+            <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Treatment plan explanation</li>
+          </ul>
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="block w-full text-blue-600 font-semibold py-3 rounded-full text-center border-2 border-blue-600 hover:bg-blue-50 transition-colors font-jost">Book Assessment</a>
+        </div>
+
+        <!-- Full Treatment — animated glow border -->
+        <div class="ew-glow-card relative shadow-2xl">
+          <div class="overflow-hidden rounded-t-xl">
+            <div class="relative overflow-hidden text-center py-3.5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+              <div class="ew-shimmer absolute inset-0"></div>
+              <span class="relative text-white font-semibold text-sm uppercase tracking-wider font-jost">Most Popular</span>
+            </div>
+          </div>
+          <div class="p-8 text-center">
+            <div class="mb-4">
+              <span class="text-5xl font-bold text-slate-800 font-jost">&pound;49</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Ear Wax Removal</h3>
+            <p class="text-gray-500 text-base mb-6 font-jost">Professional ear wax removal for clear, healthy ears.</p>
+            <ul class="text-left space-y-3 mb-6">
+              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Consultation included</li>
+              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Same-day appointments</li>
+              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Hearing screening included</li>
+              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Free 7-day follow-up</li>
+              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> HD imaging before &amp; after</li>
+            </ul>
+            <a href="<?php echo esc_url( $booking_url ); ?>" class="block w-full text-white font-semibold py-3.5 rounded-full text-center transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] font-jost" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">Book Treatment</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
