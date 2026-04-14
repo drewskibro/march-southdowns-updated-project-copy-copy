@@ -138,4 +138,144 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
 
 </section>
 
+<!-- ============================================================
+     S2: MAP & DIRECTIONS
+     ============================================================ -->
+<section id="loc-directions" class="relative py-16 lg:py-24 overflow-hidden" style="background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 50%,#3b82f6 100%);">
+
+  <div class="absolute inset-0 opacity-5" style="background-image:radial-gradient(circle at 20% 30%,#ffffff 1px,transparent 1px),radial-gradient(circle at 80% 70%,#ffffff 1px,transparent 1px);background-size:50px 50px;"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+
+    <!-- Heading -->
+    <div class="text-center mb-12 loc-reveal">
+      <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-sm font-medium px-5 py-2 rounded-full mb-5 border border-white/20 font-jost">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Getting Here
+      </div>
+      <h2 class="text-white text-3xl lg:text-4xl font-semibold font-jost mb-4">Find Our Bosmere Branch</h2>
+      <p class="text-blue-100 text-lg font-jost max-w-2xl mx-auto">Multiple ways to reach us — by car, bus, train, or on foot.</p>
+    </div>
+
+    <!-- Map + Address row -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10 loc-reveal">
+
+      <!-- Google Map -->
+      <div class="lg:col-span-2 rounded-2xl overflow-hidden shadow-2xl bg-white/10" style="min-height:380px;">
+        <?php if ( $maps_src ) : ?>
+          <iframe src="<?php echo esc_url($maps_src); ?>" width="100%" height="380" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <?php else : ?>
+          <div class="flex items-center justify-center h-[380px] bg-white/10">
+            <p class="text-white/60 font-jost text-sm">Map coming soon</p>
+          </div>
+        <?php endif; ?>
+      </div>
+
+      <!-- Address card -->
+      <div class="flex flex-col justify-between bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 lg:p-8">
+        <div>
+          <h3 class="text-white font-semibold text-xl font-jost mb-4">Bosmere Pharmacy</h3>
+          <div class="flex items-start gap-3 mb-5">
+            <svg class="w-5 h-5 text-blue-200 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <address class="text-white not-italic font-jost leading-relaxed text-sm">
+              Bosmere Medical Centre<br>
+              Solent Road<br>
+              Havant, Hampshire<br>
+              PO9 1DQ
+            </address>
+          </div>
+          <div class="flex items-start gap-3 mb-5">
+            <svg class="w-5 h-5 text-blue-200 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="text-white font-jost text-sm leading-relaxed">
+              <div>Mon–Sat: 8am–9pm</div>
+              <div>Sun: 10am–2pm</div>
+              <div class="mt-1.5 inline-flex items-center gap-1 bg-green-400/20 text-green-300 text-xs font-medium px-2 py-0.5 rounded-full border border-green-400/30 font-jost">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                Open 7 days a week
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 mb-6">
+            <svg class="w-5 h-5 text-blue-200 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:<?php echo esc_attr($phone_raw); ?>" class="text-white font-jost text-sm hover:text-blue-200 transition-colors"><?php echo esc_html($phone); ?></a>
+          </div>
+        </div>
+        <a href="<?php echo esc_url($maps_dir_url); ?>" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-2 bg-white text-blue-700 font-semibold text-sm px-5 py-3 rounded-xl hover:bg-blue-50 transition-colors shadow-lg font-jost w-full">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          Get Directions
+        </a>
+      </div>
+
+    </div><!-- /Map + Address row -->
+
+    <!-- 4 Direction cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 loc-reveal">
+
+      <!-- By Car -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 loc-card-lift">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(255,255,255,0.15);">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2.5 0M13 16H3m10 0h2m4-6l-2-4H9l-2 4h12z"/></svg>
+        </div>
+        <h4 class="text-white font-semibold text-base font-jost mb-2">By Car</h4>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Easily accessible from the A27 and A3(M) Havant interchange. Bosmere Medical Centre has on-site patient parking available.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full font-jost border border-white/20">Off A27 / A3(M)</span>
+          <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full font-jost border border-white/20">On-site patient parking</span>
+        </div>
+      </div>
+
+      <!-- By Bus -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 loc-card-lift">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(255,255,255,0.15);">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 19v2m8-2v2M3 10h18M8 5V3m8 2V3"/><circle cx="8" cy="15" r="1" fill="currentColor"/><circle cx="16" cy="15" r="1" fill="currentColor"/></svg>
+        </div>
+        <h4 class="text-white font-semibold text-base font-jost mb-2">By Bus</h4>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Stagecoach bus routes serve Havant town centre with stops close to Solent Road. The town's central bus interchange is nearby.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-white text-blue-700 text-xs font-bold px-3 py-1 rounded-full font-jost">Route 23</span>
+          <span class="bg-white text-blue-700 text-xs font-bold px-3 py-1 rounded-full font-jost">Route 35</span>
+          <span class="bg-white text-blue-700 text-xs font-bold px-3 py-1 rounded-full font-jost">Route 700</span>
+        </div>
+      </div>
+
+      <!-- By Train -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 loc-card-lift">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(255,255,255,0.15);">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19l-2 3m14-3l-2 3M5 7h14a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 15a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2zM12 7V4"/></svg>
+        </div>
+        <h4 class="text-white font-semibold text-base font-jost mb-2">By Train</h4>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Havant railway station is served by South Western Railway and Southern, with direct links to Portsmouth and London Waterloo.</p>
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between bg-white/15 rounded-lg px-3 py-2 border border-white/20">
+            <span class="text-white text-xs font-medium font-jost">Havant Station</span>
+            <span class="text-blue-200 text-xs font-jost">15 min walk</span>
+          </div>
+          <div class="flex items-center justify-between bg-white/15 rounded-lg px-3 py-2 border border-white/20">
+            <span class="text-white text-xs font-medium font-jost">Bedhampton Station</span>
+            <span class="text-blue-200 text-xs font-jost">10 min walk</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- On Foot -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 loc-card-lift">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(255,255,255,0.15);">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14l-4 4m4-4l4 4m-4-4v6"/></svg>
+        </div>
+        <h4 class="text-white font-semibold text-base font-jost mb-2">On Foot</h4>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Located within Bosmere Medical Centre on Solent Road. The centre is well signposted and easy to find from the surrounding residential area.</p>
+        <div class="flex items-center gap-2 bg-white/15 rounded-lg px-3 py-2 border border-white/20">
+          <svg class="w-4 h-4 text-blue-200 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          <span class="text-white text-xs font-medium font-jost">Inside Bosmere Medical Centre</span>
+        </div>
+      </div>
+
+    </div><!-- /Direction cards -->
+
+  </div>
+</section>
+
+
 <?php get_footer(); ?>
+
