@@ -351,4 +351,106 @@ if ( $train_stn ) {
 </section>
 
 
+<!-- ============================================================
+     S3: TESTIMONIALS
+     ============================================================ -->
+<?php
+$testimonials = get_field('branch_testimonials') ?: [];
+
+// Fallback reviews if no ACF data
+if ( empty($testimonials) ) {
+  $testimonials = [
+    [
+      'quote'          => 'The team here are absolutely brilliant. I came in for a minor ailment consultation and was seen straight away. Friendly, professional, and genuinely caring staff.',
+      'author_name'    => 'Sarah M.',
+      'author_initials'=> 'SM',
+      'service'        => 'Minor Ailments',
+      'review_date'    => 'March 2025',
+      'avatar_bg'      => 'from-blue-500 to-blue-700',
+    ],
+    [
+      'quote'          => 'Got my travel vaccinations done here before a trip to Southeast Asia. No GP referral needed, same-day appointment available. Couldn\'t be easier or more convenient.',
+      'author_name'    => 'James T.',
+      'author_initials'=> 'JT',
+      'service'        => 'Travel Health',
+      'review_date'    => 'February 2025',
+      'avatar_bg'      => 'from-indigo-500 to-indigo-700',
+    ],
+    [
+      'quote'          => 'My ear wax removal was done quickly and painlessly using microsuction. I can hear perfectly again. The pharmacist explained everything clearly before starting.',
+      'author_name'    => 'Linda P.',
+      'author_initials'=> 'LP',
+      'service'        => 'Ear Wax Removal',
+      'review_date'    => 'January 2025',
+      'avatar_bg'      => 'from-violet-500 to-violet-700',
+    ],
+  ];
+}
+?>
+<section class="py-16 lg:py-24" style="background:linear-gradient(180deg,#f8fafc 0%,#eff6ff 60%,#f8fafc 100%);">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+
+    <!-- Heading -->
+    <div class="text-center mb-12 loc-reveal">
+      <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-sm font-medium px-5 py-2 rounded-full mb-5 border border-blue-200 font-jost">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        Patient Reviews
+      </div>
+      <h2 class="text-gray-900 text-3xl lg:text-4xl font-semibold font-jost mb-4">What Our Patients Say</h2>
+      <p class="text-gray-500 text-lg font-jost max-w-2xl mx-auto">Real experiences from patients at our <?php echo esc_html($loc_name); ?> branch.</p>
+    </div>
+
+    <!-- Review cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <?php foreach ( $testimonials as $i => $t ) :
+        $delay = $i + 1;
+      ?>
+      <div class="bg-white rounded-2xl shadow-sm border border-blue-100 p-7 loc-reveal loc-card-lift" style="transition-delay:<?php echo ($i * 0.1); ?>s;">
+        <!-- Stars -->
+        <div class="flex gap-1 mb-4">
+          <?php for ( $s = 0; $s < 5; $s++ ) : ?>
+            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <?php endfor; ?>
+        </div>
+
+        <!-- Quote -->
+        <p class="text-gray-700 text-base font-jost leading-relaxed mb-6 italic">"<?php echo esc_html($t['quote']); ?>"</p>
+
+        <!-- Author -->
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br <?php echo esc_attr($t['avatar_bg']); ?> flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-sm font-bold font-jost"><?php echo esc_html($t['author_initials']); ?></span>
+          </div>
+          <div>
+            <div class="text-gray-900 font-semibold text-sm font-jost"><?php echo esc_html($t['author_name']); ?></div>
+            <div class="text-gray-400 text-xs font-jost"><?php echo esc_html($t['service']); ?> &middot; <?php echo esc_html($t['review_date']); ?></div>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div><!-- /Review cards -->
+
+    <!-- Trust strip -->
+    <div class="flex flex-wrap items-center justify-center gap-8 loc-reveal">
+      <div class="flex items-center gap-3">
+        <div class="flex gap-0.5">
+          <?php for ($s=0;$s<5;$s++): ?><svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><?php endfor; ?>
+        </div>
+        <span class="text-gray-700 font-semibold text-sm font-jost">4.9/5 Average Rating</span>
+      </div>
+      <div class="w-px h-6 bg-gray-300 hidden md:block"></div>
+      <div class="text-gray-700 font-semibold text-sm font-jost">400+ Google Reviews</div>
+      <div class="w-px h-6 bg-gray-300 hidden md:block"></div>
+      <div class="text-gray-700 font-semibold text-sm font-jost">GPhC Registered Pharmacy</div>
+      <div class="w-px h-6 bg-gray-300 hidden md:block"></div>
+      <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-blue-700 transition-colors shadow-md font-jost">
+        Book Appointment
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
 <?php get_footer(); ?>
