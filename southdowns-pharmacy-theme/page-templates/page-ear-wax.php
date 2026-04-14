@@ -552,4 +552,45 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S10: TESTIMONIALS — Light gradient, 3 patient review cards
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 40%, #e8f4fd 70%, #f8fafc 100%);">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/25 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-72 h-72 bg-cyan-100/20 rounded-full -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-200/60 shadow-sm">
+        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <span class="uppercase tracking-wider text-xs font-semibold">Patient Reviews</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-jost">What Our Patients Say</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <?php
+      $reviews = [
+        ['DW', 'David Williams',   'Emsworth Branch',  'bg-blue-100',  'text-blue-600',  'After weeks of muffled hearing, I got my ears treated here. The difference was immediate &mdash; I could hear clearly again! The clinician was so gentle and explained everything. Highly recommend!'],
+        ['MT', 'Margaret Turner',  'Davies Branch',    'bg-cyan-100',  'text-cyan-600',  'Much better than the traditional syringing I had years ago. No mess, no fuss, just clear hearing again. The appointment only took 20 minutes and the staff were lovely.'],
+        ['JR', 'John Roberts',     'Bosmere Branch',   'bg-blue-100',  'text-blue-600',  'Fantastic service. Painless procedure and immediate relief. I&rsquo;d been suffering for months with blocked ears and the GP wait was ridiculous. So glad I found Southdowns!'],
+      ];
+      foreach ( $reviews as $r ) : ?>
+      <div class="ew-reveal ew-card-lift bg-gradient-to-br from-white to-blue-50/30 rounded-2xl p-8 border border-blue-100/50" data-delay="<?php echo array_search($r, $reviews) + 1; ?>">
+        <div class="flex gap-1 mb-4">
+          <?php for($s=0;$s<5;$s++): ?><svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><?php endfor; ?>
+        </div>
+        <p class="text-gray-600 text-base leading-relaxed mb-6 italic font-jost">&ldquo;<?php echo $r[5]; ?>&rdquo;</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm <?php echo $r[3]; ?> <?php echo $r[4]; ?>"><?php echo esc_html($r[0]); ?></div>
+          <div>
+            <div class="text-slate-800 font-semibold text-sm font-jost"><?php echo esc_html($r[1]); ?></div>
+            <div class="text-gray-400 text-xs font-jost"><?php echo esc_html($r[2]); ?></div>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
