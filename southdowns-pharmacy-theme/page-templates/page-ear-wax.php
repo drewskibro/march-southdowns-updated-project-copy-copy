@@ -320,4 +320,86 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S6: HOW IT WORKS — Light gradient, photo + 3 numbered steps
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" id="how-it-works" style="background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 30%, #e8f4fd 60%, #f8fafc 100%);">
+  <div class="absolute top-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full -translate-x-1/2 -translate-y-1/4 blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-80 h-80 bg-cyan-100/30 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
+        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
+        <span class="uppercase tracking-wider text-xs font-semibold">Your Appointment</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-jost">What to Expect</h2>
+      <p class="text-lg text-gray-500 max-w-3xl mx-auto font-jost">Each appointment takes roughly 20&ndash;30 minutes. Simple, effective treatment in three easy steps.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Photo -->
+      <div class="relative rounded-2xl overflow-hidden shadow-xl ew-reveal">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&q=80&auto=format&fit=crop" alt="Healthcare professional performing ear examination" class="w-full aspect-[4/3] object-cover" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg">
+          <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span class="text-slate-800 font-semibold text-sm font-jost">20&ndash;30 Min Appointments</span>
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div>
+        <div class="space-y-6">
+
+          <div class="flex gap-5 group ew-reveal" data-delay="1">
+            <div class="flex-shrink-0 flex flex-col items-center">
+              <div class="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform text-base" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);">1</div>
+              <div class="w-0.5 flex-1 mt-3 bg-gradient-to-b from-blue-300/60 to-transparent min-h-[32px]"></div>
+            </div>
+            <div class="pb-4">
+              <h4 class="text-xl font-bold text-slate-800 mb-2 font-jost">Initial Assessment</h4>
+              <p class="text-gray-600 leading-relaxed font-jost">Detailed ear examination using high-definition imaging. We discuss your symptoms, review your ear health history, and explain the treatment plan. No-obligation assessment.</p>
+              <span class="inline-block mt-3 text-blue-600 text-sm font-medium bg-blue-50 px-3 py-1 rounded-full border border-blue-100 font-jost">~10 minutes</span>
+            </div>
+          </div>
+
+          <div class="flex gap-5 group ew-reveal" data-delay="2">
+            <div class="flex-shrink-0 flex flex-col items-center">
+              <div class="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform text-base" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);">2</div>
+              <div class="w-0.5 flex-1 mt-3 bg-gradient-to-b from-blue-300/60 to-transparent min-h-[32px]"></div>
+            </div>
+            <div class="pb-4">
+              <h4 class="text-xl font-bold text-slate-800 mb-2 font-jost">Microsuction Treatment</h4>
+              <p class="text-gray-600 leading-relaxed font-jost">Gentle wax removal using low-pressure suction with continuous monitoring and real-time imaging. Your clinician provides progress updates throughout. Completely painless with immediate relief.</p>
+              <span class="inline-block mt-3 text-blue-600 text-sm font-medium bg-blue-50 px-3 py-1 rounded-full border border-blue-100 font-jost">15&ndash;20 minutes</span>
+            </div>
+          </div>
+
+          <div class="flex gap-5 group ew-reveal" data-delay="3">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform text-base" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);">3</div>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-slate-800 mb-2 font-jost">Aftercare &amp; Follow-Up</h4>
+              <p class="text-gray-600 leading-relaxed font-jost">Prevention advice, home care tips, and hearing screening if needed. There is a <strong>free follow-up appointment</strong> included to determine if you need to return on a 3 or 6-month interval.</p>
+              <span class="inline-block mt-3 text-green-600 text-sm font-medium bg-green-50 px-3 py-1 rounded-full border border-green-100 font-jost">Free follow-up</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="mt-8 ew-reveal" data-delay="4">
+          <div class="rounded-xl p-5 text-white text-sm font-medium flex items-center gap-3 shadow-lg shadow-blue-500/20" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+            <div class="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <span class="font-jost">During examination, HD images &amp; videos are taken to identify any issues beyond wax buildup.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
