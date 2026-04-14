@@ -673,4 +673,72 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S12: LOCATIONS — Light gradient, 3 TympaHealth branch cards
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden" id="locations" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #ecfeff 100%);">
+  <div class="absolute bottom-0 left-1/2 w-[600px] h-[400px] bg-blue-200/15 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-200/60 shadow-sm">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="uppercase tracking-wider text-xs font-semibold">TympaHealth Locations</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Visit Our Ear Care Centres</h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">Available at Emsworth, Davies &amp; Bosmere. Same-day appointments where available.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <?php
+      $branches = [
+        ['Emsworth',  'Emsworth, Hampshire',          'Mon&ndash;Fri: 9am&ndash;6pm &middot; Sat: 9am&ndash;5pm', 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80&auto=format&fit=crop'],
+        ['Davies',    'Davies, Hampshire',             'Mon&ndash;Fri: 9am&ndash;6pm &middot; Sat: 9am&ndash;1pm', 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80&auto=format&fit=crop'],
+        ['Bosmere',   'Bosmere, Hampshire',            'Mon&ndash;Fri: 9am&ndash;6pm &middot; Sat: 9am&ndash;4pm', 'https://images.unsplash.com/photo-1576602976047-174e57a47881?w=600&q=80&auto=format&fit=crop'],
+      ];
+      foreach ( $branches as $i => $branch ) : $delay = $i + 1; ?>
+      <div class="ew-reveal ew-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="<?php echo $delay; ?>">
+        <div class="relative overflow-hidden aspect-[4/3]">
+          <img src="<?php echo esc_attr($branch[3]); ?>" alt="<?php echo esc_attr($branch[0]); ?> ear wax removal pharmacy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+          <div class="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md font-jost">Open Now</div>
+          <div class="absolute bottom-3 left-3">
+            <h3 class="text-white text-xl font-bold font-jost"><?php echo esc_html($branch[0]); ?></h3>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-start gap-2 mb-2">
+            <svg class="flex-shrink-0 mt-0.5 text-blue-500 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="text-gray-600 text-sm font-jost"><?php echo $branch[1]; ?></span>
+          </div>
+          <div class="flex items-start gap-2 mb-4">
+            <svg class="flex-shrink-0 mt-0.5 text-blue-500 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span class="text-gray-400 text-xs font-jost"><?php echo $branch[2]; ?></span>
+          </div>
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="flex items-center justify-center gap-2 w-full text-blue-600 text-sm font-semibold bg-blue-50 hover:bg-blue-100 px-4 py-2.5 rounded-xl transition-colors font-jost">
+            Book Here
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+    <!-- Info banner -->
+    <div class="mt-10 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-xl text-white" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+      <div class="flex-shrink-0 w-14 h-14 bg-white/20 rounded-full flex items-center justify-center">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      </div>
+      <div class="flex-1 text-center md:text-left">
+        <p class="text-lg font-semibold mb-1 font-jost">Questions about ear wax removal?</p>
+        <p class="text-blue-100 font-jost">Feel free to get in touch with our friendly team if you have any questions about the service.</p>
+      </div>
+      <a href="<?php echo esc_url( $booking_url ); ?>" class="flex-shrink-0 inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg text-sm font-jost">
+        Book Nearest Branch
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
