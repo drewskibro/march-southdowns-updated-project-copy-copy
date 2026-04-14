@@ -363,6 +363,82 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
 </section>
 
 
+<!-- ============================================================
+     S4: BOOK / AI AGENT DUAL CTA
+     ============================================================ -->
+<section class="py-16 lg:py-24" style="background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#1d4ed8 100%);">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+
+    <div class="text-center mb-12 loc-reveal">
+      <h2 class="text-white text-3xl lg:text-4xl font-semibold font-jost mb-4">Ready to Get Started?</h2>
+      <p class="text-blue-200 text-lg font-jost max-w-2xl mx-auto">Book an appointment at our Emsworth branch or speak to our AI health assistant instantly.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto loc-reveal">
+
+      <!-- Book Appointment card -->
+      <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-2xl">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+          <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-gray-900 text-2xl font-semibold font-jost mb-3">Book an Appointment</h3>
+        <p class="text-gray-500 font-jost mb-6 leading-relaxed">Same-day and next-day appointments available at our Emsworth branch. No GP referral needed for most services.</p>
+        <ul class="space-y-2 mb-8">
+          <?php foreach (['No GP referral needed', 'Same-day appointments available', 'All consultations strictly private', 'GPhC-registered pharmacists'] as $pt): ?>
+          <li class="flex items-center gap-3 text-gray-700 text-sm font-jost">
+            <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <?php echo esc_html($pt); ?>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+        <a href="<?php echo esc_url($booking_url); ?>"
+           class="flex items-center justify-center gap-2 w-full text-white font-semibold text-base px-6 py-4 rounded-2xl shadow-lg font-jost transition-all hover:shadow-xl hover:-translate-y-0.5"
+           style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+          Book Now — It's Free
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+        <p class="text-center text-gray-400 text-xs font-jost mt-3">No card required &bull; Cancel anytime</p>
+      </div>
+
+      <!-- AI Agent card -->
+      <div class="rounded-3xl p-8 lg:p-10 shadow-2xl relative overflow-hidden" style="background:linear-gradient(135deg,#2e1065 0%,#4c1d95 40%,#6d28d9 100%);">
+        <div class="absolute top-6 right-6">
+          <div class="relative">
+            <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+            <div class="absolute inset-0 w-3 h-3 bg-green-400 rounded-full animate-ping opacity-75"></div>
+          </div>
+        </div>
+        <div class="inline-flex items-center gap-1.5 bg-green-400/20 text-green-300 text-xs font-bold px-3 py-1.5 rounded-full border border-green-400/30 font-jost mb-6">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+          INSTANT HELP
+        </div>
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-white/15">
+          <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-white text-2xl font-semibold font-jost mb-3">Speak to Our AI Agent</h3>
+        <p class="text-purple-200 font-jost mb-6 leading-relaxed">Get instant answers about services, pricing, and availability at Emsworth — available 24/7, no waiting.</p>
+        <ul class="space-y-2 mb-8">
+          <?php foreach (['Available 24 hours a day, 7 days a week', 'Instant answers about all services', 'Check availability before booking', 'Completely free to use'] as $pt): ?>
+          <li class="flex items-center gap-3 text-purple-100 text-sm font-jost">
+            <svg class="w-5 h-5 text-purple-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <?php echo esc_html($pt); ?>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+        <a href="<?php echo esc_url(home_url('/ai-agent/')); ?>"
+           class="flex items-center justify-center gap-2 w-full bg-white/15 border border-white/30 text-white font-semibold text-base px-6 py-4 rounded-2xl font-jost hover:bg-white/25 transition-all backdrop-blur-sm">
+          Chat with AI Agent
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </a>
+        <p class="text-center text-purple-300 text-xs font-jost mt-3">No sign-up required &bull; Instant responses</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <?php get_footer(); ?>
+
 
 
