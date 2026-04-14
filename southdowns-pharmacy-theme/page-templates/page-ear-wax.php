@@ -265,4 +265,59 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S5: TREATMENT COMPARISON — Blue gradient, comparison table
+     ============================================================ -->
+<section class="relative py-16 md:py-20 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white rounded-full -translate-x-1/4 translate-y-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
+        <span class="uppercase tracking-wider text-xs font-semibold">Treatment Comparison</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-jost">How Our Treatment Compares</h2>
+      <p class="text-lg text-blue-100 max-w-3xl mx-auto font-jost">See why microsuction is the gold standard for ear wax removal.</p>
+    </div>
+    <div class="ew-reveal bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b border-white/20">
+              <th class="px-6 py-4 text-white font-semibold text-sm font-jost">Feature</th>
+              <th class="px-6 py-4 text-white font-bold text-sm bg-white/10 font-jost">Our Microsuction</th>
+              <th class="px-6 py-4 text-blue-200 font-semibold text-sm font-jost">Traditional Syringing</th>
+              <th class="px-6 py-4 text-blue-200 font-semibold text-sm font-jost">At-Home Remedies</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm font-jost">
+            <?php
+            $rows = [
+              ['Treatment Time',                  'Up to 30 minutes',  '30+ minutes',   'Days or weeks'],
+              ['Water Spillage',                   'None &#10003;',     'Moderate',      'Drips and Leaks'],
+              ['Risk Level',                       'Very Low &#10003;', 'Moderate',      'Varies'],
+              ['Success Rate',                     '95%+ &#10003;',     '70&ndash;80%',  'Under 50%'],
+              ['Immediate Results',                'Yes &#10003;',      'Sometimes',     'Rarely'],
+              ['Safe for Perforated Eardrums',     'Yes &#10003;',      'No',            'No'],
+            ];
+            foreach ( $rows as $i => $row ) :
+              $border = ( $i < count($rows) - 1 ) ? 'border-b border-white/10' : '';
+            ?>
+            <tr class="<?php echo $border; ?>">
+              <td class="px-6 py-4 text-blue-100 font-medium"><?php echo $row[0]; ?></td>
+              <td class="px-6 py-4 text-white font-semibold bg-white/5"><?php echo $row[1]; ?></td>
+              <td class="px-6 py-4 text-blue-200"><?php echo $row[2]; ?></td>
+              <td class="px-6 py-4 text-blue-200"><?php echo $row[3]; ?></td>
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
