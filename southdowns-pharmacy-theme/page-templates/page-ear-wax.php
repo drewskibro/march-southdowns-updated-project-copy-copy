@@ -223,4 +223,46 @@ $phone       = sp_phone();
   </div>
 </section>
 
+
+<!-- ============================================================
+     S4: WHAT IS MICROSUCTION — Two-column: white left + image right
+     ============================================================ -->
+<section class="relative overflow-hidden" id="about">
+  <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[540px]">
+    <!-- Left: copy -->
+    <div class="relative flex flex-col justify-center px-10 lg:px-16 py-16 bg-white overflow-hidden">
+      <div class="absolute top-0 right-0 w-72 h-72 bg-blue-50/60 rounded-full translate-x-1/2 -translate-y-1/2 blur-2xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-56 h-56 bg-cyan-50/60 rounded-full -translate-x-1/3 translate-y-1/3 blur-2xl pointer-events-none"></div>
+      <div class="relative z-10 ew-reveal">
+        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-2 rounded-full mb-6 border border-blue-200/60 uppercase tracking-wider self-start">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          What You Need to Know
+        </div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-jost leading-tight">What Is Ear Microsuction?</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-5 font-jost">Ear Microsuction is the safest and most effective way to remove earwax. It works by inserting a low-pressure suction probe into the ear. One of our trained clinicians wearing a microscope will control the probe to clear the ear canal of wax.</p>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8 font-jost">Painless and clean &mdash; no water squirted into your ear canal like syringing. Immediate results every time.</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
+            <div class="text-3xl font-bold text-blue-600 mb-1 font-jost">95%+</div>
+            <div class="text-gray-500 text-sm font-jost">Success rate with immediate improvement in hearing</div>
+          </div>
+          <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
+            <div class="text-3xl font-bold text-blue-600 mb-1 font-jost">No Water</div>
+            <div class="text-gray-500 text-sm font-jost">Dry procedure &mdash; no mess, no water squirted into your ears</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right: image -->
+    <div class="relative overflow-hidden min-h-[400px] lg:min-h-0">
+      <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=900&q=80&auto=format&fit=crop" alt="Professional ear examination with advanced equipment" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
+      <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg">
+        <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span class="text-slate-800 font-semibold text-sm font-jost">TympaHealth Certified Clinicians</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php get_footer(); ?>
