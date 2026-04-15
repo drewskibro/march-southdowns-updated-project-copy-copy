@@ -10,12 +10,46 @@
 
 get_header();
 
-$booking_url  = sp_booking_url();
-$phone        = '023 9248 1721';
-$phone_raw    = '02392481721';
-$maps_dir_url = 'https://www.google.com/maps/dir/?api=1&destination=Bosmere+Medical+Centre,+Solent+Road,+Havant,+Hampshire+PO9+1DQ';
-$maps_src     = ''; // Add Google Maps embed src URL here
-$hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=800&fit=crop';
+$booking_url   = sp_booking_url();
+
+// ── Hero ────────────────────────────────────────────────────────
+$hero_img      = get_field('branch_hero_image')          ?: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=800&fit=crop';
+$hero_subtitle = get_field('branch_hero_subtitle')       ?: 'Your Pharmacy at Bosmere Medical Centre';
+$hero_desc     = get_field('branch_hero_description')    ?: 'Expert healthcare services in Havant. Open 7 days a week with extended evening hours — no GP referral needed for most services.';
+
+// ── Contact & Hours ─────────────────────────────────────────────
+$addr1         = get_field('branch_address_line1')       ?: 'Bosmere Medical Centre, Solent Road';
+$addr2         = get_field('branch_address_line2')       ?: 'Havant, Hampshire';
+$postcode      = get_field('branch_postcode')            ?: 'PO9 1DQ';
+$phone         = get_field('branch_phone')               ?: '023 9248 1721';
+$phone_raw     = get_field('branch_phone_raw')           ?: '02392481721';
+$hours_wd      = get_field('branch_hours_weekday')       ?: 'Mon–Sat 8am–9pm';
+$hours_sat     = get_field('branch_hours_saturday')      ?: '';
+$hours_sun     = get_field('branch_hours_sunday')        ?: 'Sun 10am–2pm';
+$parking       = get_field('branch_parking')             ?: 'On-site patient parking';
+
+// ── Map & Directions ────────────────────────────────────────────
+$maps_src      = get_field('branch_maps_embed_src')      ?: '';
+$maps_dir_url  = get_field('branch_maps_directions_url') ?: 'https://www.google.com/maps/dir/?api=1&destination=Bosmere+Medical+Centre,+Solent+Road,+Havant,+Hampshire+PO9+1DQ';
+$by_car        = get_field('branch_by_car')              ?: 'Easily accessible from the A27 and A3(M) Havant interchange. Bosmere Medical Centre has on-site patient parking available.';
+$car_tags_raw  = get_field('branch_by_car_tags')         ?: 'Off A27 / A3(M),On-site patient parking';
+$by_bus        = get_field('branch_by_bus')              ?: 'Stagecoach bus routes serve Havant town centre with stops close to Solent Road. The town\'s central bus interchange is nearby.';
+$bus_routes_raw= get_field('branch_bus_routes')          ?: '23,35,700';
+$by_train      = get_field('branch_by_train')            ?: 'Havant railway station is served by South Western Railway and Southern, with direct links to Portsmouth and London Waterloo.';
+$train_stn_raw = get_field('branch_train_stations')      ?: 'Havant Station|15 min walk,Bedhampton Station|10 min walk';
+$on_foot       = get_field('branch_on_foot')             ?: 'Located within Bosmere Medical Centre on Solent Road. The centre is well signposted and easy to find from the surrounding residential area.';
+$landmark      = get_field('branch_landmark')            ?: 'Bosmere Medical Centre';
+
+// Parse comma / pipe-separated direction fields
+$car_tag_list   = array_filter( array_map( 'trim', explode( ',', $car_tags_raw ) ) );
+$bus_route_list = array_filter( array_map( 'trim', explode( ',', $bus_routes_raw ) ) );
+$train_list     = [];
+foreach ( array_filter( array_map( 'trim', explode( ',', $train_stn_raw ) ) ) as $pair ) {
+    $parts = explode( '|', $pair );
+    if ( count( $parts ) === 2 ) {
+        $train_list[] = [ 'name' => trim( $parts[0] ), 'time' => trim( $parts[1] ) ];
+    }
+}
 ?>
 
 <!-- Page-scoped styles -->
@@ -68,15 +102,15 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
       GPhC Registered &bull; Bosmere Medical Centre
     </div>
-    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Your Pharmacy at Bosmere Medical Centre, Havant</h1>
-    <p class="text-white text-base leading-relaxed mb-5 font-jost">Expert healthcare services at Bosmere Medical Centre. Open 7 days a week — no GP referral needed for most services.</p>
+    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;"><?php echo esc_html( $hero_subtitle ); ?></h1>
+    <p class="text-white text-base leading-relaxed mb-5 font-jost"><?php echo esc_html( $hero_desc ); ?></p>
     <div class="flex flex-wrap gap-3 mb-4">
       <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg font-jost">
         Book Appointment
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
-    <p class="text-white/90 text-sm font-jost">Mon–Sat 8am–9pm &nbsp;|&nbsp; Sun 10am–2pm &nbsp;|&nbsp; Open 7 days</p>
+    <p class="text-white/90 text-sm font-jost"><?php echo esc_html( $hours_wd ); ?><?php if ( $hours_sun ) : ?> &nbsp;|&nbsp; <?php echo esc_html( $hours_sun ); ?><?php endif; ?><?php if ( $parking ) : ?> &nbsp;|&nbsp; <?php echo esc_html( $parking ); ?><?php endif; ?></p>
   </div>
 
   <!-- Desktop: two-column split -->
@@ -88,8 +122,8 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         GPhC Registered &bull; Bosmere, Havant
       </div>
-      <h1 class="text-white text-4xl lg:text-[48px] font-semibold mb-6 font-jost" style="line-height:1.1;">Your Pharmacy at Bosmere Medical Centre</h1>
-      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost">Expert healthcare services in Havant. Open 7 days a week with extended evening hours — no GP referral needed for most services.</p>
+      <h1 class="text-white text-4xl lg:text-[48px] font-semibold mb-6 font-jost" style="line-height:1.1;"><?php echo esc_html( $hero_subtitle ); ?></h1>
+      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost"><?php echo esc_html( $hero_desc ); ?></p>
       <div class="flex flex-wrap gap-3 mb-6">
         <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-base font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg font-jost">
           Book Appointment
@@ -103,12 +137,14 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
       <div class="flex flex-wrap gap-x-6 gap-y-2 text-white text-base font-medium font-jost">
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Mon–Sat 8am–9pm
+          <?php echo esc_html( $hours_wd ); ?>
         </div>
+        <?php if ( $hours_sun ) : ?>
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Sun 10am–2pm
+          <?php echo esc_html( $hours_sun ); ?>
         </div>
+        <?php endif; ?>
         <!-- Open 7 days badge -->
         <div class="flex items-center gap-2">
           <span class="inline-flex items-center gap-1.5 bg-white/20 text-white text-sm font-semibold px-3 py-1 rounded-full border border-white/30 font-jost">
@@ -178,17 +214,16 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
           <div class="flex items-start gap-3 mb-5">
             <svg class="w-5 h-5 text-blue-200 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <address class="text-white not-italic font-jost leading-relaxed text-sm">
-              Bosmere Medical Centre<br>
-              Solent Road<br>
-              Havant, Hampshire<br>
-              PO9 1DQ
+              <?php if ( $addr1 ) echo esc_html( $addr1 ) . '<br>'; ?>
+              <?php if ( $addr2 ) echo esc_html( $addr2 ) . '<br>'; ?>
+              <?php if ( $postcode ) echo esc_html( $postcode ); ?>
             </address>
           </div>
           <div class="flex items-start gap-3 mb-5">
             <svg class="w-5 h-5 text-blue-200 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <div class="text-white font-jost text-sm leading-relaxed">
-              <div>Mon–Sat: 8am–9pm</div>
-              <div>Sun: 10am–2pm</div>
+              <div><?php echo esc_html( $hours_wd ); ?></div>
+              <?php if ( $hours_sun ) : ?><div><?php echo esc_html( $hours_sun ); ?></div><?php endif; ?>
               <div class="mt-1.5 inline-flex items-center gap-1 bg-green-400/20 text-green-300 text-xs font-medium px-2 py-0.5 rounded-full border border-green-400/30 font-jost">
                 <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
                 Open 7 days a week
@@ -218,11 +253,14 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
           <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2.5 0M13 16H3m10 0h2m4-6l-2-4H9l-2 4h12z"/></svg>
         </div>
         <h4 class="text-white font-semibold text-base font-jost mb-2">By Car</h4>
-        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Easily accessible from the A27 and A3(M) Havant interchange. Bosmere Medical Centre has on-site patient parking available.</p>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4"><?php echo esc_html( $by_car ); ?></p>
+        <?php if ( $car_tag_list ) : ?>
         <div class="flex flex-wrap gap-2">
-          <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full font-jost border border-white/20">Off A27 / A3(M)</span>
-          <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full font-jost border border-white/20">On-site patient parking</span>
+          <?php foreach ( $car_tag_list as $tag ) : ?>
+            <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full font-jost border border-white/20"><?php echo esc_html( $tag ); ?></span>
+          <?php endforeach; ?>
         </div>
+        <?php endif; ?>
       </div>
 
       <!-- By Bus -->
@@ -231,12 +269,14 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
           <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 19v2m8-2v2M3 10h18M8 5V3m8 2V3"/><circle cx="8" cy="15" r="1" fill="currentColor"/><circle cx="16" cy="15" r="1" fill="currentColor"/></svg>
         </div>
         <h4 class="text-white font-semibold text-base font-jost mb-2">By Bus</h4>
-        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Stagecoach bus routes serve Havant town centre with stops close to Solent Road. The town's central bus interchange is nearby.</p>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4"><?php echo esc_html( $by_bus ); ?></p>
+        <?php if ( $bus_route_list ) : ?>
         <div class="flex flex-wrap gap-2">
-          <span class="bg-white text-blue-700 text-xs font-bold px-3 py-1 rounded-full font-jost">Route 23</span>
-          <span class="bg-white text-blue-700 text-xs font-bold px-3 py-1 rounded-full font-jost">Route 35</span>
-          <span class="bg-white text-blue-700 text-xs font-bold px-3 py-1 rounded-full font-jost">Route 700</span>
+          <?php foreach ( $bus_route_list as $route ) : ?>
+            <span class="bg-white text-blue-700 text-xs font-bold px-3 py-1 rounded-full font-jost">Route <?php echo esc_html( $route ); ?></span>
+          <?php endforeach; ?>
         </div>
+        <?php endif; ?>
       </div>
 
       <!-- By Train -->
@@ -245,17 +285,17 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
           <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19l-2 3m14-3l-2 3M5 7h14a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 15a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2zM12 7V4"/></svg>
         </div>
         <h4 class="text-white font-semibold text-base font-jost mb-2">By Train</h4>
-        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Havant railway station is served by South Western Railway and Southern, with direct links to Portsmouth and London Waterloo.</p>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4"><?php echo esc_html( $by_train ); ?></p>
+        <?php if ( $train_list ) : ?>
         <div class="flex flex-col gap-2">
-          <div class="flex items-center justify-between bg-white/15 rounded-lg px-3 py-2 border border-white/20">
-            <span class="text-white text-xs font-medium font-jost">Havant Station</span>
-            <span class="text-blue-200 text-xs font-jost">15 min walk</span>
-          </div>
-          <div class="flex items-center justify-between bg-white/15 rounded-lg px-3 py-2 border border-white/20">
-            <span class="text-white text-xs font-medium font-jost">Bedhampton Station</span>
-            <span class="text-blue-200 text-xs font-jost">10 min walk</span>
-          </div>
+          <?php foreach ( $train_list as $stn ) : ?>
+            <div class="flex items-center justify-between bg-white/15 rounded-lg px-3 py-2 border border-white/20">
+              <span class="text-white text-xs font-medium font-jost"><?php echo esc_html( $stn['name'] ); ?></span>
+              <span class="text-blue-200 text-xs font-jost"><?php echo esc_html( $stn['time'] ); ?></span>
+            </div>
+          <?php endforeach; ?>
         </div>
+        <?php endif; ?>
       </div>
 
       <!-- On Foot -->
@@ -264,11 +304,13 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
           <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14l-4 4m4-4l4 4m-4-4v6"/></svg>
         </div>
         <h4 class="text-white font-semibold text-base font-jost mb-2">On Foot</h4>
-        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Located within Bosmere Medical Centre on Solent Road. The centre is well signposted and easy to find from the surrounding residential area.</p>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4"><?php echo esc_html( $on_foot ); ?></p>
+        <?php if ( $landmark ) : ?>
         <div class="flex items-center gap-2 bg-white/15 rounded-lg px-3 py-2 border border-white/20">
           <svg class="w-4 h-4 text-blue-200 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-          <span class="text-white text-xs font-medium font-jost">Inside Bosmere Medical Centre</span>
+          <span class="text-white text-xs font-medium font-jost">Near <?php echo esc_html( $landmark ); ?></span>
         </div>
+        <?php endif; ?>
       </div>
 
     </div><!-- /Direction cards -->

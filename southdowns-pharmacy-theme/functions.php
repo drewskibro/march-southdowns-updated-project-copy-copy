@@ -287,6 +287,13 @@ add_action( 'wp_enqueue_scripts', function() {
 
 
 // ============================================================
+// INCLUDE ACF FIELD GROUP REGISTRATIONS
+// ============================================================
+
+require_once get_template_directory() . '/inc/acf-location-fields.php';
+
+
+// ============================================================
 // DISABLE GUTENBERG FOR CUSTOM PAGE TEMPLATES
 // ============================================================
 
@@ -296,6 +303,10 @@ add_filter( 'use_block_editor_for_post', function( bool $use_block_editor, \WP_P
         'page-templates/page-weight-loss.php',
         'page-templates/page-travel-health.php',
         'page-templates/page-yellow-fever.php',
+        // Location pages — acf_after_title requires classic editor
+        'page-templates/page-location.php',
+        'page-templates/page-emsworth.php',
+        'page-templates/page-bosmere.php',
     ];
     $template = get_page_template_slug( $post->ID );
     if ( in_array( $template, $custom_templates, true ) ) {
