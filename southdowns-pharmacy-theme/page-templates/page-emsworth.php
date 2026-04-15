@@ -10,12 +10,46 @@
 
 get_header();
 
-$booking_url = sp_booking_url();
-$phone       = '01243 968 869';
-$phone_raw   = '01243968869';
-$maps_dir_url = 'https://www.google.com/maps/dir/?api=1&destination=2-4+Central+Buildings,+Emsworth,+Hampshire+PO10+7DU';
-$maps_src     = ''; // Add Google Maps embed src URL here
-$hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=800&fit=crop';
+$booking_url   = sp_booking_url();
+
+// ── Hero ────────────────────────────────────────────────────────
+$hero_img      = get_field('branch_hero_image')          ?: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=800&fit=crop';
+$hero_subtitle = get_field('branch_hero_subtitle')       ?: 'Your Local Pharmacy in Emsworth';
+$hero_desc     = get_field('branch_hero_description')    ?: 'Expert healthcare and prescription services in the heart of Emsworth. Same-day appointments available — no GP referral needed.';
+
+// ── Contact & Hours ─────────────────────────────────────────────
+$addr1         = get_field('branch_address_line1')       ?: '2-4 Central Buildings';
+$addr2         = get_field('branch_address_line2')       ?: 'Emsworth, Hampshire';
+$postcode      = get_field('branch_postcode')            ?: 'PO10 7DU';
+$phone         = get_field('branch_phone')               ?: '01243 968 869';
+$phone_raw     = get_field('branch_phone_raw')           ?: '01243968869';
+$hours_wd      = get_field('branch_hours_weekday')       ?: 'Mon–Fri 9am–7pm';
+$hours_sat     = get_field('branch_hours_saturday')      ?: 'Sat 9am–5pm';
+$hours_sun     = get_field('branch_hours_sunday')        ?: '';
+$parking       = get_field('branch_parking')             ?: 'Free town centre parking';
+
+// ── Map & Directions ────────────────────────────────────────────
+$maps_src      = get_field('branch_maps_embed_src')      ?: '';
+$maps_dir_url  = get_field('branch_maps_directions_url') ?: 'https://www.google.com/maps/dir/?api=1&destination=2-4+Central+Buildings,+Emsworth,+Hampshire+PO10+7DU';
+$by_car        = get_field('branch_by_car')              ?: 'Located on the A259 coast road with easy access from the A27 Emsworth junction. Free public car parks in North Street and Queen Street are within 3 minutes\' walk.';
+$car_tags_raw  = get_field('branch_by_car_tags')         ?: 'Off A259 coast road,Near A27 junction,Free town centre parking';
+$by_bus        = get_field('branch_by_bus')              ?: 'Stagecoach Coastliner services run frequently along the A259 through Emsworth town centre, connecting Portsmouth and Chichester.';
+$bus_routes_raw= get_field('branch_bus_routes')          ?: '700,700X';
+$by_train      = get_field('branch_by_train')            ?: 'Emsworth railway station is on Southern\'s West Coastway line (Portsmouth–Brighton). The pharmacy is an 8-minute walk from the station.';
+$train_stn_raw = get_field('branch_train_stations')      ?: 'Emsworth Station|8 min walk,Havant Station|Connections available';
+$on_foot       = get_field('branch_on_foot')             ?: 'A short stroll from Emsworth High Street and the town\'s main square. Central Buildings is clearly signposted along the main road through town.';
+$landmark      = get_field('branch_landmark')            ?: 'Emsworth Square';
+
+// Parse comma / pipe-separated direction fields
+$car_tag_list   = array_filter( array_map( 'trim', explode( ',', $car_tags_raw ) ) );
+$bus_route_list = array_filter( array_map( 'trim', explode( ',', $bus_routes_raw ) ) );
+$train_list     = [];
+foreach ( array_filter( array_map( 'trim', explode( ',', $train_stn_raw ) ) ) as $pair ) {
+    $parts = explode( '|', $pair );
+    if ( count( $parts ) === 2 ) {
+        $train_list[] = [ 'name' => trim( $parts[0] ), 'time' => trim( $parts[1] ) ];
+    }
+}
 ?>
 
 <!-- Page-scoped styles -->
@@ -68,15 +102,15 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
       GPhC Registered &bull; Emsworth
     </div>
-    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Your Local Pharmacy in Emsworth</h1>
-    <p class="text-white text-base leading-relaxed mb-5 font-jost">Expert healthcare and prescription services in the heart of Emsworth. Same-day appointments available — no GP referral needed.</p>
+    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;"><?php echo esc_html( $hero_subtitle ); ?></h1>
+    <p class="text-white text-base leading-relaxed mb-5 font-jost"><?php echo esc_html( $hero_desc ); ?></p>
     <div class="flex flex-wrap gap-3 mb-4">
       <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg font-jost">
         Book Appointment
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
-    <p class="text-white/90 text-sm font-jost">Mon–Fri 9am–7pm &nbsp;|&nbsp; Sat 9am–5pm &nbsp;|&nbsp; Free town centre parking</p>
+    <p class="text-white/90 text-sm font-jost"><?php echo esc_html( $hours_wd ); ?> &nbsp;|&nbsp; <?php echo esc_html( $hours_sat ); ?><?php if ( $hours_sun ) : ?> &nbsp;|&nbsp; <?php echo esc_html( $hours_sun ); ?><?php endif; ?><?php if ( $parking ) : ?> &nbsp;|&nbsp; <?php echo esc_html( $parking ); ?><?php endif; ?></p>
   </div>
 
   <!-- Desktop: two-column split -->
@@ -88,8 +122,8 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         GPhC Registered &bull; Emsworth Branch
       </div>
-      <h1 class="text-white text-4xl lg:text-[50px] font-semibold mb-6 font-jost" style="line-height:1.1;">Your Local Pharmacy in Emsworth</h1>
-      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost">Expert healthcare and prescription services in the heart of Emsworth. Same-day appointments available — no GP referral needed.</p>
+      <h1 class="text-white text-4xl lg:text-[50px] font-semibold mb-6 font-jost" style="line-height:1.1;"><?php echo esc_html( $hero_subtitle ); ?></h1>
+      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost"><?php echo esc_html( $hero_desc ); ?></p>
       <div class="flex flex-wrap gap-3 mb-6">
         <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-base font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg font-jost">
           Book Appointment
@@ -103,16 +137,18 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
       <div class="flex flex-wrap gap-x-6 gap-y-2 text-white text-base font-medium font-jost">
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Mon–Fri 9am–7pm
+          <?php echo esc_html( $hours_wd ); ?>
         </div>
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Sat 9am–5pm
+          <?php echo esc_html( $hours_sat ); ?>
         </div>
+        <?php if ( $hours_sun ) : ?>
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Sun Closed
+          <?php echo esc_html( $hours_sun ); ?>
         </div>
+        <?php endif; ?>
       </div>
     </div>
 
@@ -175,17 +211,21 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
           <div class="flex items-start gap-3 mb-5">
             <svg class="w-5 h-5 text-blue-200 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <address class="text-white not-italic font-jost leading-relaxed text-sm">
-              2-4 Central Buildings<br>
-              Emsworth, Hampshire<br>
-              PO10 7DU
+              <?php if ( $addr1 ) echo esc_html( $addr1 ) . '<br>'; ?>
+              <?php if ( $addr2 ) echo esc_html( $addr2 ) . '<br>'; ?>
+              <?php if ( $postcode ) echo esc_html( $postcode ); ?>
             </address>
           </div>
           <div class="flex items-start gap-3 mb-5">
             <svg class="w-5 h-5 text-blue-200 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             <div class="text-white font-jost text-sm leading-relaxed">
-              <div>Mon–Fri: 9am–7pm</div>
-              <div>Sat: 9am–5pm</div>
+              <div><?php echo esc_html( $hours_wd ); ?></div>
+              <div><?php echo esc_html( $hours_sat ); ?></div>
+              <?php if ( $hours_sun ) : ?>
+              <div><?php echo esc_html( $hours_sun ); ?></div>
+              <?php else : ?>
               <div class="text-blue-200">Sun: Closed</div>
+              <?php endif; ?>
             </div>
           </div>
           <div class="flex items-center gap-3 mb-6">
@@ -211,12 +251,14 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
           <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2.5 0M13 16H3m10 0h2m4-6l-2-4H9l-2 4h12z"/></svg>
         </div>
         <h4 class="text-white font-semibold text-base font-jost mb-2">By Car</h4>
-        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Located on the A259 coast road with easy access from the A27 Emsworth junction. Free public car parks in North Street and Queen Street are within 3 minutes' walk.</p>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4"><?php echo esc_html( $by_car ); ?></p>
+        <?php if ( $car_tag_list ) : ?>
         <div class="flex flex-wrap gap-2">
-          <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full font-jost border border-white/20">Off A259 coast road</span>
-          <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full font-jost border border-white/20">Near A27 junction</span>
-          <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full font-jost border border-white/20">Free town centre parking</span>
+          <?php foreach ( $car_tag_list as $tag ) : ?>
+            <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full font-jost border border-white/20"><?php echo esc_html( $tag ); ?></span>
+          <?php endforeach; ?>
         </div>
+        <?php endif; ?>
       </div>
 
       <!-- By Bus -->
@@ -225,11 +267,14 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
           <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 19v2m8-2v2M3 10h18M8 5V3m8 2V3"/><circle cx="8" cy="15" r="1" fill="currentColor"/><circle cx="16" cy="15" r="1" fill="currentColor"/></svg>
         </div>
         <h4 class="text-white font-semibold text-base font-jost mb-2">By Bus</h4>
-        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Stagecoach Coastliner services run frequently along the A259 through Emsworth town centre, connecting Portsmouth and Chichester.</p>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4"><?php echo esc_html( $by_bus ); ?></p>
+        <?php if ( $bus_route_list ) : ?>
         <div class="flex flex-wrap gap-2">
-          <span class="bg-white text-blue-700 text-xs font-bold px-3 py-1 rounded-full font-jost">Route 700</span>
-          <span class="bg-white text-blue-700 text-xs font-bold px-3 py-1 rounded-full font-jost">Route 700X</span>
+          <?php foreach ( $bus_route_list as $route ) : ?>
+            <span class="bg-white text-blue-700 text-xs font-bold px-3 py-1 rounded-full font-jost">Route <?php echo esc_html( $route ); ?></span>
+          <?php endforeach; ?>
         </div>
+        <?php endif; ?>
       </div>
 
       <!-- By Train -->
@@ -238,17 +283,17 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
           <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19l-2 3m14-3l-2 3M5 7h14a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 15a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2zM12 7V4"/></svg>
         </div>
         <h4 class="text-white font-semibold text-base font-jost mb-2">By Train</h4>
-        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">Emsworth railway station is on Southern's West Coastway line (Portsmouth–Brighton). The pharmacy is an 8-minute walk from the station.</p>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4"><?php echo esc_html( $by_train ); ?></p>
+        <?php if ( $train_list ) : ?>
         <div class="flex flex-col gap-2">
-          <div class="flex items-center justify-between bg-white/15 rounded-lg px-3 py-2 border border-white/20">
-            <span class="text-white text-xs font-medium font-jost">Emsworth Station</span>
-            <span class="text-blue-200 text-xs font-jost">8 min walk</span>
-          </div>
-          <div class="flex items-center justify-between bg-white/15 rounded-lg px-3 py-2 border border-white/20">
-            <span class="text-white text-xs font-medium font-jost">Havant Station</span>
-            <span class="text-blue-200 text-xs font-jost">Connections available</span>
-          </div>
+          <?php foreach ( $train_list as $stn ) : ?>
+            <div class="flex items-center justify-between bg-white/15 rounded-lg px-3 py-2 border border-white/20">
+              <span class="text-white text-xs font-medium font-jost"><?php echo esc_html( $stn['name'] ); ?></span>
+              <span class="text-blue-200 text-xs font-jost"><?php echo esc_html( $stn['time'] ); ?></span>
+            </div>
+          <?php endforeach; ?>
         </div>
+        <?php endif; ?>
       </div>
 
       <!-- On Foot -->
@@ -257,11 +302,13 @@ $hero_img     = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=
           <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14l-4 4m4-4l4 4m-4-4v6"/></svg>
         </div>
         <h4 class="text-white font-semibold text-base font-jost mb-2">On Foot</h4>
-        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4">A short stroll from Emsworth High Street and the town's main square. Central Buildings is clearly signposted along the main road through town.</p>
+        <p class="text-blue-100 text-sm font-jost leading-relaxed mb-4"><?php echo esc_html( $on_foot ); ?></p>
+        <?php if ( $landmark ) : ?>
         <div class="flex items-center gap-2 bg-white/15 rounded-lg px-3 py-2 border border-white/20">
           <svg class="w-4 h-4 text-blue-200 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-          <span class="text-white text-xs font-medium font-jost">Near Emsworth Square</span>
+          <span class="text-white text-xs font-medium font-jost">Near <?php echo esc_html( $landmark ); ?></span>
         </div>
+        <?php endif; ?>
       </div>
 
     </div><!-- /Direction cards -->
