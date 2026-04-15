@@ -585,29 +585,63 @@ $other_branches = [
       <?php endforeach; ?>
     </div>
 
-    <!-- Trust strip -->
-    <div class="mt-14 pt-10 border-t border-blue-100 flex flex-wrap items-center justify-center gap-8 loc-reveal">
-      <div class="text-center">
-        <div class="text-2xl font-bold text-gray-900 font-jost">4</div>
-        <div class="text-gray-500 text-sm font-jost">Branches</div>
-      </div>
-      <div class="w-px h-10 bg-gray-200 hidden md:block"></div>
-      <div class="text-center">
-        <div class="text-2xl font-bold text-gray-900 font-jost">8+</div>
-        <div class="text-gray-500 text-sm font-jost">Services</div>
-      </div>
-      <div class="w-px h-10 bg-gray-200 hidden md:block"></div>
-      <div class="text-center">
-        <div class="text-2xl font-bold text-gray-900 font-jost">10,000+</div>
-        <div class="text-gray-500 text-sm font-jost">Patients Served</div>
-      </div>
-      <div class="w-px h-10 bg-gray-200 hidden md:block"></div>
-      <div class="text-center">
-        <div class="text-2xl font-bold text-gray-900 font-jost">GPhC</div>
-        <div class="text-gray-500 text-sm font-jost">Registered</div>
-      </div>
-    </div>
+  </div>
+</section>
 
+
+<!-- ============================================================
+     TRUST STATS
+     ============================================================ -->
+<section class="py-14 lg:py-20" style="background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 50%,#3b82f6 100%);">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
+
+      <!-- Branches -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 lg:p-8 text-center loc-reveal">
+        <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div class="text-4xl lg:text-5xl font-bold text-white font-jost mb-2">4</div>
+        <div class="text-blue-100 text-sm font-medium font-jost">Hampshire Branches</div>
+      </div>
+
+      <!-- Services -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 lg:p-8 text-center loc-reveal" style="transition-delay:0.1s;">
+        <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <div class="text-4xl lg:text-5xl font-bold text-white font-jost mb-2">8+</div>
+        <div class="text-blue-100 text-sm font-medium font-jost">Healthcare Services</div>
+      </div>
+
+      <!-- Patients Served -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 lg:p-8 text-center loc-reveal" style="transition-delay:0.2s;">
+        <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div class="text-4xl lg:text-5xl font-bold text-white font-jost mb-2">10,000+</div>
+        <div class="text-blue-100 text-sm font-medium font-jost">Patients Served</div>
+      </div>
+
+      <!-- 4th stat: 7 Days if Sunday hours set, else 5★ -->
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 lg:p-8 text-center loc-reveal" style="transition-delay:0.3s;">
+        <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mx-auto mb-4">
+          <?php if ( $hours_sun ) : ?>
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <?php else : ?>
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <?php endif; ?>
+        </div>
+        <?php if ( $hours_sun ) : ?>
+        <div class="text-4xl lg:text-5xl font-bold text-white font-jost mb-2">7 Days</div>
+        <div class="text-blue-100 text-sm font-medium font-jost">Open Every Week</div>
+        <?php else : ?>
+        <div class="text-4xl lg:text-5xl font-bold text-white font-jost mb-2">5★</div>
+        <div class="text-blue-100 text-sm font-medium font-jost">Patient Rated</div>
+        <?php endif; ?>
+      </div>
+
+    </div>
   </div>
 </section>
 
