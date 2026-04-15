@@ -342,3 +342,87 @@ add_action( 'wp_head', function() {
     ];
     echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
 } );
+
+
+// ============================================================
+// DUPLICATE PAGE — Admin row action
+// ============================================================
+
+/**
+ * Add a "Duplicate" link to the Pages list row actions.
+ * Only shown to users who can edit pages.
+ */
+add_filter( 'page_row_actions', function( array $actions, \WP_Post $post ): array {
+    if ( ! current_user_can( 'edit_pages' ) ) {
+        return $actions;
+    }
+    $url = wp_nonce_url(
+        admin_url( 'admin.php?action=sp_duplicate_page&post_id=' . $post->ID ),
+        'sp_duplicate_page_' . $post->ID
+    );
+    $actions['sp_duplicate'] = '<a href="' . esc_url( $url ) . '">Duplicate</a>';
+    return $actions;
+}, 10, 2 );
+
+/**
+ * Handle the duplication request.
+ *
+ * Copies the post record and ALL post meta (ACF fields, page template,
+ * featured image, etc.) to a new draft, then redirects to the edit screen.
+ */
+add_action( 'admin_action_sp_duplicate_page', function(): void {
+
+    // 1. Validate post ID
+    $post_id = isset( $_GET['post_id'] ) ? absint( $_GET['post_id'] ) : 0;
+    if ( ! $post_id ) {
+        wp_die( 'No page specified.' );
+    }
+
+    // 2. Permission check
+    if ( ! current_user_can( 'edit_pages' ) ) {
+        wp_die( 'You do not have permission to duplicate pages.' );
+    }
+
+    // 3. Nonce / CSRF check
+    check_admin_referer( 'sp_duplicate_page_' . $post_id );
+
+    // 4. Fetch the original post
+    $original = get_post( $post_id );
+    if ( ! $original || $original->post_type !== 'page' ) {
+        wp_die( 'Page not found.' );
+    }
+
+    // 5. Insert the new post as a draft
+    $new_id = wp_insert_post( [
+        'post_title'     => $original->post_title . ' (Copy)',
+        'post_status'    => 'draft',
+        'post_type'      => 'page',
+        'post_author'    => get_current_user_id(),
+        'post_content'   => $original->post_content,
+        'post_excerpt'   => $original->post_excerpt,
+        'menu_order'     => $original->menu_order,
+        'post_parent'    => $original->post_parent,
+        'comment_status' => $original->comment_status,
+    ], true ); // true = return WP_Error on failure
+
+    if ( is_wp_error( $new_id ) ) {
+        wp_die( 'Could not duplicate the page: ' . esc_html( $new_id->get_error_message() ) );
+    }
+
+    // 6. Copy all post meta — this includes:
+    //    · _wp_page_template  (page template assignment)
+    //    · _thumbnail_id      (featured image)
+    //    · All ACF field values (stored as standard post meta rows)
+    $all_meta = get_post_meta( $post_id );
+    foreach ( $all_meta as $meta_key => $meta_values ) {
+        foreach ( $meta_values as $meta_value ) {
+            // get_post_meta() returns unserialized values;
+            // add_post_meta() will re-serialize arrays/objects automatically.
+            add_post_meta( $new_id, $meta_key, $meta_value );
+        }
+    }
+
+    // 7. Open the edit screen for the new draft
+    wp_redirect( admin_url( 'post.php?action=edit&post=' . $new_id ) );
+    exit;
+} );
