@@ -291,6 +291,7 @@ add_action( 'wp_enqueue_scripts', function() {
 // ============================================================
 
 require_once get_template_directory() . '/inc/acf-location-fields.php';
+require_once get_template_directory() . '/inc/acf-weight-loss-fields.php';
 
 
 // ============================================================
