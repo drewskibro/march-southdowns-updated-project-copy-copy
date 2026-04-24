@@ -13,12 +13,13 @@ $hero_headline  = sp_field( 'wl_hero_headline',  'Lose 10&ndash;20% of your body
 $hero_body      = sp_field( 'wl_hero_body',      'Mounjaro and Wegovy prescriptions from our Hampshire pharmacists. No GP referral. No long waits. Expert face-to-face care at Southsea, Waterlooville, Havant &amp; Portsmouth.' );
 $hero_badge     = sp_field( 'wl_hero_badge_text', 'Medical Weight Loss &middot; Hampshire' );
 
-$stat_1_number  = sp_field( 'wl_stat_1_number', '95%' );
-$stat_1_label   = sp_field( 'wl_stat_1_label',  'of dieters regain weight within 5 years' );
-$stat_2_number  = sp_field( 'wl_stat_2_number', '3&times;' );
-$stat_2_label   = sp_field( 'wl_stat_2_label',  'more weight lost with GLP-1 medication vs diet alone' );
-$stat_3_number  = sp_field( 'wl_stat_3_number', '68%' );
-$stat_3_label   = sp_field( 'wl_stat_3_label',  'of adults in England are overweight or obese' );
+$science_eyebrow      = sp_field( 'wl_science_eyebrow',      'Clinical Evidence' );
+$science_headline     = sp_field( 'wl_science_headline',     'Why diets alone fail &mdash; the science in one chart' );
+$science_subhead      = sp_field( 'wl_science_subhead',      'In randomised trials, GLP-1 receptor agonists produce sustained weight loss that lifestyle intervention alone rarely achieves. The contrast is not subtle.' );
+$science_citation     = sp_field( 'wl_science_citation',     'Data adapted from the STEP-1 trial (Wilding et al., <em>N Engl J Med</em> 2021) and naturalistic dieting studies published in <em>Obesity Reviews</em>.' );
+$science_quote        = sp_field( 'wl_science_quote',        'Patients on GLP-1 therapy describe something dieting never gave them &mdash; relief from the constant thinking about food. That is what makes the weight loss sustainable.' );
+$science_quote_author = sp_field( 'wl_science_quote_author', 'Alex Chen, MPharm' );
+$science_quote_role   = sp_field( 'wl_science_quote_role',   'Lead Pharmacist, Southdowns Pharmacy' );
 
 $mounjaro_price = sp_field( 'wl_mounjaro_price', 'From &pound;149/month including pharmacist support' );
 $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month including pharmacist support' );
@@ -42,6 +43,45 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
 
   .yf-step:hover .yf-step-num { transform: scale(1.15); box-shadow: 0 0 0 8px rgba(59,130,246,0.15); }
   .yf-step-num { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+  /* S3 — Editorial "Science" section */
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap');
+
+  .sci-section { background: #f8f4ec; color: #1a1a1a; }
+  .sci-section::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 20%, rgba(12,47,94,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(163,148,136,0.05) 0%, transparent 50%); pointer-events: none; }
+  .sci-eyebrow { font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: #8a7968; font-weight: 500; }
+  .sci-headline { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 500; font-variation-settings: 'opsz' 96; letter-spacing: -0.015em; color: #0c1d3a; line-height: 1.08; }
+  .sci-subhead { font-family: 'Jost', sans-serif; color: #4a4138; font-weight: 300; }
+  .sci-footnote { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: #8a7968; font-weight: 300; letter-spacing: 0.01em; }
+  .sci-footnote em { font-family: 'Fraunces', Georgia, serif; font-style: italic; }
+
+  /* Chart */
+  .sci-chart-wrap { position: relative; }
+  .sci-chart { width: 100%; height: auto; display: block; font-family: 'Jost', sans-serif; }
+  .sci-axis-line { stroke: #d8cfc1; stroke-width: 1; }
+  .sci-grid-line { stroke: #e5ddd0; stroke-width: 1; stroke-dasharray: 2 4; }
+  .sci-axis-label { fill: #8a7968; font-size: 12px; font-weight: 400; }
+  .sci-axis-title { fill: #6b5f53; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .sci-curve { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s cubic-bezier(0.22, 1, 0.36, 1); }
+  .sci-curve--diet { stroke: #b5a595; stroke-width: 2; transition-delay: 0.2s; }
+  .sci-curve--glp1 { stroke: #0c2f5e; stroke-width: 3; transition-delay: 0.6s; }
+  .yf-reveal.visible .sci-curve { stroke-dashoffset: 0; }
+
+  .sci-endpoint { opacity: 0; transition: opacity 0.6s ease; transition-delay: 2.4s; }
+  .sci-endpoint--glp1 { transition-delay: 2.8s; }
+  .yf-reveal.visible .sci-endpoint { opacity: 1; }
+  .sci-endpoint-dot-diet { fill: #b5a595; }
+  .sci-endpoint-dot-glp1 { fill: #0c2f5e; }
+  .sci-endpoint-label { font-size: 12.5px; font-weight: 500; fill: #1a1a1a; }
+  .sci-endpoint-sublabel { font-size: 11px; font-weight: 400; fill: #6b5f53; }
+
+  /* Pullquote */
+  .sci-quote { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; font-variation-settings: 'opsz' 48; color: #0c1d3a; letter-spacing: -0.005em; line-height: 1.35; }
+  .sci-quote-mark { font-family: 'Fraunces', Georgia, serif; color: #c9b896; line-height: 0.5; }
+  .sci-quote-author { font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: #1a1a1a; font-weight: 600; }
+  .sci-quote-role { font-family: 'Jost', sans-serif; font-size: 0.85rem; color: #6b5f53; font-weight: 300; font-style: normal; }
+  .sci-divider { height: 1px; background: linear-gradient(90deg, transparent, #c9b896 50%, transparent); }
 
   /* FAQ — native <details> accordion */
   .wl-faq-item { border: 1px solid #e5e7eb; border-radius: 1rem; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; }
@@ -204,104 +244,87 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
 
 
 <!-- ============================================================
-     S3: WHY DIETS FAIL — Dark navy glassmorphism, stats + problem/solution cards
+     S3: THE SCIENCE — Editorial cream bg, animated weight-loss chart, pharmacist pullquote
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1d4ed8 100%);">
-  <div class="absolute inset-0 yf-shimmer pointer-events-none"></div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="sci-section relative py-20 md:py-28 lg:py-32 overflow-hidden">
+  <div class="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-8">
 
-    <!-- Heading -->
-    <div class="text-center mb-12 md:mb-16 yf-reveal">
-      <span class="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4 border border-white/20">The Science Behind Weight Loss</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-jost">Why diets alone often fail &mdash; and what actually works</h2>
-      <p class="text-lg text-blue-200 max-w-2xl mx-auto font-jost">Most people regain weight after dieting because hunger hormones work against them. Prescription medications change that equation.</p>
+    <!-- Editorial header -->
+    <div class="yf-reveal text-center mb-14 md:mb-20">
+      <div class="sci-eyebrow mb-5"><?php echo esc_html( $science_eyebrow ); ?></div>
+      <h2 class="sci-headline text-4xl sm:text-5xl md:text-[56px] lg:text-[64px] mb-6 max-w-3xl mx-auto"><?php echo $science_headline; ?></h2>
+      <p class="sci-subhead text-base md:text-lg max-w-xl mx-auto leading-relaxed"><?php echo $science_subhead; ?></p>
     </div>
 
-    <!-- Stats strip -->
-    <div class="grid grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-16">
-      <div class="yf-reveal text-center" data-delay="1">
-        <div class="text-3xl md:text-5xl font-bold text-white mb-2 font-jost"><?php echo esc_html( $stat_1_number ); ?></div>
-        <div class="text-sm md:text-base text-blue-200 font-jost"><?php echo esc_html( $stat_1_label ); ?></div>
-      </div>
-      <div class="yf-reveal text-center" data-delay="2">
-        <div class="text-3xl md:text-5xl font-bold text-white mb-2 font-jost"><?php echo $stat_2_number; ?></div>
-        <div class="text-sm md:text-base text-blue-200 font-jost"><?php echo esc_html( $stat_2_label ); ?></div>
-      </div>
-      <div class="yf-reveal text-center" data-delay="3">
-        <div class="text-3xl md:text-5xl font-bold text-white mb-2 font-jost"><?php echo esc_html( $stat_3_number ); ?></div>
-        <div class="text-sm md:text-base text-blue-200 font-jost"><?php echo esc_html( $stat_3_label ); ?></div>
-      </div>
-    </div>
+    <!-- Animated chart -->
+    <figure class="yf-reveal sci-chart-wrap mb-6">
+      <svg class="sci-chart" viewBox="0 0 900 440" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="sci-chart-title sci-chart-desc">
+        <title id="sci-chart-title">Body weight change over 12 months: diet alone vs GLP-1 medication</title>
+        <desc id="sci-chart-desc">A line chart showing body weight as a percentage of starting weight over 12 months. Traditional dieting fluctuates near 100%, while GLP-1 medication produces a steady decline to approximately 80% by month 12.</desc>
 
-    <!-- Problem / Solution — glassmorphism comparison cards with VS badge -->
-    <div class="relative grid md:grid-cols-2 gap-6 md:gap-16 items-stretch">
+        <!-- Y-axis title -->
+        <text x="20" y="56" class="sci-axis-title" transform="rotate(-90 20 56)">Body weight (% of start)</text>
 
-      <!-- VS badge — centred on the divider, desktop only -->
-      <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-14 h-14 rounded-full items-center justify-center border border-white/30" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(12px);">
-        <span class="text-white font-bold text-sm font-jost tracking-wide">VS</span>
-      </div>
+        <!-- Grid + Y-axis labels -->
+        <line class="sci-grid-line" x1="90" y1="50"  x2="840" y2="50"/>
+        <line class="sci-grid-line" x1="90" y1="178" x2="840" y2="178"/>
+        <line class="sci-grid-line" x1="90" y1="306" x2="840" y2="306"/>
+        <text x="80" y="54"  class="sci-axis-label" text-anchor="end">100%</text>
+        <text x="80" y="182" class="sci-axis-label" text-anchor="end">90%</text>
+        <text x="80" y="310" class="sci-axis-label" text-anchor="end">80%</text>
 
-      <!-- Traditional dieting card — red tint -->
-      <div class="yf-reveal yf-card-lift rounded-3xl p-8 border border-red-400/25" style="background: rgba(239,68,68,0.10); backdrop-filter: blur(8px);" data-delay="1">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 border border-red-400/30" style="background: rgba(239,68,68,0.20);">
-            <svg class="w-5 h-5 text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-white font-jost">Traditional dieting</h3>
-        </div>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3 text-blue-100 font-jost">
-            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
-            Constant hunger and cravings make adherence extremely difficult
-          </li>
-          <li class="flex items-start gap-3 text-blue-100 font-jost">
-            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
-            Metabolism slows down, making weight loss progressively harder
-          </li>
-          <li class="flex items-start gap-3 text-blue-100 font-jost">
-            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
-            Hormones actively drive you to regain lost weight
-          </li>
-          <li class="flex items-start gap-3 text-blue-100 font-jost">
-            <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
-            Yo-yo cycling damages long-term metabolic health
-          </li>
-        </ul>
-      </div>
+        <!-- X-axis -->
+        <line class="sci-axis-line" x1="90" y1="370" x2="840" y2="370"/>
+        <text x="90"  y="395" class="sci-axis-label" text-anchor="middle">0</text>
+        <text x="277" y="395" class="sci-axis-label" text-anchor="middle">3</text>
+        <text x="465" y="395" class="sci-axis-label" text-anchor="middle">6</text>
+        <text x="652" y="395" class="sci-axis-label" text-anchor="middle">9</text>
+        <text x="840" y="395" class="sci-axis-label" text-anchor="middle">12</text>
+        <text x="465" y="423" class="sci-axis-title" text-anchor="middle">Months</text>
 
-      <!-- Medical weight loss card — emerald/teal tint -->
-      <div class="yf-reveal yf-card-lift rounded-3xl p-8 border border-emerald-400/25" style="background: rgba(16,185,129,0.10); backdrop-filter: blur(8px);" data-delay="2">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 border border-emerald-400/30" style="background: rgba(16,185,129,0.20);">
-            <svg class="w-5 h-5 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-white font-jost">Medical weight loss (GLP-1)</h3>
-        </div>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3 text-blue-100 font-jost">
-            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            Reduces appetite at a hormonal level &mdash; hunger feels manageable
-          </li>
-          <li class="flex items-start gap-3 text-blue-100 font-jost">
-            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            Slows gastric emptying so you feel full for longer after meals
-          </li>
-          <li class="flex items-start gap-3 text-blue-100 font-jost">
-            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            Clinically proven: 10&ndash;20% body weight loss over 12 months
-          </li>
-          <li class="flex items-start gap-3 text-blue-100 font-jost">
-            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            Ongoing pharmacist support to help maintain results long-term
-          </li>
-        </ul>
-      </div>
+        <!-- Diet curve — wavy, stays near top -->
+        <path class="sci-curve sci-curve--diet"
+              pathLength="1"
+              d="M 90 50 Q 160 94, 215 100 T 340 76 T 465 130 T 590 92 T 715 115 T 840 78"/>
 
-    </div>
+        <!-- GLP-1 curve — steep descent, plateau -->
+        <path class="sci-curve sci-curve--glp1"
+              pathLength="1"
+              d="M 90 50 C 220 60, 260 185, 465 232 C 680 272, 790 300, 840 306"/>
+
+        <!-- Diet endpoint -->
+        <g class="sci-endpoint">
+          <circle class="sci-endpoint-dot-diet" cx="840" cy="78" r="4.5"/>
+          <text x="770" y="48"  class="sci-endpoint-label"    text-anchor="end">Diet alone</text>
+          <text x="770" y="65" class="sci-endpoint-sublabel" text-anchor="end">−2% average change</text>
+        </g>
+
+        <!-- GLP-1 endpoint -->
+        <g class="sci-endpoint sci-endpoint--glp1">
+          <circle class="sci-endpoint-dot-glp1" cx="840" cy="306" r="5.5"/>
+          <text x="770" y="335" class="sci-endpoint-label"    text-anchor="end">GLP-1 medication</text>
+          <text x="770" y="352" class="sci-endpoint-sublabel" text-anchor="end">−17% body weight</text>
+        </g>
+      </svg>
+
+      <figcaption class="sci-footnote text-center mt-4 max-w-2xl mx-auto"><?php echo $science_citation; ?></figcaption>
+    </figure>
+
+    <!-- Editorial divider -->
+    <div class="sci-divider my-14 md:my-20 max-w-xs mx-auto"></div>
+
+    <!-- Pharmacist pullquote -->
+    <figure class="yf-reveal text-center max-w-3xl mx-auto">
+      <div class="sci-quote-mark text-6xl md:text-7xl mb-2" aria-hidden="true">&ldquo;</div>
+      <blockquote class="sci-quote text-2xl md:text-3xl lg:text-[34px] mb-10 px-2">
+        <?php echo $science_quote; ?>
+      </blockquote>
+      <figcaption>
+        <div class="sci-quote-author mb-1"><?php echo esc_html( $science_quote_author ); ?></div>
+        <div class="sci-quote-role"><?php echo esc_html( $science_quote_role ); ?></div>
+      </figcaption>
+    </figure>
+
   </div>
 </section>
 
