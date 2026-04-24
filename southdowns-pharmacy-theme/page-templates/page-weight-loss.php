@@ -44,44 +44,42 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
   .yf-step:hover .yf-step-num { transform: scale(1.15); box-shadow: 0 0 0 8px rgba(59,130,246,0.15); }
   .yf-step-num { transition: transform 0.3s ease, box-shadow 0.3s ease; }
 
-  /* S3 — Editorial "Science" section */
+  /* S3 — Editorial "Science" section — on-brand white/navy/blue palette */
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap');
 
-  .sci-section { background: #f8f4ec; color: #1a1a1a; }
-  .sci-section::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 20%, rgba(12,47,94,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(163,148,136,0.05) 0%, transparent 50%); pointer-events: none; }
-  .sci-eyebrow { font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: #8a7968; font-weight: 500; }
-  .sci-headline { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 500; font-variation-settings: 'opsz' 96; letter-spacing: -0.015em; color: #0c1d3a; line-height: 1.08; }
-  .sci-subhead { font-family: 'Jost', sans-serif; color: #4a4138; font-weight: 300; }
-  .sci-footnote { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: #8a7968; font-weight: 300; letter-spacing: 0.01em; }
+  .sci-section { background: #ffffff; }
+  .sci-headline { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 500; font-variation-settings: 'opsz' 96; letter-spacing: -0.015em; color: #111827; line-height: 1.08; }
+  .sci-subhead { font-family: 'Jost', sans-serif; color: #4b5563; font-weight: 300; }
+  .sci-footnote { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: #9ca3af; font-weight: 300; letter-spacing: 0.01em; }
   .sci-footnote em { font-family: 'Fraunces', Georgia, serif; font-style: italic; }
 
   /* Chart */
   .sci-chart-wrap { position: relative; }
   .sci-chart { width: 100%; height: auto; display: block; font-family: 'Jost', sans-serif; }
-  .sci-axis-line { stroke: #d8cfc1; stroke-width: 1; }
-  .sci-grid-line { stroke: #e5ddd0; stroke-width: 1; stroke-dasharray: 2 4; }
-  .sci-axis-label { fill: #8a7968; font-size: 12px; font-weight: 400; }
-  .sci-axis-title { fill: #6b5f53; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  .sci-axis-line { stroke: #e5e7eb; stroke-width: 1; }
+  .sci-grid-line { stroke: #f3f4f6; stroke-width: 1; stroke-dasharray: 4 4; }
+  .sci-axis-label { fill: #9ca3af; font-size: 12px; font-weight: 400; }
+  .sci-axis-note { fill: #d1d5db; font-size: 10.5px; font-weight: 400; letter-spacing: 0.02em; }
 
   .sci-curve { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s cubic-bezier(0.22, 1, 0.36, 1); }
-  .sci-curve--diet { stroke: #b5a595; stroke-width: 2; transition-delay: 0.2s; }
-  .sci-curve--glp1 { stroke: #0c2f5e; stroke-width: 3; transition-delay: 0.6s; }
+  .sci-curve--diet { stroke: #d1d5db; stroke-width: 2; transition-delay: 0.2s; }
+  .sci-curve--glp1 { stroke: #1e3a8a; stroke-width: 3; transition-delay: 0.6s; }
   .yf-reveal.visible .sci-curve { stroke-dashoffset: 0; }
 
-  .sci-endpoint { opacity: 0; transition: opacity 0.6s ease; transition-delay: 2.4s; }
-  .sci-endpoint--glp1 { transition-delay: 2.8s; }
+  .sci-endpoint { opacity: 0; transition: opacity 0.5s ease; transition-delay: 2.5s; }
+  .sci-endpoint--glp1 { transition-delay: 2.9s; }
   .yf-reveal.visible .sci-endpoint { opacity: 1; }
-  .sci-endpoint-dot-diet { fill: #b5a595; }
-  .sci-endpoint-dot-glp1 { fill: #0c2f5e; }
-  .sci-endpoint-label { font-size: 12.5px; font-weight: 500; fill: #1a1a1a; }
-  .sci-endpoint-sublabel { font-size: 11px; font-weight: 400; fill: #6b5f53; }
+  .sci-endpoint-dot-diet { fill: #9ca3af; }
+  .sci-endpoint-dot-glp1 { fill: #1e3a8a; }
+  .sci-endpoint-label { font-size: 12.5px; font-weight: 600; fill: #111827; }
+  .sci-endpoint-sublabel { font-size: 11px; font-weight: 400; fill: #6b7280; }
 
   /* Pullquote */
-  .sci-quote { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; font-variation-settings: 'opsz' 48; color: #0c1d3a; letter-spacing: -0.005em; line-height: 1.35; }
-  .sci-quote-mark { font-family: 'Fraunces', Georgia, serif; color: #c9b896; line-height: 0.5; }
-  .sci-quote-author { font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: #1a1a1a; font-weight: 600; }
-  .sci-quote-role { font-family: 'Jost', sans-serif; font-size: 0.85rem; color: #6b5f53; font-weight: 300; font-style: normal; }
-  .sci-divider { height: 1px; background: linear-gradient(90deg, transparent, #c9b896 50%, transparent); }
+  .sci-quote { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; font-variation-settings: 'opsz' 48; color: #111827; letter-spacing: -0.005em; line-height: 1.35; }
+  .sci-quote-mark { font-family: 'Fraunces', Georgia, serif; color: #93c5fd; line-height: 0.5; }
+  .sci-quote-author { font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: #111827; font-weight: 600; }
+  .sci-quote-role { font-family: 'Jost', sans-serif; font-size: 0.85rem; color: #6b7280; font-weight: 300; }
+  .sci-divider { height: 1px; background: linear-gradient(90deg, transparent, #bfdbfe 50%, transparent); }
 
   /* FAQ — native <details> accordion */
   .wl-faq-item { border: 1px solid #e5e7eb; border-radius: 1rem; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; }
@@ -244,73 +242,83 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
 
 
 <!-- ============================================================
-     S3: THE SCIENCE — Editorial cream bg, animated weight-loss chart, pharmacist pullquote
+     S3: THE SCIENCE — Brand-white bg, animated clinical chart, pharmacist pullquote
      ============================================================ -->
-<section class="sci-section relative py-20 md:py-28 lg:py-32 overflow-hidden">
-  <div class="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-8">
+<section class="sci-section py-20 md:py-28 lg:py-32">
+  <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-8">
 
-    <!-- Editorial header -->
+    <!-- Header — brand pill eyebrow -->
     <div class="yf-reveal text-center mb-14 md:mb-20">
-      <div class="sci-eyebrow mb-5"><?php echo esc_html( $science_eyebrow ); ?></div>
-      <h2 class="sci-headline text-4xl sm:text-5xl md:text-[56px] lg:text-[64px] mb-6 max-w-3xl mx-auto"><?php echo $science_headline; ?></h2>
+      <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide border border-blue-100 mb-5 font-jost"><?php echo esc_html( $science_eyebrow ); ?></span>
+      <h2 class="sci-headline text-4xl sm:text-5xl md:text-[56px] lg:text-[62px] mb-6 max-w-3xl mx-auto"><?php echo $science_headline; ?></h2>
       <p class="sci-subhead text-base md:text-lg max-w-xl mx-auto leading-relaxed"><?php echo $science_subhead; ?></p>
     </div>
 
     <!-- Animated chart -->
     <figure class="yf-reveal sci-chart-wrap mb-6">
-      <svg class="sci-chart" viewBox="0 0 900 440" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="sci-chart-title sci-chart-desc">
+      <svg class="sci-chart" viewBox="0 0 860 400" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="sci-chart-title sci-chart-desc">
         <title id="sci-chart-title">Body weight change over 12 months: diet alone vs GLP-1 medication</title>
-        <desc id="sci-chart-desc">A line chart showing body weight as a percentage of starting weight over 12 months. Traditional dieting fluctuates near 100%, while GLP-1 medication produces a steady decline to approximately 80% by month 12.</desc>
+        <desc id="sci-chart-desc">Line chart: traditional dieting stays near 100% starting weight with yo-yo oscillation; GLP-1 medication descends smoothly to ~83% by 12 months.</desc>
 
-        <!-- Y-axis title -->
-        <text x="20" y="56" class="sci-axis-title" transform="rotate(-90 20 56)">Body weight (% of start)</text>
+        <!-- Y-axis label (horizontal, no rotation) -->
+        <text x="10" y="34" class="sci-axis-note">Body weight (% of start)</text>
 
-        <!-- Grid + Y-axis labels -->
-        <line class="sci-grid-line" x1="90" y1="50"  x2="840" y2="50"/>
-        <line class="sci-grid-line" x1="90" y1="178" x2="840" y2="178"/>
-        <line class="sci-grid-line" x1="90" y1="306" x2="840" y2="306"/>
-        <text x="80" y="54"  class="sci-axis-label" text-anchor="end">100%</text>
-        <text x="80" y="182" class="sci-axis-label" text-anchor="end">90%</text>
-        <text x="80" y="310" class="sci-axis-label" text-anchor="end">80%</text>
+        <!-- Horizontal grid lines -->
+        <line class="sci-grid-line" x1="90" y1="50"  x2="800" y2="50"/>
+        <line class="sci-grid-line" x1="90" y1="155" x2="800" y2="155"/>
+        <line class="sci-grid-line" x1="90" y1="260" x2="800" y2="260"/>
 
-        <!-- X-axis -->
-        <line class="sci-axis-line" x1="90" y1="370" x2="840" y2="370"/>
-        <text x="90"  y="395" class="sci-axis-label" text-anchor="middle">0</text>
-        <text x="277" y="395" class="sci-axis-label" text-anchor="middle">3</text>
-        <text x="465" y="395" class="sci-axis-label" text-anchor="middle">6</text>
-        <text x="652" y="395" class="sci-axis-label" text-anchor="middle">9</text>
-        <text x="840" y="395" class="sci-axis-label" text-anchor="middle">12</text>
-        <text x="465" y="423" class="sci-axis-title" text-anchor="middle">Months</text>
+        <!-- Y-axis labels -->
+        <text x="82" y="54"  class="sci-axis-label" text-anchor="end">100%</text>
+        <text x="82" y="159" class="sci-axis-label" text-anchor="end">90%</text>
+        <text x="82" y="264" class="sci-axis-label" text-anchor="end">80%</text>
 
-        <!-- Diet curve — wavy, stays near top -->
+        <!-- X-axis baseline + month labels -->
+        <line class="sci-axis-line" x1="90" y1="320" x2="800" y2="320"/>
+        <text x="90"  y="340" class="sci-axis-label" text-anchor="middle">0</text>
+        <text x="267" y="340" class="sci-axis-label" text-anchor="middle">3</text>
+        <text x="445" y="340" class="sci-axis-label" text-anchor="middle">6</text>
+        <text x="623" y="340" class="sci-axis-label" text-anchor="middle">9</text>
+        <text x="800" y="340" class="sci-axis-label" text-anchor="middle">12</text>
+        <text x="445" y="365" class="sci-axis-note"  text-anchor="middle">Months on programme</text>
+
+        <!-- DIET curve: explicit cubic bezier — controlled to never cross y=50 (100% line) -->
         <path class="sci-curve sci-curve--diet"
               pathLength="1"
-              d="M 90 50 Q 160 94, 215 100 T 340 76 T 465 130 T 590 92 T 715 115 T 840 78"/>
+              d="M 90 50
+                 C 130 50, 165 100, 205 104
+                 C 242 108, 285 62, 320 66
+                 C 358 70, 398 118, 435 122
+                 C 472 126, 515 72, 552 76
+                 C 592 80, 632 110, 668 108
+                 C 706 106, 762 82, 800 84"/>
 
-        <!-- GLP-1 curve — steep descent, plateau -->
+        <!-- GLP-1 curve: smooth S-curve descent with plateau -->
         <path class="sci-curve sci-curve--glp1"
               pathLength="1"
-              d="M 90 50 C 220 60, 260 185, 465 232 C 680 272, 790 300, 840 306"/>
+              d="M 90 50 C 210 56, 250 168, 445 218 C 640 264, 760 280, 800 284"/>
 
         <!-- Diet endpoint -->
         <g class="sci-endpoint">
-          <circle class="sci-endpoint-dot-diet" cx="840" cy="78" r="4.5"/>
-          <text x="770" y="48"  class="sci-endpoint-label"    text-anchor="end">Diet alone</text>
-          <text x="770" y="65" class="sci-endpoint-sublabel" text-anchor="end">−2% average change</text>
+          <rect x="555" y="52" width="110" height="38" rx="5" fill="white" fill-opacity="0.92"/>
+          <circle class="sci-endpoint-dot-diet" cx="800" cy="84" r="4"/>
+          <text x="660" y="67"  class="sci-endpoint-label"    text-anchor="end">Diet alone</text>
+          <text x="660" y="83" class="sci-endpoint-sublabel" text-anchor="end">≈ −2% after 12 months</text>
         </g>
 
         <!-- GLP-1 endpoint -->
         <g class="sci-endpoint sci-endpoint--glp1">
-          <circle class="sci-endpoint-dot-glp1" cx="840" cy="306" r="5.5"/>
-          <text x="770" y="335" class="sci-endpoint-label"    text-anchor="end">GLP-1 medication</text>
-          <text x="770" y="352" class="sci-endpoint-sublabel" text-anchor="end">−17% body weight</text>
+          <rect x="542" y="295" width="120" height="38" rx="5" fill="white" fill-opacity="0.92"/>
+          <circle class="sci-endpoint-dot-glp1" cx="800" cy="284" r="5"/>
+          <text x="658" y="310"  class="sci-endpoint-label"    text-anchor="end">GLP-1 medication</text>
+          <text x="658" y="326" class="sci-endpoint-sublabel" text-anchor="end">≈ −17% after 12 months</text>
         </g>
       </svg>
 
       <figcaption class="sci-footnote text-center mt-4 max-w-2xl mx-auto"><?php echo $science_citation; ?></figcaption>
     </figure>
 
-    <!-- Editorial divider -->
+    <!-- Brand-toned divider -->
     <div class="sci-divider my-14 md:my-20 max-w-xs mx-auto"></div>
 
     <!-- Pharmacist pullquote -->
