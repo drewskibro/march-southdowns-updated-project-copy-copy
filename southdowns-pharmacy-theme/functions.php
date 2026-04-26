@@ -292,6 +292,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 require_once get_template_directory() . '/inc/acf-location-fields.php';
 require_once get_template_directory() . '/inc/acf-weight-loss-fields.php';
+require_once get_template_directory() . '/inc/acf-covid-vaccine-fields.php';
 
 
 // ============================================================
@@ -308,6 +309,9 @@ add_filter( 'use_block_editor_for_post', function( bool $use_block_editor, \WP_P
         'page-templates/page-location.php',
         'page-templates/page-emsworth.php',
         'page-templates/page-bosmere.php',
+        // COVID-19 vaccine pages — acf_after_title requires classic editor
+        'page-templates/page-covid-vaccine.php',
+        'page-templates/page-covid-vaccine-private.php',
     ];
     $template = get_page_template_slug( $post->ID );
     if ( in_array( $template, $custom_templates, true ) ) {

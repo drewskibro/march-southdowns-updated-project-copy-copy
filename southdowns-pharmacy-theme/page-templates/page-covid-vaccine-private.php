@@ -8,6 +8,24 @@ get_header();
 $booking_url = sp_booking_url();
 $phone_raw   = sp_phone_raw();
 $phone       = sp_phone();
+
+// ── ACF-backed copy (with hardcoded fallbacks) ─────────────────────────────
+$cvp_hero_badge     = sp_field( 'cv_priv_hero_badge',    'Private COVID-19 Vaccination · Hampshire' );
+$cvp_hero_headline  = sp_field( 'cv_priv_hero_headline', 'Private COVID-19 Vaccine in Hampshire &mdash; Available Today' );
+$cvp_hero_body      = sp_field( 'cv_priv_hero_body',     'Not eligible for the NHS COVID-19 vaccine this season? Southdowns Pharmacy offers private COVID-19 vaccination using the latest Pfizer vaccine &mdash; no eligibility criteria, no waiting list, no GP referral needed. Walk in or book online at any of our four Hampshire locations.' );
+$cvp_price          = sp_field( 'cv_priv_price',         '£89.50' );
+$cvp_price_label    = sp_field( 'cv_priv_price_label',   'per person · all-inclusive' );
+$cvp_final_headline = sp_field( 'cv_priv_final_cta_headline', 'Stay Protected.<br>Book Your Private<br>COVID-19 Vaccine Today.' );
+$cvp_final_body     = sp_field( 'cv_priv_final_cta_body',     'No waiting lists. No eligibility criteria. Just the Pfizer vaccine, administered by our expert team — at a time that suits you.' );
+
+// Repeater: pricing card inclusions
+$cvp_inclusions_raw = function_exists( 'get_field' ) ? get_field( 'cv_priv_inclusions' ) : null;
+$cvp_inclusions     = ! empty( $cvp_inclusions_raw ) ? array_column( $cvp_inclusions_raw, 'text' ) : [
+    'Pfizer-BioNTech mRNA vaccine dose',
+    'Pre-vaccination health consultation',
+    'Post-vaccination observation period',
+    'Personalised digital vaccination record',
+];
 ?>
 
 <!-- Page-scoped styles -->
@@ -63,10 +81,10 @@ $phone       = sp_phone();
   <div class="md:hidden absolute inset-0 flex flex-col justify-end px-6 py-8 z-10">
     <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full mb-4 border border-white/20 self-start">
       <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-300"></span></span>
-      Private COVID-19 Vaccination &middot; Hampshire
+      <?php echo esc_html( $cvp_hero_badge ); ?>
     </div>
-    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Private COVID-19 Vaccine in Hampshire &mdash; Available Today</h1>
-    <p class="text-white text-base leading-relaxed mb-5 font-jost">Not eligible for the NHS vaccine this season? We offer private COVID-19 vaccination using the latest Pfizer vaccine &mdash; no eligibility criteria, no waiting list, no GP referral needed.</p>
+    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;"><?php echo wp_kses_post( $cvp_hero_headline ); ?></h1>
+    <p class="text-white text-base leading-relaxed mb-5 font-jost"><?php echo wp_kses_post( $cvp_hero_body ); ?></p>
     <div class="flex flex-wrap gap-3 mb-4">
       <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg font-jost">
         Book Your Private COVID Vaccine
@@ -74,7 +92,7 @@ $phone       = sp_phone();
       </a>
     </div>
     <div class="flex flex-wrap gap-4 text-white/90 text-xs font-jost">
-      <span>&#10003; &pound;89.50 Per Dose</span>
+      <span>&#10003; <?php echo esc_html( $cvp_price ); ?> Per Dose</span>
       <span>&#10003; Latest Pfizer</span>
       <span>&#10003; Same Day Available</span>
     </div>
@@ -86,10 +104,10 @@ $phone       = sp_phone();
     <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
       <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20 self-start">
         <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-300"></span></span>
-        Private COVID-19 Vaccination &middot; Hampshire
+        <?php echo esc_html( $cvp_hero_badge ); ?>
       </div>
-      <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;">Private COVID-19 Vaccine in Hampshire &mdash; Available Today</h1>
-      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost">Not eligible for the NHS COVID-19 vaccine this season? Southdowns Pharmacy offers private COVID-19 vaccination using the latest Pfizer vaccine &mdash; no eligibility criteria, no waiting list, no GP referral needed. Walk in or book online at any of our four Hampshire locations.</p>
+      <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;"><?php echo wp_kses_post( $cvp_hero_headline ); ?></h1>
+      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost"><?php echo wp_kses_post( $cvp_hero_body ); ?></p>
       <div class="flex flex-wrap gap-3 mb-6">
         <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-base font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg font-jost">
           Book Your Private COVID Vaccine
@@ -135,7 +153,7 @@ $phone       = sp_phone();
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
 
       <div class="yf-reveal yf-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="1">
-        <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 font-jost">&pound;89.50</div>
+        <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 font-jost"><?php echo esc_html( $cvp_price ); ?></div>
         <div class="text-sm md:text-base text-blue-100 font-medium font-jost">Per Dose</div>
       </div>
 
@@ -231,18 +249,11 @@ $phone       = sp_phone();
         <div class="bg-slate-900 rounded-[1.25rem] px-8 py-10 flex flex-col items-center gap-6">
           <div class="text-center">
             <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest font-jost mb-1">Private COVID-19 Vaccine</p>
-            <p class="text-white font-bold font-jost" style="font-size:4rem;line-height:1;">£89.50</p>
-            <p class="text-slate-400 text-sm font-jost mt-1">per person · all-inclusive</p>
+            <p class="text-white font-bold font-jost" style="font-size:4rem;line-height:1;"><?php echo esc_html( $cvp_price ); ?></p>
+            <p class="text-slate-400 text-sm font-jost mt-1"><?php echo esc_html( $cvp_price_label ); ?></p>
           </div>
           <ul class="w-full space-y-3">
-            <?php
-            $inclusions = [
-              'Pfizer-BioNTech mRNA vaccine dose',
-              'Pre-vaccination health consultation',
-              'Post-vaccination observation period',
-              'Personalised digital vaccination record',
-            ];
-            foreach ( $inclusions as $inc ) : ?>
+            <?php foreach ( $cvp_inclusions as $inc ) : ?>
             <li class="flex items-center gap-3 text-slate-200 font-jost text-sm">
               <span class="flex-shrink-0 w-5 h-5 bg-blue-600/30 rounded-full flex items-center justify-center">
                 <svg class="w-3 h-3 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
@@ -252,7 +263,7 @@ $phone       = sp_phone();
             <?php endforeach; ?>
           </ul>
           <a href="<?php echo esc_url( sp_booking_url() ); ?>" class="w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3.5 rounded-xl font-jost transition-colors duration-200 shadow-lg shadow-blue-600/30">
-            Book Now — £89.50
+            Book Now — <?php echo esc_html( $cvp_price ); ?>
           </a>
         </div>
       </div>
@@ -424,7 +435,7 @@ $phone       = sp_phone();
         [
           'icon' => '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
           'title' => 'All-Inclusive Pricing',
-          'desc'  => 'One transparent fee of £89.50 covers everything — consultation, vaccine, observation, and your digital record.',
+          'desc'  => 'One transparent fee of ' . $cvp_price . ' covers everything — consultation, vaccine, observation, and your digital record.',
         ],
         [
           'icon' => '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17l-.08-.08z"/>',
@@ -675,7 +686,7 @@ $phone       = sp_phone();
         'MHRA Approved',
         'GPhC-Registered Pharmacists',
         'Same-Day Availability',
-        '£89.50 All-Inclusive',
+        $cvp_price . ' All-Inclusive',
       ];
       foreach ( $badges as $badge ) : ?>
       <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold font-jost bg-white/15 backdrop-blur-sm text-white border border-white/20">
@@ -685,8 +696,8 @@ $phone       = sp_phone();
       <?php endforeach; ?>
     </div>
 
-    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-5 font-jost leading-tight">Stay Protected.<br>Book Your Private<br>COVID-19 Vaccine Today.</h2>
-    <p class="text-blue-200 text-lg max-w-xl mx-auto mb-10 font-jost">No waiting lists. No eligibility criteria. Just the Pfizer vaccine, administered by our expert team — at a time that suits you.</p>
+    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-5 font-jost leading-tight"><?php echo wp_kses_post( $cvp_final_headline ); ?></h2>
+    <p class="text-blue-200 text-lg max-w-xl mx-auto mb-10 font-jost"><?php echo wp_kses_post( $cvp_final_body ); ?></p>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
       <a href="<?php echo esc_url( sp_booking_url() ); ?>" class="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-bold px-8 py-4 rounded-xl font-jost hover:bg-blue-50 transition-colors duration-200 shadow-xl shadow-blue-900/30 text-lg">
@@ -704,7 +715,7 @@ $phone       = sp_phone();
       <?php
       $trust_stats = [
         [ 'value' => '4',       'label' => 'Hampshire Locations' ],
-        [ 'value' => '£89.50',  'label' => 'All-Inclusive Price' ],
+        [ 'value' => $cvp_price, 'label' => 'All-Inclusive Price' ],
         [ 'value' => 'GPhC',    'label' => 'Registered Pharmacists' ],
         [ 'value' => 'Pfizer',  'label' => 'mRNA Vaccine' ],
       ];
