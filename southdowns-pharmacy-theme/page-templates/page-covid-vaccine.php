@@ -8,6 +8,44 @@ get_header();
 $booking_url = sp_booking_url();
 $phone_raw   = sp_phone_raw();
 $phone       = sp_phone();
+
+// ── ACF-backed copy (with hardcoded fallbacks) ─────────────────────────────
+$cv_hero_badge      = sp_field( 'cv_nhs_hero_badge',      'NHS Seasonal Vaccination · Hampshire' );
+$cv_hero_headline   = sp_field( 'cv_nhs_hero_headline',   'Free NHS COVID-19 Vaccination at Southdowns Pharmacy' );
+$cv_hero_body       = sp_field( 'cv_nhs_hero_body',       'Eligible patients can receive their seasonal COVID-19 vaccine free of charge at any of our four Hampshire locations. No long waits, no hassle &mdash; walk in or book online today.' );
+$cv_programme_name  = sp_field( 'cv_nhs_programme_name',  'Spring 2026 Programme' );
+$cv_programme_intro = sp_field( 'cv_nhs_programme_intro', 'For Spring 2026, the JCVI has updated its advice, focusing the programme on those at highest risk of serious disease. Free NHS COVID-19 vaccinations are now offered to the following groups only:' );
+$cv_elig_eyebrow    = sp_field( 'cv_nhs_elig_eyebrow',    'Spring 2026 Eligibility' );
+$cv_elig_headline   = sp_field( 'cv_nhs_elig_headline',   'Are You Eligible for a Free NHS COVID Vaccine?' );
+$cv_elig_subhead    = sp_field( 'cv_nhs_elig_subhead',    'The Spring 2026 programme is targeted at those at highest risk. Check whether you qualify below.' );
+$cv_promo_body      = sp_field( 'cv_nhs_promo_body',      'If you don\'t currently meet the NHS eligibility criteria for Spring 2026, you can still protect yourself with our private COVID-19 vaccination service. We offer the latest Pfizer COVID-19 vaccine privately for <strong>&pound;89.50 per dose</strong> &mdash; ideal for those who want to stay protected but fall outside the current NHS cohorts.' );
+$cv_final_headline  = sp_field( 'cv_nhs_final_cta_headline', 'Protect Yourself This Season &mdash; Book Your Free NHS COVID Vaccine Today' );
+$cv_final_body      = sp_field( 'cv_nhs_final_cta_body',     'All four Southdowns Pharmacy locations offer NHS COVID-19 vaccination for eligible patients. Walk in during opening hours or book online now.' );
+
+// Repeater: eligible-groups bullet list
+$cv_groups_raw = function_exists( 'get_field' ) ? get_field( 'cv_nhs_programme_groups' ) : null;
+$cv_groups     = ! empty( $cv_groups_raw ) ? array_column( $cv_groups_raw, 'text' ) : [
+    'Adults aged 75 years and over',
+    'Residents in care homes for older adults',
+    'Individuals who are immunosuppressed, aged 6 months and over',
+];
+
+// Repeater: eligibility cards
+$cv_cards_raw = function_exists( 'get_field' ) ? get_field( 'cv_nhs_elig_cards' ) : null;
+$cv_cards     = ! empty( $cv_cards_raw ) ? $cv_cards_raw : [
+    [
+        'title' => 'Adults Aged 75 and Over',
+        'body'  => 'If you are 75 years of age or older, you are eligible for a free NHS COVID-19 vaccine this season. You should receive an invitation from the NHS, but you can also book directly without waiting for a letter.',
+    ],
+    [
+        'title' => 'Care Home Residents',
+        'body'  => 'Residents in care homes for older adults are eligible for a free NHS COVID-19 vaccine. Vaccination is typically arranged through your care home, but please speak to our team if you need assistance.',
+    ],
+    [
+        'title' => 'Immunosuppressed Individuals (Aged 6 Months+)',
+        'body'  => 'If you or your child are immunosuppressed due to a medical condition or treatment — such as chemotherapy, certain immunological conditions, or organ transplant — you are eligible regardless of age. Please bring details of your condition to your appointment.',
+    ],
+];
 ?>
 
 <!-- Page-scoped styles -->
@@ -57,10 +95,10 @@ $phone       = sp_phone();
   <div class="md:hidden absolute inset-0 flex flex-col justify-end px-6 py-8 z-10">
     <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full mb-4 border border-white/20 self-start">
       <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-300"></span></span>
-      NHS Seasonal Vaccination &middot; Hampshire
+      <?php echo esc_html( $cv_hero_badge ); ?>
     </div>
-    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Free NHS COVID-19 Vaccination at Southdowns Pharmacy</h1>
-    <p class="text-white text-base leading-relaxed mb-5 font-jost">Eligible patients can receive their seasonal COVID-19 vaccine free of charge at any of our four Hampshire locations. No long waits &mdash; walk in or book online today.</p>
+    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;"><?php echo esc_html( $cv_hero_headline ); ?></h1>
+    <p class="text-white text-base leading-relaxed mb-5 font-jost"><?php echo wp_kses_post( $cv_hero_body ); ?></p>
     <div class="flex flex-wrap gap-3 mb-4">
       <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg font-jost">
         Book Your NHS COVID Vaccine
@@ -80,10 +118,10 @@ $phone       = sp_phone();
     <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
       <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20 self-start">
         <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-300"></span></span>
-        NHS Seasonal Vaccination &middot; Hampshire
+        <?php echo esc_html( $cv_hero_badge ); ?>
       </div>
-      <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;">Free NHS COVID-19 Vaccination at Southdowns Pharmacy</h1>
-      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost">Eligible patients can receive their seasonal COVID-19 vaccine free of charge at any of our four Hampshire locations. No long waits, no hassle &mdash; walk in or book online today.</p>
+      <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;"><?php echo esc_html( $cv_hero_headline ); ?></h1>
+      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost"><?php echo wp_kses_post( $cv_hero_body ); ?></p>
       <div class="flex flex-wrap gap-3 mb-6">
         <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-base font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg font-jost">
           Book Your NHS COVID Vaccine
@@ -183,29 +221,19 @@ $phone       = sp_phone();
     <div class="yf-reveal bg-white rounded-2xl border border-blue-100 shadow-sm overflow-hidden">
       <div class="bg-gradient-to-r from-blue-600 to-blue-500 px-6 md:px-8 py-4 flex items-center gap-3">
         <svg class="w-5 h-5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <span class="text-white font-semibold font-jost">Spring 2026 Programme</span>
+        <span class="text-white font-semibold font-jost"><?php echo esc_html( $cv_programme_name ); ?></span>
       </div>
       <div class="p-6 md:p-8">
-        <p class="text-gray-600 leading-relaxed mb-6 font-jost">For Spring 2026, the JCVI has updated its advice, focusing the programme on those at highest risk of serious disease. Free NHS COVID-19 vaccinations are now offered to the following groups only:</p>
+        <p class="text-gray-600 leading-relaxed mb-6 font-jost"><?php echo wp_kses_post( $cv_programme_intro ); ?></p>
         <ul class="space-y-3 mb-6">
+          <?php foreach ( $cv_groups as $group_text ) : ?>
           <li class="flex items-center gap-3 text-gray-700 font-jost">
             <span class="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
               <svg class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
             </span>
-            Adults aged 75 years and over
+            <?php echo esc_html( $group_text ); ?>
           </li>
-          <li class="flex items-center gap-3 text-gray-700 font-jost">
-            <span class="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
-              <svg class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            Residents in care homes for older adults
-          </li>
-          <li class="flex items-center gap-3 text-gray-700 font-jost">
-            <span class="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
-              <svg class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            Individuals who are immunosuppressed, aged 6 months and over
-          </li>
+          <?php endforeach; ?>
         </ul>
         <div class="bg-amber-50 rounded-xl p-4 border border-amber-200 flex items-start gap-3">
           <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -229,40 +257,31 @@ $phone       = sp_phone();
     <div class="text-center mb-14 yf-reveal">
       <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/30">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        <span class="uppercase tracking-wider text-xs font-semibold">Spring 2026 Eligibility</span>
+        <span class="uppercase tracking-wider text-xs font-semibold"><?php echo esc_html( $cv_elig_eyebrow ); ?></span>
       </div>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-jost">Are You Eligible for a Free NHS COVID Vaccine?</h2>
-      <p class="text-lg text-blue-100 max-w-3xl mx-auto font-jost">The Spring 2026 programme is targeted at those at highest risk. Check whether you qualify below.</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-jost"><?php echo esc_html( $cv_elig_headline ); ?></h2>
+      <p class="text-lg text-blue-100 max-w-3xl mx-auto font-jost"><?php echo wp_kses_post( $cv_elig_subhead ); ?></p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10 yf-reveal">
 
-      <!-- Card 1 -->
-      <div class="yf-card-lift bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300" data-delay="1">
+      <?php
+      $card_icons = [
+        '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>',
+        '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+        '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>',
+      ];
+      foreach ( $cv_cards as $idx => $card ) :
+        $icon = $card_icons[ $idx % count( $card_icons ) ];
+      ?>
+      <div class="yf-card-lift bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300" data-delay="<?php echo (int) ( $idx + 1 ); ?>">
         <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-5">
-          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><?php echo $icon; ?></svg>
         </div>
-        <h3 class="text-xl font-bold text-white mb-3 font-jost">Adults Aged 75 and Over</h3>
-        <p class="text-blue-100 leading-relaxed text-sm font-jost">If you are 75 years of age or older, you are eligible for a free NHS COVID-19 vaccine this season. You should receive an invitation from the NHS, but you can also book directly without waiting for a letter.</p>
+        <h3 class="text-xl font-bold text-white mb-3 font-jost"><?php echo esc_html( $card['title'] ); ?></h3>
+        <p class="text-blue-100 leading-relaxed text-sm font-jost"><?php echo wp_kses_post( $card['body'] ); ?></p>
       </div>
-
-      <!-- Card 2 -->
-      <div class="yf-card-lift bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300" data-delay="2">
-        <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-5">
-          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-white mb-3 font-jost">Care Home Residents</h3>
-        <p class="text-blue-100 leading-relaxed text-sm font-jost">Residents in care homes for older adults are eligible for a free NHS COVID-19 vaccine. Vaccination is typically arranged through your care home, but please speak to our team if you need assistance.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="yf-card-lift bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300" data-delay="3">
-        <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-5">
-          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-white mb-3 font-jost">Immunosuppressed Individuals (Aged 6 Months+)</h3>
-        <p class="text-blue-100 leading-relaxed text-sm font-jost">If you or your child are immunosuppressed due to a medical condition or treatment &mdash; such as chemotherapy, certain immunological conditions, or organ transplant &mdash; you are eligible regardless of age. Please bring details of your condition to your appointment.</p>
-      </div>
+      <?php endforeach; ?>
 
     </div>
 
@@ -390,7 +409,7 @@ $phone       = sp_phone();
     </div>
 
     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-jost">Not Eligible for the NHS Vaccine?</h2>
-    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed font-jost">If you don&apos;t currently meet the NHS eligibility criteria for Spring 2026, you can still protect yourself with our private COVID-19 vaccination service. We offer the latest Pfizer COVID-19 vaccine privately for <strong>&pound;89.50 per dose</strong> &mdash; ideal for those who want to stay protected but fall outside the current NHS cohorts.</p>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed font-jost"><?php echo wp_kses_post( $cv_promo_body ); ?></p>
 
     <a href="<?php echo esc_url( home_url( '/covid-vaccine-private/' ) ); ?>" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] text-base font-jost">
       Find Out About Our Private COVID Vaccine
@@ -567,14 +586,14 @@ $phone       = sp_phone();
     <div class="flex flex-wrap justify-center gap-3 mb-8 yf-reveal">
       <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30">NHS Funded</span>
       <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30">Free of Charge</span>
-      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30">Spring 2026 Programme</span>
+      <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30"><?php echo esc_html( $cv_programme_name ); ?></span>
       <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30">GPhC Registered</span>
       <span class="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/30">Same-Day Available</span>
     </div>
 
     <div class="yf-reveal mb-8">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-jost">Protect Yourself This Season &mdash; Book Your Free NHS COVID Vaccine Today</h2>
-      <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-10 font-jost">All four Southdowns Pharmacy locations offer NHS COVID-19 vaccination for eligible patients. Walk in during opening hours or book online now.</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-jost"><?php echo wp_kses_post( $cv_final_headline ); ?></h2>
+      <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-10 font-jost"><?php echo wp_kses_post( $cv_final_body ); ?></p>
     </div>
 
     <!-- CTA buttons -->
