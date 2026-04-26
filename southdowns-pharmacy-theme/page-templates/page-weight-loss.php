@@ -47,39 +47,43 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
   /* S3 — Editorial "Science" section — on-brand white/navy/blue palette */
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap');
 
-  .sci-section { background: #ffffff; }
+  .sci-section { position: relative; overflow: hidden; background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 48%, #eff6ff 100%); }
+  .sci-section::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(ellipse 1100px 700px at 85% -10%, rgba(59,130,246,0.16) 0%, transparent 55%), radial-gradient(ellipse 900px 600px at 5% 110%, rgba(30,58,138,0.09) 0%, transparent 50%); pointer-events: none; z-index: 0; }
+  .sci-section::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(30,58,138,0.045) 1px, transparent 1px); background-size: 32px 32px; pointer-events: none; z-index: 0; }
+  .sci-section-inner { position: relative; z-index: 1; }
+
   .sci-headline { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 500; font-variation-settings: 'opsz' 96; letter-spacing: -0.015em; color: #111827; line-height: 1.08; }
-  .sci-subhead { font-family: 'Jost', sans-serif; color: #4b5563; font-weight: 300; }
-  .sci-footnote { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: #9ca3af; font-weight: 300; letter-spacing: 0.01em; }
+  .sci-subhead { font-family: 'Jost', sans-serif; color: #475569; font-weight: 300; }
+  .sci-footnote { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: #64748b; font-weight: 300; letter-spacing: 0.01em; }
   .sci-footnote em { font-family: 'Fraunces', Georgia, serif; font-style: italic; }
 
   /* Chart */
   .sci-chart-wrap { position: relative; }
   .sci-chart { width: 100%; height: auto; display: block; font-family: 'Jost', sans-serif; }
-  .sci-axis-line { stroke: #e5e7eb; stroke-width: 1; }
-  .sci-grid-line { stroke: #f3f4f6; stroke-width: 1; stroke-dasharray: 4 4; }
-  .sci-axis-label { fill: #9ca3af; font-size: 12px; font-weight: 400; }
-  .sci-axis-note { fill: #d1d5db; font-size: 10.5px; font-weight: 400; letter-spacing: 0.02em; }
+  .sci-axis-line { stroke: #cbd5e1; stroke-width: 1; }
+  .sci-grid-line { stroke: rgba(30,58,138,0.12); stroke-width: 1; stroke-dasharray: 4 4; }
+  .sci-axis-label { fill: #64748b; font-size: 12px; font-weight: 400; }
+  .sci-axis-note { fill: #94a3b8; font-size: 10.5px; font-weight: 400; letter-spacing: 0.02em; }
 
   .sci-curve { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s cubic-bezier(0.22, 1, 0.36, 1); }
-  .sci-curve--diet { stroke: #d1d5db; stroke-width: 2; transition-delay: 0.2s; }
+  .sci-curve--diet { stroke: #cbd5e1; stroke-width: 2; transition-delay: 0.2s; }
   .sci-curve--glp1 { stroke: #1e3a8a; stroke-width: 3; transition-delay: 0.6s; }
   .yf-reveal.visible .sci-curve { stroke-dashoffset: 0; }
 
   .sci-endpoint { opacity: 0; transition: opacity 0.5s ease; transition-delay: 2.5s; }
   .sci-endpoint--glp1 { transition-delay: 2.9s; }
   .yf-reveal.visible .sci-endpoint { opacity: 1; }
-  .sci-endpoint-dot-diet { fill: #9ca3af; }
+  .sci-endpoint-dot-diet { fill: #94a3b8; }
   .sci-endpoint-dot-glp1 { fill: #1e3a8a; }
-  .sci-endpoint-label { font-size: 12.5px; font-weight: 600; fill: #111827; }
-  .sci-endpoint-sublabel { font-size: 11px; font-weight: 400; fill: #6b7280; }
+  .sci-endpoint-label { font-size: 12.5px; font-weight: 600; fill: #0f172a; }
+  .sci-endpoint-sublabel { font-size: 11px; font-weight: 400; fill: #475569; }
 
   /* Pullquote */
-  .sci-quote { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; font-variation-settings: 'opsz' 48; color: #111827; letter-spacing: -0.005em; line-height: 1.35; }
-  .sci-quote-mark { font-family: 'Fraunces', Georgia, serif; color: #93c5fd; line-height: 0.5; }
-  .sci-quote-author { font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: #111827; font-weight: 600; }
-  .sci-quote-role { font-family: 'Jost', sans-serif; font-size: 0.85rem; color: #6b7280; font-weight: 300; }
-  .sci-divider { height: 1px; background: linear-gradient(90deg, transparent, #bfdbfe 50%, transparent); }
+  .sci-quote { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; font-variation-settings: 'opsz' 48; color: #0f172a; letter-spacing: -0.005em; line-height: 1.35; }
+  .sci-quote-mark { font-family: 'Fraunces', Georgia, serif; color: #3b82f6; line-height: 0.5; }
+  .sci-quote-author { font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: #0f172a; font-weight: 600; }
+  .sci-quote-role { font-family: 'Jost', sans-serif; font-size: 0.85rem; color: #475569; font-weight: 300; }
+  .sci-divider { height: 1px; background: linear-gradient(90deg, transparent, #60a5fa 50%, transparent); }
 
   /* FAQ — native <details> accordion */
   .wl-faq-item { border: 1px solid #e5e7eb; border-radius: 1rem; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; }
@@ -245,7 +249,7 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
      S3: THE SCIENCE — Brand-white bg, animated clinical chart, pharmacist pullquote
      ============================================================ -->
 <section class="sci-section py-20 md:py-28 lg:py-32">
-  <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-8">
+  <div class="sci-section-inner max-w-5xl mx-auto px-6 sm:px-8 lg:px-8">
 
     <!-- Header — brand pill eyebrow -->
     <div class="yf-reveal text-center mb-14 md:mb-20">
@@ -300,7 +304,6 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
 
         <!-- Diet endpoint -->
         <g class="sci-endpoint">
-          <rect x="555" y="52" width="110" height="38" rx="5" fill="white" fill-opacity="0.92"/>
           <circle class="sci-endpoint-dot-diet" cx="800" cy="84" r="4"/>
           <text x="660" y="67"  class="sci-endpoint-label"    text-anchor="end">Diet alone</text>
           <text x="660" y="83" class="sci-endpoint-sublabel" text-anchor="end">≈ −2% after 12 months</text>
@@ -308,7 +311,6 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
 
         <!-- GLP-1 endpoint -->
         <g class="sci-endpoint sci-endpoint--glp1">
-          <rect x="542" y="295" width="120" height="38" rx="5" fill="white" fill-opacity="0.92"/>
           <circle class="sci-endpoint-dot-glp1" cx="800" cy="284" r="5"/>
           <text x="658" y="310"  class="sci-endpoint-label"    text-anchor="end">GLP-1 medication</text>
           <text x="658" y="326" class="sci-endpoint-sublabel" text-anchor="end">≈ −17% after 12 months</text>
