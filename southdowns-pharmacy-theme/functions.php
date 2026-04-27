@@ -324,6 +324,7 @@ require_once get_template_directory() . '/inc/acf-pharmacy-settings-fields.php';
 require_once get_template_directory() . '/inc/acf-location-fields.php';
 require_once get_template_directory() . '/inc/acf-weight-loss-fields.php';
 require_once get_template_directory() . '/inc/acf-covid-vaccine-fields.php';
+require_once get_template_directory() . '/inc/acf-travel-health-fields.php';
 
 
 // ============================================================

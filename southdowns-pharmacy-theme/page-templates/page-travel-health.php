@@ -8,6 +8,12 @@ get_header();
 $booking_url = sp_booking_url();
 $phone_raw   = sp_phone_raw();
 $phone       = sp_phone();
+
+// ── ACF-backed copy (with hardcoded fallbacks) ─────────────────────────────
+$th_hero_image    = ( function_exists( 'get_field' ) ? get_field( 'th_hero_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80&auto=format&fit=crop';
+$th_hero_badge    = sp_field( 'th_hero_badge',    'No GP Referral &middot; Same-Day Appointments' );
+$th_hero_headline = sp_field( 'th_hero_headline', 'Hampshire&rsquo;s Trusted Travel Health Clinic' );
+$th_hero_body     = sp_field( 'th_hero_body',     'Southdowns Pharmacy&rsquo;s dedicated travel health service, serving Hampshire from 4 locations. Expert vaccination advice, same-day appointments, and everything you need to travel safely &mdash; all under one roof.' );
 ?>
 
 <!-- Page-scoped styles -->
@@ -45,15 +51,15 @@ $phone       = sp_phone();
 <section class="relative w-full min-h-[500px] lg:min-h-[600px] overflow-hidden">
 
   <!-- Mobile: full-width image with overlay -->
-  <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80&auto=format&fit=crop');"></div>
+  <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('<?php echo esc_url( $th_hero_image ); ?>');"></div>
   <div class="md:hidden absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-900/70 to-transparent"></div>
   <div class="md:hidden absolute inset-0 flex flex-col justify-end px-6 py-8 z-10">
     <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full mb-4 border border-white/20 self-start">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      No GP Referral Needed
+      <?php echo esc_html( $th_hero_badge ); ?>
     </div>
-    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Hampshire&rsquo;s Trusted Travel Health Clinic</h1>
-    <p class="text-white text-base leading-relaxed mb-5 font-jost">Expert vaccination advice, same-day appointments, and everything you need to travel safely &mdash; all under one roof across 4 Hampshire locations.</p>
+    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;"><?php echo esc_html( $th_hero_headline ); ?></h1>
+    <p class="text-white text-base leading-relaxed mb-5 font-jost"><?php echo wp_kses_post( $th_hero_body ); ?></p>
     <div class="flex flex-wrap gap-3 mb-4">
       <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg font-jost">
         Book Travel Consultation
@@ -69,10 +75,10 @@ $phone       = sp_phone();
     <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
       <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20 self-start">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        No GP Referral &middot; Same-Day Appointments
+        <?php echo esc_html( $th_hero_badge ); ?>
       </div>
-      <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;">Hampshire&rsquo;s Trusted Travel Health Clinic</h1>
-      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost">Southdowns Pharmacy&rsquo;s dedicated travel health service, serving Hampshire from 4 locations. Expert vaccination advice, same-day appointments, and everything you need to travel safely &mdash; all under one roof.</p>
+      <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;"><?php echo esc_html( $th_hero_headline ); ?></h1>
+      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost"><?php echo wp_kses_post( $th_hero_body ); ?></p>
       <div class="flex flex-wrap gap-3 mb-6">
         <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-base font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg font-jost">
           Book Travel Consultation
@@ -91,7 +97,7 @@ $phone       = sp_phone();
     </div>
 
     <!-- Right: image -->
-    <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80&auto=format&fit=crop');"></div>
+    <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image: url('<?php echo esc_url( $th_hero_image ); ?>');"></div>
 
     <!-- Badge images straddling the centre divider -->
     <div class="absolute z-30 flex flex-col items-center" style="left:50%;top:15%;transform:translateX(-50%);">
