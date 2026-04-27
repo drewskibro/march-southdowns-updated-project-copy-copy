@@ -77,6 +77,15 @@ add_action( 'acf/init', function () {
             // ---- Tab 2 · Programme -------------------------------
             [ 'key' => 'field_cv_nhs_tab_programme', 'label' => 'Programme', 'name' => '', 'type' => 'tab' ],
             [
+                'key'           => 'field_cv_nhs_programme_image',
+                'label'         => 'Programme Image',
+                'name'          => 'cv_nhs_programme_image',
+                'type'          => 'image',
+                'return_format' => 'url',
+                'preview_size'  => 'medium',
+                'instructions'  => 'Image shown in the "Protecting Those Most at Risk" two-column intro. Recommended 800 × 600 px (4:3). Leave empty to use the default image.',
+            ],
+            [
                 'key'          => 'field_cv_nhs_programme_name',
                 'label'        => 'Programme Name',
                 'name'         => 'cv_nhs_programme_name',

@@ -11,6 +11,7 @@ $phone       = sp_phone();
 
 // ── ACF-backed copy (with hardcoded fallbacks) ─────────────────────────────
 $cv_hero_image      = ( function_exists( 'get_field' ) ? get_field( 'cv_nhs_hero_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80&auto=format&fit=crop';
+$cv_programme_image = ( function_exists( 'get_field' ) ? get_field( 'cv_nhs_programme_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop';
 $cv_hero_badge      = sp_field( 'cv_nhs_hero_badge',      'NHS Seasonal Vaccination · Hampshire' );
 $cv_hero_headline   = sp_field( 'cv_nhs_hero_headline',   'Free NHS COVID-19 Vaccination at Southdowns Pharmacy' );
 $cv_hero_body       = sp_field( 'cv_nhs_hero_body',       'Eligible patients can receive their seasonal COVID-19 vaccine free of charge at any of our four Hampshire locations. No long waits, no hassle &mdash; walk in or book online today.' );
@@ -209,7 +210,7 @@ $cv_cards     = ! empty( $cv_cards_raw ) ? $cv_cards_raw : [
         <p class="text-gray-600 text-lg leading-relaxed font-jost">By getting vaccinated, you help protect yourself from serious illness, hospitalisation, and the complications that COVID-19 can cause &mdash; particularly if you are older or have an underlying health condition.</p>
       </div>
       <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop" alt="Pharmacist administering a vaccination" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
+        <img src="<?php echo esc_url( $cv_programme_image ); ?>" alt="Pharmacist administering a vaccination" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
         <div class="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
         <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg">
           <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
