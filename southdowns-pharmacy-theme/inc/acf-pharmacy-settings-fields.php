@@ -113,7 +113,15 @@ add_action( 'acf/init', function () {
             'label'        => 'Saturday Hours',
             'name'         => "sp_branch_{$n}_hours_saturday",
             'type'         => 'text',
-            'instructions' => 'e.g. "Saturday: 9:00am – 1:00pm"',
+            'instructions' => 'e.g. "Saturday: 9:00am – 1:00pm". Leave empty if closed on Saturday.',
+        ];
+
+        $fields[] = [
+            'key'          => "field_sp_branch_{$n}_hours_sunday",
+            'label'        => 'Sunday Hours',
+            'name'         => "sp_branch_{$n}_hours_sunday",
+            'type'         => 'text',
+            'instructions' => 'e.g. "Sunday: 10:00am – 4:00pm". Leave empty if closed on Sunday.',
         ];
 
         $fields[] = [

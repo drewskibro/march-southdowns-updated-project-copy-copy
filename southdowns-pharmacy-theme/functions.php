@@ -145,7 +145,7 @@ function sp_email(): string {
 
 /**
  * Get a specific branch's data by number (1–4).
- * Returns array: card_image, name, address_line1, address_line2, city, postcode, phone, hours_weekday, hours_saturday, maps_url
+ * Returns array: card_image, name, address_line1, address_line2, city, postcode, phone, hours_weekday, hours_saturday, hours_sunday, maps_url
  *
  * Override any value via Pharmacy Settings → Branch Locations
  * (ACF field name: sp_branch_<n>_<key>).
@@ -165,6 +165,7 @@ function sp_branch( int $branch ): array {
             'phone'           => '023 9212 3456',
             'hours_weekday'   => 'Mon–Fri: 9:00am – 6:00pm',
             'hours_saturday'  => 'Saturday: 9:00am – 1:00pm',
+            'hours_sunday'    => '',
             'maps_url'        => '#',
         ],
         2 => [
@@ -177,6 +178,7 @@ function sp_branch( int $branch ): array {
             'phone'           => '023 9212 3456',
             'hours_weekday'   => 'Mon–Fri: 9:00am – 6:00pm',
             'hours_saturday'  => 'Saturday: 9:00am – 1:00pm',
+            'hours_sunday'    => '',
             'maps_url'        => '#',
         ],
         3 => [
@@ -189,6 +191,7 @@ function sp_branch( int $branch ): array {
             'phone'           => '023 9212 3456',
             'hours_weekday'   => 'Mon–Fri: 9:00am – 6:00pm',
             'hours_saturday'  => 'Saturday: 9:00am – 1:00pm',
+            'hours_sunday'    => '',
             'maps_url'        => '#',
         ],
         4 => [
@@ -201,6 +204,7 @@ function sp_branch( int $branch ): array {
             'phone'           => '023 9212 3456',
             'hours_weekday'   => 'Mon–Fri: 9:00am – 6:00pm',
             'hours_saturday'  => 'Saturday: 9:00am – 1:00pm',
+            'hours_sunday'    => '',
             'maps_url'        => '#',
         ],
     ];
@@ -217,6 +221,25 @@ function sp_branch( int $branch ): array {
     }
 
     return $b;
+}
+
+/**
+ * Render a branch's opening hours as escaped HTML, one line per day group
+ * (weekday / saturday / sunday). Empty values are skipped.
+ *
+ * Output is `esc_html`-applied per line and joined with `<br>`, so the
+ * caller can echo directly (HTML-safe by construction).
+ *
+ * @param array $b  Branch data array as returned by sp_branch().
+ * @return string
+ */
+function sp_branch_hours_html( array $b ): string {
+    $lines = array_filter( [
+        $b['hours_weekday']  ?? '',
+        $b['hours_saturday'] ?? '',
+        $b['hours_sunday']   ?? '',
+    ] );
+    return implode( '<br>', array_map( 'esc_html', $lines ) );
 }
 
 
