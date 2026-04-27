@@ -780,7 +780,7 @@ $phone       = sp_phone();
         $name    = $b['name'];
         $addr1   = $b['address_line1'];
         $addr2   = $b['address_line2'];
-        $hours   = $b['hours_weekday'];
+        $hours   = sp_branch_hours_html( $b );
         $img     = $b['card_image'];
         $delay   = $i;
       ?>
@@ -802,7 +802,7 @@ $phone       = sp_phone();
             <?php if ( $hours ) : ?>
             <div class="flex items-start gap-2">
               <svg class="flex-shrink-0 mt-0.5 text-blue-500" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <span><?php echo esc_html( $hours ); ?></span>
+              <span class="leading-relaxed"><?php echo $hours; ?></span>
             </div>
             <?php endif; ?>
           </div>

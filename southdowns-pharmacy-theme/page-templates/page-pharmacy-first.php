@@ -365,7 +365,7 @@ $phone       = sp_phone();
           </div>
           <div class="flex items-start gap-2 mb-4">
             <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span class="text-gray-400 text-xs font-jost"><?php echo esc_html( $b['hours_weekday'] ); ?></span>
+            <span class="text-gray-400 text-xs font-jost leading-relaxed"><?php echo sp_branch_hours_html( $b ); ?></span>
           </div>
           <a href="<?php echo esc_url( $booking_url ); ?>" class="flex items-center justify-center gap-2 w-full text-blue-600 text-sm font-semibold bg-blue-50 hover:bg-blue-100 px-4 py-2.5 rounded-xl transition-colors font-jost">
             Book Here
