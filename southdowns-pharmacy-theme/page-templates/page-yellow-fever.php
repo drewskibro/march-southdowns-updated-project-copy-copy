@@ -687,20 +687,12 @@ $phone       = sp_phone();
     </div>
 
     <!-- Branch photo cards -->
-    <?php
-    $branch_images = [
-      1 => 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80&auto=format&fit=crop',
-      2 => 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80&auto=format&fit=crop',
-      3 => 'https://images.unsplash.com/photo-1576602976047-174e57a47881?w=600&q=80&auto=format&fit=crop',
-      4 => 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80&auto=format&fit=crop',
-    ];
-    ?>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 yf-reveal">
       <?php for ( $i = 1; $i <= 4; $i++ ) :
         $b = sp_branch( $i ); ?>
       <div class="group relative bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
         <div class="relative overflow-hidden aspect-[4/3]">
-          <img src="<?php echo esc_url( $branch_images[ $i ] ); ?>" alt="<?php echo esc_attr( $b['name'] ); ?> branch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+          <img src="<?php echo esc_url( $b['card_image'] ); ?>" alt="<?php echo esc_attr( $b['name'] ); ?> branch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
           <div class="absolute bottom-3 left-3">
             <h3 class="text-white text-xl font-bold font-jost"><?php echo esc_html( $b['name'] ); ?></h3>
