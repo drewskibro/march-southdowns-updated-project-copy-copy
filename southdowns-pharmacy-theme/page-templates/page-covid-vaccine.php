@@ -10,6 +10,7 @@ $phone_raw   = sp_phone_raw();
 $phone       = sp_phone();
 
 // ── ACF-backed copy (with hardcoded fallbacks) ─────────────────────────────
+$cv_hero_image      = ( function_exists( 'get_field' ) ? get_field( 'cv_nhs_hero_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80&auto=format&fit=crop';
 $cv_hero_badge      = sp_field( 'cv_nhs_hero_badge',      'NHS Seasonal Vaccination · Hampshire' );
 $cv_hero_headline   = sp_field( 'cv_nhs_hero_headline',   'Free NHS COVID-19 Vaccination at Southdowns Pharmacy' );
 $cv_hero_body       = sp_field( 'cv_nhs_hero_body',       'Eligible patients can receive their seasonal COVID-19 vaccine free of charge at any of our four Hampshire locations. No long waits, no hassle &mdash; walk in or book online today.' );
@@ -90,7 +91,7 @@ $cv_cards     = ! empty( $cv_cards_raw ) ? $cv_cards_raw : [
 <section class="relative w-full min-h-[500px] lg:min-h-[600px] overflow-hidden">
 
   <!-- Mobile: full-width image with overlay -->
-  <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80&auto=format&fit=crop');"></div>
+  <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('<?php echo esc_url( $cv_hero_image ); ?>');"></div>
   <div class="md:hidden absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-900/70 to-transparent"></div>
   <div class="md:hidden absolute inset-0 flex flex-col justify-end px-6 py-8 z-10">
     <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full mb-4 border border-white/20 self-start">
@@ -149,7 +150,7 @@ $cv_cards     = ! empty( $cv_cards_raw ) ? $cv_cards_raw : [
     </div>
 
     <!-- Right: image -->
-    <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80&auto=format&fit=crop');"></div>
+    <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image: url('<?php echo esc_url( $cv_hero_image ); ?>');"></div>
   </div>
 
 </section>

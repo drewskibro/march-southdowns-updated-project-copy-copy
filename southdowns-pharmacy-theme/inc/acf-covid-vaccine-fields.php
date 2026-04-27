@@ -43,6 +43,15 @@ add_action( 'acf/init', function () {
             // ---- Tab 1 · Hero ------------------------------------
             [ 'key' => 'field_cv_nhs_tab_hero', 'label' => 'Hero', 'name' => '', 'type' => 'tab' ],
             [
+                'key'           => 'field_cv_nhs_hero_image',
+                'label'         => 'Hero Image',
+                'name'          => 'cv_nhs_hero_image',
+                'type'          => 'image',
+                'return_format' => 'url',
+                'preview_size'  => 'medium',
+                'instructions'  => 'Displayed on the right half of the hero section (desktop) and as the background on mobile. Minimum 1200 × 800 px. Leave empty to use the default image.',
+            ],
+            [
                 'key'         => 'field_cv_nhs_hero_badge',
                 'label'       => 'Hero Badge Text',
                 'name'        => 'cv_nhs_hero_badge',
