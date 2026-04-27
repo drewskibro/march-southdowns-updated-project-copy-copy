@@ -515,15 +515,15 @@ $other_branches = [
     'url'      => home_url('/southsea/'),
   ],
   [
-    'name'     => 'Leigh Park',
-    'addr'     => 'Leigh Park, Hampshire',
+    'name'     => 'Davies Pharmacy',
+    'addr'     => 'Hampshire',
     'phone'    => sp_phone(),
     'phone_raw'=> sp_phone_raw(),
     'hours_wd' => 'Mon–Fri 9am–6pm',
     'hours_sat'=> 'Sat 9am–1pm',
     'services' => 8,
     'img'      => 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=600&h=400&fit=crop',
-    'url'      => home_url('/leigh-park/'),
+    'url'      => home_url('/davies-pharmacy/'),
   ],
 ];
 ?>

@@ -31,7 +31,7 @@ add_action( 'acf/init', function () {
     $branches = [
         1 => 'Emsworth',
         2 => 'Havant',
-        3 => 'Leigh Park',
+        3 => 'Davies Pharmacy',
         4 => 'Rowlands Castle',
     ];
 
