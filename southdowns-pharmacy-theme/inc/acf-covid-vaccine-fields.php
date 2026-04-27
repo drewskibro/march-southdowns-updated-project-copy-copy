@@ -157,7 +157,33 @@ add_action( 'acf/init', function () {
                 ],
             ],
 
-            // ---- Tab 4 · Private Promo & Final CTA ---------------
+            // ---- Tab 4 · Locations -------------------------------
+            [ 'key' => 'field_cv_nhs_tab_locations', 'label' => 'Locations', 'name' => '', 'type' => 'tab' ],
+            [
+                'key'          => 'field_cv_nhs_locations_eyebrow',
+                'label'        => 'Eyebrow Text',
+                'name'         => 'cv_nhs_locations_eyebrow',
+                'type'         => 'text',
+                'instructions' => 'Small badge above the locations grid headline.',
+                'placeholder'  => '4 Locations Across Hampshire',
+            ],
+            [
+                'key'         => 'field_cv_nhs_locations_headline',
+                'label'       => 'Headline',
+                'name'        => 'cv_nhs_locations_headline',
+                'type'        => 'text',
+                'placeholder' => 'Book at Your Nearest Hampshire Branch',
+            ],
+            [
+                'key'         => 'field_cv_nhs_locations_subhead',
+                'label'       => 'Sub-headline',
+                'name'        => 'cv_nhs_locations_subhead',
+                'type'        => 'textarea',
+                'rows'        => 2,
+                'placeholder' => 'Free NHS COVID-19 vaccinations available at all four Southdowns Pharmacy locations.',
+            ],
+
+            // ---- Tab 5 · Private Promo & Final CTA ---------------
             [ 'key' => 'field_cv_nhs_tab_cta', 'label' => 'Promo & Final CTA', 'name' => '', 'type' => 'tab' ],
             [
                 'key'          => 'field_cv_nhs_promo_body',

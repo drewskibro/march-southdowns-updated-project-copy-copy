@@ -21,6 +21,9 @@ $cv_elig_eyebrow    = sp_field( 'cv_nhs_elig_eyebrow',    'Spring 2026 Eligibili
 $cv_elig_headline   = sp_field( 'cv_nhs_elig_headline',   'Are You Eligible for a Free NHS COVID Vaccine?' );
 $cv_elig_subhead    = sp_field( 'cv_nhs_elig_subhead',    'The Spring 2026 programme is targeted at those at highest risk. Check whether you qualify below.' );
 $cv_promo_body      = sp_field( 'cv_nhs_promo_body',      'If you don\'t currently meet the NHS eligibility criteria for Spring 2026, you can still protect yourself with our private COVID-19 vaccination service. We offer the latest Pfizer COVID-19 vaccine privately for <strong>&pound;89.50 per dose</strong> &mdash; ideal for those who want to stay protected but fall outside the current NHS cohorts.' );
+$cv_locations_eyebrow  = sp_field( 'cv_nhs_locations_eyebrow',  '4 Locations Across Hampshire' );
+$cv_locations_headline = sp_field( 'cv_nhs_locations_headline', 'Book at Your Nearest Hampshire Branch' );
+$cv_locations_subhead  = sp_field( 'cv_nhs_locations_subhead',  'Free NHS COVID-19 vaccinations available at all four Southdowns Pharmacy locations.' );
 $cv_final_headline  = sp_field( 'cv_nhs_final_cta_headline', 'Protect Yourself This Season &mdash; Book Your Free NHS COVID Vaccine Today' );
 $cv_final_body      = sp_field( 'cv_nhs_final_cta_body',     'All four Southdowns Pharmacy locations offer NHS COVID-19 vaccination for eligible patients. Walk in during opening hours or book online now.' );
 
@@ -434,10 +437,10 @@ $cv_cards     = ! empty( $cv_cards_raw ) ? $cv_cards_raw : [
     <div class="text-center mb-10 md:mb-14">
       <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span class="uppercase tracking-wider text-xs font-semibold">4 Locations Across Hampshire</span>
+        <span class="uppercase tracking-wider text-xs font-semibold"><?php echo esc_html( $cv_locations_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Book at Your Nearest Hampshire Branch</h2>
-      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">Free NHS COVID-19 vaccinations available at all four Southdowns Pharmacy locations.</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost"><?php echo esc_html( $cv_locations_headline ); ?></h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost"><?php echo wp_kses_post( $cv_locations_subhead ); ?></p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 yf-reveal">
