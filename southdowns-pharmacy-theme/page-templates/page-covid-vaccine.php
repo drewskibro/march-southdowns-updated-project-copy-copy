@@ -11,6 +11,7 @@ $phone       = sp_phone();
 
 // ── ACF-backed copy (with hardcoded fallbacks) ─────────────────────────────
 $cv_hero_image      = ( function_exists( 'get_field' ) ? get_field( 'cv_nhs_hero_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80&auto=format&fit=crop';
+$cv_programme_image = ( function_exists( 'get_field' ) ? get_field( 'cv_nhs_programme_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop';
 $cv_hero_badge      = sp_field( 'cv_nhs_hero_badge',      'NHS Seasonal Vaccination · Hampshire' );
 $cv_hero_headline   = sp_field( 'cv_nhs_hero_headline',   'Free NHS COVID-19 Vaccination at Southdowns Pharmacy' );
 $cv_hero_body       = sp_field( 'cv_nhs_hero_body',       'Eligible patients can receive their seasonal COVID-19 vaccine free of charge at any of our four Hampshire locations. No long waits, no hassle &mdash; walk in or book online today.' );
@@ -20,6 +21,9 @@ $cv_elig_eyebrow    = sp_field( 'cv_nhs_elig_eyebrow',    'Spring 2026 Eligibili
 $cv_elig_headline   = sp_field( 'cv_nhs_elig_headline',   'Are You Eligible for a Free NHS COVID Vaccine?' );
 $cv_elig_subhead    = sp_field( 'cv_nhs_elig_subhead',    'The Spring 2026 programme is targeted at those at highest risk. Check whether you qualify below.' );
 $cv_promo_body      = sp_field( 'cv_nhs_promo_body',      'If you don\'t currently meet the NHS eligibility criteria for Spring 2026, you can still protect yourself with our private COVID-19 vaccination service. We offer the latest Pfizer COVID-19 vaccine privately for <strong>&pound;89.50 per dose</strong> &mdash; ideal for those who want to stay protected but fall outside the current NHS cohorts.' );
+$cv_locations_eyebrow  = sp_field( 'cv_nhs_locations_eyebrow',  '4 Locations Across Hampshire' );
+$cv_locations_headline = sp_field( 'cv_nhs_locations_headline', 'Book at Your Nearest Hampshire Branch' );
+$cv_locations_subhead  = sp_field( 'cv_nhs_locations_subhead',  'Free NHS COVID-19 vaccinations available at all four Southdowns Pharmacy locations.' );
 $cv_final_headline  = sp_field( 'cv_nhs_final_cta_headline', 'Protect Yourself This Season &mdash; Book Your Free NHS COVID Vaccine Today' );
 $cv_final_body      = sp_field( 'cv_nhs_final_cta_body',     'All four Southdowns Pharmacy locations offer NHS COVID-19 vaccination for eligible patients. Walk in during opening hours or book online now.' );
 
@@ -209,7 +213,7 @@ $cv_cards     = ! empty( $cv_cards_raw ) ? $cv_cards_raw : [
         <p class="text-gray-600 text-lg leading-relaxed font-jost">By getting vaccinated, you help protect yourself from serious illness, hospitalisation, and the complications that COVID-19 can cause &mdash; particularly if you are older or have an underlying health condition.</p>
       </div>
       <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80&auto=format&fit=crop" alt="Pharmacist administering a vaccination" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
+        <img src="<?php echo esc_url( $cv_programme_image ); ?>" alt="Pharmacist administering a vaccination" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
         <div class="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
         <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg">
           <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -433,26 +437,18 @@ $cv_cards     = ! empty( $cv_cards_raw ) ? $cv_cards_raw : [
     <div class="text-center mb-10 md:mb-14">
       <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span class="uppercase tracking-wider text-xs font-semibold">4 Locations Across Hampshire</span>
+        <span class="uppercase tracking-wider text-xs font-semibold"><?php echo esc_html( $cv_locations_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Book at Your Nearest Hampshire Branch</h2>
-      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">Free NHS COVID-19 vaccinations available at all four Southdowns Pharmacy locations.</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost"><?php echo esc_html( $cv_locations_headline ); ?></h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost"><?php echo wp_kses_post( $cv_locations_subhead ); ?></p>
     </div>
 
-    <?php
-    $branch_images = [
-      1 => 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80&auto=format&fit=crop',
-      2 => 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80&auto=format&fit=crop',
-      3 => 'https://images.unsplash.com/photo-1576602976047-174e57a47881?w=600&q=80&auto=format&fit=crop',
-      4 => 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80&auto=format&fit=crop',
-    ];
-    ?>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 yf-reveal">
       <?php for ( $i = 1; $i <= 4; $i++ ) :
         $b = sp_branch( $i ); ?>
       <div class="group relative bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
         <div class="relative overflow-hidden aspect-[4/3]">
-          <img src="<?php echo esc_url( $branch_images[ $i ] ); ?>" alt="<?php echo esc_attr( $b['name'] ); ?> branch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+          <img src="<?php echo esc_url( $b['card_image'] ); ?>" alt="<?php echo esc_attr( $b['name'] ); ?> branch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
           <div class="absolute bottom-3 left-3">
             <h3 class="text-white text-xl font-bold font-jost"><?php echo esc_html( $b['name'] ); ?></h3>

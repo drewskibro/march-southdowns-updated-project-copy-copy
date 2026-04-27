@@ -561,21 +561,13 @@ $cvp_inclusions     = ! empty( $cvp_inclusions_raw ) ? array_column( $cvp_inclus
       <p class="text-slate-600 text-lg max-w-2xl mx-auto font-jost">Private COVID-19 vaccinations are available at all four Southdowns Pharmacy branches across Hampshire.</p>
     </div>
 
-    <?php
-    $branch_images = [
-      1 => 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&q=80&auto=format&fit=crop',
-      2 => 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop',
-      3 => 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&q=80&auto=format&fit=crop',
-      4 => 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&q=80&auto=format&fit=crop',
-    ];
-    ?>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <?php for ( $i = 1; $i <= 4; $i++ ) :
         $b = sp_branch( $i );
       ?>
       <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300 reveal-item">
         <div class="relative overflow-hidden h-44">
-          <img src="<?php echo esc_url( $branch_images[ $i ] ); ?>" alt="<?php echo esc_attr( $b['name'] ); ?> pharmacy" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy"/>
+          <img src="<?php echo esc_url( $b['card_image'] ); ?>" alt="<?php echo esc_attr( $b['name'] ); ?> pharmacy" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy"/>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
           <span class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm text-slate-800 text-xs font-semibold font-jost px-2.5 py-1 rounded-full"><?php echo esc_html( $b['name'] ); ?></span>
         </div>

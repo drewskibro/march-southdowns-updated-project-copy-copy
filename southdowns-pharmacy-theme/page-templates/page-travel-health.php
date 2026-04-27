@@ -775,20 +775,14 @@ $phone       = sp_phone();
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <?php
-      $branch_images = [
-        'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&h=400&fit=crop',
-        'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=600&h=400&fit=crop',
-        'https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&h=400&fit=crop',
-        'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop',
-      ];
-      for ( $b = 1; $b <= 4; $b++ ) :
-        $name    = sp_branch( $b, 'name' );
-        $addr1   = sp_branch( $b, 'address_line1' );
-        $addr2   = sp_branch( $b, 'address_line2' );
-        $hours   = sp_branch( $b, 'hours_weekday' );
-        $img     = $branch_images[ $b - 1 ];
-        $delay   = $b;
+      <?php for ( $i = 1; $i <= 4; $i++ ) :
+        $b       = sp_branch( $i );
+        $name    = $b['name'];
+        $addr1   = $b['address_line1'];
+        $addr2   = $b['address_line2'];
+        $hours   = $b['hours_weekday'];
+        $img     = $b['card_image'];
+        $delay   = $i;
       ?>
       <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="<?php echo $delay; ?>">
         <div class="relative overflow-hidden aspect-[4/3]">

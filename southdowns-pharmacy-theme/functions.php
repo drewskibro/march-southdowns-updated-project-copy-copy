@@ -145,7 +145,10 @@ function sp_email(): string {
 
 /**
  * Get a specific branch's data by number (1–4).
- * Returns array: name, address_line1, address_line2, city, postcode, phone, hours_weekday, hours_saturday, maps_url
+ * Returns array: card_image, name, address_line1, address_line2, city, postcode, phone, hours_weekday, hours_saturday, maps_url
+ *
+ * Override any value via Pharmacy Settings → Branch Locations
+ * (ACF field name: sp_branch_<n>_<key>).
  *
  * @param int $branch  Branch number 1–4.
  * @return array
@@ -153,6 +156,7 @@ function sp_email(): string {
 function sp_branch( int $branch ): array {
     $defaults = [
         1 => [
+            'card_image'      => 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80&auto=format&fit=crop',
             'name'            => 'Emsworth',
             'address_line1'   => '2-4 Central Buildings',
             'address_line2'   => 'Emsworth',
@@ -164,6 +168,7 @@ function sp_branch( int $branch ): array {
             'maps_url'        => '#',
         ],
         2 => [
+            'card_image'      => 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80&auto=format&fit=crop',
             'name'            => 'Havant',
             'address_line1'   => 'Bosmere Medical Centre, Solent Road',
             'address_line2'   => 'Havant',
@@ -175,6 +180,7 @@ function sp_branch( int $branch ): array {
             'maps_url'        => '#',
         ],
         3 => [
+            'card_image'      => 'https://images.unsplash.com/photo-1576602976047-174e57a47881?w=600&q=80&auto=format&fit=crop',
             'name'            => 'Leigh Park',
             'address_line1'   => '35 Park Parade',
             'address_line2'   => 'Leigh Park, Havant',
@@ -186,6 +192,7 @@ function sp_branch( int $branch ): array {
             'maps_url'        => '#',
         ],
         4 => [
+            'card_image'      => 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80&auto=format&fit=crop',
             'name'            => 'Rowlands Castle',
             'address_line1'   => '12 The Green',
             'address_line2'   => 'Rowlands Castle',
@@ -290,6 +297,7 @@ add_action( 'wp_enqueue_scripts', function() {
 // INCLUDE ACF FIELD GROUP REGISTRATIONS
 // ============================================================
 
+require_once get_template_directory() . '/inc/acf-pharmacy-settings-fields.php';
 require_once get_template_directory() . '/inc/acf-location-fields.php';
 require_once get_template_directory() . '/inc/acf-weight-loss-fields.php';
 require_once get_template_directory() . '/inc/acf-covid-vaccine-fields.php';
