@@ -433,7 +433,6 @@ $phone       = sp_phone();
           <div class="flex flex-wrap gap-2">
             <span class="bg-white/20 text-white text-sm font-medium px-3 py-1.5 rounded-full border border-white/30 font-jost">Emsworth</span>
             <span class="bg-white/20 text-white text-sm font-medium px-3 py-1.5 rounded-full border border-white/30 font-jost">Havant</span>
-            <span class="bg-white/20 text-white text-sm font-medium px-3 py-1.5 rounded-full border border-white/30 font-jost">Leigh Park</span>
             <span class="bg-white/20 text-white text-sm font-medium px-3 py-1.5 rounded-full border border-white/30 font-jost">Rowlands Castle</span>
           </div>
         </div>
@@ -536,7 +535,7 @@ $phone       = sp_phone();
         ['Real-Time HD Imaging',         'Using advanced imaging equipment, we can see exactly what&rsquo;s in your ear canal before and during treatment.',                          'rgba(6,182,212,0.25)',   'rgba(34,211,238,0.5)',  '#67e8f9',  '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'],
         ['Same-Day Appointments',        'No NHS waiting. Same-day microsuction appointments available subject to availability.',                                                   'rgba(245,158,11,0.25)', 'rgba(252,211,77,0.5)',  '#fcd34d',  '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'],
         ['Painless Procedure',           'No water, no mess &mdash; just gentle suction for a comfortable experience with immediate hearing improvement.',                          'rgba(139,92,246,0.25)', 'rgba(196,181,253,0.5)', '#c4b5fd',  '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>'],
-        ['3 Convenient Locations',       'Available at Emsworth, Davies &amp; Bosmere. Serving Havant, Leigh Park, Rowlands Castle and surrounds.',                                'rgba(244,63,94,0.25)',  'rgba(253,164,175,0.5)', '#fda4af',  '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'],
+        ['3 Convenient Locations',       'Available at Emsworth, Davies &amp; Bosmere. Serving Havant, Rowlands Castle and surrounds.',                                'rgba(244,63,94,0.25)',  'rgba(253,164,175,0.5)', '#fda4af',  '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'],
         ['Free Follow-Up',               'Complimentary aftercare appointment included to check progress and determine if further treatment is needed.',                            'rgba(249,115,22,0.25)', 'rgba(253,186,116,0.5)', '#fdba74',  '<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>'],
       ];
       foreach ( $why_cards as $i => $card ) : $delay = ($i % 3) + 1; ?>
@@ -652,7 +651,7 @@ $phone       = sp_phone();
           ['07', 'What if you find something other than wax?',
            'During the examination, high-definition images and videos are taken. This can identify infections, perforations, or other conditions. If we find anything that requires further investigation, we&rsquo;ll advise you to visit your GP or refer you to a specialist ENT doctor.'],
           ['08', 'Which branches offer this service?',
-           'TympaHealth ear wax removal is currently available at our <strong>Emsworth, Davies &amp; Bosmere</strong> branches. We serve patients from Emsworth, Havant, Leigh Park, Rowlands Castle and the surrounding Hampshire area. Contact us for the nearest location.'],
+           'TympaHealth ear wax removal is currently available at our <strong>Emsworth, Davies &amp; Bosmere</strong> branches. We serve patients from Emsworth, Havant, Rowlands Castle and the surrounding Hampshire area. Contact us for the nearest location.'],
         ];
         foreach ( $faqs as $faq ) : ?>
         <div class="ew-faq-item bg-white border border-gray-200/80 rounded-2xl overflow-hidden shadow-sm">
@@ -775,7 +774,7 @@ $phone       = sp_phone();
       <span>&#10003; Same-Day Available</span>
       <span>&#10003; From &pound;49</span>
     </div>
-    <p class="text-blue-200/70 text-sm font-jost">Serving Emsworth, Havant, Leigh Park, Rowlands Castle &amp; wider Hampshire</p>
+    <p class="text-blue-200/70 text-sm font-jost">Serving Emsworth, Havant, Rowlands Castle &amp; wider Hampshire</p>
     <!-- Trust indicators -->
     <div class="mt-10 flex flex-wrap justify-center items-center gap-8 md:gap-12">
       <div class="text-center">
