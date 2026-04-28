@@ -8,6 +8,148 @@ get_header();
 $booking_url = sp_booking_url();
 $phone_raw   = sp_phone_raw();
 $phone       = sp_phone();
+
+// ── ACF-backed copy (with hardcoded fallbacks) ─────────────────────────────
+$th_hero_image    = ( function_exists( 'get_field' ) ? get_field( 'th_hero_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80&auto=format&fit=crop';
+$th_hero_badge    = sp_field( 'th_hero_badge',    'No GP Referral &middot; Same-Day Appointments' );
+$th_hero_headline = sp_field( 'th_hero_headline', 'Hampshire&rsquo;s Trusted Travel Health Clinic' );
+$th_hero_body     = sp_field( 'th_hero_body',     'Southdowns Pharmacy&rsquo;s dedicated travel health service, serving Hampshire from 4 locations. Expert vaccination advice, same-day appointments, and everything you need to travel safely &mdash; all under one roof.' );
+
+// Stats Bar (S2)
+$th_stats_raw = function_exists( 'get_field' ) ? get_field( 'th_stats' ) : null;
+$th_stats     = ! empty( $th_stats_raw ) ? $th_stats_raw : [
+    [ 'value' => 'Same Day', 'label' => 'Travel Vaccinations',  'caption' => 'No referral needed, no long waits' ],
+    [ 'value' => '1,000+',   'label' => 'Travellers Protected', 'caption' => 'Safe journeys across 50+ countries' ],
+    [ 'value' => '20+',      'label' => 'Vaccines In Stock',    'caption' => 'Complete travel protection' ],
+    [ 'value' => '4.9★',     'label' => 'Patient Rating',       'caption' => 'GPhC registered pharmacists' ],
+];
+
+// Why Choose Us (S3)
+$th_why_eyebrow  = sp_field( 'th_why_eyebrow',  'More Than Just Jabs' );
+$th_why_headline = sp_field( 'th_why_headline', 'Why Choose Our Hampshire Travel Clinics?' );
+$th_why_subhead  = sp_field( 'th_why_subhead',  'Comprehensive travel health protection that gives you confidence from booking to landing.' );
+
+$th_why_cards_raw = function_exists( 'get_field' ) ? get_field( 'th_why_cards' ) : null;
+$th_why_cards     = ! empty( $th_why_cards_raw ) ? $th_why_cards_raw : [
+    [
+        'image'      => 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop',
+        'title'      => 'Expert Travel Consultations',
+        'body'       => 'Personalised risk assessment based on your exact itinerary, not generic destination advice. We consider your route, accommodation type, activities, and medical history.',
+        'link_label' => 'Book Consultation',
+        'link_url'   => '',
+    ],
+    [
+        'image'      => 'https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&h=400&fit=crop',
+        'title'      => 'Same-Day Appointments',
+        'body'       => 'Last-minute trip planned? No problem. Get essential vaccinations administered the same day and walk out protected, not stressed about timing.',
+        'link_label' => 'Book Consultation',
+        'link_url'   => '',
+    ],
+    [
+        'image'      => 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop',
+        'title'      => 'Every Vaccine In Stock',
+        'body'       => 'No prescription delays or follow-up visits. We stock every travel vaccine including Yellow Fever, DTP, Typhoid, Rabies, Japanese Encephalitis, and malaria prevention.',
+        'link_label' => 'View All Vaccines',
+        'link_url'   => '#vaccines',
+    ],
+];
+
+// Services (S5)
+$th_services_eyebrow   = sp_field( 'th_services_eyebrow',   'Everything Under One Roof' );
+$th_services_headline  = sp_field( 'th_services_headline',  'Our Travel Health Services' );
+$th_services_subhead   = sp_field( 'th_services_subhead',   'One appointment covers everything. No GP, no hospital, no hassle &mdash; we handle your complete travel health needs in one visit.' );
+$th_services_cta_label = sp_field( 'th_services_cta_label', 'Book Your Travel Health Appointment' );
+
+$th_services_cards_raw = function_exists( 'get_field' ) ? get_field( 'th_services_cards' ) : null;
+$th_services_cards     = ! empty( $th_services_cards_raw ) ? $th_services_cards_raw : [
+    [
+        'title'        => 'Travel Vaccination Consultation',
+        'body'         => 'Comprehensive one-to-one assessment with a qualified travel health pharmacist. We review your destination, activities, medical history, and previous vaccinations to create your personalised plan.',
+        'bullets'      => "Same-day vaccination if required\nWritten vaccination record provided\nNo GP referral needed",
+        'is_highlight' => false,
+        'top_badge'    => '',
+        'link_label'   => '',
+        'link_url'     => '',
+    ],
+    [
+        'title'        => 'Malaria Prevention',
+        'body'         => 'Prescription anti-malarial medication tailored to your destination, travel dates, and medical history. We explain how and when to take your medication for maximum protection.',
+        'bullets'      => "Doxycycline, Malarone & Lariam\nBite avoidance advice included\nSame-day prescription & supply",
+        'is_highlight' => false,
+        'top_badge'    => '',
+        'link_label'   => '',
+        'link_url'     => '',
+    ],
+    [
+        'title'        => 'Fit to Fly Certificates',
+        'body'         => 'Official documentation confirming you are medically fit to travel, accepted by all major UK airlines. Issued same-day following a brief assessment by our pharmacist.',
+        'bullets'      => "Accepted by all UK airlines\nSame-day certificate issued\nQuick 15-minute appointment",
+        'is_highlight' => false,
+        'top_badge'    => '',
+        'link_label'   => '',
+        'link_url'     => '',
+    ],
+    [
+        'title'        => 'Destination Health Advice',
+        'body'         => 'Detailed written guidance for your specific destinations covering food and water safety, insect protection, sun safety, altitude sickness, traveller’s diarrhoea, and emergency medication.',
+        'bullets'      => "Food & water safety guidance\nInsect & sun protection advice\nEmergency medication guidance",
+        'is_highlight' => false,
+        'top_badge'    => '',
+        'link_label'   => '',
+        'link_url'     => '',
+    ],
+    [
+        'title'        => 'Travel Medication & Kits',
+        'body'         => 'We supply a full range of travel medications including altitude sickness tablets, traveller’s diarrhoea treatment, antihistamines, and first aid essentials for your trip.',
+        'bullets'      => "Altitude sickness prevention\nTraveller’s diarrhoea treatment\nFull travel first-aid kits",
+        'is_highlight' => false,
+        'top_badge'    => '',
+        'link_label'   => '',
+        'link_url'     => '',
+    ],
+    [
+        'title'        => 'Yellow Fever Vaccination',
+        'body'         => 'We are an NHS-registered Yellow Fever Vaccination Centre. A single dose provides lifelong immunity and the ICVP certificate is valid for life. Accepted at all borders.',
+        'bullets'      => "ICVP certificate issued same day\nValid for life — no boosters needed\nNHS-registered centre",
+        'is_highlight' => true,
+        'top_badge'    => 'Official Vaccination Centre',
+        'link_label'   => 'Learn more about Yellow Fever',
+        'link_url'     => home_url( '/yellow-fever/' ),
+    ],
+];
+
+// Vaccines (S6)
+$th_vaccines_eyebrow         = sp_field( 'th_vaccines_eyebrow',         'Always In Stock' );
+$th_vaccines_headline        = sp_field( 'th_vaccines_headline',        'Travel Vaccines We Provide' );
+$th_vaccines_subhead         = sp_field( 'th_vaccines_subhead',         'No prescription, no waiting lists, no GP appointments. All vaccines are available same-day across our 4 Hampshire locations.' );
+$th_vaccines_banner_body     = sp_field( 'th_vaccines_banner_body',     'Some vaccinations require a course of doses over several weeks. We recommend booking your appointment at least <strong>6&ndash;8 weeks before travel</strong>, though we can still help with last-minute trips.' );
+$th_vaccines_banner_cta      = sp_field( 'th_vaccines_banner_cta_label', 'Book Now' );
+
+$th_vaccines_raw = function_exists( 'get_field' ) ? get_field( 'th_vaccines_list' ) : null;
+$th_vaccines     = ! empty( $th_vaccines_raw ) ? $th_vaccines_raw : [
+    [ 'name' => 'Yellow Fever',                 'description' => 'ICVP certificate included &middot; Valid for life',           'is_yf' => true  ],
+    [ 'name' => 'Hepatitis A',                  'description' => 'Single dose gives 1 year protection, booster lasts 25 years', 'is_yf' => false ],
+    [ 'name' => 'Hepatitis B',                  'description' => 'Course of 3 doses over 6 months &middot; Long-term protection', 'is_yf' => false ],
+    [ 'name' => 'Typhoid',                      'description' => 'Injection or oral capsules &middot; 3-year protection',        'is_yf' => false ],
+    [ 'name' => 'Rabies (Pre-Exposure)',        'description' => '3-dose course &middot; Essential for adventure travellers',    'is_yf' => false ],
+    [ 'name' => 'Meningitis ACWY',              'description' => 'Single dose &middot; Required for Hajj / Umrah pilgrims',     'is_yf' => false ],
+    [ 'name' => 'Japanese Encephalitis',        'description' => '2-dose course &middot; For rural Asia travel',                'is_yf' => false ],
+    [ 'name' => 'Diphtheria, Tetanus & Polio',  'description' => 'Combined booster &middot; 10-year protection',                'is_yf' => false ],
+    [ 'name' => 'Cholera',                      'description' => 'Oral vaccine &middot; Includes diarrhoea protection',         'is_yf' => false ],
+    [ 'name' => 'Chickenpox (Varicella)',       'description' => 'For travellers without prior immunity',                       'is_yf' => false ],
+    [ 'name' => 'MMR (Measles, Mumps, Rubella)', 'description' => 'Catch-up for unvaccinated adults',                           'is_yf' => false ],
+    [ 'name' => 'Travel Flu & Pneumo',          'description' => 'For high-risk travellers and over-65s',                       'is_yf' => false ],
+];
+
+// Service-card icons cycle by position. Six built-in icons; defaults map 1:1 to the cards above.
+$th_service_icons = [
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M8 21H5a2 2 0 0 1-2-2v-3m18 0v3a2 2 0 0 1-2 2h-3"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>',
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.58a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg>',
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+];
 ?>
 
 <!-- Page-scoped styles -->
@@ -45,15 +187,15 @@ $phone       = sp_phone();
 <section class="relative w-full min-h-[500px] lg:min-h-[600px] overflow-hidden">
 
   <!-- Mobile: full-width image with overlay -->
-  <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80&auto=format&fit=crop');"></div>
+  <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('<?php echo esc_url( $th_hero_image ); ?>');"></div>
   <div class="md:hidden absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-900/70 to-transparent"></div>
   <div class="md:hidden absolute inset-0 flex flex-col justify-end px-6 py-8 z-10">
     <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full mb-4 border border-white/20 self-start">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      No GP Referral Needed
+      <?php echo esc_html( $th_hero_badge ); ?>
     </div>
-    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Hampshire&rsquo;s Trusted Travel Health Clinic</h1>
-    <p class="text-white text-base leading-relaxed mb-5 font-jost">Expert vaccination advice, same-day appointments, and everything you need to travel safely &mdash; all under one roof across 4 Hampshire locations.</p>
+    <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;"><?php echo esc_html( $th_hero_headline ); ?></h1>
+    <p class="text-white text-base leading-relaxed mb-5 font-jost"><?php echo wp_kses_post( $th_hero_body ); ?></p>
     <div class="flex flex-wrap gap-3 mb-4">
       <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg font-jost">
         Book Travel Consultation
@@ -69,10 +211,10 @@ $phone       = sp_phone();
     <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
       <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20 self-start">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        No GP Referral &middot; Same-Day Appointments
+        <?php echo esc_html( $th_hero_badge ); ?>
       </div>
-      <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;">Hampshire&rsquo;s Trusted Travel Health Clinic</h1>
-      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost">Southdowns Pharmacy&rsquo;s dedicated travel health service, serving Hampshire from 4 locations. Expert vaccination advice, same-day appointments, and everything you need to travel safely &mdash; all under one roof.</p>
+      <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;"><?php echo esc_html( $th_hero_headline ); ?></h1>
+      <p class="text-white text-lg lg:text-xl leading-relaxed mb-6 font-jost"><?php echo wp_kses_post( $th_hero_body ); ?></p>
       <div class="flex flex-wrap gap-3 mb-6">
         <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-base font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg font-jost">
           Book Travel Consultation
@@ -91,7 +233,7 @@ $phone       = sp_phone();
     </div>
 
     <!-- Right: image -->
-    <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80&auto=format&fit=crop');"></div>
+    <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image: url('<?php echo esc_url( $th_hero_image ); ?>');"></div>
 
     <!-- Badge images straddling the centre divider -->
     <div class="absolute z-30 flex flex-col items-center" style="left:50%;top:15%;transform:translateX(-50%);">
@@ -118,26 +260,15 @@ $phone       = sp_phone();
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-      <div class="tv-reveal tv-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="1">
-        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-jost">Same Day</div>
-        <div class="text-sm md:text-base text-blue-100 font-medium font-jost">Travel Vaccinations</div>
-        <div class="text-xs text-blue-200/60 mt-1 font-jost">No referral needed, no long waits</div>
+      <?php foreach ( $th_stats as $i => $stat ) : ?>
+      <div class="tv-reveal tv-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="<?php echo (int) $i + 1; ?>">
+        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-jost"><?php echo esc_html( $stat['value'] ); ?></div>
+        <div class="text-sm md:text-base text-blue-100 font-medium font-jost"><?php echo esc_html( $stat['label'] ); ?></div>
+        <?php if ( ! empty( $stat['caption'] ) ) : ?>
+          <div class="text-xs text-blue-200/60 mt-1 font-jost"><?php echo esc_html( $stat['caption'] ); ?></div>
+        <?php endif; ?>
       </div>
-      <div class="tv-reveal tv-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="2">
-        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-jost">1,000+</div>
-        <div class="text-sm md:text-base text-blue-100 font-medium font-jost">Travellers Protected</div>
-        <div class="text-xs text-blue-200/60 mt-1 font-jost">Safe journeys across 50+ countries</div>
-      </div>
-      <div class="tv-reveal tv-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="3">
-        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-jost">20+</div>
-        <div class="text-sm md:text-base text-blue-100 font-medium font-jost">Vaccines In Stock</div>
-        <div class="text-xs text-blue-200/60 mt-1 font-jost">Complete travel protection</div>
-      </div>
-      <div class="tv-reveal tv-card-lift text-center p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors" data-delay="4">
-        <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 font-jost">4.9&#9733;</div>
-        <div class="text-sm md:text-base text-blue-100 font-medium font-jost">Patient Rating</div>
-        <div class="text-xs text-blue-200/60 mt-1 font-jost">GPhC registered pharmacists</div>
-      </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>
@@ -152,57 +283,33 @@ $phone       = sp_phone();
     <div class="text-center mb-14">
       <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
         <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
-        <span class="uppercase tracking-wider text-xs font-semibold">More Than Just Jabs</span>
+        <span class="uppercase tracking-wider text-xs font-semibold"><?php echo esc_html( $th_why_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Why Choose Our Hampshire Travel Clinics?</h2>
-      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">Comprehensive travel health protection that gives you confidence from booking to landing.</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost"><?php echo esc_html( $th_why_headline ); ?></h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost"><?php echo wp_kses_post( $th_why_subhead ); ?></p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
 
-      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="1">
+      <?php foreach ( $th_why_cards as $i => $card ) :
+        $card_link = ! empty( $card['link_url'] ) ? $card['link_url'] : $booking_url;
+      ?>
+      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="<?php echo (int) $i + 1; ?>">
         <div class="relative overflow-hidden aspect-[3/2]">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Expert travel health consultation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+          <img src="<?php echo esc_url( $card['image'] ); ?>" alt="<?php echo esc_attr( $card['title'] ); ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">01</div>
+          <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></div>
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Expert Travel Consultations</h3>
-          <p class="text-gray-600 leading-relaxed mb-4 font-jost">Personalised risk assessment based on your exact itinerary, not generic destination advice. We consider your route, accommodation type, activities, and medical history.</p>
-          <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:gap-3 transition-all font-jost">
-            Book Consultation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost"><?php echo esc_html( $card['title'] ); ?></h3>
+          <p class="text-gray-600 leading-relaxed mb-4 font-jost"><?php echo wp_kses_post( $card['body'] ); ?></p>
+          <?php if ( ! empty( $card['link_label'] ) ) : ?>
+          <a href="<?php echo esc_url( $card_link ); ?>" class="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:gap-3 transition-all font-jost">
+            <?php echo esc_html( $card['link_label'] ); ?> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
+          <?php endif; ?>
         </div>
       </div>
-
-      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="2">
-        <div class="relative overflow-hidden aspect-[3/2]">
-          <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&h=400&fit=crop" alt="Same-day travel vaccination appointments" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">02</div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Same-Day Appointments</h3>
-          <p class="text-gray-600 leading-relaxed mb-4 font-jost">Last-minute trip planned? No problem. Get essential vaccinations administered the same day and walk out protected, not stressed about timing.</p>
-          <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:gap-3 transition-all font-jost">
-            Book Consultation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="3">
-        <div class="relative overflow-hidden aspect-[3/2]">
-          <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop" alt="Full range of travel vaccines in stock" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">03</div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Every Vaccine In Stock</h3>
-          <p class="text-gray-600 leading-relaxed mb-4 font-jost">No prescription delays or follow-up visits. We stock every travel vaccine including Yellow Fever, DTP, Typhoid, Rabies, Japanese Encephalitis, and malaria prevention.</p>
-          <a href="#vaccines" class="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:gap-3 transition-all font-jost">
-            View All Vaccines <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
+      <?php endforeach; ?>
 
     </div>
   </div>
@@ -339,105 +446,52 @@ $phone       = sp_phone();
     <div class="text-center mb-14">
       <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
         <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
-        <span class="uppercase tracking-wider text-xs font-semibold">Everything Under One Roof</span>
+        <span class="uppercase tracking-wider text-xs font-semibold"><?php echo esc_html( $th_services_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Our Travel Health Services</h2>
-      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">One appointment covers everything. No GP, no hospital, no hassle &mdash; we handle your complete travel health needs in one visit.</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost"><?php echo esc_html( $th_services_headline ); ?></h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost"><?php echo wp_kses_post( $th_services_subhead ); ?></p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Travel Vaccination Consultation -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-blue-100 bg-gradient-to-br from-blue-50 to-white" data-delay="1">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <?php foreach ( $th_services_cards as $i => $card ) :
+        $is_hl  = ! empty( $card['is_highlight'] );
+        $delay  = ( $i % 3 ) + 1;
+        $bullet_lines = array_filter( array_map( 'trim', preg_split( '/\r\n|\r|\n/', (string) ( $card['bullets'] ?? '' ) ) ) );
+        $card_border  = $is_hl ? 'border-amber-200 bg-gradient-to-br from-amber-50 to-white' : 'border-blue-100 bg-gradient-to-br from-blue-50 to-white';
+        $icon_bg      = $is_hl ? 'bg-gradient-to-br from-amber-400 to-amber-600' : '';
+        $icon_style   = $is_hl ? '' : 'background:linear-gradient(135deg,#1d4ed8,#3b82f6);';
+        $bullet_color = $is_hl ? '#d97706' : '#3b82f6';
+        $link_color   = $is_hl ? 'text-amber-600' : 'text-blue-600';
+        $icon_svg     = $th_service_icons[ $i ] ?? $th_service_icons[0];
+      ?>
+      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border <?php echo esc_attr( $card_border ); ?>" data-delay="<?php echo (int) $delay; ?>">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5 text-white <?php echo esc_attr( $icon_bg ); ?>"<?php echo $icon_style ? ' style="' . esc_attr( $icon_style ) . '"' : ''; ?>>
+          <?php echo $icon_svg; ?>
         </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Travel Vaccination Consultation</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">Comprehensive one-to-one assessment with a qualified travel health pharmacist. We review your destination, activities, medical history, and previous vaccinations to create your personalised plan.</p>
+        <?php if ( ! empty( $card['top_badge'] ) ) : ?>
+        <div class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wide"><?php echo esc_html( $card['top_badge'] ); ?></div>
+        <?php endif; ?>
+        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost"><?php echo esc_html( $card['title'] ); ?></h3>
+        <p class="text-gray-600 leading-relaxed mb-4 font-jost"><?php echo wp_kses_post( $card['body'] ); ?></p>
+        <?php if ( ! empty( $bullet_lines ) ) : ?>
         <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Same-day vaccination if required</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Written vaccination record provided</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>No GP referral needed</li>
+          <?php foreach ( $bullet_lines as $line ) : ?>
+          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="<?php echo esc_attr( $bullet_color ); ?>" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><?php echo esc_html( $line ); ?></li>
+          <?php endforeach; ?>
         </ul>
-      </div>
-
-      <!-- Malaria Prevention -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-blue-100 bg-gradient-to-br from-blue-50 to-white" data-delay="2">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M8 21H5a2 2 0 0 1-2-2v-3m18 0v3a2 2 0 0 1-2 2h-3"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Malaria Prevention</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">Prescription anti-malarial medication tailored to your destination, travel dates, and medical history. We explain how and when to take your medication for maximum protection.</p>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Doxycycline, Malarone &amp; Lariam</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bite avoidance advice included</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Same-day prescription &amp; supply</li>
-        </ul>
-      </div>
-
-      <!-- Fit to Fly Certificates -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-blue-100 bg-gradient-to-br from-blue-50 to-white" data-delay="3">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.58a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Fit to Fly Certificates</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">Official documentation confirming you are medically fit to travel, accepted by all major UK airlines. Issued same-day following a brief assessment by our pharmacist.</p>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Accepted by all UK airlines</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Same-day certificate issued</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Quick 15-minute appointment</li>
-        </ul>
-      </div>
-
-      <!-- Travel Health Advice -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-blue-100 bg-gradient-to-br from-blue-50 to-white" data-delay="1">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Destination Health Advice</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">Detailed written guidance for your specific destinations covering food and water safety, insect protection, sun safety, altitude sickness, traveller&rsquo;s diarrhoea, and emergency medication.</p>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Food &amp; water safety guidance</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Insect &amp; sun protection advice</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Emergency medication guidance</li>
-        </ul>
-      </div>
-
-      <!-- Travel Medication -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-blue-100 bg-gradient-to-br from-blue-50 to-white" data-delay="2">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Travel Medication &amp; Kits</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">We supply a full range of travel medications including altitude sickness tablets, traveller&rsquo;s diarrhoea treatment, antihistamines, and first aid essentials for your trip.</p>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Altitude sickness prevention</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Traveller&rsquo;s diarrhoea treatment</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full travel first-aid kits</li>
-        </ul>
-      </div>
-
-      <!-- Yellow Fever — amber highlight card -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-amber-200 bg-gradient-to-br from-amber-50 to-white" data-delay="3">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5 bg-gradient-to-br from-amber-400 to-amber-600">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <div class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wide">Official Vaccination Centre</div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Yellow Fever Vaccination</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">We are an NHS-registered Yellow Fever Vaccination Centre. A single dose provides lifelong immunity and the ICVP certificate is valid for life. Accepted at all borders.</p>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>ICVP certificate issued same day</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Valid for life &mdash; no boosters needed</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>NHS-registered centre</li>
-        </ul>
-        <a href="<?php echo esc_url( home_url('/yellow-fever/') ); ?>" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm mt-4 hover:gap-3 transition-all font-jost">
-          Learn more about Yellow Fever <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <?php endif; ?>
+        <?php if ( ! empty( $card['link_label'] ) && ! empty( $card['link_url'] ) ) : ?>
+        <a href="<?php echo esc_url( $card['link_url'] ); ?>" class="inline-flex items-center gap-2 <?php echo esc_attr( $link_color ); ?> font-semibold text-sm mt-4 hover:gap-3 transition-all font-jost">
+          <?php echo esc_html( $card['link_label'] ); ?> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <?php endif; ?>
       </div>
+      <?php endforeach; ?>
 
     </div>
     <div class="text-center mt-10">
       <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg font-jost transition-opacity hover:opacity-90" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-        Book Your Travel Health Appointment
+        <?php echo esc_html( $th_services_cta_label ); ?>
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
@@ -457,34 +511,18 @@ $phone       = sp_phone();
     <div class="text-center mb-14">
       <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
-        <span class="uppercase tracking-wider text-xs font-semibold">Always In Stock</span>
+        <span class="uppercase tracking-wider text-xs font-semibold"><?php echo esc_html( $th_vaccines_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Travel Vaccines We Provide</h2>
-      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">No prescription, no waiting lists, no GP appointments. All vaccines are available same-day across our 4 Hampshire locations.</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost"><?php echo esc_html( $th_vaccines_headline ); ?></h2>
+      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost"><?php echo wp_kses_post( $th_vaccines_subhead ); ?></p>
     </div>
 
-    <?php
-    $vaccines = [
-      ['Yellow Fever',           'ICVP certificate included &middot; Valid for life',           '#f59e0b', true ],
-      ['Hepatitis A',            'Single dose gives 1 year protection, booster lasts 25 years', '#3b82f6', false],
-      ['Hepatitis B',            'Course of 3 doses over 6 months &middot; Long-term protection','#3b82f6', false],
-      ['Typhoid',                'Injection or oral capsules &middot; 3-year protection',        '#3b82f6', false],
-      ['Rabies (Pre-Exposure)',   '3-dose course &middot; Essential for adventure travellers',   '#3b82f6', false],
-      ['Meningitis ACWY',        'Single dose &middot; Required for Hajj / Umrah pilgrims',      '#3b82f6', false],
-      ['Japanese Encephalitis',  '2-dose course &middot; For rural Asia travel',                '#3b82f6', false],
-      ['Diphtheria, Tetanus &amp; Polio', 'Combined booster &middot; 10-year protection',       '#3b82f6', false],
-      ['Cholera',                'Oral vaccine &middot; Includes diarrhoea protection',         '#3b82f6', false],
-      ['Chickenpox (Varicella)', 'For travellers without prior immunity',                       '#3b82f6', false],
-      ['MMR (Measles, Mumps, Rubella)', 'Catch-up for unvaccinated adults',                    '#3b82f6', false],
-      ['Travel Flu &amp; Pneumo', 'For high-risk travellers and over-65s',                     '#3b82f6', false],
-    ];
-    ?>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <?php foreach ( $vaccines as $i => $v ) :
+      <?php foreach ( $th_vaccines as $i => $v ) :
         $delay = ( $i % 3 ) + 1;
-        $is_yf = $v[3];
+        $is_yf = ! empty( $v['is_yf'] );
       ?>
-      <div class="tv-reveal tv-card-lift flex items-start gap-4 p-5 rounded-2xl border backdrop-blur-sm <?php echo $is_yf ? 'bg-amber-500/20 border-amber-400/40' : 'bg-white/10 border-white/20 hover:bg-white/15'; ?> transition-colors" data-delay="<?php echo $delay; ?>">
+      <div class="tv-reveal tv-card-lift flex items-start gap-4 p-5 rounded-2xl border backdrop-blur-sm <?php echo $is_yf ? 'bg-amber-500/20 border-amber-400/40' : 'bg-white/10 border-white/20 hover:bg-white/15'; ?> transition-colors" data-delay="<?php echo (int) $delay; ?>">
         <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center <?php echo $is_yf ? 'bg-amber-400/30' : 'bg-white/20'; ?>">
           <?php if ( $is_yf ) : ?>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -493,8 +531,8 @@ $phone       = sp_phone();
           <?php endif; ?>
         </div>
         <div>
-          <div class="font-bold <?php echo $is_yf ? 'text-amber-200' : 'text-white'; ?> font-jost mb-1"><?php echo $v[0]; ?></div>
-          <div class="text-xs <?php echo $is_yf ? 'text-amber-100/80' : 'text-blue-100/80'; ?> font-jost"><?php echo $v[1]; ?></div>
+          <div class="font-bold <?php echo $is_yf ? 'text-amber-200' : 'text-white'; ?> font-jost mb-1"><?php echo wp_kses_post( $v['name'] ); ?></div>
+          <div class="text-xs <?php echo $is_yf ? 'text-amber-100/80' : 'text-blue-100/80'; ?> font-jost"><?php echo wp_kses_post( $v['description'] ); ?></div>
         </div>
         <?php if ( $is_yf ) : ?>
         <div class="ml-auto flex-shrink-0">
@@ -507,9 +545,9 @@ $phone       = sp_phone();
 
     <div class="mt-10 p-5 rounded-2xl bg-white/10 border border-white/20 flex flex-col sm:flex-row items-start sm:items-center gap-4">
       <svg class="flex-shrink-0 w-8 h-8 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <p class="text-blue-100 text-sm leading-relaxed font-jost flex-1">Some vaccinations require a course of doses over several weeks. We recommend booking your appointment at least <strong class="text-white">6–8 weeks before travel</strong>, though we can still help with last-minute trips.</p>
+      <p class="text-blue-100 text-sm leading-relaxed font-jost flex-1"><?php echo wp_kses_post( $th_vaccines_banner_body ); ?></p>
       <a href="<?php echo esc_url( $booking_url ); ?>" class="flex-shrink-0 inline-flex items-center gap-2 bg-white text-blue-700 font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-blue-50 transition-colors shadow font-jost">
-        Book Now <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        <?php echo esc_html( $th_vaccines_banner_cta ); ?> <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
   </div>
@@ -784,7 +822,7 @@ $phone       = sp_phone();
         $img     = $b['card_image'];
         $delay   = $i;
       ?>
-      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="<?php echo $delay; ?>">
+      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group flex flex-col" data-delay="<?php echo $delay; ?>">
         <div class="relative overflow-hidden aspect-[4/3]">
           <img src="<?php echo esc_attr( $img ); ?>" alt="<?php echo esc_attr( $name ); ?> travel health clinic" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
@@ -792,7 +830,7 @@ $phone       = sp_phone();
             <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full font-jost">Travel Clinic</span>
           </div>
         </div>
-        <div class="p-5">
+        <div class="p-5 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-800 mb-2 font-jost"><?php echo esc_html( $name ); ?></h3>
           <div class="space-y-1.5 text-sm text-gray-600 mb-4 font-jost">
             <div class="flex items-start gap-2">
@@ -806,7 +844,7 @@ $phone       = sp_phone();
             </div>
             <?php endif; ?>
           </div>
-          <a href="<?php echo esc_url( $booking_url ); ?>" class="block text-center text-blue-700 font-semibold text-sm py-2.5 rounded-full border border-blue-200 hover:border-blue-400 hover:bg-blue-50 transition-colors font-jost">
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="mt-auto block text-center text-blue-700 font-semibold text-sm py-2.5 rounded-full border border-blue-200 hover:border-blue-400 hover:bg-blue-50 transition-colors font-jost">
             Book at This Branch
           </a>
         </div>
