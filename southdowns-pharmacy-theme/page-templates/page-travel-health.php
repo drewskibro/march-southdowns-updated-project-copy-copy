@@ -822,7 +822,7 @@ $th_service_icons = [
         $img     = $b['card_image'];
         $delay   = $i;
       ?>
-      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="<?php echo $delay; ?>">
+      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group flex flex-col" data-delay="<?php echo $delay; ?>">
         <div class="relative overflow-hidden aspect-[4/3]">
           <img src="<?php echo esc_attr( $img ); ?>" alt="<?php echo esc_attr( $name ); ?> travel health clinic" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
@@ -830,7 +830,7 @@ $th_service_icons = [
             <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full font-jost">Travel Clinic</span>
           </div>
         </div>
-        <div class="p-5">
+        <div class="p-5 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-800 mb-2 font-jost"><?php echo esc_html( $name ); ?></h3>
           <div class="space-y-1.5 text-sm text-gray-600 mb-4 font-jost">
             <div class="flex items-start gap-2">
@@ -844,7 +844,7 @@ $th_service_icons = [
             </div>
             <?php endif; ?>
           </div>
-          <a href="<?php echo esc_url( $booking_url ); ?>" class="block text-center text-blue-700 font-semibold text-sm py-2.5 rounded-full border border-blue-200 hover:border-blue-400 hover:bg-blue-50 transition-colors font-jost">
+          <a href="<?php echo esc_url( $booking_url ); ?>" class="mt-auto block text-center text-blue-700 font-semibold text-sm py-2.5 rounded-full border border-blue-200 hover:border-blue-400 hover:bg-blue-50 transition-colors font-jost">
             Book at This Branch
           </a>
         </div>
