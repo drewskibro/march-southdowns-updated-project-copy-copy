@@ -141,6 +141,57 @@ $th_vaccines     = ! empty( $th_vaccines_raw ) ? $th_vaccines_raw : [
     [ 'name' => 'Travel Flu & Pneumo',          'description' => 'For high-risk travellers and over-65s',                       'is_yf' => false ],
 ];
 
+// How It Works (S7)
+$th_how_eyebrow  = sp_field( 'th_how_eyebrow',  'Simple &amp; Straightforward' );
+$th_how_headline = sp_field( 'th_how_headline', 'How Your Appointment Works' );
+$th_how_subhead  = sp_field( 'th_how_subhead',  'From booking to protected &mdash; it really is this simple. No GP referral, no long waits, no unnecessary visits.' );
+
+$th_how_steps_raw = function_exists( 'get_field' ) ? get_field( 'th_how_steps' ) : null;
+$th_how_steps     = ! empty( $th_how_steps_raw ) ? $th_how_steps_raw : [
+    [
+        'image'     => 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop',
+        'image_alt' => 'Book your travel health appointment online',
+        'title'     => 'Book Online or Call Us',
+        'body'      => 'Book a travel health consultation at your nearest Southdowns Pharmacy location. Same-day appointments are usually available &mdash; just call ahead to confirm. No GP referral needed.',
+        'bullets'   => '',
+    ],
+    [
+        'image'     => 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop',
+        'image_alt' => 'Travel health consultation with pharmacist',
+        'title'     => 'Your Consultation',
+        'body'      => 'A qualified travel health pharmacist reviews your destinations, activities, medical history, and travel dates. We build your personalised vaccine and health plan &mdash; typically takes 20&ndash;30 minutes.',
+        'bullets'   => "Personalised risk assessment\nWritten health advice provided",
+    ],
+    [
+        'image'     => 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=400&fit=crop',
+        'image_alt' => 'Travel vaccinations administered same day',
+        'title'     => 'Vaccinated &amp; Ready to Go',
+        'body'      => 'Approved vaccines are administered the same day, no follow-up visit needed. You leave with your vaccination record, written health advice, and the confidence to travel safely.',
+        'bullets'   => "Certificates issued same day\nComplete vaccination record kept",
+    ],
+];
+
+// Trust / About (S8)
+$th_trust_eyebrow      = sp_field( 'th_trust_eyebrow',      'GPhC Registered &middot; NHS Partner' );
+$th_trust_headline     = sp_field( 'th_trust_headline',     'Hampshire&rsquo;s Dedicated Travel Health Experts' );
+$th_trust_intro        = sp_field( 'th_trust_intro',        'Southdowns Pharmacy Group has been protecting Hampshire travellers for years. Our dedicated travel health team combines clinical expertise with genuine care to make your trip preparation as straightforward as possible.' );
+$th_trust_cta_label    = sp_field( 'th_trust_cta_label',    'Book Your Appointment' );
+$th_trust_image        = ( function_exists( 'get_field' ) ? get_field( 'th_trust_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&h=900&fit=crop';
+$th_trust_image_alt    = sp_field( 'th_trust_image_alt',    'Southdowns Pharmacy travel health pharmacist' );
+$th_trust_badge_title  = sp_field( 'th_trust_badge_title',  'GPhC Registered' );
+$th_trust_badge_body   = sp_field( 'th_trust_badge_body',   'Fully qualified travel health pharmacists at all 4 locations' );
+$th_trust_badge_rating = sp_field( 'th_trust_badge_rating', '4.9/5 Rating' );
+$th_trust_stat_value   = sp_field( 'th_trust_stat_value',   '1,000+' );
+$th_trust_stat_caption = sp_field( 'th_trust_stat_caption', 'Travellers protected each year' );
+
+$th_trust_points_raw = function_exists( 'get_field' ) ? get_field( 'th_trust_points' ) : null;
+$th_trust_points     = ! empty( $th_trust_points_raw ) ? $th_trust_points_raw : [
+    [ 'title' => 'GPhC Registered Pharmacists',         'body' => 'All our travel health pharmacists are registered with the General Pharmaceutical Council and hold specialist travel health qualifications.' ],
+    [ 'title' => 'NHS-Designated Yellow Fever Centre',  'body' => 'One of very few approved Yellow Fever vaccination centres in Hampshire, we meet NHS standards for international travel certification.' ],
+    [ 'title' => '4 Convenient Hampshire Locations',    'body' => 'Cosham, Emsworth, Havant, and Purbrook &mdash; with free parking, wheelchair access, and extended opening hours at most sites.' ],
+    [ 'title' => 'Trusted by Local GPs',                'body' => 'Hampshire GPs refer their patients to us for travel health advice, knowing they&rsquo;ll receive expert care and up-to-date guidance.' ],
+];
+
 // Service-card icons cycle by position. Six built-in icons; defaults map 1:1 to the cards above.
 $th_service_icons = [
     '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
@@ -563,26 +614,37 @@ $th_service_icons = [
     <div class="text-center mb-14">
       <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
         <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
-        <span class="uppercase tracking-wider text-xs font-semibold">Simple &amp; Straightforward</span>
+        <span class="uppercase tracking-wider text-xs font-semibold"><?php echo esc_html( $th_how_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">How Your Appointment Works</h2>
-      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">From booking to protected &mdash; it really is this simple. No GP referral, no long waits, no unnecessary visits.</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost"><?php echo esc_html( $th_how_headline ); ?></h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost"><?php echo $th_how_subhead; ?></p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
 
-      <!-- Step 1 -->
-      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="1">
+      <?php foreach ( $th_how_steps as $i => $step ) :
+          $step_num   = $i + 1;
+          $step_image = ! empty( $step['image'] ) ? $step['image'] : '';
+          $step_alt   = ! empty( $step['image_alt'] ) ? $step['image_alt'] : '';
+          $step_title = ! empty( $step['title'] ) ? $step['title'] : '';
+          $step_body  = ! empty( $step['body'] ) ? $step['body'] : '';
+          $bullets_raw = isset( $step['bullets'] ) ? (string) $step['bullets'] : '';
+          $bullets    = array_values( array_filter( array_map( 'trim', preg_split( "/\r\n|\r|\n/", $bullets_raw ) ) ) );
+      ?>
+      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="<?php echo (int) $step_num; ?>">
         <div class="relative overflow-hidden aspect-[3/2]">
-          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" alt="Book your travel health appointment online" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+          <?php if ( $step_image ) : ?>
+          <img src="<?php echo esc_url( $step_image ); ?>" alt="<?php echo esc_attr( $step_alt ); ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
+          <?php endif; ?>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
           <div class="absolute top-4 left-4">
-            <div class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider font-jost">STEP 1</div>
+            <div class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider font-jost">STEP <?php echo (int) $step_num; ?></div>
           </div>
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Book Online or Call Us</h3>
-          <p class="text-gray-600 leading-relaxed mb-4 font-jost">Book a travel health consultation at your nearest Southdowns Pharmacy location. Same-day appointments are usually available &mdash; just call ahead to confirm. No GP referral needed.</p>
+          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost"><?php echo $step_title; ?></h3>
+          <p class="text-gray-600 leading-relaxed mb-4 font-jost"><?php echo $step_body; ?></p>
+          <?php if ( $step_num === 1 ) : ?>
           <div class="flex flex-wrap gap-3">
             <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition-colors font-jost">
               Book Online
@@ -591,46 +653,16 @@ $th_service_icons = [
               Call Us
             </a>
           </div>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="2">
-        <div class="relative overflow-hidden aspect-[3/2]">
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Travel health consultation with pharmacist" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-          <div class="absolute top-4 left-4">
-            <div class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider font-jost">STEP 2</div>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Your Consultation</h3>
-          <p class="text-gray-600 leading-relaxed mb-4 font-jost">A qualified travel health pharmacist reviews your destinations, activities, medical history, and travel dates. We build your personalised vaccine and health plan &mdash; typically takes 20&ndash;30 minutes.</p>
+          <?php elseif ( ! empty( $bullets ) ) : ?>
           <ul class="space-y-1.5">
-            <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Personalised risk assessment</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Written health advice provided</li>
+            <?php foreach ( $bullets as $bullet ) : ?>
+            <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><?php echo esc_html( $bullet ); ?></li>
+            <?php endforeach; ?>
           </ul>
+          <?php endif; ?>
         </div>
       </div>
-
-      <!-- Step 3 -->
-      <div class="tv-reveal tv-card-lift bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm group" data-delay="3">
-        <div class="relative overflow-hidden aspect-[3/2]">
-          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=400&fit=crop" alt="Travel vaccinations administered same day" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-          <div class="absolute top-4 left-4">
-            <div class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider font-jost">STEP 3</div>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Vaccinated &amp; Ready to Go</h3>
-          <p class="text-gray-600 leading-relaxed mb-4 font-jost">Approved vaccines are administered the same day, no follow-up visit needed. You leave with your vaccination record, written health advice, and the confidence to travel safely.</p>
-          <ul class="space-y-1.5">
-            <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Certificates issued same day</li>
-            <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Complete vaccination record kept</li>
-          </ul>
-        </div>
-      </div>
+      <?php endforeach; ?>
 
     </div>
   </div>
@@ -649,61 +681,70 @@ $th_service_icons = [
       <div class="tv-reveal" data-delay="1">
         <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
           <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
-          <span class="uppercase tracking-wider text-xs font-semibold">GPhC Registered &middot; NHS Partner</span>
+          <span class="uppercase tracking-wider text-xs font-semibold"><?php echo $th_trust_eyebrow; ?></span>
         </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Hampshire&rsquo;s Dedicated Travel Health Experts</h2>
-        <p class="text-lg text-gray-600 leading-relaxed mb-6 font-jost">Southdowns Pharmacy Group has been protecting Hampshire travellers for years. Our dedicated travel health team combines clinical expertise with genuine care to make your trip preparation as straightforward as possible.</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost"><?php echo $th_trust_headline; ?></h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6 font-jost"><?php echo $th_trust_intro; ?></p>
         <ul class="space-y-4 mb-8">
-          <?php
-          $trust_points = [
-            ['GPhC Registered Pharmacists', 'All our travel health pharmacists are registered with the General Pharmaceutical Council and hold specialist travel health qualifications.'],
-            ['NHS-Designated Yellow Fever Centre', 'One of very few approved Yellow Fever vaccination centres in Hampshire, we meet NHS standards for international travel certification.'],
-            ['4 Convenient Hampshire Locations', 'Cosham, Emsworth, Havant, and Purbrook &mdash; with free parking, wheelchair access, and extended opening hours at most sites.'],
-            ['Trusted by Local GPs', 'Hampshire GPs refer their patients to us for travel health advice, knowing they&rsquo;ll receive expert care and up-to-date guidance.'],
-          ];
-          foreach ( $trust_points as $point ) : ?>
+          <?php foreach ( $th_trust_points as $point ) :
+              $pt_title = ! empty( $point['title'] ) ? $point['title'] : '';
+              $pt_body  = ! empty( $point['body'] )  ? $point['body']  : '';
+              if ( ! $pt_title && ! $pt_body ) { continue; }
+          ?>
           <li class="flex items-start gap-4">
             <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <div>
-              <div class="font-bold text-slate-800 font-jost mb-1"><?php echo esc_html( $point[0] ); ?></div>
-              <div class="text-gray-600 text-sm leading-relaxed font-jost"><?php echo $point[1]; ?></div>
+              <div class="font-bold text-slate-800 font-jost mb-1"><?php echo esc_html( $pt_title ); ?></div>
+              <div class="text-gray-600 text-sm leading-relaxed font-jost"><?php echo $pt_body; ?></div>
             </div>
           </li>
           <?php endforeach; ?>
         </ul>
+        <?php if ( $th_trust_cta_label ) : ?>
         <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg font-jost transition-opacity hover:opacity-90" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          Book Your Appointment
+          <?php echo esc_html( $th_trust_cta_label ); ?>
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
+        <?php endif; ?>
       </div>
 
       <!-- Right: photo + floating badge -->
       <div class="tv-reveal relative" data-delay="2">
         <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5]">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&h=900&fit=crop" alt="Southdowns Pharmacy travel health pharmacist" class="w-full h-full object-cover" loading="lazy"/>
+          <img src="<?php echo esc_url( $th_trust_image ); ?>" alt="<?php echo esc_attr( $th_trust_image_alt ); ?>" class="w-full h-full object-cover" loading="lazy"/>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent"></div>
         </div>
+        <?php if ( $th_trust_badge_title || $th_trust_badge_body || $th_trust_badge_rating ) : ?>
         <!-- Floating trust badge -->
         <div class="absolute -bottom-4 -left-4 md:-left-8 bg-white rounded-2xl shadow-xl p-5 max-w-[220px]">
+          <?php if ( $th_trust_badge_title ) : ?>
           <div class="flex items-center gap-2 mb-2">
             <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <span class="font-bold text-slate-800 text-sm font-jost">GPhC Registered</span>
+            <span class="font-bold text-slate-800 text-sm font-jost"><?php echo esc_html( $th_trust_badge_title ); ?></span>
           </div>
-          <p class="text-gray-500 text-xs leading-relaxed font-jost">Fully qualified travel health pharmacists at all 4 locations</p>
+          <?php endif; ?>
+          <?php if ( $th_trust_badge_body ) : ?>
+          <p class="text-gray-500 text-xs leading-relaxed font-jost"><?php echo $th_trust_badge_body; ?></p>
+          <?php endif; ?>
+          <?php if ( $th_trust_badge_rating ) : ?>
           <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-1">
             <?php for($s=0;$s<5;$s++): ?><svg width="14" height="14" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><?php endfor; ?>
-            <span class="text-xs text-gray-500 ml-1 font-jost">4.9/5 Rating</span>
+            <span class="text-xs text-gray-500 ml-1 font-jost"><?php echo esc_html( $th_trust_badge_rating ); ?></span>
           </div>
+          <?php endif; ?>
         </div>
+        <?php endif; ?>
+        <?php if ( $th_trust_stat_value || $th_trust_stat_caption ) : ?>
         <!-- Second floating badge top right -->
         <div class="absolute -top-4 -right-4 md:-right-8 bg-white rounded-2xl shadow-xl p-4 max-w-[180px]">
-          <div class="text-2xl font-bold text-blue-700 font-jost">1,000+</div>
-          <div class="text-xs text-gray-500 font-jost">Travellers protected each year</div>
+          <?php if ( $th_trust_stat_value ) : ?><div class="text-2xl font-bold text-blue-700 font-jost"><?php echo esc_html( $th_trust_stat_value ); ?></div><?php endif; ?>
+          <?php if ( $th_trust_stat_caption ) : ?><div class="text-xs text-gray-500 font-jost"><?php echo esc_html( $th_trust_stat_caption ); ?></div><?php endif; ?>
         </div>
+        <?php endif; ?>
       </div>
 
     </div>

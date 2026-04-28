@@ -14,6 +14,8 @@
  *   3. Why Choose Us
  *   4. Services
  *   5. Vaccines
+ *   6. How It Works
+ *   7. Trust / About
  */
 
 add_action( 'acf/init', function () {
@@ -280,6 +282,168 @@ add_action( 'acf/init', function () {
                 'name'        => 'th_vaccines_banner_cta_label',
                 'type'        => 'text',
                 'placeholder' => 'Book Now',
+            ],
+
+            // ---- Tab 6 · How It Works ----------------------------
+            [ 'key' => 'field_th_tab_how', 'label' => 'How It Works', 'name' => '', 'type' => 'tab' ],
+            [
+                'key'         => 'field_th_how_eyebrow',
+                'label'       => 'Eyebrow Text',
+                'name'        => 'th_how_eyebrow',
+                'type'        => 'text',
+                'placeholder' => 'Simple & Straightforward',
+            ],
+            [
+                'key'         => 'field_th_how_headline',
+                'label'       => 'Headline',
+                'name'        => 'th_how_headline',
+                'type'        => 'text',
+                'placeholder' => 'How Your Appointment Works',
+            ],
+            [
+                'key'         => 'field_th_how_subhead',
+                'label'       => 'Sub-headline',
+                'name'        => 'th_how_subhead',
+                'type'        => 'textarea',
+                'rows'        => 2,
+                'placeholder' => 'From booking to protected — it really is this simple. No GP referral, no long waits, no unnecessary visits.',
+            ],
+            [
+                'key'          => 'field_th_how_steps',
+                'label'        => 'Step Cards',
+                'name'         => 'th_how_steps',
+                'type'         => 'repeater',
+                'min'          => 0,
+                'max'          => 3,
+                'layout'       => 'block',
+                'button_label' => 'Add Step',
+                'instructions' => 'Up to three step cards. The STEP 1/2/3 badge is generated automatically from card position. Step 1 also shows the global Book Online / Call Us buttons; steps 2 and 3 show their bullet points. Leave empty to use defaults.',
+                'sub_fields'   => [
+                    [
+                        'key'           => 'field_th_how_step_image',
+                        'label'         => 'Image',
+                        'name'          => 'image',
+                        'type'          => 'image',
+                        'return_format' => 'url',
+                        'preview_size'  => 'medium',
+                        'instructions'  => 'Recommended 600 × 400 px (3:2).',
+                    ],
+                    [ 'key' => 'field_th_how_step_image_alt', 'label' => 'Image Alt Text', 'name' => 'image_alt', 'type' => 'text', 'instructions' => 'Describes the image for accessibility & SEO.' ],
+                    [ 'key' => 'field_th_how_step_title',     'label' => 'Title',          'name' => 'title',     'type' => 'text' ],
+                    [ 'key' => 'field_th_how_step_body',      'label' => 'Body',           'name' => 'body',      'type' => 'textarea', 'rows' => 4 ],
+                    [
+                        'key'          => 'field_th_how_step_bullets',
+                        'label'        => 'Bullet Points',
+                        'name'         => 'bullets',
+                        'type'         => 'textarea',
+                        'rows'         => 3,
+                        'instructions' => 'One bullet per line. Empty lines are skipped. Only shown on steps 2 and 3 (step 1 displays the Book Online / Call Us buttons instead).',
+                        'new_lines'    => '',
+                    ],
+                ],
+            ],
+
+            // ---- Tab 7 · Trust / About ---------------------------
+            [ 'key' => 'field_th_tab_trust', 'label' => 'Trust / About', 'name' => '', 'type' => 'tab' ],
+            [
+                'key'         => 'field_th_trust_eyebrow',
+                'label'       => 'Eyebrow Text',
+                'name'        => 'th_trust_eyebrow',
+                'type'        => 'text',
+                'placeholder' => 'GPhC Registered · NHS Partner',
+            ],
+            [
+                'key'         => 'field_th_trust_headline',
+                'label'       => 'Headline',
+                'name'        => 'th_trust_headline',
+                'type'        => 'text',
+                'placeholder' => 'Hampshire’s Dedicated Travel Health Experts',
+            ],
+            [
+                'key'         => 'field_th_trust_intro',
+                'label'       => 'Intro Paragraph',
+                'name'        => 'th_trust_intro',
+                'type'        => 'textarea',
+                'rows'        => 3,
+                'placeholder' => 'Southdowns Pharmacy Group has been protecting Hampshire travellers for years. Our dedicated travel health team combines clinical expertise with genuine care to make your trip preparation as straightforward as possible.',
+            ],
+            [
+                'key'          => 'field_th_trust_points',
+                'label'        => 'Trust Points',
+                'name'         => 'th_trust_points',
+                'type'         => 'repeater',
+                'min'          => 0,
+                'max'          => 6,
+                'layout'       => 'block',
+                'button_label' => 'Add Trust Point',
+                'instructions' => 'Bullet list with blue tick icons. Leave empty to use the four built-in points.',
+                'sub_fields'   => [
+                    [ 'key' => 'field_th_trust_point_title', 'label' => 'Heading', 'name' => 'title', 'type' => 'text' ],
+                    [ 'key' => 'field_th_trust_point_body',  'label' => 'Body',    'name' => 'body',  'type' => 'textarea', 'rows' => 3, 'instructions' => 'Basic HTML allowed (e.g. <strong>).' ],
+                ],
+            ],
+            [
+                'key'         => 'field_th_trust_cta_label',
+                'label'       => 'CTA Button Label',
+                'name'        => 'th_trust_cta_label',
+                'type'        => 'text',
+                'placeholder' => 'Book Your Appointment',
+                'instructions' => 'Button beneath the trust points. Links to the global booking URL.',
+            ],
+            [
+                'key'           => 'field_th_trust_image',
+                'label'         => 'Main Photo',
+                'name'          => 'th_trust_image',
+                'type'          => 'image',
+                'return_format' => 'url',
+                'preview_size'  => 'medium',
+                'instructions'  => 'Tall portrait photo on the right. Recommended 700 × 900 px (4:5).',
+            ],
+            [
+                'key'         => 'field_th_trust_image_alt',
+                'label'       => 'Main Photo Alt Text',
+                'name'        => 'th_trust_image_alt',
+                'type'        => 'text',
+                'placeholder' => 'Southdowns Pharmacy travel health pharmacist',
+            ],
+            [
+                'key'         => 'field_th_trust_badge_title',
+                'label'       => 'Floating Badge — Title',
+                'name'        => 'th_trust_badge_title',
+                'type'        => 'text',
+                'placeholder' => 'GPhC Registered',
+                'instructions' => 'Bold text in the bottom-left floating badge.',
+            ],
+            [
+                'key'         => 'field_th_trust_badge_body',
+                'label'       => 'Floating Badge — Body',
+                'name'        => 'th_trust_badge_body',
+                'type'        => 'textarea',
+                'rows'        => 2,
+                'placeholder' => 'Fully qualified travel health pharmacists at all 4 locations',
+            ],
+            [
+                'key'         => 'field_th_trust_badge_rating',
+                'label'       => 'Floating Badge — Rating Text',
+                'name'        => 'th_trust_badge_rating',
+                'type'        => 'text',
+                'placeholder' => '4.9/5 Rating',
+                'instructions' => 'Caption next to the 5-star row in the bottom-left badge.',
+            ],
+            [
+                'key'         => 'field_th_trust_stat_value',
+                'label'       => 'Stat Badge — Big Number',
+                'name'        => 'th_trust_stat_value',
+                'type'        => 'text',
+                'placeholder' => '1,000+',
+                'instructions' => 'Large stat in the top-right floating badge.',
+            ],
+            [
+                'key'         => 'field_th_trust_stat_caption',
+                'label'       => 'Stat Badge — Caption',
+                'name'        => 'th_trust_stat_caption',
+                'type'        => 'text',
+                'placeholder' => 'Travellers protected each year',
             ],
 
         ],
