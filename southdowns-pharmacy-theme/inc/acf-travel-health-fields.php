@@ -14,6 +14,7 @@
  *   3. Why Choose Us
  *   4. Services
  *   5. Vaccines
+ *   6. How It Works
  */
 
 add_action( 'acf/init', function () {
@@ -280,6 +281,65 @@ add_action( 'acf/init', function () {
                 'name'        => 'th_vaccines_banner_cta_label',
                 'type'        => 'text',
                 'placeholder' => 'Book Now',
+            ],
+
+            // ---- Tab 6 · How It Works ----------------------------
+            [ 'key' => 'field_th_tab_how', 'label' => 'How It Works', 'name' => '', 'type' => 'tab' ],
+            [
+                'key'         => 'field_th_how_eyebrow',
+                'label'       => 'Eyebrow Text',
+                'name'        => 'th_how_eyebrow',
+                'type'        => 'text',
+                'placeholder' => 'Simple & Straightforward',
+            ],
+            [
+                'key'         => 'field_th_how_headline',
+                'label'       => 'Headline',
+                'name'        => 'th_how_headline',
+                'type'        => 'text',
+                'placeholder' => 'How Your Appointment Works',
+            ],
+            [
+                'key'         => 'field_th_how_subhead',
+                'label'       => 'Sub-headline',
+                'name'        => 'th_how_subhead',
+                'type'        => 'textarea',
+                'rows'        => 2,
+                'placeholder' => 'From booking to protected — it really is this simple. No GP referral, no long waits, no unnecessary visits.',
+            ],
+            [
+                'key'          => 'field_th_how_steps',
+                'label'        => 'Step Cards',
+                'name'         => 'th_how_steps',
+                'type'         => 'repeater',
+                'min'          => 0,
+                'max'          => 3,
+                'layout'       => 'block',
+                'button_label' => 'Add Step',
+                'instructions' => 'Up to three step cards. The STEP 1/2/3 badge is generated automatically from card position. Step 1 also shows the global Book Online / Call Us buttons; steps 2 and 3 show their bullet points. Leave empty to use defaults.',
+                'sub_fields'   => [
+                    [
+                        'key'           => 'field_th_how_step_image',
+                        'label'         => 'Image',
+                        'name'          => 'image',
+                        'type'          => 'image',
+                        'return_format' => 'url',
+                        'preview_size'  => 'medium',
+                        'instructions'  => 'Recommended 600 × 400 px (3:2).',
+                    ],
+                    [ 'key' => 'field_th_how_step_image_alt', 'label' => 'Image Alt Text', 'name' => 'image_alt', 'type' => 'text', 'instructions' => 'Describes the image for accessibility & SEO.' ],
+                    [ 'key' => 'field_th_how_step_title',     'label' => 'Title',          'name' => 'title',     'type' => 'text' ],
+                    [ 'key' => 'field_th_how_step_body',      'label' => 'Body',           'name' => 'body',      'type' => 'textarea', 'rows' => 4 ],
+                    [
+                        'key'          => 'field_th_how_step_bullets',
+                        'label'        => 'Bullet Points',
+                        'name'         => 'bullets',
+                        'type'         => 'textarea',
+                        'rows'         => 3,
+                        'instructions' => 'One bullet per line. Empty lines are skipped. Only shown on steps 2 and 3 (step 1 displays the Book Online / Call Us buttons instead).',
+                        'new_lines'    => '',
+                    ],
+                ],
             ],
 
         ],
