@@ -118,6 +118,29 @@ $th_services_cards     = ! empty( $th_services_cards_raw ) ? $th_services_cards_
     ],
 ];
 
+// Vaccines (S6)
+$th_vaccines_eyebrow         = sp_field( 'th_vaccines_eyebrow',         'Always In Stock' );
+$th_vaccines_headline        = sp_field( 'th_vaccines_headline',        'Travel Vaccines We Provide' );
+$th_vaccines_subhead         = sp_field( 'th_vaccines_subhead',         'No prescription, no waiting lists, no GP appointments. All vaccines are available same-day across our 4 Hampshire locations.' );
+$th_vaccines_banner_body     = sp_field( 'th_vaccines_banner_body',     'Some vaccinations require a course of doses over several weeks. We recommend booking your appointment at least <strong>6&ndash;8 weeks before travel</strong>, though we can still help with last-minute trips.' );
+$th_vaccines_banner_cta      = sp_field( 'th_vaccines_banner_cta_label', 'Book Now' );
+
+$th_vaccines_raw = function_exists( 'get_field' ) ? get_field( 'th_vaccines_list' ) : null;
+$th_vaccines     = ! empty( $th_vaccines_raw ) ? $th_vaccines_raw : [
+    [ 'name' => 'Yellow Fever',                 'description' => 'ICVP certificate included &middot; Valid for life',           'is_yf' => true  ],
+    [ 'name' => 'Hepatitis A',                  'description' => 'Single dose gives 1 year protection, booster lasts 25 years', 'is_yf' => false ],
+    [ 'name' => 'Hepatitis B',                  'description' => 'Course of 3 doses over 6 months &middot; Long-term protection', 'is_yf' => false ],
+    [ 'name' => 'Typhoid',                      'description' => 'Injection or oral capsules &middot; 3-year protection',        'is_yf' => false ],
+    [ 'name' => 'Rabies (Pre-Exposure)',        'description' => '3-dose course &middot; Essential for adventure travellers',    'is_yf' => false ],
+    [ 'name' => 'Meningitis ACWY',              'description' => 'Single dose &middot; Required for Hajj / Umrah pilgrims',     'is_yf' => false ],
+    [ 'name' => 'Japanese Encephalitis',        'description' => '2-dose course &middot; For rural Asia travel',                'is_yf' => false ],
+    [ 'name' => 'Diphtheria, Tetanus & Polio',  'description' => 'Combined booster &middot; 10-year protection',                'is_yf' => false ],
+    [ 'name' => 'Cholera',                      'description' => 'Oral vaccine &middot; Includes diarrhoea protection',         'is_yf' => false ],
+    [ 'name' => 'Chickenpox (Varicella)',       'description' => 'For travellers without prior immunity',                       'is_yf' => false ],
+    [ 'name' => 'MMR (Measles, Mumps, Rubella)', 'description' => 'Catch-up for unvaccinated adults',                           'is_yf' => false ],
+    [ 'name' => 'Travel Flu & Pneumo',          'description' => 'For high-risk travellers and over-65s',                       'is_yf' => false ],
+];
+
 // Service-card icons cycle by position. Six built-in icons; defaults map 1:1 to the cards above.
 $th_service_icons = [
     '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
@@ -488,34 +511,18 @@ $th_service_icons = [
     <div class="text-center mb-14">
       <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
-        <span class="uppercase tracking-wider text-xs font-semibold">Always In Stock</span>
+        <span class="uppercase tracking-wider text-xs font-semibold"><?php echo esc_html( $th_vaccines_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Travel Vaccines We Provide</h2>
-      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">No prescription, no waiting lists, no GP appointments. All vaccines are available same-day across our 4 Hampshire locations.</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost"><?php echo esc_html( $th_vaccines_headline ); ?></h2>
+      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost"><?php echo wp_kses_post( $th_vaccines_subhead ); ?></p>
     </div>
 
-    <?php
-    $vaccines = [
-      ['Yellow Fever',           'ICVP certificate included &middot; Valid for life',           '#f59e0b', true ],
-      ['Hepatitis A',            'Single dose gives 1 year protection, booster lasts 25 years', '#3b82f6', false],
-      ['Hepatitis B',            'Course of 3 doses over 6 months &middot; Long-term protection','#3b82f6', false],
-      ['Typhoid',                'Injection or oral capsules &middot; 3-year protection',        '#3b82f6', false],
-      ['Rabies (Pre-Exposure)',   '3-dose course &middot; Essential for adventure travellers',   '#3b82f6', false],
-      ['Meningitis ACWY',        'Single dose &middot; Required for Hajj / Umrah pilgrims',      '#3b82f6', false],
-      ['Japanese Encephalitis',  '2-dose course &middot; For rural Asia travel',                '#3b82f6', false],
-      ['Diphtheria, Tetanus &amp; Polio', 'Combined booster &middot; 10-year protection',       '#3b82f6', false],
-      ['Cholera',                'Oral vaccine &middot; Includes diarrhoea protection',         '#3b82f6', false],
-      ['Chickenpox (Varicella)', 'For travellers without prior immunity',                       '#3b82f6', false],
-      ['MMR (Measles, Mumps, Rubella)', 'Catch-up for unvaccinated adults',                    '#3b82f6', false],
-      ['Travel Flu &amp; Pneumo', 'For high-risk travellers and over-65s',                     '#3b82f6', false],
-    ];
-    ?>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <?php foreach ( $vaccines as $i => $v ) :
+      <?php foreach ( $th_vaccines as $i => $v ) :
         $delay = ( $i % 3 ) + 1;
-        $is_yf = $v[3];
+        $is_yf = ! empty( $v['is_yf'] );
       ?>
-      <div class="tv-reveal tv-card-lift flex items-start gap-4 p-5 rounded-2xl border backdrop-blur-sm <?php echo $is_yf ? 'bg-amber-500/20 border-amber-400/40' : 'bg-white/10 border-white/20 hover:bg-white/15'; ?> transition-colors" data-delay="<?php echo $delay; ?>">
+      <div class="tv-reveal tv-card-lift flex items-start gap-4 p-5 rounded-2xl border backdrop-blur-sm <?php echo $is_yf ? 'bg-amber-500/20 border-amber-400/40' : 'bg-white/10 border-white/20 hover:bg-white/15'; ?> transition-colors" data-delay="<?php echo (int) $delay; ?>">
         <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center <?php echo $is_yf ? 'bg-amber-400/30' : 'bg-white/20'; ?>">
           <?php if ( $is_yf ) : ?>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -524,8 +531,8 @@ $th_service_icons = [
           <?php endif; ?>
         </div>
         <div>
-          <div class="font-bold <?php echo $is_yf ? 'text-amber-200' : 'text-white'; ?> font-jost mb-1"><?php echo $v[0]; ?></div>
-          <div class="text-xs <?php echo $is_yf ? 'text-amber-100/80' : 'text-blue-100/80'; ?> font-jost"><?php echo $v[1]; ?></div>
+          <div class="font-bold <?php echo $is_yf ? 'text-amber-200' : 'text-white'; ?> font-jost mb-1"><?php echo wp_kses_post( $v['name'] ); ?></div>
+          <div class="text-xs <?php echo $is_yf ? 'text-amber-100/80' : 'text-blue-100/80'; ?> font-jost"><?php echo wp_kses_post( $v['description'] ); ?></div>
         </div>
         <?php if ( $is_yf ) : ?>
         <div class="ml-auto flex-shrink-0">
@@ -538,9 +545,9 @@ $th_service_icons = [
 
     <div class="mt-10 p-5 rounded-2xl bg-white/10 border border-white/20 flex flex-col sm:flex-row items-start sm:items-center gap-4">
       <svg class="flex-shrink-0 w-8 h-8 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <p class="text-blue-100 text-sm leading-relaxed font-jost flex-1">Some vaccinations require a course of doses over several weeks. We recommend booking your appointment at least <strong class="text-white">6–8 weeks before travel</strong>, though we can still help with last-minute trips.</p>
+      <p class="text-blue-100 text-sm leading-relaxed font-jost flex-1"><?php echo wp_kses_post( $th_vaccines_banner_body ); ?></p>
       <a href="<?php echo esc_url( $booking_url ); ?>" class="flex-shrink-0 inline-flex items-center gap-2 bg-white text-blue-700 font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-blue-50 transition-colors shadow font-jost">
-        Book Now <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        <?php echo esc_html( $th_vaccines_banner_cta ); ?> <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
   </div>

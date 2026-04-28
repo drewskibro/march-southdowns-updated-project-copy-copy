@@ -13,6 +13,7 @@
  *   2. Stats Bar
  *   3. Why Choose Us
  *   4. Services
+ *   5. Vaccines
  */
 
 add_action( 'acf/init', function () {
@@ -214,6 +215,71 @@ add_action( 'acf/init', function () {
                 'type'        => 'text',
                 'placeholder' => 'Book Your Travel Health Appointment',
                 'instructions' => 'Text on the large CTA button below the cards. Links to the global booking URL.',
+            ],
+
+            // ---- Tab 5 · Vaccines --------------------------------
+            [ 'key' => 'field_th_tab_vaccines', 'label' => 'Vaccines', 'name' => '', 'type' => 'tab' ],
+            [
+                'key'         => 'field_th_vaccines_eyebrow',
+                'label'       => 'Eyebrow Text',
+                'name'        => 'th_vaccines_eyebrow',
+                'type'        => 'text',
+                'placeholder' => 'Always In Stock',
+            ],
+            [
+                'key'         => 'field_th_vaccines_headline',
+                'label'       => 'Headline',
+                'name'        => 'th_vaccines_headline',
+                'type'        => 'text',
+                'placeholder' => 'Travel Vaccines We Provide',
+            ],
+            [
+                'key'         => 'field_th_vaccines_subhead',
+                'label'       => 'Sub-headline',
+                'name'        => 'th_vaccines_subhead',
+                'type'        => 'textarea',
+                'rows'        => 2,
+                'placeholder' => 'No prescription, no waiting lists, no GP appointments. All vaccines are available same-day across our 4 Hampshire locations.',
+            ],
+            [
+                'key'          => 'field_th_vaccines_list',
+                'label'        => 'Vaccine Tiles',
+                'name'         => 'th_vaccines_list',
+                'type'         => 'repeater',
+                'min'          => 0,
+                'max'          => 0,
+                'layout'       => 'table',
+                'button_label' => 'Add Vaccine',
+                'instructions' => 'Tiles render in a 3-column grid in the order set here. Leave empty to use defaults (12 vaccines).',
+                'sub_fields'   => [
+                    [ 'key' => 'field_th_vaccine_name',        'label' => 'Vaccine Name',  'name' => 'name',        'type' => 'text', 'instructions' => 'e.g. "Hepatitis A"' ],
+                    [ 'key' => 'field_th_vaccine_description', 'label' => 'Short Description', 'name' => 'description', 'type' => 'text', 'instructions' => 'One-line caption beneath the name.' ],
+                    [
+                        'key'           => 'field_th_vaccine_is_yf',
+                        'label'         => 'Yellow Fever Style',
+                        'name'          => 'is_yf',
+                        'type'          => 'true_false',
+                        'ui'            => 1,
+                        'instructions'  => 'Switches the tile to the amber/ICVP highlight treatment used by Yellow Fever.',
+                        'default_value' => 0,
+                    ],
+                ],
+            ],
+            [
+                'key'         => 'field_th_vaccines_banner_body',
+                'label'       => 'Bottom Banner Copy',
+                'name'        => 'th_vaccines_banner_body',
+                'type'        => 'textarea',
+                'rows'        => 2,
+                'instructions' => 'Info banner below the tiles. Basic HTML allowed (e.g. <strong> for emphasis on lead times).',
+                'placeholder' => 'Some vaccinations require a course of doses over several weeks. We recommend booking your appointment at least <strong>6–8 weeks before travel</strong>, though we can still help with last-minute trips.',
+            ],
+            [
+                'key'         => 'field_th_vaccines_banner_cta_label',
+                'label'       => 'Banner CTA Label',
+                'name'        => 'th_vaccines_banner_cta_label',
+                'type'        => 'text',
+                'placeholder' => 'Book Now',
             ],
 
         ],
