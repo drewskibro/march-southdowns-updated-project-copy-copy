@@ -12,6 +12,7 @@
  *   1. Hero
  *   2. Stats Bar
  *   3. Why Choose Us
+ *   4. Services
  */
 
 add_action( 'acf/init', function () {
@@ -138,6 +139,81 @@ add_action( 'acf/init', function () {
                     [ 'key' => 'field_th_why_card_link_label', 'label' => 'Link Label', 'name' => 'link_label', 'type' => 'text', 'instructions' => 'e.g. "Book Consultation". Leave empty to hide the link.' ],
                     [ 'key' => 'field_th_why_card_link_url',   'label' => 'Link URL',   'name' => 'link_url',   'type' => 'url',  'instructions' => 'Full URL or in-page anchor (e.g. "#vaccines"). Leave empty to default to the global booking URL.' ],
                 ],
+            ],
+
+            // ---- Tab 4 · Services --------------------------------
+            [ 'key' => 'field_th_tab_services', 'label' => 'Services', 'name' => '', 'type' => 'tab' ],
+            [
+                'key'         => 'field_th_services_eyebrow',
+                'label'       => 'Eyebrow Text',
+                'name'        => 'th_services_eyebrow',
+                'type'        => 'text',
+                'placeholder' => 'Everything Under One Roof',
+            ],
+            [
+                'key'         => 'field_th_services_headline',
+                'label'       => 'Headline',
+                'name'        => 'th_services_headline',
+                'type'        => 'text',
+                'placeholder' => 'Our Travel Health Services',
+            ],
+            [
+                'key'         => 'field_th_services_subhead',
+                'label'       => 'Sub-headline',
+                'name'        => 'th_services_subhead',
+                'type'        => 'textarea',
+                'rows'        => 2,
+                'placeholder' => 'One appointment covers everything. No GP, no hospital, no hassle — we handle your complete travel health needs in one visit.',
+            ],
+            [
+                'key'          => 'field_th_services_cards',
+                'label'        => 'Service Cards',
+                'name'         => 'th_services_cards',
+                'type'         => 'repeater',
+                'min'          => 0,
+                'max'          => 6,
+                'layout'       => 'block',
+                'button_label' => 'Add Service',
+                'instructions' => 'Up to six service cards. Card icons are template-driven and cycle through six built-in styles by position. Leave empty to use defaults.',
+                'sub_fields'   => [
+                    [ 'key' => 'field_th_services_card_title',     'label' => 'Title',         'name' => 'title',        'type' => 'text' ],
+                    [ 'key' => 'field_th_services_card_body',      'label' => 'Body',          'name' => 'body',         'type' => 'textarea', 'rows' => 4 ],
+                    [
+                        'key'          => 'field_th_services_card_bullets',
+                        'label'        => 'Bullet Points',
+                        'name'         => 'bullets',
+                        'type'         => 'textarea',
+                        'rows'         => 4,
+                        'instructions' => 'One bullet per line. Empty lines are skipped.',
+                        'new_lines'    => '',
+                    ],
+                    [
+                        'key'           => 'field_th_services_card_is_highlight',
+                        'label'         => 'Highlight Style',
+                        'name'          => 'is_highlight',
+                        'type'          => 'true_false',
+                        'ui'            => 1,
+                        'instructions'  => 'Switches the card to the amber "official centre" treatment (used by Yellow Fever).',
+                        'default_value' => 0,
+                    ],
+                    [
+                        'key'          => 'field_th_services_card_top_badge',
+                        'label'        => 'Top Badge',
+                        'name'         => 'top_badge',
+                        'type'         => 'text',
+                        'instructions' => 'Optional small uppercase badge above the title (e.g. "Official Vaccination Centre"). Leave empty to hide.',
+                    ],
+                    [ 'key' => 'field_th_services_card_link_label', 'label' => 'Link Label',   'name' => 'link_label',   'type' => 'text', 'instructions' => 'Optional CTA link beneath the card. Leave empty to hide.' ],
+                    [ 'key' => 'field_th_services_card_link_url',   'label' => 'Link URL',     'name' => 'link_url',     'type' => 'url',  'instructions' => 'Full URL or in-page anchor.' ],
+                ],
+            ],
+            [
+                'key'         => 'field_th_services_cta_label',
+                'label'       => 'Bottom CTA Label',
+                'name'        => 'th_services_cta_label',
+                'type'        => 'text',
+                'placeholder' => 'Book Your Travel Health Appointment',
+                'instructions' => 'Text on the large CTA button below the cards. Links to the global booking URL.',
             ],
 
         ],

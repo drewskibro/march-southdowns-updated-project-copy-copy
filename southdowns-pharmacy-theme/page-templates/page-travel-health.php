@@ -53,6 +53,80 @@ $th_why_cards     = ! empty( $th_why_cards_raw ) ? $th_why_cards_raw : [
         'link_url'   => '#vaccines',
     ],
 ];
+
+// Services (S5)
+$th_services_eyebrow   = sp_field( 'th_services_eyebrow',   'Everything Under One Roof' );
+$th_services_headline  = sp_field( 'th_services_headline',  'Our Travel Health Services' );
+$th_services_subhead   = sp_field( 'th_services_subhead',   'One appointment covers everything. No GP, no hospital, no hassle &mdash; we handle your complete travel health needs in one visit.' );
+$th_services_cta_label = sp_field( 'th_services_cta_label', 'Book Your Travel Health Appointment' );
+
+$th_services_cards_raw = function_exists( 'get_field' ) ? get_field( 'th_services_cards' ) : null;
+$th_services_cards     = ! empty( $th_services_cards_raw ) ? $th_services_cards_raw : [
+    [
+        'title'        => 'Travel Vaccination Consultation',
+        'body'         => 'Comprehensive one-to-one assessment with a qualified travel health pharmacist. We review your destination, activities, medical history, and previous vaccinations to create your personalised plan.',
+        'bullets'      => "Same-day vaccination if required\nWritten vaccination record provided\nNo GP referral needed",
+        'is_highlight' => false,
+        'top_badge'    => '',
+        'link_label'   => '',
+        'link_url'     => '',
+    ],
+    [
+        'title'        => 'Malaria Prevention',
+        'body'         => 'Prescription anti-malarial medication tailored to your destination, travel dates, and medical history. We explain how and when to take your medication for maximum protection.',
+        'bullets'      => "Doxycycline, Malarone & Lariam\nBite avoidance advice included\nSame-day prescription & supply",
+        'is_highlight' => false,
+        'top_badge'    => '',
+        'link_label'   => '',
+        'link_url'     => '',
+    ],
+    [
+        'title'        => 'Fit to Fly Certificates',
+        'body'         => 'Official documentation confirming you are medically fit to travel, accepted by all major UK airlines. Issued same-day following a brief assessment by our pharmacist.',
+        'bullets'      => "Accepted by all UK airlines\nSame-day certificate issued\nQuick 15-minute appointment",
+        'is_highlight' => false,
+        'top_badge'    => '',
+        'link_label'   => '',
+        'link_url'     => '',
+    ],
+    [
+        'title'        => 'Destination Health Advice',
+        'body'         => 'Detailed written guidance for your specific destinations covering food and water safety, insect protection, sun safety, altitude sickness, traveller’s diarrhoea, and emergency medication.',
+        'bullets'      => "Food & water safety guidance\nInsect & sun protection advice\nEmergency medication guidance",
+        'is_highlight' => false,
+        'top_badge'    => '',
+        'link_label'   => '',
+        'link_url'     => '',
+    ],
+    [
+        'title'        => 'Travel Medication & Kits',
+        'body'         => 'We supply a full range of travel medications including altitude sickness tablets, traveller’s diarrhoea treatment, antihistamines, and first aid essentials for your trip.',
+        'bullets'      => "Altitude sickness prevention\nTraveller’s diarrhoea treatment\nFull travel first-aid kits",
+        'is_highlight' => false,
+        'top_badge'    => '',
+        'link_label'   => '',
+        'link_url'     => '',
+    ],
+    [
+        'title'        => 'Yellow Fever Vaccination',
+        'body'         => 'We are an NHS-registered Yellow Fever Vaccination Centre. A single dose provides lifelong immunity and the ICVP certificate is valid for life. Accepted at all borders.',
+        'bullets'      => "ICVP certificate issued same day\nValid for life — no boosters needed\nNHS-registered centre",
+        'is_highlight' => true,
+        'top_badge'    => 'Official Vaccination Centre',
+        'link_label'   => 'Learn more about Yellow Fever',
+        'link_url'     => home_url( '/yellow-fever/' ),
+    ],
+];
+
+// Service-card icons cycle by position. Six built-in icons; defaults map 1:1 to the cards above.
+$th_service_icons = [
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M8 21H5a2 2 0 0 1-2-2v-3m18 0v3a2 2 0 0 1-2 2h-3"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>',
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.58a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg>',
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+];
 ?>
 
 <!-- Page-scoped styles -->
@@ -349,105 +423,52 @@ $th_why_cards     = ! empty( $th_why_cards_raw ) ? $th_why_cards_raw : [
     <div class="text-center mb-14">
       <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
         <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
-        <span class="uppercase tracking-wider text-xs font-semibold">Everything Under One Roof</span>
+        <span class="uppercase tracking-wider text-xs font-semibold"><?php echo esc_html( $th_services_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Our Travel Health Services</h2>
-      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">One appointment covers everything. No GP, no hospital, no hassle &mdash; we handle your complete travel health needs in one visit.</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost"><?php echo esc_html( $th_services_headline ); ?></h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost"><?php echo wp_kses_post( $th_services_subhead ); ?></p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Travel Vaccination Consultation -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-blue-100 bg-gradient-to-br from-blue-50 to-white" data-delay="1">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <?php foreach ( $th_services_cards as $i => $card ) :
+        $is_hl  = ! empty( $card['is_highlight'] );
+        $delay  = ( $i % 3 ) + 1;
+        $bullet_lines = array_filter( array_map( 'trim', preg_split( '/\r\n|\r|\n/', (string) ( $card['bullets'] ?? '' ) ) ) );
+        $card_border  = $is_hl ? 'border-amber-200 bg-gradient-to-br from-amber-50 to-white' : 'border-blue-100 bg-gradient-to-br from-blue-50 to-white';
+        $icon_bg      = $is_hl ? 'bg-gradient-to-br from-amber-400 to-amber-600' : '';
+        $icon_style   = $is_hl ? '' : 'background:linear-gradient(135deg,#1d4ed8,#3b82f6);';
+        $bullet_color = $is_hl ? '#d97706' : '#3b82f6';
+        $link_color   = $is_hl ? 'text-amber-600' : 'text-blue-600';
+        $icon_svg     = $th_service_icons[ $i ] ?? $th_service_icons[0];
+      ?>
+      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border <?php echo esc_attr( $card_border ); ?>" data-delay="<?php echo (int) $delay; ?>">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5 text-white <?php echo esc_attr( $icon_bg ); ?>"<?php echo $icon_style ? ' style="' . esc_attr( $icon_style ) . '"' : ''; ?>>
+          <?php echo $icon_svg; ?>
         </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Travel Vaccination Consultation</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">Comprehensive one-to-one assessment with a qualified travel health pharmacist. We review your destination, activities, medical history, and previous vaccinations to create your personalised plan.</p>
+        <?php if ( ! empty( $card['top_badge'] ) ) : ?>
+        <div class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wide"><?php echo esc_html( $card['top_badge'] ); ?></div>
+        <?php endif; ?>
+        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost"><?php echo esc_html( $card['title'] ); ?></h3>
+        <p class="text-gray-600 leading-relaxed mb-4 font-jost"><?php echo wp_kses_post( $card['body'] ); ?></p>
+        <?php if ( ! empty( $bullet_lines ) ) : ?>
         <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Same-day vaccination if required</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Written vaccination record provided</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>No GP referral needed</li>
+          <?php foreach ( $bullet_lines as $line ) : ?>
+          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="<?php echo esc_attr( $bullet_color ); ?>" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><?php echo esc_html( $line ); ?></li>
+          <?php endforeach; ?>
         </ul>
-      </div>
-
-      <!-- Malaria Prevention -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-blue-100 bg-gradient-to-br from-blue-50 to-white" data-delay="2">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M8 21H5a2 2 0 0 1-2-2v-3m18 0v3a2 2 0 0 1-2 2h-3"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Malaria Prevention</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">Prescription anti-malarial medication tailored to your destination, travel dates, and medical history. We explain how and when to take your medication for maximum protection.</p>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Doxycycline, Malarone &amp; Lariam</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bite avoidance advice included</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Same-day prescription &amp; supply</li>
-        </ul>
-      </div>
-
-      <!-- Fit to Fly Certificates -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-blue-100 bg-gradient-to-br from-blue-50 to-white" data-delay="3">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.58a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Fit to Fly Certificates</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">Official documentation confirming you are medically fit to travel, accepted by all major UK airlines. Issued same-day following a brief assessment by our pharmacist.</p>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Accepted by all UK airlines</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Same-day certificate issued</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Quick 15-minute appointment</li>
-        </ul>
-      </div>
-
-      <!-- Travel Health Advice -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-blue-100 bg-gradient-to-br from-blue-50 to-white" data-delay="1">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Destination Health Advice</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">Detailed written guidance for your specific destinations covering food and water safety, insect protection, sun safety, altitude sickness, traveller&rsquo;s diarrhoea, and emergency medication.</p>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Food &amp; water safety guidance</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Insect &amp; sun protection advice</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Emergency medication guidance</li>
-        </ul>
-      </div>
-
-      <!-- Travel Medication -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-blue-100 bg-gradient-to-br from-blue-50 to-white" data-delay="2">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Travel Medication &amp; Kits</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">We supply a full range of travel medications including altitude sickness tablets, traveller&rsquo;s diarrhoea treatment, antihistamines, and first aid essentials for your trip.</p>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Altitude sickness prevention</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Traveller&rsquo;s diarrhoea treatment</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full travel first-aid kits</li>
-        </ul>
-      </div>
-
-      <!-- Yellow Fever — amber highlight card -->
-      <div class="tv-reveal tv-card-lift rounded-2xl p-8 border border-amber-200 bg-gradient-to-br from-amber-50 to-white" data-delay="3">
-        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-5 bg-gradient-to-br from-amber-400 to-amber-600">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <div class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wide">Official Vaccination Centre</div>
-        <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Yellow Fever Vaccination</h3>
-        <p class="text-gray-600 leading-relaxed mb-4 font-jost">We are an NHS-registered Yellow Fever Vaccination Centre. A single dose provides lifelong immunity and the ICVP certificate is valid for life. Accepted at all borders.</p>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>ICVP certificate issued same day</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Valid for life &mdash; no boosters needed</li>
-          <li class="flex items-center gap-2 text-sm text-gray-600 font-jost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>NHS-registered centre</li>
-        </ul>
-        <a href="<?php echo esc_url( home_url('/yellow-fever/') ); ?>" class="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm mt-4 hover:gap-3 transition-all font-jost">
-          Learn more about Yellow Fever <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <?php endif; ?>
+        <?php if ( ! empty( $card['link_label'] ) && ! empty( $card['link_url'] ) ) : ?>
+        <a href="<?php echo esc_url( $card['link_url'] ); ?>" class="inline-flex items-center gap-2 <?php echo esc_attr( $link_color ); ?> font-semibold text-sm mt-4 hover:gap-3 transition-all font-jost">
+          <?php echo esc_html( $card['link_label'] ); ?> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <?php endif; ?>
       </div>
+      <?php endforeach; ?>
 
     </div>
     <div class="text-center mt-10">
       <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg font-jost transition-opacity hover:opacity-90" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-        Book Your Travel Health Appointment
+        <?php echo esc_html( $th_services_cta_label ); ?>
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
