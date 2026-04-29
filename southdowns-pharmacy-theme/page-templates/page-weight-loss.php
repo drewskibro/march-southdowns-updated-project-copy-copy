@@ -25,6 +25,33 @@ $science_quote_role   = sp_field( 'wl_science_quote_role',   'Lead Pharmacist, S
 $mounjaro_price = sp_field( 'wl_mounjaro_price', 'From &pound;149/month including pharmacist support' );
 $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month including pharmacist support' );
 
+// Treatments (S4)
+$treatments_eyebrow     = sp_field( 'wl_treatments_eyebrow',     'Prescription Treatments' );
+$treatments_headline    = sp_field( 'wl_treatments_headline',    'Clinically proven weight loss medications' );
+$treatments_subhead     = sp_field( 'wl_treatments_subhead',     'Our GPhC-registered pharmacists prescribe the two most effective GLP-1 medications available in the UK, tailored to your health profile.' );
+$treatments_cta_label   = sp_field( 'wl_treatments_cta_label',   'Book Free Consultation' );
+$treatments_eligibility = sp_field( 'wl_treatments_eligibility', '<strong>Eligibility:</strong> You must have a BMI of 30 or above, or 27+ with a weight-related health condition such as type 2 diabetes or hypertension. Our pharmacists will assess your suitability at your free consultation.' );
+
+$mounjaro_image     = ( function_exists( 'get_field' ) ? get_field( 'wl_mounjaro_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80&auto=format&fit=crop';
+$mounjaro_image_alt = sp_field( 'wl_mounjaro_image_alt', 'Mounjaro weight loss injection' );
+$mounjaro_badge     = sp_field( 'wl_mounjaro_badge',     'Most Popular' );
+$mounjaro_name      = sp_field( 'wl_mounjaro_name',      'Mounjaro&reg;' );
+$mounjaro_subtitle  = sp_field( 'wl_mounjaro_subtitle',  'Tirzepatide &middot; GIP &amp; GLP-1 receptor agonist' );
+$mounjaro_body      = sp_field( 'wl_mounjaro_body',      'The newest and most effective medication available. Mounjaro targets two hormones simultaneously, producing up to <strong>22.5% weight loss</strong> in clinical trials &mdash; more than any other approved treatment.' );
+$mounjaro_bullets_raw = sp_field( 'wl_mounjaro_bullets', "Weekly self-injection, 2.5mg starting dose\nDual-action: reduces appetite &amp; improves insulin sensitivity\nMHRA-approved for BMI &ge;30, or &ge;27 with comorbidities" );
+$mounjaro_bullets   = array_values( array_filter( array_map( 'trim', preg_split( "/\r\n|\r|\n/", (string) $mounjaro_bullets_raw ) ) ) );
+if ( $mounjaro_price ) { $mounjaro_bullets[] = $mounjaro_price; }
+
+$wegovy_image     = ( function_exists( 'get_field' ) ? get_field( 'wl_wegovy_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop';
+$wegovy_image_alt = sp_field( 'wl_wegovy_image_alt', 'Wegovy weight loss injection' );
+$wegovy_badge     = sp_field( 'wl_wegovy_badge',     'Well Established' );
+$wegovy_name      = sp_field( 'wl_wegovy_name',      'Wegovy&reg;' );
+$wegovy_subtitle  = sp_field( 'wl_wegovy_subtitle',  'Semaglutide &middot; GLP-1 receptor agonist' );
+$wegovy_body      = sp_field( 'wl_wegovy_body',      'The gold-standard GLP-1 medication with an extensive clinical track record. SUSTAIN and STEP trial data show up to <strong>15% body weight reduction</strong> &mdash; a major advance over lifestyle intervention alone.' );
+$wegovy_bullets_raw = sp_field( 'wl_wegovy_bullets', "Weekly self-injection, 0.25mg starting dose\nMimics natural GLP-1 hormone to suppress appetite\nMHRA-approved for BMI &ge;30, or &ge;27 with comorbidities" );
+$wegovy_bullets   = array_values( array_filter( array_map( 'trim', preg_split( "/\r\n|\r|\n/", (string) $wegovy_bullets_raw ) ) ) );
+if ( $wegovy_price ) { $wegovy_bullets[] = $wegovy_price; }
+
 // Testimonials (S7)
 $testimonials_eyebrow  = sp_field( 'wl_testimonials_eyebrow',  'Patient Stories' );
 $testimonials_headline = sp_field( 'wl_testimonials_headline', 'Real patients, real results' );
@@ -415,99 +442,94 @@ $faq_items     = ! empty( $faq_items_raw ) ? $faq_items_raw : [
 
     <!-- Heading -->
     <div class="text-center mb-12 md:mb-16 yf-reveal">
-      <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4">Prescription Treatments</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-jost">Clinically proven weight loss medications</h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto font-jost">Our GPhC-registered pharmacists prescribe the two most effective GLP-1 medications available in the UK, tailored to your health profile.</p>
+      <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4"><?php echo esc_html( $treatments_eyebrow ); ?></span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-jost"><?php echo esc_html( $treatments_headline ); ?></h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto font-jost"><?php echo $treatments_subhead; ?></p>
     </div>
 
     <!-- Treatment cards -->
     <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
-      <!-- Mounjaro card -->
-      <div class="yf-reveal yf-card-lift bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-md" data-delay="1">
+      <?php
+      $treatment_cards = [
+          [
+              'image'       => $mounjaro_image,
+              'image_alt'   => $mounjaro_image_alt,
+              'badge'       => $mounjaro_badge,
+              'badge_class' => 'bg-blue-600',
+              'name'        => $mounjaro_name,
+              'subtitle'    => $mounjaro_subtitle,
+              'body'        => $mounjaro_body,
+              'bullets'     => $mounjaro_bullets,
+              'delay'       => 1,
+          ],
+          [
+              'image'       => $wegovy_image,
+              'image_alt'   => $wegovy_image_alt,
+              'badge'       => $wegovy_badge,
+              'badge_class' => 'bg-teal-600',
+              'name'        => $wegovy_name,
+              'subtitle'    => $wegovy_subtitle,
+              'body'        => $wegovy_body,
+              'bullets'     => $wegovy_bullets,
+              'delay'       => 2,
+          ],
+      ];
+      foreach ( $treatment_cards as $card ) : ?>
+      <div class="yf-reveal yf-card-lift bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-md" data-delay="<?php echo (int) $card['delay']; ?>">
         <div class="relative h-56 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80&auto=format&fit=crop" alt="Mounjaro weight loss injection" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          <?php if ( $card['image'] ) : ?>
+          <img src="<?php echo esc_url( $card['image'] ); ?>" alt="<?php echo esc_attr( $card['image_alt'] ); ?>" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          <?php endif; ?>
           <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent"></div>
+          <?php if ( $card['badge'] ) : ?>
           <div class="absolute bottom-4 left-5">
-            <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Most Popular</span>
+            <span class="<?php echo esc_attr( $card['badge_class'] ); ?> text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide"><?php echo esc_html( $card['badge'] ); ?></span>
           </div>
+          <?php endif; ?>
         </div>
         <div class="p-7">
-          <h3 class="text-2xl font-bold text-gray-900 mb-1 font-jost">Mounjaro&reg;</h3>
-          <p class="text-sm text-blue-600 font-medium mb-4 font-jost">Tirzepatide &middot; GIP &amp; GLP-1 receptor agonist</p>
-          <p class="text-gray-600 mb-5 font-jost leading-relaxed">The newest and most effective medication available. Mounjaro targets two hormones simultaneously, producing up to <strong>22.5% weight loss</strong> in clinical trials &mdash; more than any other approved treatment.</p>
+          <?php if ( $card['name'] ) : ?>
+          <h3 class="text-2xl font-bold text-gray-900 mb-1 font-jost"><?php echo $card['name']; ?></h3>
+          <?php endif; ?>
+          <?php if ( $card['subtitle'] ) : ?>
+          <p class="text-sm text-blue-600 font-medium mb-4 font-jost"><?php echo $card['subtitle']; ?></p>
+          <?php endif; ?>
+          <?php if ( $card['body'] ) : ?>
+          <p class="text-gray-600 mb-5 font-jost leading-relaxed"><?php echo $card['body']; ?></p>
+          <?php endif; ?>
+          <?php if ( ! empty( $card['bullets'] ) ) : ?>
           <ul class="space-y-2.5 mb-6">
+            <?php foreach ( $card['bullets'] as $bullet ) : ?>
             <li class="flex items-start gap-2.5 text-sm text-gray-700 font-jost">
               <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              Weekly self-injection, 2.5mg starting dose
+              <span><?php echo $bullet; ?></span>
             </li>
-            <li class="flex items-start gap-2.5 text-sm text-gray-700 font-jost">
-              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              Dual-action: reduces appetite &amp; improves insulin sensitivity
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-gray-700 font-jost">
-              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              MHRA-approved for BMI &ge;30, or &ge;27 with comorbidities
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-gray-700 font-jost">
-              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <?php echo $mounjaro_price; ?>
-            </li>
+            <?php endforeach; ?>
           </ul>
+          <?php endif; ?>
+          <?php if ( $treatments_cta_label ) : ?>
           <a href="<?php echo esc_url( $booking_url ); ?>" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full transition-colors font-jost">
-            Book Free Consultation
+            <?php echo esc_html( $treatments_cta_label ); ?>
           </a>
+          <?php endif; ?>
         </div>
       </div>
-
-      <!-- Wegovy card -->
-      <div class="yf-reveal yf-card-lift bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-md" data-delay="2">
-        <div class="relative h-56 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop" alt="Wegovy weight loss injection" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent"></div>
-          <div class="absolute bottom-4 left-5">
-            <span class="bg-teal-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Well Established</span>
-          </div>
-        </div>
-        <div class="p-7">
-          <h3 class="text-2xl font-bold text-gray-900 mb-1 font-jost">Wegovy&reg;</h3>
-          <p class="text-sm text-blue-600 font-medium mb-4 font-jost">Semaglutide &middot; GLP-1 receptor agonist</p>
-          <p class="text-gray-600 mb-5 font-jost leading-relaxed">The gold-standard GLP-1 medication with an extensive clinical track record. SUSTAIN and STEP trial data show up to <strong>15% body weight reduction</strong> &mdash; a major advance over lifestyle intervention alone.</p>
-          <ul class="space-y-2.5 mb-6">
-            <li class="flex items-start gap-2.5 text-sm text-gray-700 font-jost">
-              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              Weekly self-injection, 0.25mg starting dose
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-gray-700 font-jost">
-              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              Mimics natural GLP-1 hormone to suppress appetite
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-gray-700 font-jost">
-              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              MHRA-approved for BMI &ge;30, or &ge;27 with comorbidities
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-gray-700 font-jost">
-              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              <?php echo $wegovy_price; ?>
-            </li>
-          </ul>
-          <a href="<?php echo esc_url( $booking_url ); ?>" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full transition-colors font-jost">
-            Book Free Consultation
-          </a>
-        </div>
-      </div>
+      <?php endforeach; ?>
 
     </div>
 
+    <?php if ( $treatments_eligibility ) : ?>
     <!-- Eligibility note -->
     <div class="mt-10 text-center yf-reveal">
       <div class="inline-flex items-start gap-3 bg-blue-50 border border-blue-100 rounded-2xl px-6 py-4 max-w-2xl text-left">
         <svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
         </svg>
-        <p class="text-sm text-blue-800 font-jost"><strong>Eligibility:</strong> You must have a BMI of 30 or above, or 27+ with a weight-related health condition such as type 2 diabetes or hypertension. Our pharmacists will assess your suitability at your free consultation.</p>
+        <p class="text-sm text-blue-800 font-jost"><?php echo $treatments_eligibility; ?></p>
       </div>
     </div>
+    <?php endif; ?>
 
   </div>
 </section>
