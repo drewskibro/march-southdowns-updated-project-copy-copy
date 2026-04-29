@@ -9,6 +9,7 @@ $booking_url = sp_booking_url();
 $phone_raw   = sp_phone_raw();
 $phone       = sp_phone();
 
+$hero_image     = ( function_exists( 'get_field' ) ? get_field( 'wl_hero_image' ) : '' ) ?: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80&auto=format&fit=crop';
 $hero_headline  = sp_field( 'wl_hero_headline',  'Lose 10&ndash;20% of your body weight in 12 months &mdash; with prescription support at your local Hampshire pharmacy' );
 $hero_body      = sp_field( 'wl_hero_body',      'Mounjaro and Wegovy prescriptions from our Hampshire pharmacists. No GP referral. No long waits. Expert face-to-face care at Southsea, Waterlooville, Havant &amp; Portsmouth.' );
 $hero_badge     = sp_field( 'wl_hero_badge_text', 'Medical Weight Loss &middot; Hampshire' );
@@ -51,7 +52,7 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
   .sci-section-inner { position: relative; z-index: 10; }
   .sci-headline { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 500; font-variation-settings: 'opsz' 96; letter-spacing: -0.015em; color: #ffffff; line-height: 1.08; }
   .sci-subhead { font-family: 'Jost', sans-serif; color: rgba(219,234,254,0.85); font-weight: 300; }
-  .sci-footnote { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: rgba(255,255,255,0.45); font-weight: 300; letter-spacing: 0.01em; }
+  .sci-footnote { font-family: 'Jost', sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.78); font-weight: 400; letter-spacing: 0.01em; }
   .sci-footnote em { font-family: 'Fraunces', Georgia, serif; font-style: italic; }
 
   /* Chart */
@@ -59,8 +60,8 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
   .sci-chart { width: 100%; height: auto; display: block; font-family: 'Jost', sans-serif; }
   .sci-axis-line { stroke: rgba(255,255,255,0.15); stroke-width: 1; }
   .sci-grid-line { stroke: rgba(255,255,255,0.08); stroke-width: 1; stroke-dasharray: 4 4; }
-  .sci-axis-label { fill: rgba(255,255,255,0.55); font-size: 12px; font-weight: 400; }
-  .sci-axis-note { fill: rgba(255,255,255,0.4); font-size: 10.5px; font-weight: 400; letter-spacing: 0.02em; }
+  .sci-axis-label { fill: rgba(255,255,255,0.78); font-size: 12px; font-weight: 400; }
+  .sci-axis-note { fill: rgba(255,255,255,0.7); font-size: 11.5px; font-weight: 400; letter-spacing: 0.02em; }
 
   .sci-curve { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.4s cubic-bezier(0.22, 1, 0.36, 1); }
   .sci-curve--diet { stroke: rgba(255,255,255,0.35); stroke-width: 2; transition-delay: 0.2s; }
@@ -99,7 +100,7 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
 <section class="relative w-full min-h-[500px] lg:min-h-[600px] overflow-hidden">
 
   <!-- Mobile: full-width image with overlay -->
-  <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80&auto=format&fit=crop');"></div>
+  <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('<?php echo esc_url( $hero_image ); ?>');"></div>
   <div class="md:hidden absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-900/70 to-transparent"></div>
   <div class="md:hidden absolute inset-0 flex flex-col justify-end px-6 py-8 z-10">
     <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full mb-4 border border-white/20 self-start">
@@ -156,7 +157,7 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
     </div>
 
     <!-- Right: image -->
-    <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80&auto=format&fit=crop');"></div>
+    <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image: url('<?php echo esc_url( $hero_image ); ?>');"></div>
 
     <!-- Badge images straddling the centre divider -->
     <div class="absolute z-30 flex flex-col items-center" style="left:50%;top:15%;transform:translateX(-50%);">
