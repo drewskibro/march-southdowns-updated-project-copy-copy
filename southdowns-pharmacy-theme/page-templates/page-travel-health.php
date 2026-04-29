@@ -896,15 +896,12 @@ $th_service_icons = [
     <!-- Info banner -->
     <div class="mt-10 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-5 bg-white border border-blue-100 shadow-sm">
       <div class="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.58a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
       <div class="flex-1">
         <div class="font-bold text-slate-800 font-jost mb-1">Not sure which branch to visit?</div>
-        <p class="text-gray-600 text-sm font-jost">All four locations offer the complete range of travel health services. Call <strong><?php echo esc_html( $phone ); ?></strong> and we&rsquo;ll help you find the best appointment for your schedule and location.</p>
+        <p class="text-gray-600 text-sm font-jost">Each of our four pharmacies books its own travel health appointments. Find your nearest location above and contact that branch directly &mdash; every site offers the complete range of travel health services.</p>
       </div>
-      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="flex-shrink-0 inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-full font-jost transition-opacity hover:opacity-90" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
-        Call <?php echo esc_html( $phone ); ?>
-      </a>
     </div>
   </div>
 </section>
