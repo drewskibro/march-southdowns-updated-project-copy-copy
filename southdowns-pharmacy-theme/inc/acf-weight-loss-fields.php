@@ -43,6 +43,15 @@ add_action( 'acf/init', function () {
                 'type'  => 'tab',
             ],
             [
+                'key'           => 'field_wl_hero_image',
+                'label'         => 'Hero Image',
+                'name'          => 'wl_hero_image',
+                'type'          => 'image',
+                'return_format' => 'url',
+                'preview_size'  => 'medium',
+                'instructions'  => 'Displayed on the right half of the hero on desktop and as the background image on mobile. Recommended minimum 1200 × 800 px.',
+            ],
+            [
                 'key'          => 'field_wl_hero_headline',
                 'label'        => 'Hero Headline (H1)',
                 'name'         => 'wl_hero_headline',
