@@ -8,7 +8,7 @@
  * Tabs:
  *   1. Hero
  *   2. Science Section
- *   3. Pricing
+ *   3. Treatments
  *   4. Testimonials
  *   5. FAQ
  */
@@ -144,28 +144,183 @@ add_action( 'acf/init', function () {
             ],
 
             // ============================================================
-            // TAB 3 — PRICING
+            // TAB 3 — TREATMENTS (S4)
             // ============================================================
             [
                 'key'   => 'field_wl_tab_pricing',
-                'label' => 'Pricing',
+                'label' => 'Treatments',
                 'name'  => '',
                 'type'  => 'tab',
+            ],
+
+            // ---- Section header ----------------------------------
+            [
+                'key'         => 'field_wl_treatments_eyebrow',
+                'label'       => 'Section Eyebrow',
+                'name'        => 'wl_treatments_eyebrow',
+                'type'        => 'text',
+                'placeholder' => 'Prescription Treatments',
+            ],
+            [
+                'key'         => 'field_wl_treatments_headline',
+                'label'       => 'Section Headline',
+                'name'        => 'wl_treatments_headline',
+                'type'        => 'text',
+                'placeholder' => 'Clinically proven weight loss medications',
+            ],
+            [
+                'key'         => 'field_wl_treatments_subhead',
+                'label'       => 'Section Sub-headline',
+                'name'        => 'wl_treatments_subhead',
+                'type'        => 'textarea',
+                'rows'        => 2,
+                'placeholder' => 'Our GPhC-registered pharmacists prescribe the two most effective GLP-1 medications available in the UK, tailored to your health profile.',
+            ],
+            [
+                'key'         => 'field_wl_treatments_cta_label',
+                'label'       => 'Card CTA Button Label',
+                'name'        => 'wl_treatments_cta_label',
+                'type'        => 'text',
+                'placeholder' => 'Book Free Consultation',
+                'instructions' => 'Used on both treatment cards. Links to the global booking URL.',
+            ],
+            [
+                'key'         => 'field_wl_treatments_eligibility',
+                'label'       => 'Eligibility Note',
+                'name'        => 'wl_treatments_eligibility',
+                'type'        => 'textarea',
+                'rows'        => 3,
+                'instructions' => 'Blue note shown beneath the cards. Basic HTML allowed (e.g. <strong>).',
+                'placeholder' => '<strong>Eligibility:</strong> You must have a BMI of 30 or above, or 27+ with a weight-related health condition such as type 2 diabetes or hypertension. Our pharmacists will assess your suitability at your free consultation.',
+            ],
+
+            // ---- Mounjaro card -----------------------------------
+            [
+                'key'           => 'field_wl_mounjaro_image',
+                'label'         => 'Mounjaro — Image',
+                'name'          => 'wl_mounjaro_image',
+                'type'          => 'image',
+                'return_format' => 'url',
+                'preview_size'  => 'medium',
+                'instructions'  => 'Top photo on the Mounjaro card. Recommended 800 × 450 px (16:9).',
+            ],
+            [
+                'key'         => 'field_wl_mounjaro_image_alt',
+                'label'       => 'Mounjaro — Image Alt Text',
+                'name'        => 'wl_mounjaro_image_alt',
+                'type'        => 'text',
+                'placeholder' => 'Mounjaro weight loss injection',
+            ],
+            [
+                'key'         => 'field_wl_mounjaro_badge',
+                'label'       => 'Mounjaro — Top Badge',
+                'name'        => 'wl_mounjaro_badge',
+                'type'        => 'text',
+                'placeholder' => 'Most Popular',
+                'instructions' => 'Small uppercase pill on the image (blue background). Leave empty to hide the badge.',
+            ],
+            [
+                'key'         => 'field_wl_mounjaro_name',
+                'label'       => 'Mounjaro — Card Title',
+                'name'        => 'wl_mounjaro_name',
+                'type'        => 'text',
+                'placeholder' => 'Mounjaro®',
+            ],
+            [
+                'key'         => 'field_wl_mounjaro_subtitle',
+                'label'       => 'Mounjaro — Subtitle',
+                'name'        => 'wl_mounjaro_subtitle',
+                'type'        => 'text',
+                'placeholder' => 'Tirzepatide · GIP & GLP-1 receptor agonist',
+            ],
+            [
+                'key'         => 'field_wl_mounjaro_body',
+                'label'       => 'Mounjaro — Body',
+                'name'        => 'wl_mounjaro_body',
+                'type'        => 'textarea',
+                'rows'        => 4,
+                'instructions' => 'Main paragraph beneath the title. Basic HTML allowed (e.g. <strong> for the headline statistic).',
+            ],
+            [
+                'key'          => 'field_wl_mounjaro_bullets',
+                'label'        => 'Mounjaro — Bullet Points',
+                'name'         => 'wl_mounjaro_bullets',
+                'type'         => 'textarea',
+                'rows'         => 4,
+                'instructions' => 'One bullet per line. Empty lines are skipped. The price line below is appended automatically as the last bullet.',
+                'new_lines'    => '',
             ],
             [
                 'key'          => 'field_wl_mounjaro_price',
                 'label'        => 'Mounjaro — Price Line',
                 'name'         => 'wl_mounjaro_price',
                 'type'         => 'text',
-                'instructions' => 'Displayed at the bottom of the Mounjaro treatment card.',
+                'instructions' => 'Appended as the last bullet on the Mounjaro card. Leave empty to omit.',
                 'placeholder'  => 'From £149/month including pharmacist support',
+            ],
+
+            // ---- Wegovy card -------------------------------------
+            [
+                'key'           => 'field_wl_wegovy_image',
+                'label'         => 'Wegovy — Image',
+                'name'          => 'wl_wegovy_image',
+                'type'          => 'image',
+                'return_format' => 'url',
+                'preview_size'  => 'medium',
+                'instructions'  => 'Top photo on the Wegovy card. Recommended 800 × 450 px (16:9).',
+            ],
+            [
+                'key'         => 'field_wl_wegovy_image_alt',
+                'label'       => 'Wegovy — Image Alt Text',
+                'name'        => 'wl_wegovy_image_alt',
+                'type'        => 'text',
+                'placeholder' => 'Wegovy weight loss injection',
+            ],
+            [
+                'key'         => 'field_wl_wegovy_badge',
+                'label'       => 'Wegovy — Top Badge',
+                'name'        => 'wl_wegovy_badge',
+                'type'        => 'text',
+                'placeholder' => 'Well Established',
+                'instructions' => 'Small uppercase pill on the image (teal background). Leave empty to hide the badge.',
+            ],
+            [
+                'key'         => 'field_wl_wegovy_name',
+                'label'       => 'Wegovy — Card Title',
+                'name'        => 'wl_wegovy_name',
+                'type'        => 'text',
+                'placeholder' => 'Wegovy®',
+            ],
+            [
+                'key'         => 'field_wl_wegovy_subtitle',
+                'label'       => 'Wegovy — Subtitle',
+                'name'        => 'wl_wegovy_subtitle',
+                'type'        => 'text',
+                'placeholder' => 'Semaglutide · GLP-1 receptor agonist',
+            ],
+            [
+                'key'         => 'field_wl_wegovy_body',
+                'label'       => 'Wegovy — Body',
+                'name'        => 'wl_wegovy_body',
+                'type'        => 'textarea',
+                'rows'        => 4,
+                'instructions' => 'Main paragraph beneath the title. Basic HTML allowed.',
+            ],
+            [
+                'key'          => 'field_wl_wegovy_bullets',
+                'label'        => 'Wegovy — Bullet Points',
+                'name'         => 'wl_wegovy_bullets',
+                'type'         => 'textarea',
+                'rows'         => 4,
+                'instructions' => 'One bullet per line. Empty lines are skipped. The price line below is appended automatically as the last bullet.',
+                'new_lines'    => '',
             ],
             [
                 'key'          => 'field_wl_wegovy_price',
                 'label'        => 'Wegovy — Price Line',
                 'name'         => 'wl_wegovy_price',
                 'type'         => 'text',
-                'instructions' => 'Displayed at the bottom of the Wegovy treatment card.',
+                'instructions' => 'Appended as the last bullet on the Wegovy card. Leave empty to omit.',
                 'placeholder'  => 'From £149/month including pharmacist support',
             ],
 
