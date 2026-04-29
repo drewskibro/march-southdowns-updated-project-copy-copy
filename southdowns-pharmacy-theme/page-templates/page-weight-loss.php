@@ -24,6 +24,69 @@ $science_quote_role   = sp_field( 'wl_science_quote_role',   'Lead Pharmacist, S
 
 $mounjaro_price = sp_field( 'wl_mounjaro_price', 'From &pound;149/month including pharmacist support' );
 $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month including pharmacist support' );
+
+// Testimonials (S7)
+$testimonials_eyebrow  = sp_field( 'wl_testimonials_eyebrow',  'Patient Stories' );
+$testimonials_headline = sp_field( 'wl_testimonials_headline', 'Real patients, real results' );
+$testimonials_subhead  = sp_field( 'wl_testimonials_subhead',  'Hundreds of Hampshire patients have transformed their health through our medical weight loss programme.' );
+
+$testimonials_reviews_raw = function_exists( 'get_field' ) ? get_field( 'wl_testimonials_reviews' ) : null;
+$testimonials_reviews     = ! empty( $testimonials_reviews_raw ) ? $testimonials_reviews_raw : [
+    [ 'quote' => 'I&rsquo;ve tried every diet going over the years. With Mounjaro I lost 18kg in 6 months. The Southdowns team have been brilliant &mdash; so knowledgeable and supportive throughout.', 'initials' => 'SH', 'name' => 'Sarah H.',  'location' => 'Waterlooville' ],
+    [ 'quote' => 'My GP had a 3-month wait. I walked into Southdowns pharmacy, had a consultation the same day and started Wegovy that afternoon. 14kg down in 5 months &mdash; absolutely life-changing.',  'initials' => 'MT', 'name' => 'Mark T.',   'location' => 'Portsmouth'    ],
+    [ 'quote' => 'I was sceptical at first but the pharmacist explained everything so clearly. My blood sugar is now normal for the first time in years and I&rsquo;ve lost nearly 3 stone. Highly recommend.', 'initials' => 'LR', 'name' => 'Linda R.',  'location' => 'Havant'        ],
+    [ 'quote' => 'The monthly check-ins are what make this different from online services. Having a real pharmacist monitor my progress and adjust my dose has made all the difference. Down 22kg and counting.', 'initials' => 'DJ', 'name' => 'David J.',  'location' => 'Southsea'      ],
+    [ 'quote' => 'I&rsquo;d heard horror stories about side effects but mine were minimal. The pharmacist gave me clear advice on managing them. 11kg lost in 3 months and my joints feel amazing.',          'initials' => 'JB', 'name' => 'Julie B.',  'location' => 'Waterlooville' ],
+    [ 'quote' => 'Fantastic service from start to finish. No judgement, just professional support. I feel like a completely different person. The team at Portsmouth are wonderful.',                          'initials' => 'RC', 'name' => 'Rachel C.', 'location' => 'Portsmouth'    ],
+];
+
+$testimonials_trust_raw = function_exists( 'get_field' ) ? get_field( 'wl_testimonials_trust' ) : null;
+$testimonials_trust     = ! empty( $testimonials_trust_raw ) ? $testimonials_trust_raw : [
+    [ 'value' => '4.9/5', 'caption' => 'average rating'    ],
+    [ 'value' => '400+',  'caption' => 'verified reviews'  ],
+    [ 'value' => 'GPhC',  'caption' => 'registered'        ],
+];
+
+// Trust-row icons cycle by position (star → people → shield).
+$testimonials_trust_icons = [
+    '<svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
+    '<svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>',
+    '<svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    '<svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
+];
+
+// FAQ (S10)
+$faq_eyebrow   = sp_field( 'wl_faq_eyebrow',   'FAQs' );
+$faq_headline  = sp_field( 'wl_faq_headline',  'Common questions about medical weight loss' );
+$faq_intro     = sp_field( 'wl_faq_intro',     'Everything you need to know before starting your journey. Can&rsquo;t find your answer? Call us free.' );
+$faq_cta_label = sp_field( 'wl_faq_cta_label', 'Book Free Consultation' );
+
+$faq_stats_raw = function_exists( 'get_field' ) ? get_field( 'wl_faq_stats' ) : null;
+$faq_stats     = ! empty( $faq_stats_raw ) ? $faq_stats_raw : [
+    [ 'value' => '4.9',  'label' => 'Rating'   ],
+    [ 'value' => '400+', 'label' => 'Reviews'  ],
+    [ 'value' => '10k+', 'label' => 'Patients' ],
+];
+
+$faq_items_raw = function_exists( 'get_field' ) ? get_field( 'wl_faq_items' ) : null;
+$faq_items     = ! empty( $faq_items_raw ) ? $faq_items_raw : [
+    [ 'question' => 'Am I eligible for weight loss injections?',
+      'answer'   => 'You are generally eligible if you have a BMI of 30 or above, or a BMI of 27 or above alongside a weight-related health condition such as type 2 diabetes, high blood pressure, high cholesterol or sleep apnoea. Our pharmacists will carry out a full assessment at your free consultation to confirm eligibility.' ],
+    [ 'question' => 'What is the difference between Mounjaro and Wegovy?',
+      'answer'   => 'Both are weekly self-injections that reduce appetite, but they work differently. Mounjaro (tirzepatide) targets two hormones &mdash; GIP and GLP-1 &mdash; and tends to produce greater weight loss (up to 22.5% in trials). Wegovy (semaglutide) targets GLP-1 only and has a longer clinical track record. Our pharmacists will recommend the right option based on your health history and goals.' ],
+    [ 'question' => 'Do I need a GP referral?',
+      'answer'   => 'No. Our GPhC-registered pharmacists are independent prescribers who can assess your suitability and issue a prescription directly &mdash; without a GP referral or NHS waiting list. You can book, consult and start treatment all on the same day.' ],
+    [ 'question' => 'How much weight can I expect to lose?',
+      'answer'   => 'Clinical trials show that patients typically lose 10&ndash;20% of their body weight over 12 months. Results vary by individual and depend on consistent use, diet, activity and adherence to the programme. Most patients notice a meaningful reduction in appetite and begin losing weight within the first 4&ndash;8 weeks.' ],
+    [ 'question' => 'What are the common side effects?',
+      'answer'   => 'The most common side effects are nausea, constipation, diarrhoea and reduced appetite, particularly in the first few weeks as your body adjusts to the medication. These are usually mild and temporary. Our pharmacists provide detailed advice on managing side effects and can adjust your dose if needed.' ],
+    [ 'question' => 'How much does the programme cost?',
+      'answer'   => 'Your initial consultation is completely free. Monthly treatment costs start from &pound;149 and include your medication, the prescribing consultation and ongoing pharmacist support. Pricing varies by medication and dose. We will provide a full cost breakdown at your free consultation before you commit to anything.' ],
+    [ 'question' => 'Can I use weight loss injections if I have type 2 diabetes?',
+      'answer'   => 'Yes, and GLP-1 medications can be particularly beneficial for people with type 2 diabetes, as they also improve blood sugar control. However, your pharmacist will review your current medications and medical history carefully to ensure safety and appropriate dosing, particularly if you are taking insulin or sulphonylureas.' ],
+    [ 'question' => 'What happens when I reach my goal weight?',
+      'answer'   => 'When you reach your goal weight, our pharmacists will work with you on a structured exit plan to help maintain your results. This may involve a gradual dose reduction, lifestyle coaching and dietary advice. Our goal is to give you the tools to maintain a healthy weight long after completing the programme.' ],
+];
 ?>
 
 <!-- Page-scoped styles -->
@@ -646,116 +709,55 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
     <div class="text-center mb-12 md:mb-16 yf-reveal">
       <span class="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4 border border-white/20">
         <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        Patient Stories
+        <?php echo esc_html( $testimonials_eyebrow ); ?>
       </span>
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-jost">Real patients, real results</h2>
-      <p class="text-lg text-blue-100 max-w-2xl mx-auto font-jost">Hundreds of Hampshire patients have transformed their health through our medical weight loss programme.</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-jost"><?php echo esc_html( $testimonials_headline ); ?></h2>
+      <p class="text-lg text-blue-100 max-w-2xl mx-auto font-jost"><?php echo $testimonials_subhead; ?></p>
     </div>
 
-    <!-- 6 review cards -->
+    <!-- Review cards -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-
-      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="1">
+      <?php foreach ( $testimonials_reviews as $i => $review ) :
+          $r_quote    = ! empty( $review['quote'] )    ? $review['quote']    : '';
+          $r_initials = ! empty( $review['initials'] ) ? $review['initials'] : '';
+          $r_name     = ! empty( $review['name'] )     ? $review['name']     : '';
+          $r_location = ! empty( $review['location'] ) ? $review['location'] : '';
+          $r_delay    = ( $i % 3 ) + 1;
+      ?>
+      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="<?php echo (int) $r_delay; ?>">
         <div class="flex gap-1 mb-3">
-          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
+          <?php for($s=0;$s<5;$s++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
         </div>
-        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;I've tried every diet going over the years. With Mounjaro I lost 18kg in 6 months. The Southdowns team have been brilliant &mdash; so knowledgeable and supportive throughout.&rdquo;</p>
+        <?php if ( $r_quote ) : ?>
+        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;<?php echo $r_quote; ?>&rdquo;</p>
+        <?php endif; ?>
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">SH</div>
+          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm"><?php echo esc_html( $r_initials ); ?></div>
           <div>
-            <div class="text-white font-semibold text-sm font-jost">Sarah H.</div>
-            <div class="text-blue-200 text-xs font-jost">Waterlooville</div>
+            <div class="text-white font-semibold text-sm font-jost"><?php echo esc_html( $r_name ); ?></div>
+            <div class="text-blue-200 text-xs font-jost"><?php echo esc_html( $r_location ); ?></div>
           </div>
         </div>
       </div>
-
-      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="2">
-        <div class="flex gap-1 mb-3">
-          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
-        </div>
-        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;My GP had a 3-month wait. I walked into Southdowns pharmacy, had a consultation the same day and started Wegovy that afternoon. 14kg down in 5 months &mdash; absolutely life-changing.&rdquo;</p>
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">MT</div>
-          <div>
-            <div class="text-white font-semibold text-sm font-jost">Mark T.</div>
-            <div class="text-blue-200 text-xs font-jost">Portsmouth</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="3">
-        <div class="flex gap-1 mb-3">
-          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
-        </div>
-        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;I was sceptical at first but the pharmacist explained everything so clearly. My blood sugar is now normal for the first time in years and I've lost nearly 3 stone. Highly recommend.&rdquo;</p>
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">LR</div>
-          <div>
-            <div class="text-white font-semibold text-sm font-jost">Linda R.</div>
-            <div class="text-blue-200 text-xs font-jost">Havant</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="1">
-        <div class="flex gap-1 mb-3">
-          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
-        </div>
-        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;The monthly check-ins are what make this different from online services. Having a real pharmacist monitor my progress and adjust my dose has made all the difference. Down 22kg and counting.&rdquo;</p>
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">DJ</div>
-          <div>
-            <div class="text-white font-semibold text-sm font-jost">David J.</div>
-            <div class="text-blue-200 text-xs font-jost">Southsea</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="2">
-        <div class="flex gap-1 mb-3">
-          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
-        </div>
-        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;I'd heard horror stories about side effects but mine were minimal. The pharmacist gave me clear advice on managing them. 11kg lost in 3 months and my joints feel amazing.&rdquo;</p>
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">JB</div>
-          <div>
-            <div class="text-white font-semibold text-sm font-jost">Julie B.</div>
-            <div class="text-blue-200 text-xs font-jost">Waterlooville</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="yf-reveal yf-card-lift bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6" data-delay="3">
-        <div class="flex gap-1 mb-3">
-          <?php for($i=0;$i<5;$i++): ?><svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><?php endfor; ?>
-        </div>
-        <p class="text-white/90 text-sm leading-relaxed mb-4 font-jost">&ldquo;Fantastic service from start to finish. No judgement, just professional support. I feel like a completely different person. The team at Portsmouth are wonderful.&rdquo;</p>
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm">RC</div>
-          <div>
-            <div class="text-white font-semibold text-sm font-jost">Rachel C.</div>
-            <div class="text-blue-200 text-xs font-jost">Portsmouth</div>
-          </div>
-        </div>
-      </div>
-
+      <?php endforeach; ?>
     </div>
 
     <!-- Trust row -->
+    <?php if ( ! empty( $testimonials_trust ) ) : ?>
     <div class="flex flex-wrap justify-center gap-8 yf-reveal">
+      <?php foreach ( $testimonials_trust as $i => $t ) :
+          $t_value   = ! empty( $t['value'] )   ? $t['value']   : '';
+          $t_caption = ! empty( $t['caption'] ) ? $t['caption'] : '';
+          if ( ! $t_value && ! $t_caption ) { continue; }
+          $t_icon    = $testimonials_trust_icons[ $i % count( $testimonials_trust_icons ) ];
+      ?>
       <div class="flex items-center gap-2 text-white font-jost">
-        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <span class="font-bold">4.9/5</span><span class="text-blue-200 text-sm">average rating</span>
+        <?php echo $t_icon; ?>
+        <span class="font-bold"><?php echo esc_html( $t_value ); ?></span><span class="text-blue-200 text-sm"><?php echo esc_html( $t_caption ); ?></span>
       </div>
-      <div class="flex items-center gap-2 text-white font-jost">
-        <svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>
-        <span class="font-bold">400+</span><span class="text-blue-200 text-sm">verified reviews</span>
-      </div>
-      <div class="flex items-center gap-2 text-white font-jost">
-        <svg class="w-5 h-5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span class="font-bold">GPhC</span><span class="text-blue-200 text-sm">registered</span>
-      </div>
+      <?php endforeach; ?>
     </div>
+    <?php endif; ?>
 
   </div>
 </section>
@@ -908,99 +910,49 @@ $wegovy_price   = sp_field( 'wl_wegovy_price',   'From &pound;149/month includin
 
       <!-- Sticky sidebar -->
       <div class="lg:sticky lg:top-28 yf-reveal">
-        <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4">FAQs</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-jost">Common questions about medical weight loss</h2>
-        <p class="text-gray-600 mb-8 font-jost">Everything you need to know before starting your journey. Can't find your answer? Call us free.</p>
+        <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wide mb-4"><?php echo esc_html( $faq_eyebrow ); ?></span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-jost"><?php echo esc_html( $faq_headline ); ?></h2>
+        <p class="text-gray-600 mb-8 font-jost"><?php echo $faq_intro; ?></p>
 
+        <?php if ( ! empty( $faq_stats ) ) : ?>
         <!-- Trust stats -->
-        <div class="grid grid-cols-3 gap-3 mb-8">
+        <div class="grid grid-cols-<?php echo (int) min( 6, max( 1, count( $faq_stats ) ) ); ?> gap-3 mb-8">
+          <?php foreach ( $faq_stats as $stat ) :
+              $s_value = ! empty( $stat['value'] ) ? $stat['value'] : '';
+              $s_label = ! empty( $stat['label'] ) ? $stat['label'] : '';
+              if ( ! $s_value && ! $s_label ) { continue; }
+          ?>
           <div class="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
-            <div class="text-2xl font-bold text-blue-600 font-jost">4.9</div>
-            <div class="text-xs text-gray-500 font-jost">Rating</div>
+            <div class="text-2xl font-bold text-blue-600 font-jost"><?php echo esc_html( $s_value ); ?></div>
+            <div class="text-xs text-gray-500 font-jost"><?php echo esc_html( $s_label ); ?></div>
           </div>
-          <div class="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
-            <div class="text-2xl font-bold text-blue-600 font-jost">400+</div>
-            <div class="text-xs text-gray-500 font-jost">Reviews</div>
-          </div>
-          <div class="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
-            <div class="text-2xl font-bold text-blue-600 font-jost">10k+</div>
-            <div class="text-xs text-gray-500 font-jost">Patients</div>
-          </div>
+          <?php endforeach; ?>
         </div>
+        <?php endif; ?>
 
+        <?php if ( $faq_cta_label ) : ?>
         <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3.5 rounded-full transition-colors font-jost shadow-lg shadow-blue-500/20 w-full justify-center">
-          Book Free Consultation
+          <?php echo esc_html( $faq_cta_label ); ?>
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
+        <?php endif; ?>
       </div>
 
       <!-- FAQ accordion -->
       <div class="space-y-3 yf-reveal" data-delay="2">
-
+        <?php foreach ( $faq_items as $faq ) :
+            $q = ! empty( $faq['question'] ) ? $faq['question'] : '';
+            $a = ! empty( $faq['answer'] )   ? $faq['answer']   : '';
+            if ( ! $q && ! $a ) { continue; }
+        ?>
         <details class="wl-faq-item">
           <summary class="wl-faq-question">
-            <span>Am I eligible for weight loss injections?</span>
+            <span><?php echo esc_html( $q ); ?></span>
             <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <div class="wl-faq-answer">You are generally eligible if you have a BMI of 30 or above, or a BMI of 27 or above alongside a weight-related health condition such as type 2 diabetes, high blood pressure, high cholesterol or sleep apnoea. Our pharmacists will carry out a full assessment at your free consultation to confirm eligibility.</div>
+          <div class="wl-faq-answer"><?php echo $a; ?></div>
         </details>
-
-        <details class="wl-faq-item">
-          <summary class="wl-faq-question">
-            <span>What is the difference between Mounjaro and Wegovy?</span>
-            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="wl-faq-answer">Both are weekly self-injections that reduce appetite, but they work differently. Mounjaro (tirzepatide) targets two hormones &mdash; GIP and GLP-1 &mdash; and tends to produce greater weight loss (up to 22.5% in trials). Wegovy (semaglutide) targets GLP-1 only and has a longer clinical track record. Our pharmacists will recommend the right option based on your health history and goals.</div>
-        </details>
-
-        <details class="wl-faq-item">
-          <summary class="wl-faq-question">
-            <span>Do I need a GP referral?</span>
-            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="wl-faq-answer">No. Our GPhC-registered pharmacists are independent prescribers who can assess your suitability and issue a prescription directly &mdash; without a GP referral or NHS waiting list. You can book, consult and start treatment all on the same day.</div>
-        </details>
-
-        <details class="wl-faq-item">
-          <summary class="wl-faq-question">
-            <span>How much weight can I expect to lose?</span>
-            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="wl-faq-answer">Clinical trials show that patients typically lose 10&ndash;20% of their body weight over 12 months. Results vary by individual and depend on consistent use, diet, activity and adherence to the programme. Most patients notice a meaningful reduction in appetite and begin losing weight within the first 4&ndash;8 weeks.</div>
-        </details>
-
-        <details class="wl-faq-item">
-          <summary class="wl-faq-question">
-            <span>What are the common side effects?</span>
-            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="wl-faq-answer">The most common side effects are nausea, constipation, diarrhoea and reduced appetite, particularly in the first few weeks as your body adjusts to the medication. These are usually mild and temporary. Our pharmacists provide detailed advice on managing side effects and can adjust your dose if needed.</div>
-        </details>
-
-        <details class="wl-faq-item">
-          <summary class="wl-faq-question">
-            <span>How much does the programme cost?</span>
-            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="wl-faq-answer">Your initial consultation is completely free. Monthly treatment costs start from &pound;149 and include your medication, the prescribing consultation and ongoing pharmacist support. Pricing varies by medication and dose. We will provide a full cost breakdown at your free consultation before you commit to anything.</div>
-        </details>
-
-        <details class="wl-faq-item">
-          <summary class="wl-faq-question">
-            <span>Can I use weight loss injections if I have type 2 diabetes?</span>
-            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="wl-faq-answer">Yes, and GLP-1 medications can be particularly beneficial for people with type 2 diabetes, as they also improve blood sugar control. However, your pharmacist will review your current medications and medical history carefully to ensure safety and appropriate dosing, particularly if you are taking insulin or sulphonylureas.</div>
-        </details>
-
-        <details class="wl-faq-item">
-          <summary class="wl-faq-question">
-            <span>What happens when I reach my goal weight?</span>
-            <svg class="wl-faq-chevron w-5 h-5 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="wl-faq-answer">When you reach your goal weight, our pharmacists will work with you on a structured exit plan to help maintain your results. This may involve a gradual dose reduction, lifestyle coaching and dietary advice. Our goal is to give you the tools to maintain a healthy weight long after completing the programme.</div>
-        </details>
-
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
