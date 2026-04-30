@@ -196,6 +196,48 @@ $stars = str_repeat( $star_svg, 5 );
 </script>
 
 <!-- ============================================================
+     MOST POPULAR TREATMENTS
+     ============================================================ -->
+<section class="relative py-16 md:py-24 overflow-hidden bg-white">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+    <div class="text-center mb-10 md:mb-14">
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
+        <span class="badge-text text-slate-500 text-sm font-light tracking-[0.15em] uppercase font-jost">Trusted by thousands across Hampshire</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 mb-6 font-jost">Our Most Popular Treatments</h2>
+      <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-jost">Comprehensive healthcare solutions tailored to your needs, delivered with care at our Hampshire locations.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+      <?php
+      $treatments = [
+        ['Weight Loss',       home_url('/weight-loss/'),    'https://c.animaapp.com/mkl3y6t51Gb5OV/img/uploaded-asset-1769944273995-0.jpeg', 'Weight loss treatment at Southdowns Pharmacy'],
+        ['Travel Health',     home_url('/travel-health/'),  'https://c.animaapp.com/mkl3y6t51Gb5OV/img/uploaded-asset-1769944274005-1.jpeg', 'Travel health vaccinations at Southdowns Pharmacy'],
+        ['Ear Wax Removal',   home_url('/ear-wax/'),        'https://c.animaapp.com/mkl3y6t51Gb5OV/img/uploaded-asset-1769944517596-0.jpeg', 'Ear wax removal service at Southdowns Pharmacy'],
+        ['Hair Loss',         home_url('/hair-loss/'),      'https://c.animaapp.com/mkl3y6t51Gb5OV/img/uploaded-asset-1769944274011-2.jpeg', 'Hair loss treatment at Southdowns Pharmacy'],
+        ['Smoking Cessation', home_url('/smoking-cessation/'), 'https://c.animaapp.com/mkl3y6t51Gb5OV/img/uploaded-asset-1769944583782-0.jpeg', 'Smoking cessation support at Southdowns Pharmacy'],
+      ];
+      foreach ( $treatments as $t ) : ?>
+      <a href="<?php echo esc_url( $t[1] ); ?>" class="group block">
+        <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-[3/4]">
+          <img alt="<?php echo esc_attr( $t[3] ); ?>" src="<?php echo esc_url( $t[2] ); ?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/40 transition-colors duration-300 flex items-center justify-center">
+            <span class="text-white text-sm font-medium px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/30">View Details</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+            <h3 class="text-white text-lg md:text-xl font-semibold font-jost mb-1"><?php echo esc_html( $t[0] ); ?></h3>
+            <div class="w-8 h-0.5 bg-blue-400 group-hover:w-12 transition-all duration-300"></div>
+          </div>
+        </div>
+      </a>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      SEARCH VACCINES BY DESTINATION
      ============================================================ -->
 <section class="relative py-16 md:py-24 overflow-hidden" style="background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 50%,#3b82f6 100%);">
@@ -254,48 +296,6 @@ $stars = str_repeat( $star_svg, 5 );
         </div>
         <h3 class="text-white text-xl md:text-2xl font-semibold mb-1 font-jost group-hover:text-blue-200 transition-colors"><?php echo $d[0]; ?></h3>
         <p class="text-blue-100 text-base md:text-lg font-normal font-jost"><?php echo esc_html( $d[2] ); ?></p>
-      </a>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     MOST POPULAR TREATMENTS
-     ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden bg-white">
-  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
-    <div class="text-center mb-10 md:mb-14">
-      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
-        <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
-        <span class="badge-text text-slate-500 text-sm font-light tracking-[0.15em] uppercase font-jost">Trusted by thousands across Hampshire</span>
-      </div>
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 mb-6 font-jost">Our Most Popular Treatments</h2>
-      <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-jost">Comprehensive healthcare solutions tailored to your needs, delivered with care at our Hampshire locations.</p>
-    </div>
-
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-      <?php
-      $treatments = [
-        ['Weight Loss',       home_url('/weight-loss/'),    'https://c.animaapp.com/mkl3y6t51Gb5OV/img/uploaded-asset-1769944273995-0.jpeg', 'Weight loss treatment at Southdowns Pharmacy'],
-        ['Travel Health',     home_url('/travel-health/'),  'https://c.animaapp.com/mkl3y6t51Gb5OV/img/uploaded-asset-1769944274005-1.jpeg', 'Travel health vaccinations at Southdowns Pharmacy'],
-        ['Ear Wax Removal',   home_url('/ear-wax/'),        'https://c.animaapp.com/mkl3y6t51Gb5OV/img/uploaded-asset-1769944517596-0.jpeg', 'Ear wax removal service at Southdowns Pharmacy'],
-        ['Hair Loss',         home_url('/hair-loss/'),      'https://c.animaapp.com/mkl3y6t51Gb5OV/img/uploaded-asset-1769944274011-2.jpeg', 'Hair loss treatment at Southdowns Pharmacy'],
-        ['Smoking Cessation', home_url('/smoking-cessation/'), 'https://c.animaapp.com/mkl3y6t51Gb5OV/img/uploaded-asset-1769944583782-0.jpeg', 'Smoking cessation support at Southdowns Pharmacy'],
-      ];
-      foreach ( $treatments as $t ) : ?>
-      <a href="<?php echo esc_url( $t[1] ); ?>" class="group block">
-        <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-[3/4]">
-          <img alt="<?php echo esc_attr( $t[3] ); ?>" src="<?php echo esc_url( $t[2] ); ?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
-          <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/40 transition-colors duration-300 flex items-center justify-center">
-            <span class="text-white text-sm font-medium px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/30">View Details</span>
-          </div>
-          <div class="absolute bottom-0 left-0 right-0 p-4 md:p-5">
-            <h3 class="text-white text-lg md:text-xl font-semibold font-jost mb-1"><?php echo esc_html( $t[0] ); ?></h3>
-            <div class="w-8 h-0.5 bg-blue-400 group-hover:w-12 transition-all duration-300"></div>
-          </div>
-        </div>
       </a>
       <?php endforeach; ?>
     </div>
