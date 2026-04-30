@@ -281,6 +281,14 @@ add_action( 'wp_enqueue_scripts', function() {
         $ver
     );
 
+    // Serif accent for headline emphasis (Playfair Display italic)
+    wp_enqueue_style(
+        'southdowns-serif',
+        'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap',
+        [],
+        null
+    );
+
     // Page-specific scripts
     $template = get_page_template_slug();
 
