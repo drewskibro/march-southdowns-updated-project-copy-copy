@@ -177,5 +177,24 @@
 </footer>
 
 <?php wp_footer(); ?>
+<script>
+(function() {
+  var badges = document.querySelectorAll('.premium-badge');
+  if (!badges.length) return;
+  if (!('IntersectionObserver' in window)) {
+    badges.forEach(function(el) { el.classList.add('premium-badge-visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('premium-badge-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  badges.forEach(function(el) { obs.observe(el); });
+})();
+</script>
 </body>
 </html>
