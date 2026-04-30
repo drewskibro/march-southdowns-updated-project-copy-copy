@@ -22,6 +22,10 @@ $stars = str_repeat( $star_svg, 5 );
       <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773049303978-0.png');"></div>
       <div class="md:hidden absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-900/70 to-transparent"></div>
       <div class="md:hidden absolute inset-0 flex flex-col justify-end px-6 py-8 z-10">
+        <div class="premium-badge flex items-center justify-start gap-4 mb-4 self-start">
+          <div class="badge-rule w-8 h-px bg-white/30"></div>
+          <span class="badge-text text-white/80 text-xs font-light tracking-[0.15em] uppercase font-jost">4 Hampshire Locations &middot; Same-Day</span>
+        </div>
         <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Same Day Vaccine &amp; Blood Test Appointments</h1>
         <p class="text-white text-base font-normal leading-relaxed mb-5 font-jost">Book your vaccine or blood test appointment today online or call our friendly team for advice and more information.</p>
         <div class="mb-4">
@@ -34,6 +38,10 @@ $stars = str_repeat( $star_svg, 5 );
       </div>
       <div class="hidden md:flex">
         <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
+          <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
+            <div class="badge-rule w-10 h-px bg-white/30"></div>
+            <span class="badge-text text-white/80 text-sm font-light tracking-[0.15em] uppercase font-jost">4 Hampshire Locations &middot; Same-Day Appointments</span>
+          </div>
           <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;">Same Day Vaccine &amp; Blood Test Appointments</h1>
           <p class="text-white text-lg lg:text-xl font-normal leading-relaxed mb-6 font-jost">Book your vaccine or blood test appointment today online or call our friendly team for advice and more information.</p>
           <div class="mb-6">
@@ -42,7 +50,11 @@ $stars = str_repeat( $star_svg, 5 );
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
           </div>
-          <p class="text-white text-base lg:text-lg font-medium leading-relaxed font-jost">Same day appointments are typically available but please book in early to avoid disappointment.</p>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-white/90 text-sm font-jost">
+            <span class="flex items-center gap-1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> All Vaccines in Stock</span>
+            <span class="flex items-center gap-1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Same-Day Available</span>
+            <span class="flex items-center gap-1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Expert Pharmacists</span>
+          </div>
         </div>
         <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image:url('https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773049303978-0.png');"></div>
         <div class="absolute z-30 flex flex-col items-center" style="left:50%;top:15%;transform:translateX(-50%);">
@@ -62,6 +74,10 @@ $stars = str_repeat( $star_svg, 5 );
       <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image:url('https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773078227843-0.png');"></div>
       <div class="md:hidden absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-900/70 to-transparent"></div>
       <div class="md:hidden absolute inset-0 flex flex-col justify-end px-6 py-8 z-10">
+        <div class="premium-badge flex items-center justify-start gap-4 mb-4 self-start">
+          <div class="badge-rule w-8 h-px bg-white/30"></div>
+          <span class="badge-text text-white/80 text-xs font-light tracking-[0.15em] uppercase font-jost">GPhC Registered &middot; Clinically Supervised</span>
+        </div>
         <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Medical Weight Loss Programme</h1>
         <p class="text-white text-base font-normal leading-relaxed mb-5 font-jost">Achieve your weight loss goals with our clinically supervised programme. GPhC registered pharmacists providing safe, effective treatments.</p>
         <div class="mb-4">
@@ -74,6 +90,10 @@ $stars = str_repeat( $star_svg, 5 );
       </div>
       <div class="hidden md:flex">
         <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
+          <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
+            <div class="badge-rule w-10 h-px bg-white/30"></div>
+            <span class="badge-text text-white/80 text-sm font-light tracking-[0.15em] uppercase font-jost">GPhC Registered &middot; Clinically Supervised</span>
+          </div>
           <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;">Medical Weight Loss Programme</h1>
           <p class="text-white text-lg lg:text-xl font-normal leading-relaxed mb-6 font-jost">Achieve your weight loss goals with our clinically supervised programme. GPhC registered pharmacists providing safe, effective treatments.</p>
           <div class="mb-6">
@@ -82,7 +102,11 @@ $stars = str_repeat( $star_svg, 5 );
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
           </div>
-          <p class="text-white text-base lg:text-lg font-medium leading-relaxed font-jost">Average 15-20kg weight loss with monthly check-ins included.</p>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-white/90 text-sm font-jost">
+            <span class="flex items-center gap-1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> GLP-1 Treatments</span>
+            <span class="flex items-center gap-1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Monthly Check-ins</span>
+            <span class="flex items-center gap-1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Free Consultation</span>
+          </div>
         </div>
         <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover" style="background-image:url('https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773078227843-0.png');background-position:85% center;"></div>
       </div>
@@ -93,6 +117,10 @@ $stars = str_repeat( $star_svg, 5 );
       <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image:url('https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773078227870-1.png');"></div>
       <div class="md:hidden absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-900/70 to-transparent"></div>
       <div class="md:hidden absolute inset-0 flex flex-col justify-end px-6 py-8 z-10">
+        <div class="premium-badge flex items-center justify-start gap-4 mb-4 self-start">
+          <div class="badge-rule w-8 h-px bg-white/30"></div>
+          <span class="badge-text text-white/80 text-xs font-light tracking-[0.15em] uppercase font-jost">Results in 24&ndash;48 Hours</span>
+        </div>
         <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Comprehensive Blood Testing</h1>
         <p class="text-white text-base font-normal leading-relaxed mb-5 font-jost">Same day blood test appointments available across 4 Hampshire locations. Vitamin B12 deficiency testing and full health screening.</p>
         <div class="mb-4">
@@ -105,6 +133,10 @@ $stars = str_repeat( $star_svg, 5 );
       </div>
       <div class="hidden md:flex">
         <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
+          <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
+            <div class="badge-rule w-10 h-px bg-white/30"></div>
+            <span class="badge-text text-white/80 text-sm font-light tracking-[0.15em] uppercase font-jost">Results in 24&ndash;48 Hours &middot; 4 Locations</span>
+          </div>
           <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;">Comprehensive Blood Testing</h1>
           <p class="text-white text-lg lg:text-xl font-normal leading-relaxed mb-6 font-jost">Same day blood test appointments available across 4 Hampshire locations. Vitamin B12 deficiency testing and full health screening.</p>
           <div class="mb-6">
@@ -113,7 +145,11 @@ $stars = str_repeat( $star_svg, 5 );
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
           </div>
-          <p class="text-white text-base lg:text-lg font-medium leading-relaxed font-jost">Results typically available within 24-48 hours.</p>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-white/90 text-sm font-jost">
+            <span class="flex items-center gap-1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Same-Day Available</span>
+            <span class="flex items-center gap-1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 24&ndash;48hr Results</span>
+            <span class="flex items-center gap-1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> B12 &amp; Full Screening</span>
+          </div>
         </div>
         <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover" style="background-image:url('https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773078227870-1.png');background-position:85% center;"></div>
       </div>
