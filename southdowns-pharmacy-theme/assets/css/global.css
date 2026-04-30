@@ -319,15 +319,3 @@ img { transition: transform 0.5s ease; }
   font-weight: 400;
   letter-spacing: 0;
 }
-
-/* ============================================================
-   HERO PANEL — navy→blue gradient with subtle dot texture
-   Used on the homepage hero left-side panels
-   ============================================================ */
-.hero-panel-bg {
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px),
-    linear-gradient(135deg, #0c2340 0%, #133870 45%, #1a73e9 100%);
-  background-size: 28px 28px, 100% 100%;
-  background-position: 0 0, 0 0;
-}

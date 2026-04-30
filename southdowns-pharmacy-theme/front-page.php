@@ -37,7 +37,7 @@ $stars = str_repeat( $star_svg, 5 );
         <p class="text-white/90 text-sm font-normal leading-relaxed font-jost">Same day appointments typically available—book early to avoid disappointment.</p>
       </div>
       <div class="hidden md:flex">
-        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12 hero-panel-bg" style="background-color:#0c2340;">
+        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
           <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
             <div class="badge-rule w-10 h-px bg-white/30"></div>
             <span class="badge-text text-white/80 text-sm font-light tracking-[0.15em] uppercase font-jost">4 Hampshire Locations &middot; Same-Day Appointments</span>
@@ -89,7 +89,7 @@ $stars = str_repeat( $star_svg, 5 );
         <p class="text-white/90 text-sm font-normal leading-relaxed font-jost">Average 15-20kg weight loss with monthly check-ins included.</p>
       </div>
       <div class="hidden md:flex">
-        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12 hero-panel-bg" style="background-color:#0c2340;">
+        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
           <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
             <div class="badge-rule w-10 h-px bg-white/30"></div>
             <span class="badge-text text-white/80 text-sm font-light tracking-[0.15em] uppercase font-jost">GPhC Registered &middot; Clinically Supervised</span>
@@ -132,7 +132,7 @@ $stars = str_repeat( $star_svg, 5 );
         <p class="text-white/90 text-sm font-normal leading-relaxed font-jost">Results typically available within 24-48 hours.</p>
       </div>
       <div class="hidden md:flex">
-        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12 hero-panel-bg" style="background-color:#0c2340;">
+        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
           <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
             <div class="badge-rule w-10 h-px bg-white/30"></div>
             <span class="badge-text text-white/80 text-sm font-light tracking-[0.15em] uppercase font-jost">Results in 24&ndash;48 Hours &middot; 4 Locations</span>
