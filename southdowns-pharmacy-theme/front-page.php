@@ -26,7 +26,7 @@ $stars = str_repeat( $star_svg, 5 );
           <div class="badge-rule w-8 h-px bg-white/30"></div>
           <span class="badge-text text-white/80 text-xs font-light tracking-[0.15em] uppercase font-jost">4 Hampshire Locations &middot; Same-Day</span>
         </div>
-        <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Same Day Vaccine &amp; Blood Test Appointments</h1>
+        <h1 class="text-white text-3xl font-semibold tracking-tight leading-tight mb-4 font-jost" style="line-height:1.2;"><span class="serif-accent">Same-day</span> vaccine &amp; blood test appointments</h1>
         <p class="text-white text-base font-normal leading-relaxed mb-5 font-jost">Book your vaccine or blood test appointment today online or call our friendly team for advice and more information.</p>
         <div class="mb-4">
           <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 text-white text-sm font-medium bg-transparent border-2 border-white/40 px-5 py-2.5 rounded-full hover:bg-white/10 transition-colors font-jost">
@@ -37,12 +37,12 @@ $stars = str_repeat( $star_svg, 5 );
         <p class="text-white/90 text-sm font-normal leading-relaxed font-jost">Same day appointments typically available—book early to avoid disappointment.</p>
       </div>
       <div class="hidden md:flex">
-        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
+        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12 hero-panel-bg">
           <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
             <div class="badge-rule w-10 h-px bg-white/30"></div>
             <span class="badge-text text-white/80 text-sm font-light tracking-[0.15em] uppercase font-jost">4 Hampshire Locations &middot; Same-Day Appointments</span>
           </div>
-          <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;">Same Day Vaccine &amp; Blood Test Appointments</h1>
+          <h1 class="text-white text-4xl lg:text-[50px] font-semibold tracking-tight leading-tight mb-6 font-jost" style="line-height:1.1;"><span class="serif-accent">Same-day</span> vaccine &amp; blood test appointments</h1>
           <p class="text-white text-lg lg:text-xl font-normal leading-relaxed mb-6 font-jost">Book your vaccine or blood test appointment today online or call our friendly team for advice and more information.</p>
           <div class="mb-6">
             <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 text-white text-base font-medium bg-transparent border-2 border-white/30 px-6 py-3 rounded-full hover:bg-white/10 transition-colors font-jost">
@@ -78,7 +78,7 @@ $stars = str_repeat( $star_svg, 5 );
           <div class="badge-rule w-8 h-px bg-white/30"></div>
           <span class="badge-text text-white/80 text-xs font-light tracking-[0.15em] uppercase font-jost">GPhC Registered &middot; Clinically Supervised</span>
         </div>
-        <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Medical Weight Loss Programme</h1>
+        <h1 class="text-white text-3xl font-semibold tracking-tight leading-tight mb-4 font-jost" style="line-height:1.2;">Medical <span class="serif-accent">weight loss</span> programme</h1>
         <p class="text-white text-base font-normal leading-relaxed mb-5 font-jost">Achieve your weight loss goals with our clinically supervised programme. GPhC registered pharmacists providing safe, effective treatments.</p>
         <div class="mb-4">
           <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="inline-flex items-center gap-2 text-white text-sm font-medium bg-transparent border-2 border-white/40 px-5 py-2.5 rounded-full hover:bg-white/10 transition-colors font-jost">
@@ -89,12 +89,12 @@ $stars = str_repeat( $star_svg, 5 );
         <p class="text-white/90 text-sm font-normal leading-relaxed font-jost">Average 15-20kg weight loss with monthly check-ins included.</p>
       </div>
       <div class="hidden md:flex">
-        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
+        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12 hero-panel-bg">
           <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
             <div class="badge-rule w-10 h-px bg-white/30"></div>
             <span class="badge-text text-white/80 text-sm font-light tracking-[0.15em] uppercase font-jost">GPhC Registered &middot; Clinically Supervised</span>
           </div>
-          <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;">Medical Weight Loss Programme</h1>
+          <h1 class="text-white text-4xl lg:text-[50px] font-semibold tracking-tight leading-tight mb-6 font-jost" style="line-height:1.1;">Medical <span class="serif-accent">weight loss</span> programme</h1>
           <p class="text-white text-lg lg:text-xl font-normal leading-relaxed mb-6 font-jost">Achieve your weight loss goals with our clinically supervised programme. GPhC registered pharmacists providing safe, effective treatments.</p>
           <div class="mb-6">
             <a href="<?php echo esc_url( home_url( '/weight-loss/' ) ); ?>" class="inline-flex items-center gap-2 text-white text-base font-medium bg-transparent border-2 border-white/30 px-6 py-3 rounded-full hover:bg-white/10 transition-colors font-jost">
@@ -121,7 +121,7 @@ $stars = str_repeat( $star_svg, 5 );
           <div class="badge-rule w-8 h-px bg-white/30"></div>
           <span class="badge-text text-white/80 text-xs font-light tracking-[0.15em] uppercase font-jost">Results in 24&ndash;48 Hours</span>
         </div>
-        <h1 class="text-white text-3xl font-semibold leading-tight mb-4 font-jost" style="line-height:1.2;">Comprehensive Blood Testing</h1>
+        <h1 class="text-white text-3xl font-semibold tracking-tight leading-tight mb-4 font-jost" style="line-height:1.2;"><span class="serif-accent">Comprehensive</span> blood testing</h1>
         <p class="text-white text-base font-normal leading-relaxed mb-5 font-jost">Same day blood test appointments available across 4 Hampshire locations. Vitamin B12 deficiency testing and full health screening.</p>
         <div class="mb-4">
           <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 text-white text-sm font-medium bg-transparent border-2 border-white/40 px-5 py-2.5 rounded-full hover:bg-white/10 transition-colors font-jost">
@@ -132,12 +132,12 @@ $stars = str_repeat( $star_svg, 5 );
         <p class="text-white/90 text-sm font-normal leading-relaxed font-jost">Results typically available within 24-48 hours.</p>
       </div>
       <div class="hidden md:flex">
-        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
+        <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12 hero-panel-bg">
           <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
             <div class="badge-rule w-10 h-px bg-white/30"></div>
             <span class="badge-text text-white/80 text-sm font-light tracking-[0.15em] uppercase font-jost">Results in 24&ndash;48 Hours &middot; 4 Locations</span>
           </div>
-          <h1 class="text-white text-4xl lg:text-[50px] font-semibold leading-tight mb-6 font-jost" style="line-height:1.1;">Comprehensive Blood Testing</h1>
+          <h1 class="text-white text-4xl lg:text-[50px] font-semibold tracking-tight leading-tight mb-6 font-jost" style="line-height:1.1;"><span class="serif-accent">Comprehensive</span> blood testing</h1>
           <p class="text-white text-lg lg:text-xl font-normal leading-relaxed mb-6 font-jost">Same day blood test appointments available across 4 Hampshire locations. Vitamin B12 deficiency testing and full health screening.</p>
           <div class="mb-6">
             <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 text-white text-base font-medium bg-transparent border-2 border-white/30 px-6 py-3 rounded-full hover:bg-white/10 transition-colors font-jost">
