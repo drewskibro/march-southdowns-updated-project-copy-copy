@@ -169,9 +169,10 @@ $stars = str_repeat( $star_svg, 5 );
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
     <div class="text-center mb-10 md:mb-14">
-      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/30">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        <span>4 Locations Across Hampshire</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <span class="badge-numeral text-4xl font-bold text-white font-jost leading-none">4</span>
+        <div class="badge-divider w-px h-8 bg-white/15"></div>
+        <span class="badge-text text-white/80 text-sm font-light tracking-[0.15em] uppercase font-jost">Locations Across Hampshire</span>
       </div>
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white mb-6 font-jost">Search Vaccines by<br class="hidden md:block" /> Destination</h2>
       <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">At <?php echo esc_html( sp_pharmacy_name() ); ?>, we provide expert travel health services across Hampshire. Find the vaccines you need for your next adventure.</p>
@@ -229,9 +230,9 @@ $stars = str_repeat( $star_svg, 5 );
 <section class="relative py-16 md:py-24 overflow-hidden bg-white">
   <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
     <div class="text-center mb-10 md:mb-14">
-      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
-        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
-        <span class="uppercase tracking-wider text-xs font-semibold">Trusted by thousands across Hampshire</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
+        <span class="badge-text text-slate-500 text-sm font-light tracking-[0.15em] uppercase font-jost">Trusted by thousands across Hampshire</span>
       </div>
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 mb-6 font-jost">Our Most Popular Treatments</h2>
       <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-jost">Comprehensive healthcare solutions tailored to your needs, delivered with care at our Hampshire locations.</p>
@@ -275,9 +276,9 @@ $stars = str_repeat( $star_svg, 5 );
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
     <div class="text-center mb-10 md:mb-16">
-      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/30">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        <span class="uppercase tracking-wider text-xs font-semibold">Trusted by Thousands</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-white/15"></div>
+        <span class="badge-text text-white/70 text-sm font-light tracking-[0.15em] uppercase font-jost">Trusted by Thousands</span>
       </div>
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-jost">What Our Patients Say</h2>
       <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">Real experiences from real patients across our Hampshire locations.</p>
@@ -335,9 +336,9 @@ $stars = str_repeat( $star_svg, 5 );
   <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-14 gap-6">
       <div class="flex-1">
-        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
-          <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
-          <span class="uppercase tracking-wider text-xs font-semibold">Expert Advice</span>
+        <div class="premium-badge flex items-center justify-start gap-4 mb-6">
+          <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
+          <span class="badge-text text-slate-500 text-sm font-light tracking-[0.15em] uppercase font-jost">Expert Advice</span>
         </div>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 font-jost">
           Latest from the <span class="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">Health Hub</span>
@@ -431,9 +432,9 @@ $stars = str_repeat( $star_svg, 5 );
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
     <div class="text-center mb-12 md:mb-16">
-      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/30">
-        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span></span>
-        <span class="uppercase tracking-wider text-xs font-semibold">Premium Collection</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-white/15"></div>
+        <span class="badge-text text-white/70 text-sm font-light tracking-[0.15em] uppercase font-jost">Premium Collection</span>
       </div>
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-jost">Our Premium Products</h2>
       <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed font-jost">Discover our exclusive range of premium healthcare products, crafted with excellence.</p>
