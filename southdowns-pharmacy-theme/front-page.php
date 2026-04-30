@@ -398,7 +398,7 @@ $stars = str_repeat( $star_svg, 5 );
             ['name' => 'Dengue Fever (Qdenga)',              'url' => home_url( '/travel-health/' )],
           ];
           foreach ( $vaccines as $v ) : ?>
-          <li><a href="<?php echo esc_url( $v['url'] ); ?>" class="group relative flex items-center justify-center min-h-[88px] px-6 pr-12 bg-white rounded-xl text-blue-900 font-bold text-xl text-center font-jost transition-all duration-300 ease-in-out hover:bg-blue-50 hover:-translate-y-0.5 hover:shadow-lg"><span><?php echo esc_html( $v['name'] ); ?></span><svg class="absolute right-5 w-5 h-5 text-blue-400 group-hover:text-blue-700 group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></li>
+          <li><a href="<?php echo esc_url( $v['url'] ); ?>" class="group relative flex items-center justify-center min-h-[88px] px-6 pr-12 bg-blue-50 rounded-xl text-blue-900 font-bold text-xl text-center font-jost transition-all duration-300 ease-in-out hover:bg-white hover:-translate-y-0.5 hover:shadow-lg"><span><?php echo esc_html( $v['name'] ); ?></span><svg class="absolute right-5 w-5 h-5 text-blue-400 group-hover:text-blue-700 group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></li>
           <?php endforeach; ?>
         </ul>
         <div class="mb-6">
