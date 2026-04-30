@@ -381,13 +381,32 @@ $stars = str_repeat( $star_svg, 5 );
       <div>
         <h2 class="text-4xl md:text-5xl font-semibold text-white mb-4 font-jost">Popular Vaccines</h2>
         <p class="text-blue-100 text-lg mb-8 font-jost">Find out everything about these popular vaccines we can provide at <?php echo esc_html( sp_pharmacy_name() ); ?>.</p>
-        <ul class="grid grid-cols-2 gap-3 mb-8">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <?php
-          $vaccines = ['Chickenpox','Chikungunya Vaccine','Cholera','Dengue Fever (Qdenga)','DTP (Diphtheria, Tetanus & Polio)','Hepatitis A','Hepatitis B','HPV (Gardasil 9)','Japanese Encephalitis','Malaria','Meningitis B','Meningococcal Meningitis','MMR (Measles, Mumps & Rubella)','Private Covid Vaccine','Rabies','Shingles','Tick Borne Encephalitis','Typhoid','Whooping Cough (Pertussis)','Yellow Fever'];
+          $vaccines = [
+            ['name' => 'Yellow Fever',                       'url' => home_url( '/yellow-fever/' )],
+            ['name' => 'Hepatitis A',                        'url' => home_url( '/travel-health/' )],
+            ['name' => 'Typhoid',                            'url' => home_url( '/travel-health/' )],
+            ['name' => 'Hepatitis B',                        'url' => home_url( '/travel-health/' )],
+            ['name' => 'Rabies',                             'url' => home_url( '/travel-health/' )],
+            ['name' => 'Cholera',                            'url' => home_url( '/travel-health/' )],
+            ['name' => 'Japanese Encephalitis',              'url' => home_url( '/travel-health/' )],
+            ['name' => 'Meningitis (ACWY)',                  'url' => home_url( '/travel-health/' )],
+            ['name' => 'Tick Borne Encephalitis',            'url' => home_url( '/travel-health/' )],
+            ['name' => 'Malaria Tablets',                    'url' => home_url( '/travel-health/' )],
+            ['name' => 'MMR (Measles, Mumps & Rubella)',     'url' => home_url( '/travel-health/' )],
+            ['name' => 'Dengue Fever (Qdenga)',              'url' => home_url( '/travel-health/' )],
+          ];
           foreach ( $vaccines as $v ) : ?>
-          <li><a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="block px-4 py-3 border-2 border-white/30 rounded-xl text-white font-medium font-jost text-sm hover:border-white/70 hover:bg-white/10 transition-all duration-200 text-center"><?php echo esc_html( $v ); ?></a></li>
+          <li><a href="<?php echo esc_url( $v['url'] ); ?>" class="group relative flex items-center justify-center min-h-[88px] px-6 pr-12 bg-white rounded-xl text-blue-900 font-bold text-xl text-center font-jost transition-all duration-300 ease-in-out hover:bg-blue-50 hover:-translate-y-0.5 hover:shadow-lg"><span><?php echo esc_html( $v['name'] ); ?></span><svg class="absolute right-5 w-5 h-5 text-blue-400 group-hover:text-blue-700 group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></li>
           <?php endforeach; ?>
         </ul>
+        <div class="mb-6">
+          <a href="<?php echo esc_url( home_url( '/travel-health/' ) ); ?>" class="inline-flex items-center gap-2 text-white font-semibold text-lg font-jost border-b-2 border-white/40 hover:border-white pb-1 transition-colors">
+            View all vaccines
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
         <p class="text-white/80 text-sm font-jost"><strong class="text-white">Vaccine not listed?</strong> We can provide any travel vaccine. <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-white underline hover:text-blue-200">Contact us</a> for more information.</p>
       </div>
       <div class="hidden md:block">
