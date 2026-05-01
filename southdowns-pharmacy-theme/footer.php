@@ -149,14 +149,6 @@
         </a>
       </div>
     </div>
-
-    <!-- Accreditation badges -->
-    <div class="border-t border-[#e8e0d8] mt-4 pt-4">
-      <div class="flex flex-wrap items-center justify-center gap-8">
-        <img src="https://c.animaapp.com/mmkd7a1dRSnHAj/assets/nathnac.svg" alt="NATHNAC" class="h-12 opacity-60 hover:opacity-100 transition-opacity"/>
-        <img src="https://c.animaapp.com/mmkd7a1dRSnHAj/assets/Yellow-Fever-Zone.svg" alt="Yellow Fever Centre" class="h-10 opacity-60 hover:opacity-100 transition-opacity"/>
-      </div>
-    </div>
   </div>
 
   <!-- Bottom bar -->
