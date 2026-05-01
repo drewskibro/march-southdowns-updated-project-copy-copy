@@ -35,7 +35,7 @@ $destinations = [
 <header class="sticky top-0 z-[100] bg-white">
 
   <!-- Desktop header -->
-  <div class="relative bg-white hidden md:flex justify-center z-[9] border-b border-stone-300 px-5">
+  <div class="relative bg-white hidden md:flex justify-center z-[9] border-b border-[#e8e0d8] px-5">
     <div class="relative flex max-w-[1393.6px] w-full">
 
       <!-- Logo -->
@@ -201,7 +201,7 @@ $destinations = [
   </div>
 
   <!-- Mobile header -->
-  <div class="relative bg-white flex justify-center z-[99999] border-b border-stone-300 p-[5px] md:hidden">
+  <div class="relative bg-white flex justify-center z-[99999] border-b border-[#e8e0d8] p-[5px] md:hidden">
     <div class="relative flex items-center w-full">
 
       <!-- Hamburger (left) -->
