@@ -116,7 +116,7 @@ $phone       = sp_phone();
 <!-- ============================================================
      S2: KEY STATS — Light gradient, 4 white stat cards
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #f0f9ff 100%);">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]">
   <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-80 h-80 bg-cyan-100/20 rounded-full -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -328,7 +328,7 @@ $phone       = sp_phone();
 <!-- ============================================================
      S6: HOW IT WORKS — Light gradient, photo + 3 numbered steps
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" id="how-it-works" style="background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 30%, #e8f4fd 60%, #f8fafc 100%);">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]" id="how-it-works">
   <div class="absolute top-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full -translate-x-1/2 -translate-y-1/4 blur-3xl"></div>
   <div class="absolute bottom-0 right-0 w-80 h-80 bg-cyan-100/30 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -454,7 +454,7 @@ $phone       = sp_phone();
 <!-- ============================================================
      S8: PRICING — Light gradient, consultation card + glow treatment card
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" id="pricing" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 40%, #ecfeff 70%, #f8fafc 100%);">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]" id="pricing">
   <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-200/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
   <div class="absolute top-0 right-0 w-80 h-80 bg-cyan-200/15 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -559,7 +559,7 @@ $phone       = sp_phone();
 <!-- ============================================================
      S10: TESTIMONIALS — Light gradient, 3 patient review cards
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 40%, #e8f4fd 70%, #f8fafc 100%);">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]">
   <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/25 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-72 h-72 bg-cyan-100/20 rounded-full -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -680,7 +680,7 @@ $phone       = sp_phone();
 <!-- ============================================================
      S12: LOCATIONS — All 4 branches via sp_branch() ACF helper
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" id="locations" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #ecfeff 100%);">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]" id="locations">
   <div class="absolute bottom-0 left-1/2 w-[600px] h-[400px] bg-blue-200/15 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14">
