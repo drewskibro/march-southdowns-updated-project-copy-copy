@@ -116,14 +116,14 @@ $phone       = sp_phone();
 <!-- ============================================================
      S2: KEY STATS — Light gradient, 4 white stat cards
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #f0f9ff 100%);">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]">
   <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-80 h-80 bg-cyan-100/20 rounded-full -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-200/60 shadow-sm">
-        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
-        <span class="uppercase tracking-wider text-xs font-semibold">At a Glance</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
+        <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">At a Glance</span>
       </div>
       <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Professional Microsuction Treatment</h2>
       <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">The safest and most effective method of ear wax removal, available across our Hampshire locations.</p>
@@ -160,9 +160,9 @@ $phone       = sp_phone();
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        <span class="uppercase tracking-wider text-xs font-semibold">Common Symptoms</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-white/30"></div>
+        <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost">Common Symptoms</span>
       </div>
       <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Is Ear Wax Affecting Your Daily Life?</h2>
       <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">Don&rsquo;t let blocked ears hold you back. Recognise these common symptoms?</p>
@@ -238,9 +238,9 @@ $phone       = sp_phone();
       <div class="absolute top-0 right-0 w-72 h-72 bg-blue-50/60 rounded-full translate-x-1/2 -translate-y-1/2 blur-2xl pointer-events-none"></div>
       <div class="absolute bottom-0 left-0 w-56 h-56 bg-cyan-50/60 rounded-full -translate-x-1/3 translate-y-1/3 blur-2xl pointer-events-none"></div>
       <div class="relative z-10 ew-reveal">
-        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-semibold px-4 py-2 rounded-full mb-6 border border-blue-200/60 uppercase tracking-wider self-start">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          What You Need to Know
+        <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
+          <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
+          <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">What You Need to Know</span>
         </div>
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-jost leading-tight">What Is Ear Microsuction?</h2>
         <p class="text-gray-600 text-lg leading-relaxed mb-5 font-jost">Ear Microsuction is the safest and most effective way to remove earwax. It works by inserting a low-pressure suction probe into the ear. One of our trained clinicians wearing a microscope will control the probe to clear the ear canal of wax.</p>
@@ -280,8 +280,9 @@ $phone       = sp_phone();
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
-        <span class="uppercase tracking-wider text-xs font-semibold">Treatment Comparison</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-white/30"></div>
+        <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost">Treatment Comparison</span>
       </div>
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-jost">How Our Treatment Compares</h2>
       <p class="text-lg text-blue-100 max-w-3xl mx-auto font-jost">See why microsuction is the gold standard for ear wax removal.</p>
@@ -328,14 +329,14 @@ $phone       = sp_phone();
 <!-- ============================================================
      S6: HOW IT WORKS — Light gradient, photo + 3 numbered steps
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" id="how-it-works" style="background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 30%, #e8f4fd 60%, #f8fafc 100%);">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]" id="how-it-works">
   <div class="absolute top-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full -translate-x-1/2 -translate-y-1/4 blur-3xl"></div>
   <div class="absolute bottom-0 right-0 w-80 h-80 bg-cyan-100/30 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
-        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
-        <span class="uppercase tracking-wider text-xs font-semibold">Your Appointment</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
+        <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">Your Appointment</span>
       </div>
       <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-jost">What to Expect</h2>
       <p class="text-lg text-gray-500 max-w-3xl mx-auto font-jost">Each appointment takes roughly 20&ndash;30 minutes. Simple, effective treatment in three easy steps.</p>
@@ -426,8 +427,9 @@ $phone       = sp_phone();
 
       <!-- Right: copy -->
       <div class="order-1 lg:order-2 ew-reveal" data-delay="1">
-        <div class="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 border border-white/20 uppercase tracking-wider font-jost">
-          Why Pharmacy Ear Care
+        <div class="premium-badge flex items-center justify-start gap-4 mb-6">
+          <div class="badge-rule w-10 h-px bg-white/30"></div>
+          <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost">Why Pharmacy Ear Care</span>
         </div>
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-jost">Skip the 12&ndash;16 Week NHS Wait</h2>
         <p class="text-blue-100 text-lg leading-relaxed mb-5 font-jost">In the UK, 3.9% of the population need earwax management yearly, many enduring 12&ndash;16 week waits. The lack of available NHS treatment leads many to suffer in silence, unaware that local pharmacy options exist.</p>
@@ -454,14 +456,14 @@ $phone       = sp_phone();
 <!-- ============================================================
      S8: PRICING — Light gradient, consultation card + glow treatment card
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" id="pricing" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 40%, #ecfeff 70%, #f8fafc 100%);">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]" id="pricing">
   <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-200/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
   <div class="absolute top-0 right-0 w-80 h-80 bg-cyan-200/15 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-100">
-        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span></span>
-        <span class="uppercase tracking-wider text-xs font-semibold">Transparent Pricing</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
+        <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">Transparent Pricing</span>
       </div>
       <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-jost">Ear Wax Removal Pricing</h2>
       <p class="text-lg text-gray-500 max-w-2xl mx-auto font-jost">Clear, upfront pricing with no hidden fees.</p>
@@ -525,9 +527,9 @@ $phone       = sp_phone();
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-        <span class="uppercase tracking-wider text-xs font-semibold">Why Us</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-white/30"></div>
+        <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost">Why Us</span>
       </div>
       <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Why Choose Southdowns Pharmacy</h2>
       <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">TympaHealth certified clinicians using the latest diagnostic technology for safe, effective ear care.</p>
@@ -559,14 +561,14 @@ $phone       = sp_phone();
 <!-- ============================================================
      S10: TESTIMONIALS — Light gradient, 3 patient review cards
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 40%, #e8f4fd 70%, #f8fafc 100%);">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]">
   <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/25 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-72 h-72 bg-cyan-100/20 rounded-full -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-200/60 shadow-sm">
-        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        <span class="uppercase tracking-wider text-xs font-semibold">Patient Reviews</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
+        <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">Patient Reviews</span>
       </div>
       <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-jost">What Our Patients Say</h2>
     </div>
@@ -610,9 +612,9 @@ $phone       = sp_phone();
 
       <!-- Sticky sidebar -->
       <div class="lg:col-span-4 lg:sticky lg:top-28 lg:self-start ew-reveal">
-        <div class="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-white/20">
-          <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span></span>
-          <span class="uppercase tracking-wider text-xs font-semibold">FAQs</span>
+        <div class="premium-badge flex items-center justify-start gap-4 mb-6">
+          <div class="badge-rule w-10 h-px bg-white/30"></div>
+          <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost">FAQs</span>
         </div>
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-jost">Frequently Asked Questions</h2>
         <p class="text-lg text-blue-100 leading-relaxed mb-8 font-jost">Everything you need to know about ear wax removal at Southdowns Pharmacy.</p>
@@ -680,13 +682,13 @@ $phone       = sp_phone();
 <!-- ============================================================
      S12: LOCATIONS — All 4 branches via sp_branch() ACF helper
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden" id="locations" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #ecfeff 100%);">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]" id="locations">
   <div class="absolute bottom-0 left-1/2 w-[600px] h-[400px] bg-blue-200/15 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-blue-700 text-sm font-medium px-5 py-2.5 rounded-full mb-6 border border-blue-200/60 shadow-sm">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span class="uppercase tracking-wider text-xs font-semibold">Our Locations</span>
+      <div class="premium-badge flex items-center justify-center gap-4 mb-6">
+        <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
+        <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">Our Locations</span>
       </div>
       <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Visit Our Ear Care Centres</h2>
       <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">Ear wax removal available across all 4 Hampshire locations. Same-day appointments where available.</p>
