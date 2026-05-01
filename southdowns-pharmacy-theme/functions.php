@@ -333,6 +333,7 @@ require_once get_template_directory() . '/inc/acf-location-fields.php';
 require_once get_template_directory() . '/inc/acf-weight-loss-fields.php';
 require_once get_template_directory() . '/inc/acf-covid-vaccine-fields.php';
 require_once get_template_directory() . '/inc/acf-travel-health-fields.php';
+require_once get_template_directory() . '/inc/acf-ear-wax-fields.php';
 
 
 // ============================================================
@@ -345,6 +346,7 @@ add_filter( 'use_block_editor_for_post', function( bool $use_block_editor, \WP_P
         'page-templates/page-weight-loss.php',
         'page-templates/page-travel-health.php',
         'page-templates/page-yellow-fever.php',
+        'page-templates/page-ear-wax.php',
         // Location pages — acf_after_title requires classic editor
         'page-templates/page-location.php',
         'page-templates/page-emsworth.php',
