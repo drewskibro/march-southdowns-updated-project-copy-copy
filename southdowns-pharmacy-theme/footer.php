@@ -3,8 +3,8 @@
      ACF: SP_* global options — logo, branches, email, phone,
           social links, booking URL, accreditation badges
      ============================================================ -->
-<footer class="relative bg-white border-t border-gray-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<footer class="relative bg-[#fdf9f6] border-t border-[#e8e0d8]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-0">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
       <!-- Logo & About -->
@@ -102,7 +102,7 @@
     </div>
 
     <!-- Footer CTA strip -->
-    <div class="border-t border-gray-200 pt-8">
+    <div class="border-t border-[#e8e0d8] pt-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <a href="<?php echo esc_url( sp_booking_url() ); ?>" class="group relative bg-blue-600 hover:bg-blue-700 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl overflow-hidden">
           <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
@@ -151,7 +151,7 @@
     </div>
 
     <!-- Accreditation badges -->
-    <div class="border-t border-gray-200 mt-6 pt-6">
+    <div class="border-t border-[#e8e0d8] mt-4 pt-4">
       <div class="flex flex-wrap items-center justify-center gap-8">
         <img src="https://c.animaapp.com/mmkd7a1dRSnHAj/assets/nathnac.svg" alt="NATHNAC" class="h-12 opacity-60 hover:opacity-100 transition-opacity"/>
         <img src="https://c.animaapp.com/mmkd7a1dRSnHAj/assets/Yellow-Fever-Zone.svg" alt="Yellow Fever Centre" class="h-10 opacity-60 hover:opacity-100 transition-opacity"/>
@@ -160,7 +160,7 @@
   </div>
 
   <!-- Bottom bar -->
-  <div class="border-t border-gray-200 bg-white">
+  <div class="border-t border-[#e8e0d8] bg-[#fdf9f6]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
         <p class="text-gray-900 text-base font-jost text-center md:text-left">
