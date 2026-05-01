@@ -368,7 +368,7 @@ $stars = str_repeat( $star_svg, 5 );
 <!-- ============================================================
      HEALTH HUB
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden bg-white">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]">
   <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-14 gap-6">
       <div class="flex-1">
