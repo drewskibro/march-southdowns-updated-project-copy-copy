@@ -198,7 +198,7 @@ $stars = str_repeat( $star_svg, 5 );
 <!-- ============================================================
      MOST POPULAR TREATMENTS
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden bg-slate-50 border-t border-slate-200">
+<section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]">
   <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
     <div class="text-center mb-10 md:mb-14">
       <div class="premium-badge flex items-center justify-center gap-4 mb-6">
