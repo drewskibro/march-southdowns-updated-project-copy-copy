@@ -198,12 +198,12 @@ $stars = str_repeat( $star_svg, 5 );
 <!-- ============================================================
      MOST POPULAR TREATMENTS
      ============================================================ -->
-<section class="relative py-16 md:py-24 overflow-hidden bg-white">
+<section class="relative py-16 md:py-24 overflow-hidden bg-slate-50 border-t border-slate-200">
   <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
     <div class="text-center mb-10 md:mb-14">
       <div class="premium-badge flex items-center justify-center gap-4 mb-6">
         <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
-        <span class="badge-text text-slate-500 text-sm font-light tracking-[0.15em] uppercase font-jost">Trusted by thousands across Hampshire</span>
+        <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">Trusted by thousands across Hampshire</span>
       </div>
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 mb-6 font-jost">Our Most Popular Treatments</h2>
       <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-jost">Comprehensive healthcare solutions tailored to your needs, delivered with care at our Hampshire locations.</p>
