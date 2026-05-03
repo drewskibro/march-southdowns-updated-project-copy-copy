@@ -433,6 +433,19 @@ $how_steps = ( ! empty( $how_steps_acf ) ) ? $how_steps_acf : $how_defaults;
 <!-- ============================================================
      S7: WHY THE NHS GAP MATTERS — Blue gradient, two-col text + image
      ============================================================ -->
+<?php
+$nhs_image           = get_field( 'ew_nhs_image' )            ?: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop';
+$nhs_image_alt       = get_field( 'ew_nhs_image_alt' )        ?: 'Friendly pharmacist consultation';
+$nhs_eyebrow         = get_field( 'ew_nhs_eyebrow' )          ?: 'Why Pharmacy Ear Care';
+$nhs_headline        = get_field( 'ew_nhs_headline' )         ?: 'Skip the 12&ndash;16 Week NHS Wait';
+$nhs_body_1          = get_field( 'ew_nhs_body_1' )           ?: 'In the UK, 3.9% of the population need earwax management yearly, many enduring 12&ndash;16 week waits. The lack of available NHS treatment leads many to suffer in silence, unaware that local pharmacy options exist.';
+$nhs_body_2          = get_field( 'ew_nhs_body_2' )           ?: 'At Southdowns Pharmacy Group, we&rsquo;ve partnered with <strong class="text-white">TympaHealth</strong> to provide easy and accessible ear wax removal at our Emsworth, Davies &amp; Bosmere branches. Various factors like age and loud noise exposure impact ear health. Don&rsquo;t let ear wax buildup lead to social withdrawal.';
+$nhs_locs_headline   = get_field( 'ew_nhs_locations_headline' ) ?: 'Serving across Hampshire:';
+$nhs_locations_raw   = get_field( 'ew_nhs_locations' );
+$nhs_locations       = $nhs_locations_raw
+    ? array_filter( array_map( 'trim', explode( "\n", $nhs_locations_raw ) ) )
+    : [ 'Emsworth', 'Havant', 'Rowlands Castle' ];
+?>
 <section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
   <div class="absolute inset-0 opacity-10">
     <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 -translate-y-1/2"></div>
@@ -443,7 +456,7 @@ $how_steps = ( ! empty( $how_steps_acf ) ) ? $how_steps_acf : $how_defaults;
 
       <!-- Left: image -->
       <div class="ew-reveal relative rounded-2xl overflow-hidden shadow-2xl group order-2 lg:order-1">
-        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format&fit=crop" alt="Friendly pharmacist consultation" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
+        <img src="<?php echo esc_url( $nhs_image ); ?>" alt="<?php echo esc_attr( $nhs_image_alt ); ?>" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
         <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
       </div>
 
@@ -451,17 +464,17 @@ $how_steps = ( ! empty( $how_steps_acf ) ) ? $how_steps_acf : $how_defaults;
       <div class="order-1 lg:order-2 ew-reveal" data-delay="1">
         <div class="premium-badge flex items-center justify-start gap-4 mb-6">
           <div class="badge-rule w-10 h-px bg-white/30"></div>
-          <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost">Why Pharmacy Ear Care</span>
+          <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost"><?php echo esc_html( $nhs_eyebrow ); ?></span>
         </div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-jost">Skip the 12&ndash;16 Week NHS Wait</h2>
-        <p class="text-blue-100 text-lg leading-relaxed mb-5 font-jost">In the UK, 3.9% of the population need earwax management yearly, many enduring 12&ndash;16 week waits. The lack of available NHS treatment leads many to suffer in silence, unaware that local pharmacy options exist.</p>
-        <p class="text-blue-100 text-lg leading-relaxed mb-6 font-jost">At Southdowns Pharmacy Group, we&rsquo;ve partnered with <strong class="text-white">TympaHealth</strong> to provide easy and accessible ear wax removal at our Emsworth, Davies &amp; Bosmere branches. Various factors like age and loud noise exposure impact ear health. Don&rsquo;t let ear wax buildup lead to social withdrawal.</p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-jost"><?php echo wp_kses_post( $nhs_headline ); ?></h2>
+        <p class="text-blue-100 text-lg leading-relaxed mb-5 font-jost"><?php echo wp_kses_post( $nhs_body_1 ); ?></p>
+        <p class="text-blue-100 text-lg leading-relaxed mb-6 font-jost"><?php echo wp_kses_post( $nhs_body_2 ); ?></p>
         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 mb-6">
-          <h4 class="text-white font-bold mb-3 font-jost">Serving across Hampshire:</h4>
+          <h4 class="text-white font-bold mb-3 font-jost"><?php echo esc_html( $nhs_locs_headline ); ?></h4>
           <div class="flex flex-wrap gap-2">
-            <span class="bg-white/20 text-white text-sm font-medium px-3 py-1.5 rounded-full border border-white/30 font-jost">Emsworth</span>
-            <span class="bg-white/20 text-white text-sm font-medium px-3 py-1.5 rounded-full border border-white/30 font-jost">Havant</span>
-            <span class="bg-white/20 text-white text-sm font-medium px-3 py-1.5 rounded-full border border-white/30 font-jost">Rowlands Castle</span>
+            <?php foreach ( $nhs_locations as $loc ) : ?>
+            <span class="bg-white/20 text-white text-sm font-medium px-3 py-1.5 rounded-full border border-white/30 font-jost"><?php echo esc_html( $loc ); ?></span>
+            <?php endforeach; ?>
           </div>
         </div>
         <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-7 py-3.5 rounded-full hover:bg-blue-50 transition-colors shadow-lg font-jost">
