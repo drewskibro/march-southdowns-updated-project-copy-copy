@@ -491,6 +491,25 @@ $nhs_locations       = $nhs_locations_raw
 <!-- ============================================================
      S8: PRICING — Light gradient, consultation card + glow treatment card
      ============================================================ -->
+<?php
+$pricing_eyebrow         = get_field( 'ew_pricing_eyebrow' )           ?: 'Transparent Pricing';
+$pricing_headline        = get_field( 'ew_pricing_headline' )          ?: 'Ear Wax Removal Pricing';
+$pricing_subhead         = get_field( 'ew_pricing_subhead' )           ?: 'Clear, upfront pricing with no hidden fees.';
+$pricing_c_price         = get_field( 'ew_pricing_consult_price' )     ?: '&pound;10';
+$pricing_c_title         = get_field( 'ew_pricing_consult_title' )     ?: 'Initial Consultation';
+$pricing_c_body          = get_field( 'ew_pricing_consult_body' )      ?: 'Comprehensive ear assessment before treatment to determine the best care for you.';
+$pricing_c_bullets_raw   = get_field( 'ew_pricing_consult_bullets' );
+$pricing_c_bullets       = $pricing_c_bullets_raw
+    ? array_filter( array_map( 'trim', explode( "\n", $pricing_c_bullets_raw ) ) )
+    : [ 'HD ear canal imaging', 'Symptom discussion', 'Treatment plan explanation' ];
+$pricing_t_price         = get_field( 'ew_pricing_treatment_price' )   ?: '&pound;49';
+$pricing_t_title         = get_field( 'ew_pricing_treatment_title' )   ?: 'Ear Wax Removal';
+$pricing_t_body          = get_field( 'ew_pricing_treatment_body' )    ?: 'Professional ear wax removal for clear, healthy ears.';
+$pricing_t_bullets_raw   = get_field( 'ew_pricing_treatment_bullets' );
+$pricing_t_bullets       = $pricing_t_bullets_raw
+    ? array_filter( array_map( 'trim', explode( "\n", $pricing_t_bullets_raw ) ) )
+    : [ 'Consultation included', 'Same-day appointments', 'Hearing screening included', 'Free 7-day follow-up', 'HD imaging before &amp; after' ];
+?>
 <section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]" id="pricing">
   <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-200/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
   <div class="absolute top-0 right-0 w-80 h-80 bg-cyan-200/15 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
@@ -498,10 +517,10 @@ $nhs_locations       = $nhs_locations_raw
     <div class="text-center mb-14">
       <div class="premium-badge flex items-center justify-center gap-4 mb-6">
         <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
-        <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">Transparent Pricing</span>
+        <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost"><?php echo esc_html( $pricing_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-jost">Ear Wax Removal Pricing</h2>
-      <p class="text-lg text-gray-500 max-w-2xl mx-auto font-jost">Clear, upfront pricing with no hidden fees.</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-jost"><?php echo esc_html( $pricing_headline ); ?></h2>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto font-jost"><?php echo esc_html( $pricing_subhead ); ?></p>
     </div>
     <div class="max-w-3xl mx-auto ew-reveal">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -509,14 +528,14 @@ $nhs_locations       = $nhs_locations_raw
         <!-- Consultation -->
         <div class="ew-card-lift bg-white rounded-2xl p-8 border border-gray-200 shadow-lg text-center">
           <div class="mb-4">
-            <span class="text-5xl font-bold text-slate-800 font-jost">&pound;10</span>
+            <span class="text-5xl font-bold text-slate-800 font-jost"><?php echo wp_kses_post( $pricing_c_price ); ?></span>
           </div>
-          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Initial Consultation</h3>
-          <p class="text-gray-500 text-base mb-6 font-jost">Comprehensive ear assessment before treatment to determine the best care for you.</p>
+          <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost"><?php echo esc_html( $pricing_c_title ); ?></h3>
+          <p class="text-gray-500 text-base mb-6 font-jost"><?php echo esc_html( $pricing_c_body ); ?></p>
           <ul class="text-left space-y-3 mb-6">
-            <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> HD ear canal imaging</li>
-            <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Symptom discussion</li>
-            <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Treatment plan explanation</li>
+            <?php foreach ( $pricing_c_bullets as $bullet ) : ?>
+            <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <?php echo wp_kses_post( $bullet ); ?></li>
+            <?php endforeach; ?>
           </ul>
           <a href="<?php echo esc_url( $booking_url ); ?>" class="block w-full text-blue-600 font-semibold py-3 rounded-full text-center border-2 border-blue-600 hover:bg-blue-50 transition-colors font-jost">Book Assessment</a>
         </div>
@@ -531,16 +550,14 @@ $nhs_locations       = $nhs_locations_raw
           </div>
           <div class="p-8 text-center">
             <div class="mb-4">
-              <span class="text-5xl font-bold text-slate-800 font-jost">&pound;49</span>
+              <span class="text-5xl font-bold text-slate-800 font-jost"><?php echo wp_kses_post( $pricing_t_price ); ?></span>
             </div>
-            <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost">Ear Wax Removal</h3>
-            <p class="text-gray-500 text-base mb-6 font-jost">Professional ear wax removal for clear, healthy ears.</p>
+            <h3 class="text-xl font-bold text-slate-800 mb-3 font-jost"><?php echo esc_html( $pricing_t_title ); ?></h3>
+            <p class="text-gray-500 text-base mb-6 font-jost"><?php echo esc_html( $pricing_t_body ); ?></p>
             <ul class="text-left space-y-3 mb-6">
-              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Consultation included</li>
-              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Same-day appointments</li>
-              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Hearing screening included</li>
-              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Free 7-day follow-up</li>
-              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> HD imaging before &amp; after</li>
+              <?php foreach ( $pricing_t_bullets as $bullet ) : ?>
+              <li class="flex items-start gap-3 text-gray-600 text-sm font-jost"><svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <?php echo wp_kses_post( $bullet ); ?></li>
+              <?php endforeach; ?>
             </ul>
             <a href="<?php echo esc_url( $booking_url ); ?>" class="block w-full text-white font-semibold py-3.5 rounded-full text-center transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] font-jost" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">Book Treatment</a>
           </div>
