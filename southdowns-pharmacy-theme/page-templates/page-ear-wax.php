@@ -168,6 +168,31 @@ $stats = ( ! empty( $stats_acf ) ) ? $stats_acf : $stats_defaults;
 <!-- ============================================================
      S3: COMMON SYMPTOMS — Blue gradient, 6 symptom cards
      ============================================================ -->
+<?php
+$symptoms_eyebrow = get_field( 'ew_symptoms_eyebrow' ) ?: 'Common Symptoms';
+$symptoms_headline = get_field( 'ew_symptoms_headline' ) ?: 'Is Ear Wax Affecting Your Daily Life?';
+$symptoms_subhead  = get_field( 'ew_symptoms_subhead' )  ?: 'Don&rsquo;t let blocked ears hold you back. Recognise these common symptoms?';
+$symptoms_acf      = get_field( 'ew_symptoms' );
+$symptoms_defaults = [
+    [ 'title' => 'Difficulty Hearing',    'body' => 'Muffled sounds or reduced hearing quality affecting conversations and daily activities.' ],
+    [ 'title' => 'Earache or Discomfort', 'body' => 'Persistent pain, pressure, or uncomfortable fullness in one or both ears.' ],
+    [ 'title' => 'Ringing or Buzzing',    'body' => 'Tinnitus symptoms including ringing, buzzing, or humming sounds in your ears.' ],
+    [ 'title' => 'Dizziness',             'body' => 'Feeling off-balance or experiencing vertigo due to blocked ear canals.' ],
+    [ 'title' => 'Hearing Aid Problems',  'body' => 'Failed hearing aid fitting or devices not working properly due to wax build-up.' ],
+    [ 'title' => 'Persistent Cough',      'body' => 'Unexplained coughing caused by ear wax stimulating nerves in the ear canal.' ],
+];
+$symptoms = ( ! empty( $symptoms_acf ) ) ? $symptoms_acf : $symptoms_defaults;
+
+// Icon sets by position (bg colour, border colour, stroke colour, SVG path).
+$symptom_icons = [
+    [ 'rgba(6,182,212,0.25)',   'rgba(34,211,238,0.5)',  '#67e8f9', '<path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>' ],
+    [ 'rgba(244,63,94,0.25)',   'rgba(253,164,175,0.5)', '#fda4af', '<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/>' ],
+    [ 'rgba(245,158,11,0.25)',  'rgba(252,211,77,0.5)',  '#fcd34d', '<path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>' ],
+    [ 'rgba(139,92,246,0.25)',  'rgba(196,181,253,0.5)', '#c4b5fd', '<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>' ],
+    [ 'rgba(16,185,129,0.25)',  'rgba(52,211,153,0.5)',  '#6ee7b7', '<path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>' ],
+    [ 'rgba(249,115,22,0.25)',  'rgba(253,186,116,0.5)', '#fdba74', '<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>' ],
+];
+?>
 <section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
   <div class="absolute inset-0 opacity-10">
     <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
@@ -177,61 +202,24 @@ $stats = ( ! empty( $stats_acf ) ) ? $stats_acf : $stats_defaults;
     <div class="text-center mb-12">
       <div class="premium-badge flex items-center justify-center gap-4 mb-6">
         <div class="badge-rule w-10 h-px bg-white/30"></div>
-        <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost">Common Symptoms</span>
+        <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost"><?php echo esc_html( $symptoms_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Is Ear Wax Affecting Your Daily Life?</h2>
-      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost">Don&rsquo;t let blocked ears hold you back. Recognise these common symptoms?</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost"><?php echo esc_html( $symptoms_headline ); ?></h2>
+      <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-jost"><?php echo wp_kses_post( $symptoms_subhead ); ?></p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-
-      <div class="ew-reveal group bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105" data-delay="1">
-        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(6,182,212,0.25);border:1px solid rgba(34,211,238,0.5);">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#67e8f9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+      <?php foreach ( $symptoms as $i => $symptom ) :
+        $icon = $symptom_icons[ $i % count( $symptom_icons ) ];
+        $delay = $i + 1;
+      ?>
+      <div class="ew-reveal group bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105" data-delay="<?php echo $delay; ?>">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:<?php echo $icon[0]; ?>;border:1px solid <?php echo $icon[1]; ?>;">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="<?php echo $icon[2]; ?>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><?php echo $icon[3]; ?></svg>
         </div>
-        <h3 class="text-white text-lg font-bold mb-3 font-jost">Difficulty Hearing</h3>
-        <p class="text-blue-100 leading-relaxed font-jost">Muffled sounds or reduced hearing quality affecting conversations and daily activities.</p>
+        <h3 class="text-white text-lg font-bold mb-3 font-jost"><?php echo esc_html( $symptom['title'] ); ?></h3>
+        <p class="text-blue-100 leading-relaxed font-jost"><?php echo esc_html( $symptom['body'] ); ?></p>
       </div>
-
-      <div class="ew-reveal group bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105" data-delay="2">
-        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(244,63,94,0.25);border:1px solid rgba(253,164,175,0.5);">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#fda4af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
-        </div>
-        <h3 class="text-white text-lg font-bold mb-3 font-jost">Earache or Discomfort</h3>
-        <p class="text-blue-100 leading-relaxed font-jost">Persistent pain, pressure, or uncomfortable fullness in one or both ears.</p>
-      </div>
-
-      <div class="ew-reveal group bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105" data-delay="3">
-        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(245,158,11,0.25);border:1px solid rgba(252,211,77,0.5);">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#fcd34d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
-        </div>
-        <h3 class="text-white text-lg font-bold mb-3 font-jost">Ringing or Buzzing</h3>
-        <p class="text-blue-100 leading-relaxed font-jost">Tinnitus symptoms including ringing, buzzing, or humming sounds in your ears.</p>
-      </div>
-
-      <div class="ew-reveal group bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105" data-delay="4">
-        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(139,92,246,0.25);border:1px solid rgba(196,181,253,0.5);">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-        </div>
-        <h3 class="text-white text-lg font-bold mb-3 font-jost">Dizziness</h3>
-        <p class="text-blue-100 leading-relaxed font-jost">Feeling off-balance or experiencing vertigo due to blocked ear canals.</p>
-      </div>
-
-      <div class="ew-reveal group bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105" data-delay="5">
-        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(16,185,129,0.25);border:1px solid rgba(52,211,153,0.5);">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#6ee7b7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
-        </div>
-        <h3 class="text-white text-lg font-bold mb-3 font-jost">Hearing Aid Problems</h3>
-        <p class="text-blue-100 leading-relaxed font-jost">Failed hearing aid fitting or devices not working properly due to wax build-up.</p>
-      </div>
-
-      <div class="ew-reveal group bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105" data-delay="6">
-        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(249,115,22,0.25);border:1px solid rgba(253,186,116,0.5);">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#fdba74" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3 class="text-white text-lg font-bold mb-3 font-jost">Persistent Cough</h3>
-        <p class="text-blue-100 leading-relaxed font-jost">Unexplained coughing caused by ear wax stimulating nerves in the ear canal.</p>
-      </div>
-
+      <?php endforeach; ?>
     </div>
     <div class="text-center mt-10">
       <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-7 py-3.5 rounded-full hover:bg-blue-50 transition-colors shadow-lg font-jost">
