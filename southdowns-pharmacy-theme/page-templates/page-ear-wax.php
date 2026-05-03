@@ -129,6 +129,18 @@ $hero_roundel_3_alt = get_field( 'ew_hero_roundel_3_alt' ) ?: '5-Star Rated';
 <!-- ============================================================
      S2: KEY STATS — Light gradient, 4 white stat cards
      ============================================================ -->
+<?php
+$stats_headline = get_field( 'ew_stats_headline' ) ?: 'Professional Microsuction Treatment';
+$stats_subhead  = get_field( 'ew_stats_subhead' )  ?: 'The safest and most effective method of ear wax removal, available across our Hampshire locations.';
+$stats_acf      = get_field( 'ew_stats' );
+$stats_defaults = [
+    [ 'value' => '20',    'label' => 'Minute Appointments' ],
+    [ 'value' => '95%+',  'label' => 'Success Rate' ],
+    [ 'value' => 'Same',  'label' => 'Day Appointments' ],
+    [ 'value' => 'Free',  'label' => 'Follow-Up Included' ],
+];
+$stats = ( ! empty( $stats_acf ) ) ? $stats_acf : $stats_defaults;
+?>
 <section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]">
   <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-80 h-80 bg-cyan-100/20 rounded-full -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
@@ -138,26 +150,16 @@ $hero_roundel_3_alt = get_field( 'ew_hero_roundel_3_alt' ) ?: '5-Star Rated';
         <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
         <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">At a Glance</span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost">Professional Microsuction Treatment</h2>
-      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost">The safest and most effective method of ear wax removal, available across our Hampshire locations.</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 font-jost"><?php echo esc_html( $stats_headline ); ?></h2>
+      <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-jost"><?php echo esc_html( $stats_subhead ); ?></p>
     </div>
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-      <div class="ew-reveal ew-card-lift text-center p-6 md:p-8 bg-white rounded-2xl border border-blue-100/60 shadow-sm hover:shadow-md transition-shadow" data-delay="1">
-        <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 font-jost">20</div>
-        <div class="text-sm md:text-base text-gray-500 font-medium font-jost">Minute Appointments</div>
+      <?php foreach ( $stats as $i => $stat ) : $delay = $i + 1; ?>
+      <div class="ew-reveal ew-card-lift text-center p-6 md:p-8 bg-white rounded-2xl border border-blue-100/60 shadow-sm hover:shadow-md transition-shadow" data-delay="<?php echo $delay; ?>">
+        <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 font-jost"><?php echo esc_html( $stat['value'] ); ?></div>
+        <div class="text-sm md:text-base text-gray-500 font-medium font-jost"><?php echo esc_html( $stat['label'] ); ?></div>
       </div>
-      <div class="ew-reveal ew-card-lift text-center p-6 md:p-8 bg-white rounded-2xl border border-blue-100/60 shadow-sm hover:shadow-md transition-shadow" data-delay="2">
-        <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 font-jost">95%+</div>
-        <div class="text-sm md:text-base text-gray-500 font-medium font-jost">Success Rate</div>
-      </div>
-      <div class="ew-reveal ew-card-lift text-center p-6 md:p-8 bg-white rounded-2xl border border-blue-100/60 shadow-sm hover:shadow-md transition-shadow" data-delay="3">
-        <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 font-jost">Same</div>
-        <div class="text-sm md:text-base text-gray-500 font-medium font-jost">Day Appointments</div>
-      </div>
-      <div class="ew-reveal ew-card-lift text-center p-6 md:p-8 bg-white rounded-2xl border border-blue-100/60 shadow-sm hover:shadow-md transition-shadow" data-delay="4">
-        <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 font-jost">Free</div>
-        <div class="text-sm md:text-base text-gray-500 font-medium font-jost">Follow-Up Included</div>
-      </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>
