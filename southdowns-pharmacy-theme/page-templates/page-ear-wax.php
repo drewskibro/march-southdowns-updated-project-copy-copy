@@ -288,6 +288,21 @@ $about_stat2_lbl  = get_field( 'ew_about_stat_2_label' ) ?: 'Dry procedure &mdas
 <!-- ============================================================
      S5: TREATMENT COMPARISON — Blue gradient, comparison table
      ============================================================ -->
+<?php
+$cmp_eyebrow  = get_field( 'ew_comparison_eyebrow' )  ?: 'Treatment Comparison';
+$cmp_headline = get_field( 'ew_comparison_headline' ) ?: 'How Our Treatment Compares';
+$cmp_subhead  = get_field( 'ew_comparison_subhead' )  ?: 'See why microsuction is the gold standard for ear wax removal.';
+$cmp_rows_acf = get_field( 'ew_comparison_rows' );
+$cmp_defaults = [
+    [ 'feature' => 'Treatment Time',              'microsuction' => 'Up to 30 minutes',  'syringing' => '30+ minutes',  'home_remedies' => 'Days or weeks' ],
+    [ 'feature' => 'Water Spillage',              'microsuction' => 'None &#10003;',     'syringing' => 'Moderate',     'home_remedies' => 'Drips and Leaks' ],
+    [ 'feature' => 'Risk Level',                  'microsuction' => 'Very Low &#10003;', 'syringing' => 'Moderate',     'home_remedies' => 'Varies' ],
+    [ 'feature' => 'Success Rate',                'microsuction' => '95%+ &#10003;',     'syringing' => '70&ndash;80%', 'home_remedies' => 'Under 50%' ],
+    [ 'feature' => 'Immediate Results',           'microsuction' => 'Yes &#10003;',      'syringing' => 'Sometimes',    'home_remedies' => 'Rarely' ],
+    [ 'feature' => 'Safe for Perforated Eardrums','microsuction' => 'Yes &#10003;',      'syringing' => 'No',           'home_remedies' => 'No' ],
+];
+$cmp_rows = ( ! empty( $cmp_rows_acf ) ) ? $cmp_rows_acf : $cmp_defaults;
+?>
 <section class="relative py-16 md:py-20 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
   <div class="absolute inset-0 opacity-10">
     <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 -translate-y-1/2"></div>
@@ -297,10 +312,10 @@ $about_stat2_lbl  = get_field( 'ew_about_stat_2_label' ) ?: 'Dry procedure &mdas
     <div class="text-center mb-12">
       <div class="premium-badge flex items-center justify-center gap-4 mb-6">
         <div class="badge-rule w-10 h-px bg-white/30"></div>
-        <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost">Treatment Comparison</span>
+        <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost"><?php echo esc_html( $cmp_eyebrow ); ?></span>
       </div>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-jost">How Our Treatment Compares</h2>
-      <p class="text-lg text-blue-100 max-w-3xl mx-auto font-jost">See why microsuction is the gold standard for ear wax removal.</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-jost"><?php echo esc_html( $cmp_headline ); ?></h2>
+      <p class="text-lg text-blue-100 max-w-3xl mx-auto font-jost"><?php echo esc_html( $cmp_subhead ); ?></p>
     </div>
     <div class="ew-reveal bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden">
       <div class="overflow-x-auto">
@@ -314,23 +329,14 @@ $about_stat2_lbl  = get_field( 'ew_about_stat_2_label' ) ?: 'Dry procedure &mdas
             </tr>
           </thead>
           <tbody class="text-sm font-jost">
-            <?php
-            $rows = [
-              ['Treatment Time',                  'Up to 30 minutes',  '30+ minutes',   'Days or weeks'],
-              ['Water Spillage',                   'None &#10003;',     'Moderate',      'Drips and Leaks'],
-              ['Risk Level',                       'Very Low &#10003;', 'Moderate',      'Varies'],
-              ['Success Rate',                     '95%+ &#10003;',     '70&ndash;80%',  'Under 50%'],
-              ['Immediate Results',                'Yes &#10003;',      'Sometimes',     'Rarely'],
-              ['Safe for Perforated Eardrums',     'Yes &#10003;',      'No',            'No'],
-            ];
-            foreach ( $rows as $i => $row ) :
-              $border = ( $i < count($rows) - 1 ) ? 'border-b border-white/10' : '';
+            <?php foreach ( $cmp_rows as $i => $row ) :
+              $border = ( $i < count( $cmp_rows ) - 1 ) ? 'border-b border-white/10' : '';
             ?>
             <tr class="<?php echo $border; ?>">
-              <td class="px-6 py-4 text-blue-100 font-medium"><?php echo $row[0]; ?></td>
-              <td class="px-6 py-4 text-white font-semibold bg-white/5"><?php echo $row[1]; ?></td>
-              <td class="px-6 py-4 text-blue-200"><?php echo $row[2]; ?></td>
-              <td class="px-6 py-4 text-blue-200"><?php echo $row[3]; ?></td>
+              <td class="px-6 py-4 text-blue-100 font-medium"><?php echo wp_kses_post( $row['feature'] ); ?></td>
+              <td class="px-6 py-4 text-white font-semibold bg-white/5"><?php echo wp_kses_post( $row['microsuction'] ); ?></td>
+              <td class="px-6 py-4 text-blue-200"><?php echo wp_kses_post( $row['syringing'] ); ?></td>
+              <td class="px-6 py-4 text-blue-200"><?php echo wp_kses_post( $row['home_remedies'] ); ?></td>
             </tr>
             <?php endforeach; ?>
           </tbody>
