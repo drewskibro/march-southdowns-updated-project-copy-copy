@@ -15,7 +15,7 @@ $hero_image_alt   = get_field( 'ew_hero_image_alt' )  ?: 'Professional ear wax r
 $hero_badge       = get_field( 'ew_hero_badge' )      ?: 'TympaHealth Certified';
 $hero_headline    = get_field( 'ew_hero_headline' )   ?: 'Professional <span class="serif-accent">ear wax removal</span> by microsuction';
 $hero_body        = get_field( 'ew_hero_body' )       ?: 'Powered by TympaHealth, our trained clinicians use gentle low-pressure microsuction &mdash; the gold standard in ear care. No water, no mess, completely painless with immediate results.';
-$hero_sub_text    = get_field( 'ew_hero_sub_text' )   ?: 'From &pound;49 &middot; Free follow-up included &middot; Same-day appointments';
+$hero_sub_text    = get_field( 'ew_hero_sub_text' )   ?: '&pound;50 one ear &middot; &pound;55 both ears &middot; Same-day appointments';
 $hero_roundel_1   = get_field( 'ew_hero_roundel_1' )  ?: 'https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773073398697-0.png';
 $hero_roundel_1_alt = get_field( 'ew_hero_roundel_1_alt' ) ?: 'Same Day Appointments';
 $hero_roundel_2   = get_field( 'ew_hero_roundel_2' )  ?: 'https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773073398697-0.png';
@@ -137,7 +137,7 @@ $stats_defaults = [
     [ 'value' => '20',    'label' => 'Minute Appointments' ],
     [ 'value' => '95%+',  'label' => 'Success Rate' ],
     [ 'value' => 'Same',  'label' => 'Day Appointments' ],
-    [ 'value' => 'Free',  'label' => 'Follow-Up Included' ],
+    [ 'value' => 'From',  'label' => '&pound;50 Per Ear' ],
 ];
 $stats = ( ! empty( $stats_acf ) ) ? $stats_acf : $stats_defaults;
 ?>
@@ -361,7 +361,7 @@ $how_steps_acf  = get_field( 'ew_how_steps' );
 $how_defaults   = [
     [ 'title' => 'Initial Assessment',        'body' => 'Detailed ear examination using high-definition imaging. We discuss your symptoms, review your ear health history, and explain the treatment plan. No-obligation assessment.',                                                                   'duration_label' => '~10 minutes',       'duration_style' => 'blue' ],
     [ 'title' => 'Microsuction Treatment',    'body' => 'Gentle wax removal using low-pressure suction with continuous monitoring and real-time imaging. Your clinician provides progress updates throughout. Completely painless with immediate relief.',                                        'duration_label' => '15&ndash;20 minutes','duration_style' => 'blue' ],
-    [ 'title' => 'Aftercare &amp; Follow-Up', 'body' => 'Prevention advice, home care tips, and hearing screening if needed. There is a <strong>free follow-up appointment</strong> included to determine if you need to return on a 3 or 6-month interval.', 'duration_label' => 'Free follow-up',    'duration_style' => 'green' ],
+    [ 'title' => 'Aftercare &amp; Advice',    'body' => 'Prevention advice, home care tips, and hearing screening if needed. Professional ear wax removal for clear, healthy ears.',                                                              'duration_label' => '',               'duration_style' => 'blue' ],
 ];
 $how_steps = ( ! empty( $how_steps_acf ) ) ? $how_steps_acf : $how_defaults;
 ?>
@@ -439,12 +439,12 @@ $nhs_image_alt       = get_field( 'ew_nhs_image_alt' )        ?: 'Friendly pharm
 $nhs_eyebrow         = get_field( 'ew_nhs_eyebrow' )          ?: 'Why Pharmacy Ear Care';
 $nhs_headline        = get_field( 'ew_nhs_headline' )         ?: 'Skip the 12&ndash;16 Week NHS Wait';
 $nhs_body_1          = get_field( 'ew_nhs_body_1' )           ?: 'In the UK, 3.9% of the population need earwax management yearly, many enduring 12&ndash;16 week waits. The lack of available NHS treatment leads many to suffer in silence, unaware that local pharmacy options exist.';
-$nhs_body_2          = get_field( 'ew_nhs_body_2' )           ?: 'At Southdowns Pharmacy Group, we&rsquo;ve partnered with <strong class="text-white">TympaHealth</strong> to provide easy and accessible ear wax removal at our Emsworth, Davies &amp; Bosmere branches. Various factors like age and loud noise exposure impact ear health. Don&rsquo;t let ear wax buildup lead to social withdrawal.';
-$nhs_locs_headline   = get_field( 'ew_nhs_locations_headline' ) ?: 'Serving across Hampshire:';
+$nhs_body_2          = get_field( 'ew_nhs_body_2' )           ?: 'At Southdowns Pharmacy Group, we&rsquo;ve partnered with <strong class="text-white">TympaHealth</strong> to provide easy and accessible ear wax removal at our branch. Various factors like age and loud noise exposure impact ear health. Don&rsquo;t let ear wax buildup lead to social withdrawal.';
+$nhs_locs_headline   = get_field( 'ew_nhs_locations_headline' ) ?: 'Available at:';
 $nhs_locations_raw   = get_field( 'ew_nhs_locations' );
 $nhs_locations       = $nhs_locations_raw
     ? array_filter( array_map( 'trim', explode( "\n", $nhs_locations_raw ) ) )
-    : [ 'Emsworth', 'Havant', 'Rowlands Castle' ];
+    : [ 'Southdowns Pharmacy, [INSERT BRANCH LOCATION]' ];
 ?>
 <section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
   <div class="absolute inset-0 opacity-10">
@@ -489,26 +489,26 @@ $nhs_locations       = $nhs_locations_raw
 
 
 <!-- ============================================================
-     S8: PRICING — Light gradient, consultation card + glow treatment card
+     S8: PRICING — Light gradient, one-ear card + two-ear glow card
      ============================================================ -->
 <?php
 $pricing_eyebrow         = get_field( 'ew_pricing_eyebrow' )           ?: 'Transparent Pricing';
 $pricing_headline        = get_field( 'ew_pricing_headline' )          ?: 'Ear Wax Removal Pricing';
-$pricing_subhead         = get_field( 'ew_pricing_subhead' )           ?: 'Clear, upfront pricing with no hidden fees.';
-$pricing_c_price         = get_field( 'ew_pricing_consult_price' )     ?: '&pound;10';
-$pricing_c_title         = get_field( 'ew_pricing_consult_title' )     ?: 'Initial Consultation';
-$pricing_c_body          = get_field( 'ew_pricing_consult_body' )      ?: 'Comprehensive ear assessment before treatment to determine the best care for you.';
+$pricing_subhead         = get_field( 'ew_pricing_subhead' )           ?: 'Clear, upfront pricing with no hidden fees. Consultation included.';
+$pricing_c_price         = get_field( 'ew_pricing_consult_price' )     ?: '&pound;50';
+$pricing_c_title         = get_field( 'ew_pricing_consult_title' )     ?: 'One Ear';
+$pricing_c_body          = get_field( 'ew_pricing_consult_body' )      ?: 'Professional ear wax removal for clear, healthy ears.';
 $pricing_c_bullets_raw   = get_field( 'ew_pricing_consult_bullets' );
 $pricing_c_bullets       = $pricing_c_bullets_raw
     ? array_filter( array_map( 'trim', explode( "\n", $pricing_c_bullets_raw ) ) )
-    : [ 'HD ear canal imaging', 'Symptom discussion', 'Treatment plan explanation' ];
-$pricing_t_price         = get_field( 'ew_pricing_treatment_price' )   ?: '&pound;49';
-$pricing_t_title         = get_field( 'ew_pricing_treatment_title' )   ?: 'Ear Wax Removal';
+    : [ 'Consultation included', 'Same-day appointments', 'HD ear canal imaging', 'Hearing screening included' ];
+$pricing_t_price         = get_field( 'ew_pricing_treatment_price' )   ?: '&pound;55';
+$pricing_t_title         = get_field( 'ew_pricing_treatment_title' )   ?: 'Both Ears';
 $pricing_t_body          = get_field( 'ew_pricing_treatment_body' )    ?: 'Professional ear wax removal for clear, healthy ears.';
 $pricing_t_bullets_raw   = get_field( 'ew_pricing_treatment_bullets' );
 $pricing_t_bullets       = $pricing_t_bullets_raw
     ? array_filter( array_map( 'trim', explode( "\n", $pricing_t_bullets_raw ) ) )
-    : [ 'Consultation included', 'Same-day appointments', 'Hearing screening included', 'Free 7-day follow-up', 'HD imaging before &amp; after' ];
+    : [ 'Consultation included', 'Same-day appointments', 'HD imaging before &amp; after', 'Hearing screening included' ];
 ?>
 <section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]" id="pricing">
   <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-200/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
@@ -582,8 +582,8 @@ $why_defaults  = [
     [ 'title' => 'Real-Time HD Imaging',    'body' => 'Using advanced imaging equipment, we can see exactly what&rsquo;s in your ear canal before and during treatment.' ],
     [ 'title' => 'Same-Day Appointments',   'body' => 'No NHS waiting. Same-day microsuction appointments available subject to availability.' ],
     [ 'title' => 'Painless Procedure',      'body' => 'No water, no mess &mdash; just gentle suction for a comfortable experience with immediate hearing improvement.' ],
-    [ 'title' => '3 Convenient Locations',  'body' => 'Available at Emsworth, Davies &amp; Bosmere. Serving Havant, Rowlands Castle and surrounds.' ],
-    [ 'title' => 'Free Follow-Up',          'body' => 'Complimentary aftercare appointment included to check progress and determine if further treatment is needed.' ],
+    [ 'title' => 'Convenient Location',     'body' => 'Available at Southdowns Pharmacy, [INSERT BRANCH LOCATION]. Easy access with same-day appointments available.' ],
+    [ 'title' => 'Professional Service',   'body' => 'Professional ear wax removal for clear, healthy ears. Carried out by trained, TympaHealth certified clinicians.' ],
 ];
 $why_cards = ( ! empty( $why_cards_acf ) ) ? $why_cards_acf : $why_defaults;
 
@@ -637,9 +637,9 @@ $test_eyebrow  = get_field( 'ew_testimonials_eyebrow' )  ?: 'Patient Reviews';
 $test_headline = get_field( 'ew_testimonials_headline' ) ?: 'What Our Patients Say';
 $test_acf      = get_field( 'ew_testimonials' );
 $test_defaults = [
-    [ 'initials' => 'DW', 'name' => 'David Williams',  'branch' => 'Emsworth Branch', 'quote' => 'After weeks of muffled hearing, I got my ears treated here. The difference was immediate &mdash; I could hear clearly again! The clinician was so gentle and explained everything. Highly recommend!' ],
-    [ 'initials' => 'MT', 'name' => 'Margaret Turner', 'branch' => 'Davies Branch',   'quote' => 'Much better than the traditional syringing I had years ago. No mess, no fuss, just clear hearing again. The appointment only took 20 minutes and the staff were lovely.' ],
-    [ 'initials' => 'JR', 'name' => 'John Roberts',    'branch' => 'Bosmere Branch',  'quote' => 'Fantastic service. Painless procedure and immediate relief. I&rsquo;d been suffering for months with blocked ears and the GP wait was ridiculous. So glad I found Southdowns!' ],
+    [ 'initials' => 'DW', 'name' => 'David Williams',  'branch' => 'Southdowns Pharmacy', 'quote' => 'After weeks of muffled hearing, I got my ears treated here. The difference was immediate &mdash; I could hear clearly again! The clinician was so gentle and explained everything. Highly recommend!' ],
+    [ 'initials' => 'MT', 'name' => 'Margaret Turner', 'branch' => 'Southdowns Pharmacy', 'quote' => 'Much better than the traditional syringing I had years ago. No mess, no fuss, just clear hearing again. The appointment only took 20 minutes and the staff were lovely.' ],
+    [ 'initials' => 'JR', 'name' => 'John Roberts',    'branch' => 'Southdowns Pharmacy', 'quote' => 'Fantastic service. Painless procedure and immediate relief. I&rsquo;d been suffering for months with blocked ears and the GP wait was ridiculous. So glad I found Southdowns!' ],
 ];
 $testimonials = ( ! empty( $test_acf ) ) ? $test_acf : $test_defaults;
 // Avatar colour pairs cycle by position.
@@ -701,9 +701,9 @@ $faqs_defaults = [
     [ 'question' => 'Do I need to use ear drops before my appointment?', 'answer' => 'We recommend using olive oil or sodium bicarbonate ear drops for <strong>2&ndash;3 days before your appointment</strong>. This softens the wax and makes removal easier and quicker. However, we can often remove wax without prior preparation.' ],
     [ 'question' => 'Is the service available on the NHS?',         'answer' => 'Many NHS GP surgeries no longer offer ear wax removal, and where they do, waiting times can be 12&ndash;16 weeks. Our private service means you can be seen <strong>the same day with no referral needed</strong>, so you get relief immediately.' ],
     [ 'question' => 'Is there an age restriction?',                 'answer' => '<strong>Yes, this service is strictly for ages 18 and over only.</strong> If you make a booking for someone under 18, there is a strict no-refund policy as clinical time has been allocated. Please do not book for any persons under the age of 18.' ],
-    [ 'question' => 'How often will I need treatment?',             'answer' => 'This varies from person to person. Some people only need treatment once. Others who produce excess wax may benefit from appointments <strong>every 3 to 6 months</strong>. Your clinician will advise a personalised schedule during your free follow-up.' ],
+    [ 'question' => 'How often will I need treatment?',             'answer' => 'This varies from person to person. Some people only need treatment once. Others who produce excess wax may benefit from appointments <strong>every 3 to 6 months</strong>. Your clinician will advise a personalised schedule at the end of your appointment.' ],
     [ 'question' => 'What if you find something other than wax?',   'answer' => 'During the examination, high-definition images and videos are taken. This can identify infections, perforations, or other conditions. If we find anything that requires further investigation, we&rsquo;ll advise you to visit your GP or refer you to a specialist ENT doctor.' ],
-    [ 'question' => 'Which branches offer this service?',           'answer' => 'TympaHealth ear wax removal is currently available at our <strong>Emsworth, Davies &amp; Bosmere</strong> branches. We serve patients from Emsworth, Havant, Rowlands Castle and the surrounding Hampshire area. Contact us for the nearest location.' ],
+    [ 'question' => 'Where is the service available?',              'answer' => 'TympaHealth ear wax removal is available at <strong>Southdowns Pharmacy, [INSERT BRANCH LOCATION]</strong>. Contact us to book or to find out more about the service.' ],
 ];
 $faqs = ( ! empty( $faqs_acf ) ) ? $faqs_acf : $faqs_defaults;
 ?>
@@ -739,7 +739,7 @@ $faqs = ( ! empty( $faqs_acf ) ) ? $faqs_acf : $faqs_defaults;
         </div>
         <div class="hidden lg:block space-y-3">
           <a href="<?php echo esc_url( $booking_url ); ?>" class="flex items-center justify-center gap-2 bg-white text-blue-700 hover:bg-blue-50 font-semibold px-6 py-3.5 rounded-full transition-all shadow-lg font-jost">Book Appointment</a>
-          <p class="text-blue-200 text-sm text-center font-jost">From &pound;49 &middot; Free follow-up included</p>
+          <p class="text-blue-200 text-sm text-center font-jost">&pound;50 one ear &middot; &pound;55 both ears</p>
         </div>
       </div>
 
@@ -839,7 +839,7 @@ $faqs = ( ! empty( $faqs_acf ) ) ? $faqs_acf : $faqs_defaults;
 $cta_pills_raw   = get_field( 'ew_cta_trust_pills' );
 $cta_pills       = $cta_pills_raw
     ? array_filter( array_map( 'trim', explode( "\n", $cta_pills_raw ) ) )
-    : [ 'TympaHealth Certified', 'Free Follow-Up', 'Same-Day Available', 'Ages 18+ Only' ];
+    : [ 'TympaHealth Certified', '&pound;50 One Ear', '&pound;55 Both Ears', 'Same-Day Available', 'Ages 18+ Only' ];
 $cta_headline    = get_field( 'ew_cta_headline' )      ?: 'Clearer Hearing Starts Today';
 $cta_body        = get_field( 'ew_cta_body' )          ?: 'Don&rsquo;t suffer in silence. Book your ear wax removal appointment at one of our TympaHealth-equipped branches and experience immediate relief.';
 $cta_stat_rating  = get_field( 'ew_cta_stat_rating' )  ?: '4.9/5';
@@ -874,7 +874,7 @@ $cta_stat_patients= get_field( 'ew_cta_stat_patients') ?: '10,000+';
       <span>&#10003; <?php echo esc_html( $pill ); ?></span>
       <?php endforeach; ?>
     </div>
-    <p class="text-blue-200/70 text-sm font-jost">Serving Emsworth, Havant, Rowlands Castle &amp; wider Hampshire</p>
+    <p class="text-blue-200/70 text-sm font-jost">Available at Southdowns Pharmacy, [INSERT BRANCH LOCATION]</p>
     <!-- Trust indicators -->
     <div class="mt-10 flex flex-wrap justify-center items-center gap-8 md:gap-12">
       <div class="text-center">
