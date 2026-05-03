@@ -234,6 +234,18 @@ $symptom_icons = [
 <!-- ============================================================
      S4: WHAT IS MICROSUCTION — Two-column: white left + image right
      ============================================================ -->
+<?php
+$about_image      = get_field( 'ew_about_image' )      ?: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=900&q=80&auto=format&fit=crop';
+$about_image_alt  = get_field( 'ew_about_image_alt' )  ?: 'Professional ear examination with advanced equipment';
+$about_eyebrow    = get_field( 'ew_about_eyebrow' )    ?: 'What You Need to Know';
+$about_headline   = get_field( 'ew_about_headline' )   ?: 'What Is Ear Microsuction?';
+$about_body_1     = get_field( 'ew_about_body_1' )     ?: 'Ear Microsuction is the safest and most effective way to remove earwax. It works by inserting a low-pressure suction probe into the ear. One of our trained clinicians wearing a microscope will control the probe to clear the ear canal of wax.';
+$about_body_2     = get_field( 'ew_about_body_2' )     ?: 'Painless and clean &mdash; no water squirted into your ear canal like syringing. Immediate results every time.';
+$about_stat1_val  = get_field( 'ew_about_stat_1_value' ) ?: '95%+';
+$about_stat1_lbl  = get_field( 'ew_about_stat_1_label' ) ?: 'Success rate with immediate improvement in hearing';
+$about_stat2_val  = get_field( 'ew_about_stat_2_value' ) ?: 'No Water';
+$about_stat2_lbl  = get_field( 'ew_about_stat_2_label' ) ?: 'Dry procedure &mdash; no mess, no water squirted into your ears';
+?>
 <section class="relative overflow-hidden" id="about">
   <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[540px]">
     <!-- Left: copy -->
@@ -243,26 +255,26 @@ $symptom_icons = [
       <div class="relative z-10 ew-reveal">
         <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
           <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
-          <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">What You Need to Know</span>
+          <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost"><?php echo esc_html( $about_eyebrow ); ?></span>
         </div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-jost leading-tight">What Is Ear Microsuction?</h2>
-        <p class="text-gray-600 text-lg leading-relaxed mb-5 font-jost">Ear Microsuction is the safest and most effective way to remove earwax. It works by inserting a low-pressure suction probe into the ear. One of our trained clinicians wearing a microscope will control the probe to clear the ear canal of wax.</p>
-        <p class="text-gray-600 text-lg leading-relaxed mb-8 font-jost">Painless and clean &mdash; no water squirted into your ear canal like syringing. Immediate results every time.</p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6 font-jost leading-tight"><?php echo esc_html( $about_headline ); ?></h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-5 font-jost"><?php echo wp_kses_post( $about_body_1 ); ?></p>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8 font-jost"><?php echo wp_kses_post( $about_body_2 ); ?></p>
         <div class="grid grid-cols-2 gap-4">
           <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
-            <div class="text-3xl font-bold text-blue-600 mb-1 font-jost">95%+</div>
-            <div class="text-gray-500 text-sm font-jost">Success rate with immediate improvement in hearing</div>
+            <div class="text-3xl font-bold text-blue-600 mb-1 font-jost"><?php echo esc_html( $about_stat1_val ); ?></div>
+            <div class="text-gray-500 text-sm font-jost"><?php echo wp_kses_post( $about_stat1_lbl ); ?></div>
           </div>
           <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
-            <div class="text-3xl font-bold text-blue-600 mb-1 font-jost">No Water</div>
-            <div class="text-gray-500 text-sm font-jost">Dry procedure &mdash; no mess, no water squirted into your ears</div>
+            <div class="text-3xl font-bold text-blue-600 mb-1 font-jost"><?php echo esc_html( $about_stat2_val ); ?></div>
+            <div class="text-gray-500 text-sm font-jost"><?php echo wp_kses_post( $about_stat2_lbl ); ?></div>
           </div>
         </div>
       </div>
     </div>
     <!-- Right: image -->
     <div class="relative overflow-hidden min-h-[400px] lg:min-h-0">
-      <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=900&q=80&auto=format&fit=crop" alt="Professional ear examination with advanced equipment" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy"/>
+      <img src="<?php echo esc_url( $about_image ); ?>" alt="<?php echo esc_attr( $about_image_alt ); ?>" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy"/>
       <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
       <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-lg">
         <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
