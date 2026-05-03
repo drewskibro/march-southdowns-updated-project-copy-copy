@@ -353,6 +353,8 @@ add_filter( 'use_block_editor_for_post', function( bool $use_block_editor, \WP_P
         // COVID-19 vaccine pages — acf_after_title requires classic editor
         'page-templates/page-covid-vaccine.php',
         'page-templates/page-covid-vaccine-private.php',
+        // Ear wax removal — acf_after_title requires classic editor
+        'page-templates/page-ear-wax.php',
     ];
     $template = get_page_template_slug( $post->ID );
     if ( in_array( $template, $custom_templates, true ) ) {
