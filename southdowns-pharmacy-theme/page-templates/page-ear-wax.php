@@ -632,6 +632,23 @@ $why_icons = [
 <!-- ============================================================
      S10: TESTIMONIALS — Light gradient, 3 patient review cards
      ============================================================ -->
+<?php
+$test_eyebrow  = get_field( 'ew_testimonials_eyebrow' )  ?: 'Patient Reviews';
+$test_headline = get_field( 'ew_testimonials_headline' ) ?: 'What Our Patients Say';
+$test_acf      = get_field( 'ew_testimonials' );
+$test_defaults = [
+    [ 'initials' => 'DW', 'name' => 'David Williams',  'branch' => 'Emsworth Branch', 'quote' => 'After weeks of muffled hearing, I got my ears treated here. The difference was immediate &mdash; I could hear clearly again! The clinician was so gentle and explained everything. Highly recommend!' ],
+    [ 'initials' => 'MT', 'name' => 'Margaret Turner', 'branch' => 'Davies Branch',   'quote' => 'Much better than the traditional syringing I had years ago. No mess, no fuss, just clear hearing again. The appointment only took 20 minutes and the staff were lovely.' ],
+    [ 'initials' => 'JR', 'name' => 'John Roberts',    'branch' => 'Bosmere Branch',  'quote' => 'Fantastic service. Painless procedure and immediate relief. I&rsquo;d been suffering for months with blocked ears and the GP wait was ridiculous. So glad I found Southdowns!' ],
+];
+$testimonials = ( ! empty( $test_acf ) ) ? $test_acf : $test_defaults;
+// Avatar colour pairs cycle by position.
+$avatar_colours = [
+    [ 'bg-blue-100', 'text-blue-600' ],
+    [ 'bg-cyan-100', 'text-cyan-600' ],
+    [ 'bg-blue-100', 'text-blue-600' ],
+];
+?>
 <section class="relative py-16 md:py-24 overflow-hidden bg-[#fdf9f6] border-t border-[#e8e0d8]">
   <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/25 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-72 h-72 bg-cyan-100/20 rounded-full -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
@@ -639,28 +656,25 @@ $why_icons = [
     <div class="text-center mb-14">
       <div class="premium-badge flex items-center justify-center gap-4 mb-6">
         <div class="badge-rule w-10 h-px bg-slate-800/20"></div>
-        <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost">Patient Reviews</span>
+        <span class="badge-text text-slate-500 text-sm font-normal tracking-[0.15em] uppercase font-jost"><?php echo esc_html( $test_eyebrow ); ?></span>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-jost">What Our Patients Say</h2>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 font-jost"><?php echo esc_html( $test_headline ); ?></h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-      <?php
-      $reviews = [
-        ['DW', 'David Williams',   'Emsworth Branch',  'bg-blue-100',  'text-blue-600',  'After weeks of muffled hearing, I got my ears treated here. The difference was immediate &mdash; I could hear clearly again! The clinician was so gentle and explained everything. Highly recommend!'],
-        ['MT', 'Margaret Turner',  'Davies Branch',    'bg-cyan-100',  'text-cyan-600',  'Much better than the traditional syringing I had years ago. No mess, no fuss, just clear hearing again. The appointment only took 20 minutes and the staff were lovely.'],
-        ['JR', 'John Roberts',     'Bosmere Branch',   'bg-blue-100',  'text-blue-600',  'Fantastic service. Painless procedure and immediate relief. I&rsquo;d been suffering for months with blocked ears and the GP wait was ridiculous. So glad I found Southdowns!'],
-      ];
-      foreach ( $reviews as $r ) : ?>
-      <div class="ew-reveal ew-card-lift bg-gradient-to-br from-white to-blue-50/30 rounded-2xl p-8 border border-blue-100/50" data-delay="<?php echo array_search($r, $reviews) + 1; ?>">
+      <?php foreach ( $testimonials as $i => $t ) :
+        $colours = $avatar_colours[ $i % count( $avatar_colours ) ];
+        $delay   = $i + 1;
+      ?>
+      <div class="ew-reveal ew-card-lift bg-gradient-to-br from-white to-blue-50/30 rounded-2xl p-8 border border-blue-100/50" data-delay="<?php echo $delay; ?>">
         <div class="flex gap-1 mb-4">
-          <?php for($s=0;$s<5;$s++): ?><svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><?php endfor; ?>
+          <?php for ( $s = 0; $s < 5; $s++ ) : ?><svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><?php endfor; ?>
         </div>
-        <p class="text-gray-600 text-base leading-relaxed mb-6 italic font-jost">&ldquo;<?php echo $r[5]; ?>&rdquo;</p>
+        <p class="text-gray-600 text-base leading-relaxed mb-6 italic font-jost">&ldquo;<?php echo wp_kses_post( $t['quote'] ); ?>&rdquo;</p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm <?php echo $r[3]; ?> <?php echo $r[4]; ?>"><?php echo esc_html($r[0]); ?></div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm <?php echo $colours[0]; ?> <?php echo $colours[1]; ?>"><?php echo esc_html( $t['initials'] ); ?></div>
           <div>
-            <div class="text-slate-800 font-semibold text-sm font-jost"><?php echo esc_html($r[1]); ?></div>
-            <div class="text-gray-400 text-xs font-jost"><?php echo esc_html($r[2]); ?></div>
+            <div class="text-slate-800 font-semibold text-sm font-jost"><?php echo esc_html( $t['name'] ); ?></div>
+            <div class="text-gray-400 text-xs font-jost"><?php echo esc_html( $t['branch'] ); ?></div>
           </div>
         </div>
       </div>
