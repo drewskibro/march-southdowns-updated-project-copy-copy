@@ -185,12 +185,18 @@ $symptoms = ( ! empty( $symptoms_acf ) ) ? $symptoms_acf : $symptoms_defaults;
 
 // Icon sets by position (bg colour, border colour, stroke colour, SVG path).
 $symptom_icons = [
-    [ 'rgba(6,182,212,0.25)',   'rgba(34,211,238,0.5)',  '#67e8f9', '<path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>' ],
-    [ 'rgba(244,63,94,0.25)',   'rgba(253,164,175,0.5)', '#fda4af', '<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/>' ],
-    [ 'rgba(245,158,11,0.25)',  'rgba(252,211,77,0.5)',  '#fcd34d', '<path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>' ],
-    [ 'rgba(139,92,246,0.25)',  'rgba(196,181,253,0.5)', '#c4b5fd', '<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>' ],
-    [ 'rgba(16,185,129,0.25)',  'rgba(52,211,153,0.5)',  '#6ee7b7', '<path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>' ],
-    [ 'rgba(249,115,22,0.25)',  'rgba(253,186,116,0.5)', '#fdba74', '<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>' ],
+    // Difficulty Hearing — muted speaker (Heroicons speaker-x-mark).
+    [ 'rgba(6,182,212,0.25)',   'rgba(34,211,238,0.5)',  '#67e8f9', '<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"/>' ],
+    // Earache or Discomfort — bolt / sharp pain (Heroicons bolt).
+    [ 'rgba(244,63,94,0.25)',   'rgba(253,164,175,0.5)', '#fda4af', '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5 14.25 2.25 12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/>' ],
+    // Ringing or Buzzing (Tinnitus) — radiating signal waves (Heroicons signal).
+    [ 'rgba(245,158,11,0.25)',  'rgba(252,211,77,0.5)',  '#fcd34d', '<path stroke-linecap="round" stroke-linejoin="round" d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Z"/>' ],
+    // Dizziness / Vertigo — circular spinning arrows (Heroicons arrow-path).
+    [ 'rgba(139,92,246,0.25)',  'rgba(196,181,253,0.5)', '#c4b5fd', '<path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/>' ],
+    // Hearing Aid Problems — wrench / repair tool (Heroicons wrench).
+    [ 'rgba(16,185,129,0.25)',  'rgba(52,211,153,0.5)',  '#6ee7b7', '<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 0 1-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 1 1-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 0 1 6.336-4.486l-3.276 3.276a3.004 3.004 0 0 0 2.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852Z"/>' ],
+    // Persistent Cough — airflow / wind lines (Feather wind).
+    [ 'rgba(249,115,22,0.25)',  'rgba(253,186,116,0.5)', '#fdba74', '<path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>' ],
 ];
 ?>
 <section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
