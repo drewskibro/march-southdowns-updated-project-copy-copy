@@ -8,6 +8,20 @@ get_header();
 $booking_url = sp_booking_url();
 $phone_raw   = sp_phone_raw();
 $phone       = sp_phone();
+
+// ── S1 Hero ACF fields ────────────────────────────────────────
+$hero_image       = get_field( 'ew_hero_image' )      ?: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=1200&q=80&auto=format&fit=crop';
+$hero_image_alt   = get_field( 'ew_hero_image_alt' )  ?: 'Professional ear wax removal by microsuction';
+$hero_badge       = get_field( 'ew_hero_badge' )      ?: 'TympaHealth Certified';
+$hero_headline    = get_field( 'ew_hero_headline' )   ?: 'Professional <span class="serif-accent">ear wax removal</span> by microsuction';
+$hero_body        = get_field( 'ew_hero_body' )       ?: 'Powered by TympaHealth, our trained clinicians use gentle low-pressure microsuction &mdash; the gold standard in ear care. No water, no mess, completely painless with immediate results.';
+$hero_sub_text    = get_field( 'ew_hero_sub_text' )   ?: 'From &pound;49 &middot; Free follow-up included &middot; Same-day appointments';
+$hero_roundel_1   = get_field( 'ew_hero_roundel_1' )  ?: 'https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773073398697-0.png';
+$hero_roundel_1_alt = get_field( 'ew_hero_roundel_1_alt' ) ?: 'Same Day Appointments';
+$hero_roundel_2   = get_field( 'ew_hero_roundel_2' )  ?: 'https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773073398697-0.png';
+$hero_roundel_2_alt = get_field( 'ew_hero_roundel_2_alt' ) ?: 'TympaHealth Certified';
+$hero_roundel_3   = get_field( 'ew_hero_roundel_3' )  ?: 'https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773073398725-1.png';
+$hero_roundel_3_alt = get_field( 'ew_hero_roundel_3_alt' ) ?: '5-Star Rated';
 ?>
 
 <!-- Page-scoped styles -->
@@ -53,22 +67,22 @@ $phone       = sp_phone();
 <section class="relative w-full min-h-[500px] lg:min-h-[600px] overflow-hidden">
 
   <!-- Mobile: full-width image with overlay -->
-  <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=1200&q=80&auto=format&fit=crop');"></div>
+  <div class="md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('<?php echo esc_url( $hero_image ); ?>');"></div>
   <div class="md:hidden absolute inset-0 bg-gradient-to-t from-blue-900/95 via-blue-900/70 to-transparent"></div>
   <div class="md:hidden absolute inset-0 flex flex-col justify-end px-6 py-8 z-10">
     <div class="premium-badge flex items-center justify-start gap-4 mb-4 self-start">
       <div class="badge-rule w-8 h-px bg-white/30"></div>
-      <span class="badge-text text-white/80 text-xs font-normal tracking-[0.15em] uppercase font-jost">TympaHealth Certified</span>
+      <span class="badge-text text-white/80 text-xs font-normal tracking-[0.15em] uppercase font-jost"><?php echo esc_html( $hero_badge ); ?></span>
     </div>
-    <h1 class="text-white text-3xl font-semibold tracking-tight leading-tight mb-4 font-jost" style="line-height:1.2;">Professional <span class="serif-accent">ear wax</span> removal</h1>
-    <p class="text-white text-base font-normal leading-relaxed mb-5 font-jost">Safe, painless microsuction by trained clinicians. The gold standard in ear care &mdash; no water, no mess, immediate results.</p>
+    <h1 class="text-white text-3xl font-semibold tracking-tight leading-tight mb-4 font-jost" style="line-height:1.2;"><?php echo wp_kses_post( $hero_headline ); ?></h1>
+    <p class="text-white text-base font-normal leading-relaxed mb-5 font-jost"><?php echo wp_kses_post( $hero_body ); ?></p>
     <div class="flex flex-wrap gap-3 mb-4">
       <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg font-jost">
         Book Appointment
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
-    <p class="text-white/90 text-sm font-jost">Same-day appointments available &middot; From &pound;49 &middot; Free follow-up included</p>
+    <p class="text-white/90 text-sm font-jost"><?php echo wp_kses_post( $hero_sub_text ); ?></p>
   </div>
 
   <!-- Desktop: 2-column split matching homepage hero -->
@@ -77,10 +91,10 @@ $phone       = sp_phone();
     <div class="w-1/2 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center px-12 lg:px-16 py-12" style="background-color:#1a73e9;">
       <div class="premium-badge flex items-center justify-start gap-4 mb-6 self-start">
         <div class="badge-rule w-10 h-px bg-white/30"></div>
-        <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost">TympaHealth Certified</span>
+        <span class="badge-text text-white/80 text-sm font-normal tracking-[0.15em] uppercase font-jost"><?php echo esc_html( $hero_badge ); ?></span>
       </div>
-      <h1 class="text-white text-4xl lg:text-[50px] font-semibold tracking-tight leading-tight mb-6 font-jost" style="line-height:1.1;">Professional <span class="serif-accent">ear wax removal</span> by microsuction</h1>
-      <p class="text-white text-lg lg:text-xl font-normal leading-relaxed mb-6 font-jost">Powered by TympaHealth, our trained clinicians use gentle low-pressure microsuction &mdash; the gold standard in ear care. No water, no mess, completely painless with immediate results.</p>
+      <h1 class="text-white text-4xl lg:text-[50px] font-semibold tracking-tight leading-tight mb-6 font-jost" style="line-height:1.1;"><?php echo wp_kses_post( $hero_headline ); ?></h1>
+      <p class="text-white text-lg lg:text-xl font-normal leading-relaxed mb-6 font-jost"><?php echo wp_kses_post( $hero_body ); ?></p>
       <div class="flex flex-wrap gap-3 mb-6">
         <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center gap-2 bg-white text-blue-700 text-base font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg font-jost">
           Book Appointment
@@ -91,22 +105,21 @@ $phone       = sp_phone();
           Find Your Nearest Branch
         </a>
       </div>
-      <p class="text-white text-base font-medium font-jost">From &pound;49 &middot; Free follow-up included &middot; Same-day appointments</p>
+      <p class="text-white text-base font-medium font-jost"><?php echo wp_kses_post( $hero_sub_text ); ?></p>
     </div>
 
     <!-- Right: image -->
-    <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=1200&q=80&auto=format&fit=crop');"></div>
+    <div class="w-1/2 min-h-[500px] lg:min-h-[600px] bg-cover bg-center" style="background-image: url('<?php echo esc_url( $hero_image ); ?>');"></div>
 
     <!-- Floating roundel badges — 3 positions matching homepage hero (top / centre / bottom) -->
     <div class="absolute z-30 flex flex-col items-center" style="left:50%;top:15%;transform:translateX(-50%);">
-      <img src="https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773073398697-0.png" alt="Same Day Appointments" class="w-[130px] h-[130px] object-contain drop-shadow-lg"/>
+      <img src="<?php echo esc_url( $hero_roundel_1 ); ?>" alt="<?php echo esc_attr( $hero_roundel_1_alt ); ?>" class="w-[130px] h-[130px] object-contain drop-shadow-lg"/>
     </div>
-    <!-- TODO: replace src with the new third roundel image when supplied by client -->
     <div class="absolute z-30 flex flex-col items-center" style="left:50%;top:50%;transform:translate(-50%,-50%);">
-      <img src="https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773073398697-0.png" alt="Roundel placeholder &mdash; awaiting third badge image" class="w-[130px] h-[130px] object-contain drop-shadow-lg"/>
+      <img src="<?php echo esc_url( $hero_roundel_2 ); ?>" alt="<?php echo esc_attr( $hero_roundel_2_alt ); ?>" class="w-[130px] h-[130px] object-contain drop-shadow-lg"/>
     </div>
     <div class="absolute z-30 flex flex-col items-center" style="left:50%;bottom:15%;transform:translateX(-50%);">
-      <img src="https://c.animaapp.com/mmkd7a1dRSnHAj/img/uploaded-asset-1773073398725-1.png" alt="5-Star Rated" class="w-[130px] h-[130px] object-contain drop-shadow-lg"/>
+      <img src="<?php echo esc_url( $hero_roundel_3 ); ?>" alt="<?php echo esc_attr( $hero_roundel_3_alt ); ?>" class="w-[130px] h-[130px] object-contain drop-shadow-lg"/>
     </div>
   </div>
 
