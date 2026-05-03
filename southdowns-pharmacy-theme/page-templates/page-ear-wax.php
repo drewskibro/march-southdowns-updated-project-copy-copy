@@ -835,6 +835,17 @@ $faqs = ( ! empty( $faqs_acf ) ) ? $faqs_acf : $faqs_defaults;
 <!-- ============================================================
      S13: FINAL CTA — Blue gradient, trust pills + Book CTA
      ============================================================ -->
+<?php
+$cta_pills_raw   = get_field( 'ew_cta_trust_pills' );
+$cta_pills       = $cta_pills_raw
+    ? array_filter( array_map( 'trim', explode( "\n", $cta_pills_raw ) ) )
+    : [ 'TympaHealth Certified', 'Free Follow-Up', 'Same-Day Available', 'Ages 18+ Only' ];
+$cta_headline    = get_field( 'ew_cta_headline' )      ?: 'Clearer Hearing Starts Today';
+$cta_body        = get_field( 'ew_cta_body' )          ?: 'Don&rsquo;t suffer in silence. Book your ear wax removal appointment at one of our TympaHealth-equipped branches and experience immediate relief.';
+$cta_stat_rating  = get_field( 'ew_cta_stat_rating' )  ?: '4.9/5';
+$cta_stat_reviews = get_field( 'ew_cta_stat_reviews' ) ?: '400+';
+$cta_stat_patients= get_field( 'ew_cta_stat_patients') ?: '10,000+';
+?>
 <section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #3b82f6 100%);">
   <div class="absolute inset-0 opacity-10">
     <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
@@ -842,13 +853,12 @@ $faqs = ( ! empty( $faqs_acf ) ) ? $faqs_acf : $faqs_defaults;
   </div>
   <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <div class="flex flex-wrap justify-center gap-3 mb-8">
-      <span class="bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20 font-jost">TympaHealth Certified</span>
-      <span class="bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20 font-jost">Free Follow-Up</span>
-      <span class="bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20 font-jost">Same-Day Available</span>
-      <span class="bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20 font-jost">Ages 18+ Only</span>
+      <?php foreach ( $cta_pills as $pill ) : ?>
+      <span class="bg-white/15 text-white text-xs font-semibold px-4 py-2 rounded-full border border-white/20 font-jost"><?php echo esc_html( $pill ); ?></span>
+      <?php endforeach; ?>
     </div>
-    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost">Clearer Hearing Starts Today</h2>
-    <p class="text-xl text-blue-100 leading-relaxed mb-10 max-w-2xl mx-auto font-jost">Don&rsquo;t suffer in silence. Book your ear wax removal appointment at one of our TympaHealth-equipped branches and experience immediate relief.</p>
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-jost"><?php echo esc_html( $cta_headline ); ?></h2>
+    <p class="text-xl text-blue-100 leading-relaxed mb-10 max-w-2xl mx-auto font-jost"><?php echo wp_kses_post( $cta_body ); ?></p>
     <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
       <a href="<?php echo esc_url( $booking_url ); ?>" class="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition-colors shadow-xl text-lg font-jost">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -860,26 +870,25 @@ $faqs = ( ! empty( $faqs_acf ) ) ? $faqs_acf : $faqs_defaults;
       </a>
     </div>
     <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white text-sm mb-4 font-jost">
-      <span>&#10003; TympaHealth Certified</span>
-      <span>&#10003; Free Follow-Up</span>
-      <span>&#10003; Same-Day Available</span>
-      <span>&#10003; From &pound;49</span>
+      <?php foreach ( $cta_pills as $pill ) : ?>
+      <span>&#10003; <?php echo esc_html( $pill ); ?></span>
+      <?php endforeach; ?>
     </div>
     <p class="text-blue-200/70 text-sm font-jost">Serving Emsworth, Havant, Rowlands Castle &amp; wider Hampshire</p>
     <!-- Trust indicators -->
     <div class="mt-10 flex flex-wrap justify-center items-center gap-8 md:gap-12">
       <div class="text-center">
-        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">4.9/5</div>
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost"><?php echo esc_html( $cta_stat_rating ); ?></div>
         <div class="text-blue-200 text-sm font-jost">Average Rating</div>
       </div>
       <div class="hidden md:block w-px h-12 bg-white/30"></div>
       <div class="text-center">
-        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">400+</div>
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost"><?php echo esc_html( $cta_stat_reviews ); ?></div>
         <div class="text-blue-200 text-sm font-jost">5-Star Reviews</div>
       </div>
       <div class="hidden md:block w-px h-12 bg-white/30"></div>
       <div class="text-center">
-        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost">10,000+</div>
+        <div class="text-white text-3xl md:text-4xl font-bold mb-1 font-jost"><?php echo esc_html( $cta_stat_patients ); ?></div>
         <div class="text-blue-200 text-sm font-jost">Happy Patients</div>
       </div>
     </div>
